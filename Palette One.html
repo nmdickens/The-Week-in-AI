@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.77">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;AI Industry Report: Week of July 28 - August 1, 2025&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Chosen Palette: Warm Neutral Harmony (Updated to #E8B4B8, #EED6D3, #A49393, #67595E) --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Application Structure Plan: A thematic dashboard with four main sections (Policy, Investment, Technology, Impact) accessible via a top navigation bar. This structure breaks down the dense report into logical, digestible themes, promoting user-driven exploration over linear reading. The Policy section uses content cards for key updates and ethical debates. The Investment section uses a bar chart for clear comparison of funding. The Technology section uses interactive cards to explain model releases and agentic AI. The Impact section uses clear stat cards and toggles for societal consequences. This design prioritizes usability and interactive discovery. --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Visualization &amp; Content Choices:<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>- Policy: Content Cards (HTML/CSS) -&gt; Goal: Summarize key policy and ethical updates -&gt; Interaction: Read -&gt; Justification: Best for qualitative summaries.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>- Investment: Bar Chart (Chart.js) -&gt; Goal: Compare funding magnitudes -&gt; Interaction: Hover for tooltips -&gt; Justification: Standard, clear way to show quantitative comparisons.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>- Technology: Interactive Cards (HTML/CSS/JS) -&gt; Goal: Simplify complex model features and applications -&gt; Interaction: Click/hover to reveal info -&gt; Justification: Modern, engaging way to present distinct items.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>- Agentic AI: Icon Grid (HTML/CSS/JS) -&gt; Goal: Showcase industry applications -&gt; Interaction: Click icons for use cases -&gt; Justification: Visually appealing and intuitive navigation.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>- All data sourced from the report, presented to support the thematic structure.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #EED6D3; /* Changed from #FDFBF7 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #67595E; /* Changed from #383734 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.nav-button {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.nav-button.active {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #E8B4B8; /* Changed from #A68E7A */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #FFFFFF;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: 600;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.nav-button:not(.active):hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #A49393; /* Changed from #EAE5DD */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.content-section {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.content-section.active {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.card {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #FFFFFF;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 1px solid #A49393; /* Changed from #EAE5DD */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease, box-shadow 0.3s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.card:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: translateY(-5px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.chart-container {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: relative;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 800px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-left: auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-right: auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 400px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-height: 50vh;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>.chart-container {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>height: 300px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>max-height: 60vh;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.tech-card {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>perspective: 1000px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.tech-card-inner {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: relative;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: transform 0.6s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform-style: preserve-3d;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.tech-card.flipped .tech-card-inner {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: rotateY(180deg);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.tech-card-front, .tech-card-back {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: absolute;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>-webkit-backface-visibility: hidden;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>backface-visibility: hidden;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>flex-direction: column;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.tech-card-back {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: rotateY(180deg);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #E8B4B8; /* Changed from #A68E7A */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: white;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.agent-icon.active {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #E8B4B8; /* Changed from #A68E7A */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: white;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;header class="text-center mb-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-4xl md:text-5xl font-bold text-[#67595E] mb-4"&gt;AI Industry in Focus&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p class="text-lg md:text-xl text-[#67595E]"&gt;An Interactive Summary of the Week: July 28 - August 1, 2025&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-4 rounded-lg border border-[#A49393]"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="text-3xl font-bold text-[#67595E]"&gt;$79.88B&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-[#A49393]"&gt;Total AI Investment (July 2025)&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-4 rounded-lg border border-[#A49393]"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="text-3xl font-bold text-[#67595E]"&gt;$2B&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-[#A49393]"&gt;Thinking Machines Lab Seed Round&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-4 rounded-lg border border-[#A49393]"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="text-3xl font-bold text-[#67595E]"&gt;10,000+&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-[#A49393]"&gt;US Jobs Linked to AI Displacement (2025 YTD)&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;nav class="flex justify-center mb-12 bg-white p-2 rounded-full shadow-sm border border-[#A49393] max-w-lg mx-auto"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button data-target="policy" class="nav-button active flex-1 py-2 px-4 rounded-full text-sm sm:text-base"&gt;Policy &amp; Governance&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button data-target="investment" class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base"&gt;Investment&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button data-target="technology" class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base"&gt;Technology&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button data-target="impact" class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base"&gt;Impact&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/nav&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;main&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;section id="policy" class="content-section active"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-3xl font-bold mb-2"&gt;Evolving Oversight and Ethical Debates&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="max-w-3xl mx-auto text-[#67595E]"&gt;This section highlights the latest developments in AI policy and the ongoing ethical discussions that shaped the week. From judicial guidelines to international efforts, the focus is on ensuring responsible AI deployment.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="card p-6 rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="font-bold text-xl mb-2"&gt;🇺🇸 America's AI Action Plan: Deregulation &amp; Exports&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-[#67595E]"&gt;Discussions continued on the US plan to roll back AI regulations, link funding to deregulation, and boost AI exports to allies, while addressing concerns about "synthetic media."&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="card p-6 rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="font-bold text-xl mb-2"&gt;⚖️ Judicial Guidelines for Generative AI&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-[#67595E]"&gt;By September 2025, courts not banning generative AI must adopt policies for its use by staff, driven by concerns over AI "hallucinations" undermining trust.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="card p-6 rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="font-bold text-xl mb-2"&gt;🇮🇩 Indonesia's National AI Roadmap&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-[#67595E]"&gt;Indonesia announced an upcoming AI strategy roadmap for August 2025, clarifying market potential in health/agriculture and guiding infrastructure, regulation, and investment.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="card p-6 rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="font-bold text-xl mb-2"&gt;🌍 Global AI Security &amp; Ethics Conference&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-[#67595E]"&gt;The inaugural Global Conference on AI, Security and Ethics (AISE25) is being launched in Geneva to foster shared norms and regulations on AI's security and defense applications.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;section id="investment" class="content-section"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>&lt;div class="text-center mb-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-3xl font-bold mb-2"&gt;The Flow of Capital: AI's Financial Momentum&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="max-w-3xl mx-auto text-[#67595E]"&gt;This section highlights the significant financial activities in the AI industry this week, including major funding rounds and strategic acquisitions that underscore continued investor confidence and market growth.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="card p-6 rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-xl mb-4 text-center"&gt;Major AI Funding &amp; Deals (July 28 - August 1, 2025)&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="chart-container"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;canvas id="investmentChart"&gt;&lt;/canvas&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="text-center text-sm text-[#A49393] mt-4"&gt;This chart illustrates key investment events, including venture rounds and strategic acquisitions, reported this week.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;section id="technology" class="content-section"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-3xl font-bold mb-2"&gt;Next-Gen AI: Models and Applications&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="max-w-3xl mx-auto text-[#67595E]"&gt;Technology continues to advance rapidly, with breakthroughs in making AI development more accessible and the expansion of "Agentic AI." Explore new tools and see how agentic AI is being applied across various industries.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-2xl font-bold text-center mb-6"&gt;Foundational Model &amp; Tool Highlights&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="tech-card h-64 rounded-lg cursor-pointer" data-model="opal"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="tech-card-inner rounded-lg shadow-md"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="tech-card-front card rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h4 class="text-2xl font-bold"&gt;Google Opal&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-[#A49393]"&gt;No-Code AI App Builder&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="tech-card-back rounded-lg text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h5 class="font-bold mb-2"&gt;AI for Everyone&lt;/h5&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-sm"&gt;New experimental tool allowing users to create mini AI apps with no coding, using natural language and visual editing.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="tech-card h-64 rounded-lg cursor-pointer" data-model="gemini-flash-lite"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="tech-card-inner rounded-lg shadow-md"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="tech-card-front card rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h4 class="text-2xl font-bold"&gt;Gemini 2.5 Flash-Lite&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-[#A49393]"&gt;Generally Available&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="tech-card-back rounded-lg text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h5 class="font-bold mb-2"&gt;Efficiency &amp; Cost-Effectiveness&lt;/h5&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-sm"&gt;Google's fastest and cheapest model, now generally available for scaled production use, featuring native reasoning capabilities.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="tech-card h-64 rounded-lg cursor-pointer" data-model="medical-ai"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="tech-card-inner rounded-lg shadow-md"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="tech-card-front card rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h4 class="text-2xl font-bold"&gt;Medical Image AI&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-[#A49393]"&gt;Less Data Needed&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="tech-card-back rounded-lg text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h5 class="font-bold mb-2"&gt;Accelerated Diagnostics&lt;/h5&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-sm"&gt;New AI tool learns to read medical images with significantly less data, potentially accelerating diagnostics and research.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="card p-6 rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-center mb-6"&gt;The Expanding Reach of Agentic AI&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div id="agentic-icons" class="flex justify-center flex-wrap gap-4 mb-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button data-agent="enterprise" class="agent-icon p-4 bg-white rounded-full text-2xl" title="Enterprise Automation"&gt;🏢&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button data-agent="healthcare" class="agent-icon p-4 bg-white rounded-full text-2xl" title="Healthcare"&gt;🏥&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button data-agent="it" class="agent-icon p-4 bg-white rounded-full text-2xl" title="IT Management"&gt;💻&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button data-agent="finance" class="agent-icon p-4 bg-white rounded-full text-2xl" title="Finance"&gt;💰&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button data-agent="cybersecurity" class="agent-icon p-4 bg-white rounded-full text-2xl" title="Cybersecurity"&gt;🔒&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div id="agentic-details" class="p-4 bg-gray-50 rounded-lg min-h-[120px]"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-center text-[#A49393]"&gt;Select an industry icon to see an example of how Agentic AI is automating complex tasks.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;section id="impact" class="content-section"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-3xl font-bold mb-2"&gt;Societal &amp; Economic Ripples&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="max-w-3xl mx-auto text-[#67595E]"&gt;AI's rapid advancement is creating profound societal shifts. This section explores the tangible effects on the workforce, the deepening ethical debates, and the emerging security risks that accompanied this week's technological leaps.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="card p-6 rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-3"&gt;Workforce Transformation&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-[#67595E]"&gt;AI is not just replacing jobs but redefining work itself. The demand for skills in "working with AI" is exploding, creating a new competency landscape.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-4 bg-white border-l-4 border-[#E8B4B8] p-4 rounded"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p class="font-bold text-[#67595E]"&gt;Over 10,000 US jobs&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm text-[#A49393]"&gt;were linked to AI displacement in 2025 YTD.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="card p-6 rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-3"&gt;Ethical &amp; Trustworthiness Concerns&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-[#67595E]"&gt;Concerns about AI accuracy ("hallucinations") and trustworthiness are growing, impacting sectors like the judiciary. Developers' trust in AI outputs is also worsening.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;ul class="mt-4 space-y-2 text-sm list-disc list-inside text-[#67595E]"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;li&gt;Judicial guidelines for generative AI due to "hallucinations."&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;li&gt;Developers' trust in AI outputs worsening (Stack Overflow).&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;li&gt;Concerns over "synthetic media" in federal policy.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="card p-6 rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-3"&gt;Cybersecurity &amp; AI Arms Race&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-[#67595E]"&gt;AI is being used for both advanced cyberattacks and defense, creating a dynamic arms race. New firms are emerging to tackle AI security at the source.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                         </span>&lt;ul class="mt-4 space-y-2 text-sm list-disc list-inside text-[#67595E]"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;li&gt;Palo Alto Networks acquires CyberArk ($25B) for identity security.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;li&gt;New firms like Dawnguard and Cyata focusing on AI security.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;li&gt;AI's dual-use nature in both offense and defense.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/main&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const navButtons = document.querySelectorAll('.nav-button');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const contentSections = document.querySelectorAll('.content-section');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const techCards = document.querySelectorAll('.tech-card');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const agenticIcons = document.querySelectorAll('.agent-icon');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const agenticDetails = document.getElementById('agentic-details');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const agenticData = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>enterprise: { title: 'Automated Business Processes', text: 'Agentic AI is increasingly used to automate repetitive, multi-stage tasks and entire workflows across enterprises, improving efficiency and reducing manual effort.' },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>healthcare: { title: 'Accelerating Medical Breakthroughs', text: 'Companies like Sanofi are leveraging AI and agentic AI to accelerate research and development, leading to faster discoveries in medicine.' },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>it: { title: 'Proactive IT Management', text: 'Agentic AI enhances IT operations by proactively resolving issues, integrating data from various systems, and improving problem-solving before escalations.' },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>finance: { title: 'Autonomous Financial Workflows', text: 'Agentic AI can manage compliance workflows, identify anomalies, and generate audit-ready documentation, improving accuracy and reducing manual effort in finance.' },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>cybersecurity: { title: 'AI-Powered Security Operations', text: 'New firms are emerging to tackle AI security at the source, using agentic AI to enhance threat detection, identity security, and overall risk management.' }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>navButtons.forEach(button =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>button.addEventListener('click', () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>const target = button.dataset.target;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>navButtons.forEach(btn =&gt; btn.classList.remove('active'));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>button.classList.add('active');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>contentSections.forEach(section =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>if (section.id === target) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>section.classList.add('active');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>section.classList.remove('active');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>techCards.forEach(card =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>card.addEventListener('click', () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>card.classList.toggle('flipped');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>agenticIcons.forEach(icon =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>icon.addEventListener('click', () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>const agentKey = icon.dataset.agent;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>const data = agenticData[agentKey];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>agenticDetails.innerHTML = `&lt;h4 class="font-bold text-lg mb-2"&gt;${data.title}&lt;/h4&gt;&lt;p&gt;${data.text}&lt;/p&gt;`;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>agenticIcons.forEach(i =&gt; i.classList.remove('active'));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>icon.classList.add('active');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const investmentChartCanvas = document.getElementById('investmentChart');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (investmentChartCanvas) { // Added check for canvas existence</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const investmentCtx = investmentChartCanvas.getContext('2d');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>new Chart(investmentCtx, {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>type: 'bar',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>data: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>labels: ['Thinking Machines Lab (Seed)', 'US Public Sector AI', 'Microsoft (Indonesia)', 'Nvidia (Indonesia)', 'Palo Alto Networks (Acquisition)'],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>datasets: [{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>label: 'Investment Amount (in Billions USD)',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>data: [2, 31, 1.7, 0.2, 25], /* 0.2 for $200 million */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>backgroundColor: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>'rgba(232, 180, 184, 0.7)', /* E8B4B8 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>'rgba(164, 147, 147, 0.7)', /* A49393 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>'rgba(103, 89, 94, 0.7)',<span class="Apple-converted-space">  </span>/* 67595E */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>'rgba(232, 180, 184, 0.7)', /* E8B4B8 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>'rgba(164, 147, 147, 0.7)', /* A49393 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>borderColor: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>'rgba(232, 180, 184, 1)', /* E8B4B8 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>'rgba(164, 147, 147, 1)', /* A49393 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>'rgba(103, 89, 94, 1)',<span class="Apple-converted-space">  </span>/* 67595E */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>'rgba(232, 180, 184, 1)', /* E8B4B8 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>'rgba(164, 147, 147, 1)', /* A49393 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>borderWidth: 1</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>}]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>options: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>responsive: true,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>maintainAspectRatio: false,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>indexAxis: 'y',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>plugins: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>legend: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>display: false</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>tooltip: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>callbacks: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>label: function(context) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>return ` $${context.raw} Billion`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>scales: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>x: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>beginAtZero: true,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>title: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>display: true,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>text: 'Amount (Billions USD)'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>console.error("Canvas element with ID 'investmentChart' not found. Chart will not be rendered.");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
