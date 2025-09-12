@@ -3,388 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Industry Report: Week of July 28 - August 1, 2025</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Updated to #4C3D40, #BDB5C0, #C8B4D0, #F6EEF0 -->
-    <!-- Application Structure Plan: A thematic dashboard with four main sections (Policy, Investment, Technology, Impact) accessible via a top navigation bar. This structure breaks down the dense report into logical, digestible themes, promoting user-driven exploration over linear reading. The Policy section uses content cards for key updates and ethical debates. The Investment section uses a bar chart for clear comparison of funding. The Technology section uses interactive cards to explain model releases and agentic AI. The Impact section uses clear stat cards and toggles for societal consequences. This design prioritizes usability and interactive discovery. -->
-    <!-- Visualization & Content Choices: 
-        - Policy: Content Cards (HTML/CSS) -> Goal: Summarize key policy and ethical updates -> Interaction: Read -> Justification: Best for qualitative summaries.
-        - Investment: Bar Chart (Chart.js) -> Goal: Compare funding magnitudes -> Interaction: Hover for tooltips -> Justification: Standard, clear way to show quantitative comparisons.
-        - Technology: Interactive Cards (HTML/CSS/JS) -> Goal: Simplify complex model features and applications -> Interaction: Click/hover to reveal info -> Justification: Modern, engaging way to present distinct items.
-        - Agentic AI: Icon Grid (HTML/CSS/JS) -> Goal: Showcase industry applications -> Interaction: Click icons for use cases -> Justification: Visually appealing and intuitive navigation.
-        - All data sourced from the report, presented to support the thematic structure.
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <title>Interactive AI Industry Report: Week of August 10, 2025 - August 16, 2025</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        
+        /* Early Harvest Color Palette */
+        :root {
+            --primary-dark: #554B45; /* Dark brown */
+            --secondary-accent: #A06AB4; /* Purple-pink */
+            --tertiary-highlight: #D30907; /* Red */
+            --background-light: #DDDBD4; /* Off-white */
+        }
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F6EEF0; /* Lightest */
-            color: #4C3D40; /* Darkest */
-        }
-        .nav-button {
-            transition: all 0.3s ease;
-        }
-        .nav-button.active {
-            background-color: #C8B4D0; /* Medium */
-            color: #FFFFFF;
-            font-weight: 600;
-        }
-        .nav-button:not(.active):hover {
-            background-color: #BDB5C0; /* Medium-light */
-        }
-        .content-section {
-            display: none;
-        }
-        .content-section.active {
-            display: block;
-        }
-        .card {
-            background-color: #FFFFFF;
-            border: 1px solid #BDB5C0; /* Medium-light */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 400px;
-            max-height: 50vh;
-        }
-        @media (max-width: 768px) {
-            .chart-container {
-                height: 300px;
-                max-height: 60vh;
-            }
-        }
-        .tech-card {
-            perspective: 1000px;
-        }
-        .tech-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-        .tech-card.flipped .tech-card-inner {
-            transform: rotateY(180deg);
-        }
-        .tech-card-front, .tech-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-light);
+            color: var(--primary-dark);
+            margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
+            min-height: 100vh;
+        }
+        
+       .header {
+            background-color: var(--primary-dark);
+            color: var(--background-light);
+            padding: 1rem 2rem;
             text-align: center;
         }
-        .tech-card-back {
-            background-color: #C8B4D0; /* Medium */
-            color: white;
-            transform: rotateY(180deg);
+
+       .navbar {
+            background-color: var(--secondary-accent);
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 0.75rem 0;
+            flex-wrap: wrap;
         }
-        .agent-icon.active {
-            background-color: #C8B4D0; /* Medium */
-            color: white;
+
+       .nav-button {
+            background-color: var(--primary-dark);
+            color: var(--background-light);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            font-weight: 700;
+        }
+
+       .nav-button:hover {
+            transform: translateY(-2px);
+            background-color: var(--tertiary-highlight);
+        }
+        
+       .main-content {
+            padding: 2rem;
+            flex-grow: 1;
+        }
+        
+       .summary-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+       .summary-box {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+       .summary-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+       .summary-box h3 {
+            margin-top: 0;
+            color: var(--secondary-accent);
+            font-weight: 700;
+        }
+
+       .section-container {
+            display: none;
+        }
+        
+       .section-card {
+            background-color: #f8f8f4;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+       .sources-card {
+            background-color: #f8f8f4;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+       .card-title {
+            color: var(--secondary-accent);
+            border-bottom: 2px solid var(--primary-dark);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+       .interactive-button {
+            background-color: var(--tertiary-highlight);
+            color: var(--background-light);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        
+       .interactive-button:hover {
+            background-color: #C10806;
+        }
+
+       .sources-list {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+            display: none;
+        }
+
+       .sources-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+       .footer {
+            background-color: var(--primary-dark);
+            color: var(--background-light);
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
+    <div class="header">
+        <h1>Interactive AI Industry Report</h1>
+        <h2>Week of August 10, 2025 - August 16, 2025</h2>
+    </div>
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
-        <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-[#4C3D40] mb-4">AI Industry in Focus</h1>
-            <p class="text-lg md:text-xl text-[#4C3D40]">An Interactive Summary of the Week: July 28 - August 1, 2025</p>
-            <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                <div class="bg-white p-4 rounded-lg border border-[#BDB5C0]">
-                    <p class="text-3xl font-bold text-[#4C3D40]">$79.88B</p>
-                    <p class="text-sm text-[#BDB5C0]">Total AI Investment (July 2025)</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg border border-[#BDB5C0]">
-                    <p class="text-3xl font-bold text-[#4C3D40]">$2B</p>
-                    <p class="text-sm text-[#BDB5C0]">Thinking Machines Lab Seed Round</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg border border-[#BDB5C0]">
-                    <p class="text-3xl font-bold text-[#4C3D40]">10,000+</p>
-                    <p class="text-sm text-[#BDB5C0]">US Jobs Linked to AI Displacement (2025 YTD)</p>
-                </div>
+    <div class="navbar">
+        <button class="nav-button" data-target="policy">Policy</button>
+        <button class="nav-button" data-target="investment">Investment</button>
+        <button class="nav-button" data-target="technology">Technology</button>
+        <button class="nav-button" data-target="impact">Impact</button>
+        <button class="nav-button" data-target="sources">Sources</button>
+    </div>
+
+    <div class="main-content">
+        <div class="summary-boxes" id="summaryBoxes">
+            <div class="summary-box" onclick="showSection('policy')">
+                <h3>Policy & Governance</h3>
+                <p>EU AI Act becomes effective; US regulatory landscape fragments with states in control.</p>
             </div>
-        </header>
+            <div class="summary-box" onclick="showSection('investment')">
+                <h3>Investment & M&A</h3>
+                <p>Mega-rounds for Anthropic ($13B) and Cohere ($500M) amid strategic M&A surge.</p>
+            </div>
+            <div class="summary-box" onclick="showSection('technology')">
+                <h3>Technology Breakthroughs</h3>
+                <p>GPT-5 launches but fails "hype test"; Google releases new video and image models.</p>
+            </div>
+            <div class="summary-box" onclick="showSection('impact')">
+                <h3>Societal Impact</h3>
+                <p>AI-driven layoffs at Salesforce and Oracle signal a new phase of labor market disruption.</p>
+            </div>
+        </div>
 
-        <nav class="flex justify-center mb-12 bg-white p-2 rounded-full shadow-sm border border-[#BDB5C0] max-w-lg mx-auto">
-            <button data-target="policy" class="nav-button active flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Policy & Governance</button>
-            <button data-target="investment" class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Investment</button>
-            <button data-target="technology" class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Technology</button>
-            <button data-target="impact" class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Impact</button>
-        </nav>
+        <div id="policy" class="section-container">
+            <div class="section-card">
+                <h2 class="card-title">Global AI Policy and Governance</h2>
+                <p>The week of August 10-16 marked a tangible shift in global AI governance, moving from aspirational frameworks to enforceable, on-the-ground regulations. This new reality is defined by a deep geopolitical split in regulatory philosophy and a fragmented, state-led approach in the United States.</p>
+                
+                <h3>EU AI Act: The Implementation Phase</h3>
+                <p>On August 2, 2025, core provisions of the EU AI Act became effective, ushering in an era of mandatory transparency for general-purpose AI (GPAI) models. Providers of these models are now required to publish a summary of the training data used across all stages of development, from pre-training to fine-tuning. The European Commission's AI Office published a mandatory template for this disclosure, which must be updated at least every six months. This obligation applies immediately to models placed on the market after August 2, 2025, with a two-year transition period for pre-existing models.</p>
+                
+                <h3>The Fragmented US Regulatory Landscape</h3>
+                <p>In the United States, the Senate's overwhelming vote (99-1) to remove a proposed federal moratorium on state and local AI regulation was a landmark event. This decision ensures that states will remain the primary regulators of AI, creating a complex and fragmented compliance environment for businesses operating nationwide. A new "patchwork" of state-level laws is emerging, each with a different approach. For example, Colorado has adopted a "high-risk" model that imposes obligations on developers of AI systems that influence employment or housing. In contrast, California's approach emphasizes transparency and consumer protection, while Texas has a more minimalist model focused on innovation. Utah's law is the least intrusive, requiring disclosure of AI interaction only if a consumer asks, except for licensed professionals.</p>
+            </div>
+        </div>
 
-        <main>
-            <section id="policy" class="content-section active">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-2">Evolving Oversight and Ethical Debates</h2>
-                    <p class="max-w-3xl mx-auto text-[#4C3D40]">This section highlights the latest developments in AI policy and the ongoing ethical discussions that shaped the week. From judicial guidelines to international efforts, the focus is on ensuring responsible AI deployment.</p>
-                </div>
+        <div id="investment" class="section-container">
+            <div class="section-card">
+                <h2 class="card-title">AI Industry Investment</h2>
+                <p>The week's financial landscape was defined by an unprecedented concentration of capital into outsized funding rounds and strategic M&A, signaling a shift from a broad "gold rush" to a mature phase of consolidation and vertical integration.</p>
+                
+                <h3>Mega-Rounds for Established Players</h3>
+                <p>Anthropic completed a massive $13 billion Series F round, raising its post-money valuation to $183 billion. This funding is earmarked for international expansion, deepened safety research, and meeting the growing demand from enterprises. Similarly, Canadian AI startup Cohere secured a new $500 million round, raising its valuation to $6.8 billion. This was explicitly cited as "Enterprise AI Validation," confirming that a distinct market segment exists where enterprises are willing to pay a premium for AI models that prioritize security, compliance, and reliability.</p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="card p-6 rounded-lg">
-                        <h3 class="font-bold text-xl mb-2">🇺🇸 America's AI Action Plan: Deregulation & Exports</h3>
-                        <p class="text-sm text-[#4C3D40]">Discussions continued on the US plan to roll back AI regulations, link funding to deregulation, and boost AI exports to allies, while addressing concerns about "synthetic media."</p>
-                    </div>
-                    <div class="card p-6 rounded-lg">
-                        <h3 class="font-bold text-xl mb-2">⚖️ Judicial Guidelines for Generative AI</h3>
-                        <p class="text-sm text-[#4C3D40]">By September 2025, courts not banning generative AI must adopt policies for its use by staff, driven by concerns over AI "hallucinations" undermining trust.</p>
-                    </div>
-                    <div class="card p-6 rounded-lg">
-                        <h3 class="font-bold text-xl mb-2">🇮🇩 Indonesia's National AI Roadmap</h3>
-                        <p class="text-sm text-[#4C3D40]">Indonesia announced an upcoming AI strategy roadmap for August 2025, clarifying market potential in health/agriculture and guiding infrastructure, regulation, and investment.</p>
-                    </div>
-                    <div class="card p-6 rounded-lg">
-                        <h3 class="font-bold text-xl mb-2">🌍 Global AI Security & Ethics Conference</h3>
-                        <p class="text-sm text-[#4C3D40]">The inaugural Global Conference on AI, Security and Ethics (AISE25) is being launched in Geneva to foster shared norms and regulations on AI's security and defense applications.</p>
-                    </div>
-                </div>
-            </section>
+                <h3>M&A and Strategic Consolidation</h3>
+                <p>The M&A market is accelerating as legacy businesses acquire AI companies to bolster their product offerings and compete with disruption. This trend is demonstrated by several high-profile deals announced in 2025, including Google's planned acquisition of cloud security firm Wiz ($32B) and Salesforce's purchase of Informatica ($8B) to boost data management capabilities for agentic AI. The investment landscape is shifting from a venture capital-fueled "land grab" to a strategic "arms race" dominated by established corporations.</p>
+            </div>
+        </div>
 
-            <section id="investment" class="content-section">
-                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-2">The Flow of Capital: AI's Financial Momentum</h2>
-                    <p class="max-w-3xl mx-auto text-[#4C3D40]">This section highlights the significant financial activities in the AI industry this week, including major funding rounds and strategic acquisitions that underscore continued investor confidence and market growth.</p>
-                </div>
-                <div class="card p-6 rounded-lg">
-                    <h3 class="font-bold text-xl mb-4 text-center">Major AI Funding & Deals (July 28 - August 1, 2025)</h3>
-                    <div class="chart-container">
-                        <canvas id="investmentChart"></canvas>
-                    </div>
-                    <p class="text-center text-sm text-[#BDB5C0] mt-4">This chart illustrates key investment events, including venture rounds and strategic acquisitions, reported this week.</p>
-                </div>
-            </section>
+        <div id="technology" class="section-container">
+            <div class="section-card">
+                <h2 class="card-title">Breakthroughs in AI Technology</h2>
+                <p>This week saw a flurry of technical advancements across the AI technology stack, from flagship models to hardware and robotics. However, the reception of these breakthroughs signaled a shift in what the market values, moving from an obsession with scale to a focus on utility, efficiency, and real-world applicability.</p>
 
-            <section id="technology" class="content-section">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-2">Next-Gen AI: Models and Applications</h2>
-                    <p class="max-w-3xl mx-auto text-[#4C3D40]">Technology continues to advance rapidly, with breakthroughs in making AI development more accessible and the expansion of "Agentic AI." Explore new tools and see how agentic AI is being applied across various industries.</p>
-                </div>
+                <h3>OpenAI's GPT-5 Launch and Its Backlash</h3>
+                <p>The most prominent event was the unveiling of OpenAI's GPT-5, described as its first "unified" model, combining the reasoning abilities of its o-series with the fast responses of its GPT series. It sets new state-of-the-art benchmarks across multiple domains, including math, coding, and multimodal understanding. However, despite this technical prowess, the launch was a "mess" that "failed the hype test," leading to a user revolt that forced OpenAI to bring back GPT-4o. The user community complained that the model had lost the "human touch" of its predecessor, indicating that a model's value is no longer measured purely on technical benchmarks but on subjective, real-world user experience.</p>
+                
+                <h3>Innovations from Competitors</h3>
+                <p>Google's video generation model, Veo 3, received refinements that give it a key competitive advantage: "native audio output" and the ability to align lip movements with audio, a feature that sets it apart from competitors like Runway and Sora. Google also released Gemini Nano Banana, a lightweight, multimodal image editing model. Its core strength is "subject consistency," which solves a common problem where a person or pet's likeness would change across multiple edits. The week also saw significant releases from Anthropic and Microsoft, as well as a rise in the open-source movement, with new models rivaling proprietary ones on key benchmarks.</p>
+            </div>
+        </div>
 
-                <h3 class="text-2xl font-bold text-center mb-6">Foundational Model & Tool Highlights</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                    <div class="tech-card h-64 rounded-lg cursor-pointer" data-model="opal">
-                        <div class="tech-card-inner rounded-lg shadow-md">
-                            <div class="tech-card-front card rounded-lg">
-                                <h4 class="text-2xl font-bold">Google Opal</h4>
-                                <p class="text-[#BDB5C0]">No-Code AI App Builder</p>
-                            </div>
-                            <div class="tech-card-back rounded-lg text-center">
-                                <h5 class="font-bold mb-2">AI for Everyone</h5>
-                                <p class="text-sm">New experimental tool allowing users to create mini AI apps with no coding, using natural language and visual editing.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tech-card h-64 rounded-lg cursor-pointer" data-model="gemini-flash-lite">
-                        <div class="tech-card-inner rounded-lg shadow-md">
-                            <div class="tech-card-front card rounded-lg">
-                                <h4 class="text-2xl font-bold">Gemini 2.5 Flash-Lite</h4>
-                                <p class="text-[#BDB5C0]">Generally Available</p>
-                            </div>
-                            <div class="tech-card-back rounded-lg text-center">
-                                <h5 class="font-bold mb-2">Efficiency & Cost-Effectiveness</h5>
-                                <p class="text-sm">Google's fastest and cheapest model, now generally available for scaled production use, featuring native reasoning capabilities.</p>
-                            </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tech-card h-64 rounded-lg cursor-pointer" data-model="medical-ai">
-                        <div class="tech-card-inner rounded-lg shadow-md">
-                            <div class="tech-card-front card rounded-lg">
-                                <h4 class="text-2xl font-bold">Medical Image AI</h4>
-                                <p class="text-[#BDB5C0]">Less Data Needed</p>
-                            </div>
-                            <div class="tech-card-back rounded-lg text-center">
-                                <h5 class="font-bold mb-2">Accelerated Diagnostics</h5>
-                                <p class="text-sm">New AI tool learns to read medical images with significantly less data, potentially accelerating diagnostics and research.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div id="impact" class="section-container">
+            <div class="section-card">
+                <h2 class="card-title">Societal and Economic Implications</h2>
+                <p>The week's events painted a complex and at times contradictory picture of AI's societal and economic impact, revealing both immense wealth creation and profound labor market disruption. The analysis suggests that while AI is contributing meaningfully to economic growth, it is also restructuring the labor market in a targeted manner.</p>
+                
+                <h3>The Labor Market Paradox</h3>
+                <p>The U.S. labor market presents a paradox. Despite a historically low unemployment rate of 4.2%, data shows that AI-related layoffs have affected more than 10,000 jobs through August. Executives at major firms are explicitly linking these job cuts to AI-driven efficiency gains. Marc Benioff, CEO of Salesforce, justified a reduction of 4,000 jobs in the customer support division by stating that AI's ability to handle millions of customer conversations meant he "needs less heads." Similarly, Oracle and Intel announced thousands of layoffs as they restructure operations and rebalance their workforces in a shift toward AI.</p>
+                
+                <h3>Dual-Edged Economic Impact</h3>
+                <p>The economic impact is a "double-edged sword." On one hand, AI is contributing to U.S. economic growth through two major avenues: massive capital expenditures and wealth creation. The top four hyperscalers are spending a staggering $361 billion in fiscal year 2025 on AI infrastructure. At the same time, AI companies have created nearly $2.25 trillion in wealth this year, which is expected to boost consumer spending by up to $112 billion in the next two years. On the other hand, a potential future increase in AI-driven job losses could lead to a "more cautious consumer" and slow overall GDP growth, posing a significant challenge for policymakers.</p>
+            </div>
+        </div>
 
-                <div class="card p-6 rounded-lg">
-                    <h3 class="text-2xl font-bold text-center mb-6">The Expanding Reach of Agentic AI</h3>
-                    <div id="agentic-icons" class="flex justify-center flex-wrap gap-4 mb-6">
-                        <button data-agent="enterprise" class="agent-icon p-4 bg-white rounded-full text-2xl" title="Enterprise Automation">🏢</button>
-                        <button data-agent="healthcare" class="agent-icon p-4 bg-white rounded-full text-2xl" title="Healthcare">🏥</button>
-                        <button data-agent="it" class="agent-icon p-4 bg-white rounded-full text-2xl" title="IT Management">💻</button>
-                        <button data-agent="finance" class="agent-icon p-4 bg-white rounded-full text-2xl" title="Finance">💰</button>
-                        <button data-agent="cybersecurity" class="agent-icon p-4 bg-white rounded-full text-2xl" title="Cybersecurity">🔒</button>
-                    </div>
-                    <div id="agentic-details" class="p-4 bg-gray-50 rounded-lg min-h-[120px]">
-                        <p class="text-center text-[#BDB5C0]">Select an industry icon to see an example of how Agentic AI is automating complex tasks.</p>
-                    </div>
-                </div>
-
-            </section>
-
-            <section id="impact" class="content-section">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-2">Societal & Economic Ripples</h2>
-                    <p class="max-w-3xl mx-auto text-[#4C3D40]">AI's rapid advancement is creating profound societal shifts. This section explores the tangible effects on the workforce, the deepening ethical debates, and the emerging security risks that accompanied this week's technological leaps.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="card p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-3">Workforce Transformation</h3>
-                        <p class="text-[#4C3D40]">AI is not just replacing jobs but redefining work itself. The demand for skills in "working with AI" is exploding, creating a new competency landscape.</p>
-                        <div class="mt-4 bg-white border-l-4 border-[#C8B4D0] p-4 rounded">
-                            <p class="font-bold text-[#4C3D40]">Over 10,000 US jobs</p>
-                            <p class="text-sm text-[#BDB5C0]">were linked to AI displacement in 2025 YTD.</p>
-                        </div>
-                    </div>
-                    <div class="card p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-3">Ethical & Trustworthiness Concerns</h3>
-                        <p class="text-[#4C3D40]">Concerns about AI accuracy ("hallucinations") and trustworthiness are growing, impacting sectors like the judiciary. Developers' trust in AI outputs is also worsening.</p>
-                        <ul class="mt-4 space-y-2 text-sm list-disc list-inside text-[#4C3D40]">
-                            <li>Judicial guidelines for generative AI due to "hallucinations."</li>
-                            <li>Developers' trust in AI outputs worsening (Stack Overflow).</li>
-                            <li>Concerns over "synthetic media" in federal policy.</li>
-                        </ul>
-                    </div>
-                    <div class="card p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-3">Cybersecurity & AI Arms Race</h3>
-                        <p class="text-[#4C3D40]">AI is being used for both advanced cyberattacks and defense, creating a dynamic arms race. New firms are emerging to tackle AI security at the source.</p>
-                         <ul class="mt-4 space-y-2 text-sm list-disc list-inside text-[#4C3D40]">
-                            <li>Palo Alto Networks acquires CyberArk ($25B) for identity security.</li>
-                            <li>New firms like Dawnguard and Cyata focusing on AI security.</li>
-                            <li>AI's dual-use nature in both offense and defense.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </main>
-
+        <div id="sources" class="section-container">
+            <div class="sources-card">
+                <h2 class="card-title">Sources</h2>
+                <button class="interactive-button" onclick="toggleSources()">Show All Sources</button>
+                <ul class="sources-list" id="sourcesList">
+                    <li>1. Amiko Consulting. "AI Key Topics Roundup for August 10-16, 2025: What Should Manufacturing Change?" <a href="https://amiko.consulting/ai-key-topics-roundup-for-august-10-16-2025-what-should-manufacturing-change/?lang=en" target="_blank">Link</a></li>
+                    <li>2. National Centre for AI. "August 2025 round-up of interesting AI news and announcements." <a href="https://nationalcentreforai.jiscinvolve.org/wp/2025/09/04/august-2025-round-up-of-interesting-ai-news-and-announcements/" target="_blank">Link</a></li>
+                    <li>3. Quinn Emanuel. "Artificial Intelligence Update - August 2025." <a href="https://www.quinnemanuel.com/the-firm/publications/artificial-intelligence-update-august-2025/" target="_blank">Link</a></li>
+                    <li>4. Simmons & Simmons. "AI View - August 2025." <a href="https://www.simmons-simmons.com/en/publications/cmdyieenb00ueu11o0d8rdavl/ai-view-august-2025" target="_blank">Link</a></li>
+                    <li>5. European Commission. "Regulatory framework for AI." <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank">Link</a></li>
+                    <li>6. Simmons & Simmons. "AI View - August 2025." <a href="https://www.simmons-simmons.com/en/publications/cmdyieenb00ueu11o0d8rdavl/ai-view-august-2025" target="_blank">Link</a></li>
+                    <li>7. Eqvista. "Top US AI Funding Rounds: $100M+ in 2025." <a href="https://eqvista.com/top-us-ai-funding/" target="_blank">Link</a></li>
+                    <li>8. Anthropic. "Anthropic Raises Series F at USD183B Post-Money Valuation." <a href="https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation" target="_blank">Link</a></li>
+                    <li>9. Ropes & Gray. "Artificial Intelligence H1 2025 Global Report." <a href="https://www.ropesgray.com/en/insights/alerts/2025/08/artificial-intelligence-h1-2025-global-report" target="_blank">Link</a></li>
+                    <li>10. CRN. "The 10 Biggest Tech M&A Deals of 2025 So Far." <a href="https://www.crn.com/news/channel-news/2025/the-10-biggest-tech-m-a-deals-of-2025-so-far" target="_blank">Link</a></li>
+                    <li>11. Times of India. "Explained: Google Gemini Nano Banana, what it is, how it works, and what all you can do with it." <a href="https://timesofindia.indiatimes.com/technology/tech-news/explained-google-gemini-nano-banana-what-it-is-how-it-works-and-what-all-you-can-do-with-it/articleshow/123828060.cms" target="_blank">Link</a></li>
+                    <li>12. Medium. "What shocked the AI world in August 2025 and what's next for LLMs in September." <a href="https://medium.com/@ashinno43/what-shocked-the-ai-world-in-august-2025-and-whats-next-for-llms-in-september-bb1c5abfa754" target="_blank">Link</a></li>
+                    <li>13. FourWeekMBA. "AI Business Analysis: Week of August 10-16, 2025." <a href="https://fourweekmba.com/ai-business-analysis-week-of-august-10-16-2025/" target="_blank">Link</a></li>
+                    <li>14. Medium. "AI Weekly: Government Revenue Sharing, GPU Breakthroughs, and Model Competition Heats." <a href="https://medium.com/artificial-synapse-media/ai-weekly-government-revenue-sharing-gpu-breakthroughs-and-model-competition-heats-10-16-db940576ceb3" target="_blank">Link</a></li>
+                    <li>15. Arxiv. "Arxiv AI papers week of August 11 2025." <a href="https://arxiv.org/" target="_blank">Link</a></li>
+                    <li>16. Hugging Face. "AI Release Week Thread (11 August 2025)." <a href="https://huggingface.co/collections/Presidentlin/ai-release-week-thread-11-august-2025-68a2ad2ec2d01ee8a56c075c" target="_blank">Link</a></li>
+                    <li>17. Times of India. "US job cuts surge to 86,000 in August amid slowing hiring and persistent labor market strain." <a href="https://timesofindia.indiatimes.com/education/news/us-job-cuts-surge-to-86000-in-august-amid-slowing-hiring-and-persistent-labor-market-strain/articleshow/123715590.cms" target="_blank">Link</a></li>
+                    <li>18. The Washington Post. "Layoffs, hiring slowdown propel unemployment to highest level since 2021." <a href="https://www.washingtonpost.com/business/2025/09/07/layoffs-hiring-slowdown/" target="_blank">Link</a></li>
+                    <li>19. UNIDIR. "Global Conference on AI, Security and Ethics 2025." <a href="https://unidir.org/event/global-conference-on-ai-security-and-ethics-2025/" target="_blank">Link</a></li>
+                    <li>20. YouTube. "AI and Robotics: A Massive Showcase in China." <a href="https://www.youtube.com/watch?v=eg-3-CsSRrY" target="_blank">Link</a></li>
+                    <li>21. Council on Foreign Relations. "Will Artificial Intelligence Do More Harm Than Good for U.S. Growth?" <a href="https://www.cfr.org/article/will-artificial-intelligence-do-more-harm-good-us-growth" target="_blank">Link</a></li>
+                    <li>22. Orrick. "AI Law Center - August 2025 Updates." <a href="https://www.orrick.com/en/Insights/2025/08/AI-Law-Center-August-2025-Updates" target="_blank">Link</a></li>
+                    <li>23. Nextiva. "Best AI Tools for Small Business in 2025." <a href="https://www.nextiva.com/blog/best-ai-tools-for-small-business.html" target="_blank">Link</a></li>
+                    <li>24. TTMS. "Top 15 AI Tools for Business." <a href="https://ttms.com/top-15-ai-tools-for-business/" target="_blank">Link</a></li>
+                    <li>25. RapidArchitect. "AI Trends for Small to Medium Businesses: What August 2025 Tells." <a href="https://rapidarchitect.com/ai-state-of-the-union/" target="_blank">Link</a></li>
+                    <li>26. FourWeekMBA. "AI Business Analysis: Week of August 10-16, 2025." <a href="https://fourweekmba.com/ai-business-analysis-week-of-august-10-16-2025/" target="_blank">Link</a></li>
+                    <li>27. The Economic Times. "Oracle, Salesforce announce massive layoffs in US as tech job cuts deepen." <a href="https://m.economictimes.com/news/international/global-trends/us-news-oracle-salesforce-announce-massive-layoffs-in-us-as-tech-job-cuts-deepen-check-worst-hit-department/articleshow/123717042.cms" target="_blank">Link</a></li>
+                    <li>28. New York Fed. "Are Businesses Scaling Back Hiring Due to AI?" <a href="https://libertystreeteconomics.newyorkfed.org/2025/09/are-businesses-scaling-back-hiring-due-to-ai/" target="_blank">Link</a></li>
+                    <li>29. The Economic Times. "Tech layoffs 2025 surge in US." <a href="https://m.economictimes.com/news/international/global-trends/us-news-tech-layoffs-2025-surge-in-us-amazon-microsoft-meta-slash-thousands-of-jobs-check-full-list-of-companies-affected/articleshow/123735499.cms" target="_blank">Link</a></li>
+                    <li>30. Al Jazeera. "Salesforce lays off thousands despite strong earnings report." <a href="https://www.aljazeera.com/economy/2025/9/3/salesforce-lays-off-thousands-despite-strong-earnings-report" target="_blank">Link</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Powered by Gemini and organized with NotebookLM.</p>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const navButtons = document.querySelectorAll('.nav-button');
-            const contentSections = document.querySelectorAll('.content-section');
-            const techCards = document.querySelectorAll('.tech-card');
-            const agenticIcons = document.querySelectorAll('.agent-icon');
-            const agenticDetails = document.getElementById('agentic-details');
+            const sections = document.querySelectorAll('.section-container');
+            const summaryBoxes = document.getElementById('summaryBoxes');
 
-            const agenticData = {
-                enterprise: { title: 'Automated Business Processes', text: 'Agentic AI is increasingly used to automate repetitive, multi-stage tasks and entire workflows across enterprises, improving efficiency and reducing manual effort.' },
-                healthcare: { title: 'Accelerating Medical Breakthroughs', text: 'Companies like Sanofi are leveraging AI and agentic AI to accelerate research and development, leading to faster discoveries in medicine.' },
-                it: { title: 'Proactive IT Management', text: 'Agentic AI enhances IT operations by proactively resolving issues, integrating data from various systems, and improving problem-solving before escalations.' },
-                finance: { title: 'Autonomous Financial Workflows', text: 'Agentic AI can manage compliance workflows, identify anomalies, and generate audit-ready documentation, improving accuracy and reducing manual effort in finance.' },
-                cybersecurity: { title: 'AI-Powered Security Operations', text: 'New firms are emerging to tackle AI security at the source, using agentic AI to enhance threat detection, identity security, and overall risk management.' }
-            };
-            
-            navButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const target = button.dataset.target;
-
-                    navButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    contentSections.forEach(section => {
-                        if (section.id === target) {
-                            section.classList.add('active');
-                        } else {
-                            section.classList.remove('active');
-                        }
-                    });
+            function hideAllSections() {
+                sections.forEach(section => {
+                    section.style.display = 'none';
                 });
-            });
-            
-            techCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    card.classList.toggle('flipped');
-                });
-            });
-
-            agenticIcons.forEach(icon => {
-                icon.addEventListener('click', () => {
-                    const agentKey = icon.dataset.agent;
-                    const data = agenticData[agentKey];
-                    agenticDetails.innerHTML = `<h4 class="font-bold text-lg mb-2">${data.title}</h4><p>${data.text}</p>`;
-                    
-                    agenticIcons.forEach(i => i.classList.remove('active'));
-                    icon.classList.add('active');
-
-                });
-            });
-            
-            const investmentChartCanvas = document.getElementById('investmentChart');
-            if (investmentChartCanvas) { // Added check for canvas existence
-                const investmentCtx = investmentChartCanvas.getContext('2d');
-                new Chart(investmentCtx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Thinking Machines Lab (Seed)', 'US Public Sector AI', 'Microsoft (Indonesia)', 'Nvidia (Indonesia)', 'Palo Alto Networks (Acquisition)'],
-                        datasets: [{
-                            label: 'Investment Amount (in Billions USD)',
-                            data: [2, 31, 1.7, 0.2, 25], /* 0.2 for $200 million */
-                            backgroundColor: [
-                                'rgba(200, 180, 208, 0.7)', /* C8B4D0 */
-                                'rgba(189, 181, 192, 0.7)', /* BDB5C0 */
-                                'rgba(76, 61, 64, 0.7)',  /* 4C3D40 */
-                                'rgba(200, 180, 208, 0.7)', /* C8B4D0 */
-                                'rgba(189, 181, 192, 0.7)', /* BDB5C0 */
-                            ],
-                            borderColor: [
-                                'rgba(200, 180, 208, 1)', /* C8B4D0 */
-                                'rgba(189, 181, 192, 1)', /* BDB5C0 */
-                                'rgba(76, 61, 64, 1)',  /* 4C3D40 */
-                                'rgba(200, 180, 208, 1)', /* C8B4D0 */
-                                'rgba(189, 181, 192, 1)', /* BDB5C0 */
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        indexAxis: 'y',
-                        plugins: {
-                            legend: {
-                                display: false
-                            },
-                            tooltip: {
-                                callbacks: {
-                                    label: function(context) {
-                                        return ` $${context.raw} Billion`;
-                                    }
-                                }
-                            }
-                        },
-                        scales: {
-                            x: {
-                                beginAtZero: true,
-                                title: {
-                                    display: true,
-                                    text: 'Amount (Billions USD)'
-                                }
-                            }
-                        }
-                    }
-                });
-            } else {
-                console.error("Canvas element with ID 'investmentChart' not found. Chart will not be rendered.");
             }
-        });
-    </script>
 
+            function showSummary() {
+                summaryBoxes.style.display = 'grid';
+            }
+
+            function showSection(targetId) {
+                hideAllSections();
+                showSummary(); 
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    summaryBoxes.style.display = 'none';
+                    targetSection.style.display = 'block';
+                }
+            }
+            window.showSection = showSection;
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const targetId = event.target.getAttribute('data-target');
+                    showSection(targetId);
+                });
+            });
+
+            // Initially show the summary boxes
+            showSummary();
+        });
+
+        function toggleSources() {
+            const sourcesList = document.getElementById('sourcesList');
+            const button = document.querySelector('#sources button');
+            if (sourcesList.style.display === 'none' |
+
+| sourcesList.style.display === '') {
+                sourcesList.style.display = 'block';
+                button.textContent = 'Hide Sources';
+            } else {
+                sourcesList.style.display = 'none';
+                button.textContent = 'Show All Sources';
+            }
+        }
+    </script>
 </body>
 </html>
