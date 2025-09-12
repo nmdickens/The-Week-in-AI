@@ -10,22 +10,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-dark: #554B45;
+            --secondary-accent: #A06AB4;
+            --tertiary-highlight: #D30907;
+            --background-light: #DDDBD4;
+        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #E6E6FA; /* Off-White */
-            color: #483C32; /* Primary Dark */
+            background-color: var(--background-light);
+            color: var(--primary-dark);
         }
         .nav-button {
             transition: all 0.3s ease;
         }
         .nav-button.active {
-            background-color: #F4C2C2; /* Soft Pink */
-            color: #483C32;
+            background-color: var(--secondary-accent);
+            color: var(--primary-dark);
             font-weight: 600;
         }
         .nav-button:not(.active):hover {
-            background-color: #B0C4DE; /* Dusty Blue */
-            color: #483C32;
+            background-color: var(--tertiary-highlight);
+            color: var(--background-light);
         }
         .content-section {
             display: none;
@@ -35,7 +41,7 @@
         }
         .card {
             background-color: #FFFFFF;
-            border: 1px solid #B0C4DE; /* Dusty Blue */
+            border: 1px solid var(--secondary-accent);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card:hover {
@@ -84,13 +90,13 @@
             text-align: center;
         }
         .tech-card-back {
-            background-color: #F4C2C2; /* Soft Pink */
-            color: #483C32;
+            background-color: var(--secondary-accent);
+            color: var(--primary-dark);
             transform: rotateY(180deg);
         }
         .agent-icon.active {
-            background-color: #F4C2C2; /* Soft Pink */
-            color: #483C32;
+            background-color: var(--secondary-accent);
+            color: var(--primary-dark);
         }
     </style>
 </head>
@@ -99,72 +105,72 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
         <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-[#483C32] mb-4">AI Industry in Focus</h1>
-            <p class="text-lg md:text-xl text-[#483C32]">An Interactive Summary of the Week: August 10 - August 16, 2025</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-[var(--primary-dark)] mb-4">AI Industry in Focus</h1>
+            <p class="text-lg md:text-xl text-[var(--primary-dark)]">An Interactive Summary of the Week: August 10 - August 16, 2025</p>
             <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                <div class="bg-white p-4 rounded-lg border border-[#B0C4DE]">
-                    <p class="text-3xl font-bold text-[#483C32]">$13B</p>
-                    <p class="text-sm text-[#B0C4DE]">Anthropic Series F Round</p>
+                <div class="bg-white p-4 rounded-lg border border-[var(--secondary-accent)]">
+                    <p class="text-3xl font-bold text-[var(--primary-dark)]">$13B</p>
+                    <p class="text-sm text-[var(--secondary-accent)]">Anthropic Series F Round</p>
                 </div>
-                <div class="bg-white p-4 rounded-lg border border-[#B0C4DE]">
-                    <p class="text-3xl font-bold text-[#483C32]">$32B</p>
-                    <p class="text-sm text-[#B0C4DE]">Google's Planned Acquisition of Wiz</p>
+                <div class="bg-white p-4 rounded-lg border border-[var(--secondary-accent)]">
+                    <p class="text-3xl font-bold text-[var(--primary-dark)]">$32B</p>
+                    <p class="text-sm text-[var(--secondary-accent)]">Google's Planned Acquisition of Wiz</p>
                 </div>
-                <div class="bg-white p-4 rounded-lg border border-[#B0C4DE]">
-                    <p class="text-3xl font-bold text-[#483C32]">$2.25T</p>
-                    <p class="text-sm text-[#B0C4DE]">AI Wealth Creation (YTD)</p>
+                <div class="bg-white p-4 rounded-lg border border-[var(--secondary-accent)]">
+                    <p class="text-3xl font-bold text-[var(--primary-dark)]">$2.25T</p>
+                    <p class="text-sm text-[var(--secondary-accent)]">AI Wealth Creation (YTD)</p>
                 </div>
             </div>
         </header>
 
-        <nav class="flex justify-center mb-12 bg-white p-2 rounded-full shadow-sm border border-[#B0C4DE] max-w-lg mx-auto">
+        <nav class="flex justify-center mb-12 bg-white p-2 rounded-full shadow-sm border border-[var(--secondary-accent)] max-w-lg mx-auto">
             <button data-target="policy" class="nav-button active flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Policy & Governance</button>
             <button data-target="investment" class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Investment</button>
             <button data-target="technology" class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Technology</button>
             <button data-target="impact" class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Impact</button>
         </nav>
         <div class="flex justify-center gap-4 mb-8">
-            <a href="#" class="inline-block bg-[#F4C2C2] hover:bg-[#B0C4DE] text-[#483C32] font-bold py-2 px-6 rounded-full transition-colors duration-300">Read Full Report</a>
-            <a href="#" class="inline-block bg-[#F4C2C2] hover:bg-[#B0C4DE] text-[#483C32] font-bold py-2 px-6 rounded-full transition-colors duration-300">Listen to Audio Overview</a>
+            <a href="#" class="inline-block bg-[var(--secondary-accent)] hover:bg-[var(--tertiary-highlight)] text-[var(--primary-dark)] font-bold py-2 px-6 rounded-full transition-colors duration-300">Read Full Report</a>
+            <a href="#" class="inline-block bg-[var(--secondary-accent)] hover:bg-[var(--tertiary-highlight)] text-[var(--primary-dark)] font-bold py-2 px-6 rounded-full transition-colors duration-300">Listen to Audio Overview</a>
         </div>
 
         <main>
             <section id="policy" class="content-section active">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold mb-2">Global AI Policy and Governance</h2>
-                    <p class="max-w-3xl mx-auto text-[#483C32]">The week of August 10-16 marked a tangible shift in global AI governance, moving from aspirational frameworks to enforceable, on-the-ground regulations. [cite_start]This new reality is defined by a deep geopolitical split in regulatory philosophy and a fragmented, state-led approach in the United States[cite: 3, 22].</p>
+                    <p class="max-w-3xl mx-auto text-[var(--primary-dark)]">The week of August 10-16 marked a tangible shift in global AI governance, moving from aspirational frameworks to enforceable, on-the-ground regulations. This new reality is defined by a deep geopolitical split in regulatory philosophy and a fragmented, state-led approach in the United States.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="card p-6 rounded-lg">
                         <h3 class="font-bold text-xl mb-2">🇪🇺 EU AI Act: The Implementation Phase</h3>
-                        <p class="text-sm text-[#483C32]">On August 2, 2025, core provisions of the EU AI Act became effective, ushering in an era of mandatory transparency for general-purpose AI (GPAI) models. Providers of these models are now required to publish a summary of the training data used across all stages of development, from pre-training to fine-tuning. The European Commission's AI Office published a mandatory template for this disclosure, which must be updated at least every six months. [cite_start]This obligation applies immediately to models placed on the market after August 2, 2025, with a two-year transition period for pre-existing models[cite: 4, 5, 6].</p>
+                        [cite_start]<p class="text-sm text-[var(--primary-dark)]">On August 2, 2025, core provisions of the EU AI Act became effective, ushering in an era of mandatory transparency for general-purpose AI (GPAI) models. [cite: 5] [cite_start]Providers of these models are now required to publish a summary of the training data used across all stages of development, from pre-training to fine-tuning. [cite: 5] [cite_start]The European Commission's AI Office published a mandatory template for this disclosure, which must be updated at least every six months. [cite: 5] [cite_start]This obligation applies immediately to models placed on the market after August 2, 2025, with a two-year transition period for pre-existing models. [cite: 5]</p>
                     </div>
                     <div class="card p-6 rounded-lg">
                         <h3 class="font-bold text-xl mb-2">⚖️ The Fragmented US Regulatory Landscape</h3>
-                        [cite_start]<p class="text-sm text-[#483C32]">In the United States, the Senate's overwhelming vote (99-1) to remove a proposed federal moratorium on state and local AI regulation was a landmark event[cite: 3]. [cite_start]This decision ensures that states will remain the primary regulators of AI, creating a complex and fragmented compliance environment for businesses operating nationwide[cite: 3]. [cite_start]A new "patchwork" of state-level laws is emerging, each with a different approach[cite: 3]. For example, Colorado has adopted a "high-risk" model that imposes obligations on developers of AI systems that influence employment or housing. In contrast, California's approach emphasizes transparency and consumer protection, while Texas has a more minimalist model focused on innovation. [cite_start]Utah's law is the least intrusive, requiring disclosure of AI interaction only if a consumer asks, except for licensed professionals[cite: 3].</p>
+                        [cite_start]<p class="text-sm text-[var(--primary-dark)]">In the United States, the Senate's overwhelming vote (99-1) to remove a proposed federal moratorium on state and local AI regulation was a landmark event. [cite: 3] [cite_start]This decision ensures that states will remain the primary regulators of AI, creating a complex and fragmented compliance environment for businesses operating nationwide. [cite: 3] A new "patchwork" of state-level laws is emerging, each with a different approach. [cite_start]For example, Colorado has adopted a "high-risk" model that imposes obligations on developers of AI systems that influence employment or housing. [cite: 3] [cite_start]In contrast, California's approach emphasizes transparency and consumer protection, while Texas has a more minimalist model focused on innovation. [cite: 3] [cite_start]Utah's law is the least intrusive, requiring disclosure of AI interaction only if a consumer asks, except for licensed professionals. [cite: 3]</p>
                     </div>
                 </div>
             </section>
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             <section id="investment" class="content-section">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold mb-2">The Flow of Capital: AI's Financial Momentum</h2>
-                    [cite_start]<p class="max-w-3xl mx-auto text-[#483C32]">The week's financial landscape was defined by an unprecedented concentration of capital into outsized funding rounds and strategic M&A, signaling a shift from a broad "gold rush" to a mature phase of consolidation and vertical integration[cite: 9, 10].</p>
+                    [cite_start]<p class="max-w-3xl mx-auto text-[var(--primary-dark)]">The week's financial landscape was defined by an unprecedented concentration of capital into outsized funding rounds and strategic M&A, signaling a shift from a broad "gold rush" to a mature phase of consolidation and vertical integration. [cite: 9]</p>
                 </div>
                 <div class="card p-6 rounded-lg">
                     <h3 class="font-bold text-xl mb-4 text-center">Major AI Funding & Deals (August 10 - August 16, 2025)</h3>
                     <div class="chart-container">
                         <canvas id="investmentChart"></canvas>
                     </div>
-                    <p class="text-center text-sm text-[#B0C4DE] mt-4">This chart illustrates key investment events, including mega-rounds and strategic acquisitions, reported this week.</p>
+                    <p class="text-center text-sm text-[var(--secondary-accent)] mt-4">This chart illustrates key investment events, including mega-rounds and strategic acquisitions, reported this week.</p>
                 </div>
             </section>
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             <section id="technology" class="content-section">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold mb-2">Breakthroughs in AI Technology</h2>
-                    <p class="max-w-3xl mx-auto text-[#483C32]">This week saw a flurry of technical advancements across the AI technology stack, from flagship models to hardware and robotics. [cite_start]However, the reception of these breakthroughs signaled a shift in what the market values, moving from an obsession with scale to a focus on utility, efficiency, and real-world applicability[cite: 12].</p>
+                    [cite_start]<p class="max-w-3xl mx-auto text-[var(--primary-dark)]">This week saw a flurry of technical advancements across the AI technology stack, from flagship models to hardware and robotics. [cite: 14] [cite_start]However, the reception of these breakthroughs signaled a shift in what the market values, moving from an obsession with scale to a focus on utility, efficiency, and real-world applicability. [cite: 14]</p>
                 </div>
 
                 <h3 class="text-2xl font-bold text-center mb-6">Foundational Model & Tool Highlights</h3>
@@ -173,11 +179,11 @@
                         <div class="tech-card-inner rounded-lg shadow-md">
                             <div class="tech-card-front card rounded-lg">
                                 <h4 class="text-2xl font-bold">OpenAI's GPT-5</h4>
-                                <p class="text-[#B0C4DE]">The Hype Test</p>
+                                <p class="text-[var(--secondary-accent)]">The Hype Test</p>
                             </div>
                             <div class="tech-card-back rounded-lg text-center">
                                 <h5 class="font-bold mb-2">Launch and Its Backlash</h5>
-                                <p class="text-sm">The most prominent event was the unveiling of OpenAI's GPT-5, described as its first "unified" model, combining the reasoning abilities of its o-series with the fast responses of its GPT series. [cite_start]It sets new state-of-the-art benchmarks across multiple domains, including math, coding, and multimodal understanding[cite: 12, 16]. However, despite this technical prowess, the launch was a "mess" that "failed the hype test," leading to a user revolt that forced OpenAI to bring back GPT-4o. [cite_start]The user community complained that the model had lost the "human touch" of its predecessor, indicating that a model's value is no longer measured purely on technical benchmarks but on subjective, real-world user experience[cite: 12].</p>
+                                [cite_start]<p class="text-sm">The most prominent event was the unveiling of OpenAI's GPT-5, described as its first "unified" model, combining the reasoning abilities of its o-series with the fast responses of its GPT series. [cite: 12] [cite_start]It sets new state-of-the-art benchmarks across multiple domains, including math, coding, and multimodal understanding. [cite: 12] [cite_start]However, despite this technical prowess, the launch was a "mess" that "failed the hype test," leading to a user revolt that forced OpenAI to bring back GPT-4o. [cite: 12] [cite_start]The user community complained that the model had lost the "human touch" of its predecessor, indicating that a model's value is no longer measured purely on technical benchmarks but on subjective, real-world user experience. [cite: 12]</p>
                             </div>
                         </div>
                     </div>
@@ -185,11 +191,11 @@
                         <div class="tech-card-inner rounded-lg shadow-md">
                             <div class="tech-card-front card rounded-lg">
                                 <h4 class="text-2xl font-bold">Google's Video & Image Models</h4>
-                                <p class="text-[#B0C4DE]">New Capabilities</p>
+                                <p class="text-[var(--secondary-accent)]">New Capabilities</p>
                             </div>
                             <div class="tech-card-back rounded-lg text-center">
                                 <h5 class="font-bold mb-2">Innovations from Competitors</h5>
-                                [cite_start]<p class="text-sm">Google's video generation model, Veo 3, received refinements that give it a key competitive advantage: "native audio output" and the ability to align lip movements with audio, a feature that sets it apart from competitors like Runway and Sora[cite: 11, 14]. Google also released Gemini Nano Banana, a lightweight, multimodal image editing model. [cite_start]Its core strength is "subject consistency," which solves a common problem where a person or pet's likeness would change across multiple edits[cite: 11]. [cite_start]The week also saw significant releases from Anthropic and Microsoft, as well as a rise in the open-source movement, with new models rivaling proprietary ones on key benchmarks[cite: 15, 16].</p>
+                                [cite_start]<p class="text-sm">Google's video generation model, Veo 3, received refinements that give it a key competitive advantage: "native audio output" and the ability to align lip movements with audio, a feature that sets it apart from competitors like Runway and Sora. [cite: 12] [cite_start]Google also released Gemini Nano Banana, a lightweight, multimodal image editing model. [cite: 11] [cite_start]Its core strength is "subject consistency," which solves a common problem where a person or pet's likeness would change across multiple edits. [cite: 11] [cite_start]The week also saw significant releases from Anthropic and Microsoft, as well as a rise in the open-source movement, with new models rivaling proprietary ones on key benchmarks. [cite: 12, 16]</p>
                             </p>
                             </div>
                         </div>
@@ -198,11 +204,11 @@
                         <div class="tech-card-inner rounded-lg shadow-md">
                             <div class="tech-card-front card rounded-lg">
                                 <h4 class="text-2xl font-bold">Enterprise AI & Robotics</h4>
-                                <p class="text-[#B0C4DE]">New Applications</p>
+                                <p class="text-[var(--secondary-accent)]">New Applications</p>
                             </div>
                             <div class="tech-card-back rounded-lg text-center">
                                 <h5 class="font-bold mb-2">Practical Applications</h5>
-                                [cite_start]<p class="text-sm">In China, a massive showcase highlighted advancements in AI and robotics, with a new focus on practical, real-world applications[cite: 20]. [cite_start]The investment landscape also showed a strong trend toward "Enterprise AI Validation," where companies like Cohere are raising mega-rounds based on their ability to deliver secure and compliant AI solutions for businesses[cite: 26]. [cite_start]The focus on utility is driving a new wave of practical AI tools for small to medium businesses[cite: 23, 24, 25].</p>
+                                [cite_start]<p class="text-sm">In China, a massive showcase highlighted advancements in AI and robotics, with a new focus on practical, real-world applications. [cite: 20] [cite_start]The investment landscape also showed a strong trend toward "Enterprise AI Validation," where companies like Cohere are raising mega-rounds based on their ability to deliver secure and compliant AI solutions for businesses. [cite: 26] [cite_start]The focus on utility is driving a new wave of practical AI tools for small to medium businesses. [cite: 23, 24, 25]</p>
                             </div>
                         </div>
                     </div>
@@ -217,38 +223,37 @@
                         <button data-agent="healthcare" class="agent-icon p-4 rounded-full text-2xl" title="Healthcare">🏥</button>
                         <button data-agent="research" class="agent-icon p-4 rounded-full text-2xl" title="Research">🔬</button>
                     </div>
-                    <div id="agentic-details" class="p-4 bg-[#E6E6FA]/50 rounded-lg min-h-[120px] text-[#483C32]">
-                        <p class="text-center text-[#B0C4DE]">Select an industry icon to see an example of how Agentic AI is automating complex tasks.</p>
+                    <div id="agentic-details" class="p-4 bg-[var(--background-light)]/50 rounded-lg min-h-[120px] text-[var(--primary-dark)]">
+                        <p class="text-center text-[var(--secondary-accent)]">Select an industry icon to see an example of how Agentic AI is automating complex tasks.</p>
                     </div>
                 </div>
 
             </section>
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             <section id="impact" class="content-section">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold mb-2">Societal & Economic Implications</h2>
-                    <p class="max-w-3xl mx-auto text-[#483C32]">The week's events painted a complex and at times contradictory picture of AI's societal and economic impact, revealing both immense wealth creation and profound labor market disruption. [cite_start]The analysis suggests that while AI is contributing meaningfully to economic growth, it is also restructuring the labor market in a targeted manner[cite: 21, 26].</p>
+                    [cite_start]<p class="max-w-3xl mx-auto text-[var(--primary-dark)]">The week's events painted a complex and at times contradictory picture of AI's societal and economic impact, revealing both immense wealth creation and profound labor market disruption. [cite: 21] [cite_start]The analysis suggests that while AI is contributing meaningfully to economic growth, it is also restructuring the labor market in a targeted manner. [cite: 21]</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card p-6 rounded-lg">
                         <h3 class="text-xl font-bold mb-3">The Labor Market Paradox</h3>
-                        [cite_start]<p class="text-[#483C32]">The U.S. labor market presents a paradox[cite: 28]. [cite_start]Despite a historically low unemployment rate of 4.2%, data shows that AI-related layoffs have affected more than **10,000 jobs** through August[cite: 17]. [cite_start]Executives at major firms are explicitly linking these job cuts to AI-driven efficiency gains[cite: 27, 30]. [cite_start]For example, Salesforce CEO Marc Benioff justified a reduction of 4,000 jobs in the customer support division by stating that AI's ability to handle millions of customer conversations meant he "needs less heads"[cite: 27, 30]. [cite_start]Similarly, Oracle and Intel announced thousands of layoffs as they restructure operations and rebalance their workforces in a shift toward AI[cite: 27, 29].</p>
+                        <p class="text-[var(--primary-dark)]">The U.S. labor market presents a paradox. [cite_start]Despite a historically low unemployment rate of 4.2%, data shows that AI-related layoffs have affected more than **10,000 jobs** through August. [cite: 17, 27] [cite_start]Executives at major firms are explicitly linking these job cuts to AI-driven efficiency gains. [cite: 27] [cite_start]For example, Salesforce CEO Marc Benioff justified a reduction of 4,000 jobs in the customer support division by stating that AI's ability to handle millions of customer conversations meant he "needs less heads"[cite: 30]. [cite_start]Similarly, Oracle and Intel announced thousands of layoffs as they restructure operations and rebalance their workforces in a shift toward AI. [cite: 27]</p>
                     </div>
                     <div class="card p-6 rounded-lg">
                         <h3 class="text-xl font-bold mb-3">Economic Impact: A Double-Edged Sword</h3>
-                        [cite_start]<p class="text-[#483C32]">The economic impact is a "double-edged sword"[cite: 21]. [cite_start]On one hand, AI is contributing to U.S. economic growth through two major avenues: massive capital expenditures and wealth creation[cite: 21]. [cite_start]The top four hyperscalers are spending a staggering **$361 billion** in fiscal year 2025 on AI infrastructure[cite: 21]. [cite_start]At the same time, AI companies have created nearly **$2.25 trillion** in wealth this year, which is expected to boost consumer spending by up to $112 billion in the next two years[cite: 21]. [cite_start]On the other hand, a potential future increase in AI-driven job losses could lead to a "more cautious consumer" and slow overall GDP growth, posing a significant challenge for policymakers[cite: 21].</p>
+                        [cite_start]<p class="text-[var(--primary-dark)]">The economic impact is a "double-edged sword." [cite: 21] [cite_start]On one hand, AI is contributing to U.S. economic growth through two major avenues: massive capital expenditures and wealth creation. [cite: 21] [cite_start]The top four hyperscalers are spending a staggering **$361 billion** in fiscal year 2025 on AI infrastructure. [cite: 21] [cite_start]At the same time, AI companies have created nearly **$2.25 trillion** in wealth this year, which is expected to boost consumer spending by up to $112 billion in the next two years. [cite: 21] [cite_start]On the other hand, a potential future increase in AI-driven job losses could lead to a "more cautious consumer" and slow overall GDP growth, posing a significant challenge for policymakers. [cite: 21]</p>
                     </div>
                     <div class="card p-6 rounded-lg">
                         <h3 class="text-xl font-bold mb-3">AI and Security</h3>
-                        <p class="text-[#483C32]">As AI systems become more complex, new security concerns are emerging. [cite_start]This week, there was a global conference on AI, Security, and Ethics in Geneva[cite: 19]. [cite_start]Additionally, there's been a notable trend of major companies acquiring cloud and identity security firms to protect their AI infrastructure, such as Google's planned acquisition of Wiz[cite: 10]. This highlights a growing need for security measures that are natively built for AI applications and platforms.
-</p>
+                        [cite_start]<p class="text-[var(--primary-dark)]">As AI systems become more complex, new security concerns are emerging. [cite: 19, 22] [cite_start]This week, there was a global conference on AI, Security, and Ethics in Geneva. [cite: 19] [cite_start]Additionally, there's been a notable trend of major companies acquiring cloud and identity security firms to protect their AI infrastructure, such as Google's planned acquisition of Wiz. [cite: 10] [cite_start]This highlights a growing need for security measures that are natively built for AI applications and platforms. [cite: 22]</p>
                     </div>
                 </div>
             </section>
         </main>
 
     </div>
-    <footer class="text-center py-8 text-[#B0C4DE]">
+    <footer class="text-center py-8 text-[var(--secondary-accent)]">
         <p class="text-sm">Powered by Gemini and organized with NotebookLM</p>
     </footer>
     <script>
