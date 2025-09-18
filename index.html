@@ -1,378 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive AI Industry Report: Week of August 10 - August 16, 2025</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-dark: #554B45;
-            --secondary-accent: #A06AB4;
-            --tertiary-highlight: #D30907;
-            --background-light: #DDDBD4;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--background-light);
-            color: var(--primary-dark);
-        }
-        .nav-button {
-            transition: all 0.3s ease;
-        }
-        .nav-button.active {
-            background-color: var(--secondary-accent);
-            color: var(--primary-dark);
-            font-weight: 600;
-        }
-        .nav-button:not(.active):hover {
-            background-color: var(--tertiary-highlight);
-            color: var(--background-light);
-        }
-        .content-section {
-            display: none;
-        }
-        .content-section.active {
-            display: block;
-        }
-        .card {
-            background-color: #FFFFFF;
-            border: 1px solid var(--secondary-accent);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 400px;
-            max-height: 50vh;
-        }
-        @media (max-width: 768px) {
-            .chart-container {
-                height: 300px;
-                max-height: 60vh;
-            }
-        }
-        .tech-card {
-            perspective: 1000px;
-        }
-        .tech-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-        .tech-card.flipped .tech-card-inner {
-            transform: rotateY(180deg);
-        }
-        .tech-card-front, .tech-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-            text-align: center;
-        }
-        .tech-card-back {
-            background-color: var(--secondary-accent);
-            color: var(--primary-dark);
-            transform: rotateY(180deg);
-        }
-        .agent-icon.active {
-            background-color: var(--secondary-accent);
-            color: var(--primary-dark);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Pulse Weekly: Week of August 17 - August 23, 2025</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Leafy Green palette (not shown in visible text) */
+      --primary-dark: #326076;
+      --secondary-accent: #C8BF6A;
+      --tertiary-highlight: #BDB6AD;
+      --background-light: #5F5950;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--background-light); color: var(--tertiary-highlight); }
+    .nav-button { transition: all 0.3s ease; }
+    .nav-button.active { background: var(--secondary-accent); color: var(--primary-dark); font-weight: 600; }
+    .nav-button:not(.active):hover { background: var(--primary-dark); color: #fff; }
+    .content-section { display: none; }
+    .content-section.active { display: block; }
+    .card {
+      background: #fff; border: 1px solid var(--secondary-accent);
+      transition: transform .3s ease, box-shadow .3s ease; color: #1f2937;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,.08), 0 4px 6px -2px rgba(0,0,0,.06); }
+    .kpi .value { color: var(--secondary-accent); }
+    .pill { background: #fff; border: 1px solid var(--secondary-accent); color: var(--primary-dark); }
+    .chart-container { position: relative; width: 100%; max-width: 900px; margin: 0 auto; height: 420px; max-height: 55vh; }
+    @media (max-width: 768px) { .chart-container { height: 320px; max-height: 65vh; } }
+    .tech-card { perspective: 1000px; }
+    .tech-card-inner { position: relative; width: 100%; height: 100%; transition: transform .6s; transform-style: preserve-3d; }
+    .tech-card.flipped .tech-card-inner { transform: rotateY(180deg); }
+    .tech-card-front, .tech-card-back {
+      position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden;
+      display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 1rem; text-align: center;
+    }
+    .tech-card-back { background: var(--secondary-accent); color: var(--primary-dark); transform: rotateY(180deg); }
+    a.btn { background: var(--secondary-accent); color: var(--primary-dark); }
+    a.btn:hover { background: var(--primary-dark); color: #fff; }
+  </style>
 </head>
 <body>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
-        <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-[var(--primary-dark)] mb-4">AI Industry in Focus</h1>
-            <p class="text-lg md:text-xl text-[var(--primary-dark)]">An Interactive Summary of the Week: August 10 - August 16, 2025</p>
-            <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                <div class="bg-white p-4 rounded-lg border border-[var(--secondary-accent)]">
-                    <p class="text-3xl font-bold text-[var(--primary-dark)]">$13B</p>
-                    <p class="text-sm text-[var(--secondary-accent)]">Anthropic Series F Round</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg border border-[var(--secondary-accent)]">
-                    <p class="text-3xl font-bold text-[var(--primary-dark)]">$32B</p>
-                    <p class="text-sm text-[var(--secondary-accent)]">Google's Planned Acquisition of Wiz</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg border border-[var(--secondary-accent)]">
-                    <p class="text-3xl font-bold text-[var(--primary-dark)]">$2.25T</p>
-                    <p class="text-sm text-[var(--secondary-accent)]">AI Wealth Creation (YTD)</p>
-                </div>
-            </div>
-        </header>
+    <header class="text-center mb-10">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-3">AI Pulse Weekly</h1>
+      <p class="text-lg md:text-xl">Interactive Summary • August 17 – August 23, 2025</p>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
+        <div class="card p-4 rounded-lg kpi"><p class="text-3xl font-bold value">$8.3B</p><p class="text-sm text-[var(--primary-dark)]">OpenAI Mega-Round (week coverage)</p></div>
+        <div class="card p-4 rounded-lg kpi"><p class="text-3xl font-bold value">$32B</p><p class="text-sm text-[var(--primary-dark)]">Google ↦ Wiz (planned acquisition)</p></div>
+        <div class="card p-4 rounded-lg kpi"><p class="text-3xl font-bold value">10²³ FLOPs</p><p class="text-sm text-[var(--primary-dark)]">EU AI Act GPAI threshold in focus</p></div>
+      </div>
+    </header>
 
-        <nav class="flex justify-center mb-12 bg-white p-2 rounded-full shadow-sm border border-[var(--secondary-accent)] max-w-lg mx-auto">
-            <button data-target="policy" class="nav-button active flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Policy & Governance</button>
-            <button data-target="investment" class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Investment</button>
-            <button data-target="technology" class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Technology</button>
-            <button data-target="impact" class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Impact</button>
-        </nav>
-        <div class="flex justify-center gap-4 mb-8">
-            <a href="#" class="inline-block bg-[var(--secondary-accent)] hover:bg-[var(--tertiary-highlight)] text-[var(--primary-dark)] font-bold py-2 px-6 rounded-full transition-colors duration-300">Read Full Report</a>
-            <a href="#" class="inline-block bg-[var(--secondary-accent)] hover:bg-[var(--tertiary-highlight)] text-[var(--primary-dark)] font-bold py-2 px-6 rounded-full transition-colors duration-300">Listen to Audio Overview</a>
-        </div>
-        
-        <div class="card p-6 rounded-lg mb-8">
-            <h3 class="text-xl font-bold mb-3">The AI Industry: A Week of Pivot and Paradox</h3>
-            <p class="text-[var(--primary-dark)]">The week of August 10-16, 2025, represented a pivotal moment for the AI industry, characterized by a fundamental shift from a focus on the **"myth of scale"** to the **"reality of fit"**. While OpenAI's GPT-5 launch showcased technical prowess, its user backlash highlighted that the market now prioritizes practical application and user experience over raw performance metrics alone. The EU AI Act became effective, mandating new transparency rules, while the US regulatory landscape fragmented. This paradox of immense wealth creation and AI-driven layoffs emerged as a defining theme, signaling AI's tangible impact on the global economy.</p>
-            
-            <br>
-            
-            <h3 class="text-xl font-bold mb-3">Why Small and Medium-Sized Businesses Should Care</h3>
-            <p class="text-[var(--primary-dark)]">AI is no longer a futuristic concept for small and medium-sized businesses but a **democratized, essential tool for competitiveness**. Reports show a dramatic 41% surge in AI adoption among SMBs, with many owners saving between $500 and $2,000 monthly. The market is now flooded with specialized, affordable tools for marketing, content creation, and customer service that allow lean teams to compete with larger organizations. However, this rapid adoption carries a hidden risk, as many SMBs lack formal AI strategies and have concerns about data privacy and ethical bias. Ultimately, agility and tech-savviness are becoming core competencies for business growth and scaling.</p>
-        </div>
+    <!-- Nav order: Technology, Investment, Policy, Impact — Technology default -->
+    <nav class="flex justify-center mb-10 bg-white p-2 rounded-full shadow-sm border border-[var(--secondary-accent)] max-w-xl mx-auto">
+      <button data-target="technology" class="nav-button active flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Technology</button>
+      <button data-target="investment" class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Investment</button>
+      <button data-target="policy" class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Policy</button>
+      <button data-target="impact" class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base">Impact</button>
+    </nav>
 
-        <main>
-            <section id="policy" class="content-section active">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-2">Global AI Policy and Governance</h2>
-                    <p class="max-w-3xl mx-auto text-[var(--primary-dark)]">The week of August 10-16 marked a tangible shift in global AI governance, moving from aspirational frameworks to enforceable, on-the-ground regulations. This new reality is defined by a deep geopolitical split in regulatory philosophy and a fragmented, state-led approach in the United States.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="card p-6 rounded-lg">
-                        <h3 class="font-bold text-xl mb-2">🇪🇺 EU AI Act: The Implementation Phase</h3>
-                        <p class="text-sm text-[var(--primary-dark)]">On August 2, 2025, core provisions of the EU AI Act became effective, ushering in an era of mandatory transparency for general-purpose AI (GPAI) models. Providers of these models are now required to publish a summary of the training data used across all stages of development, from pre-training to fine-tuning. The European Commission's AI Office published a mandatory template for this disclosure, which must be updated at least every six months. This obligation applies immediately to models placed on the market after August 2, 2025, with a two-year transition period for pre-existing models.</p>
-                    </div>
-                    <div class="card p-6 rounded-lg">
-                        <h3 class="font-bold text-xl mb-2">⚖️ The Fragmented US Regulatory Landscape</h3>
-                        <p class="text-sm text-[var(--primary-dark)]">In the United States, the Senate's overwhelming vote (99-1) to remove a proposed federal moratorium on state and local AI regulation was a landmark event. This decision ensures that states will remain the primary regulators of AI, creating a complex and fragmented compliance environment for businesses operating nationwide. A new "patchwork" of state-level laws is emerging, each with a different approach. For example, Colorado has adopted a "high-risk" model that imposes obligations on developers of AI systems that influence employment or housing. In contrast, California's approach emphasizes transparency and consumer protection, while Texas has a more minimalist model focused on innovation. Utah's law is the least intrusive, requiring disclosure of AI interaction only if a consumer asks, except for licensed professionals.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="investment" class="content-section">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-2">The Flow of Capital: AI's Financial Momentum</h2>
-                    <p class="max-w-3xl mx-auto text-[var(--primary-dark)]">The week's financial landscape was defined by an unprecedented concentration of capital into outsized funding rounds and strategic M&A, signaling a shift from a broad "gold rush" to a mature phase of consolidation and vertical integration.</p>
-                </div>
-                <div class="card p-6 rounded-lg">
-                    <h3 class="font-bold text-xl mb-4 text-center">Major AI Funding & Deals (August 10 - August 16, 2025)</h3>
-                    <div class="chart-container">
-                        <canvas id="investmentChart"></canvas>
-                    </div>
-                    <p class="text-center text-sm text-[var(--secondary-accent)] mt-4">This chart illustrates key investment events, including mega-rounds and strategic acquisitions, reported this week.</p>
-                </div>
-            </section>
-            
-            <section id="technology" class="content-section">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-2">Breakthroughs in AI Technology</h2>
-                    <p class="max-w-3xl mx-auto text-[var(--primary-dark)]">This week saw a flurry of technical advancements across the AI technology stack, from flagship models to hardware and robotics. However, the reception of these breakthroughs signaled a shift in what the market values, moving from an obsession with scale to a focus on utility, efficiency, and real-world applicability.</p>
-                </div>
-
-                <h3 class="text-2xl font-bold text-center mb-6">Foundational Model & Tool Highlights</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                    <div class="tech-card h-64 rounded-lg cursor-pointer" data-model="gpt-5">
-                        <div class="tech-card-inner rounded-lg shadow-md">
-                            <div class="tech-card-front card rounded-lg">
-                                <h4 class="text-2xl font-bold">OpenAI's GPT-5</h4>
-                                <p class="text-[var(--secondary-accent)]">The Hype Test</p>
-                            </div>
-                            <div class="tech-card-back rounded-lg text-center">
-                                <h5 class="font-bold mb-2">Launch and Its Backlash</h5>
-                                <p class="text-sm">The most prominent event was the unveiling of OpenAI's GPT-5, described as its first "unified" model, combining the reasoning abilities of its o-series with the fast responses of its GPT series. It sets new state-of-the-art benchmarks across multiple domains, including math, coding, and multimodal understanding. However, despite this technical prowess, the launch was a "mess" that "failed the hype test," leading to a user revolt that forced OpenAI to bring back GPT-4o. The user community complained that the model had lost the "human touch" of its predecessor, indicating that a model's value is no longer measured purely on technical benchmarks but on subjective, real-world user experience.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tech-card h-64 rounded-lg cursor-pointer" data-model="google-models">
-                        <div class="tech-card-inner rounded-lg shadow-md">
-                            <div class="tech-card-front card rounded-lg">
-                                <h4 class="text-2xl font-bold">Google's Video & Image Models</h4>
-                                <p class="text-[var(--secondary-accent)]">New Capabilities</p>
-                            </div>
-                            <div class="tech-card-back rounded-lg text-center">
-                                <h5 class="font-bold mb-2">Innovations from Competitors</h5>
-                                <p class="text-sm">Google's video generation model, Veo 3, received refinements that give it a key competitive advantage: "native audio output" and the ability to align lip movements with audio, a feature that sets it apart from competitors like Runway and Sora. Google also released Gemini Nano Banana, a lightweight, multimodal image editing model. Its core strength is "subject consistency," which solves a common problem where a person or pet's likeness would change across multiple edits. The week also saw significant releases from Anthropic and Microsoft, as well as a rise in the open-source movement, with new models rivaling proprietary ones on key benchmarks.</p>
-                            </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tech-card h-64 rounded-lg cursor-pointer" data-model="enterprise-ai">
-                        <div class="tech-card-inner rounded-lg shadow-md">
-                            <div class="tech-card-front card rounded-lg">
-                                <h4 class="text-2xl font-bold">Enterprise AI & Robotics</h4>
-                                <p class="text-[var(--secondary-accent)]">New Applications</p>
-                            </div>
-                            <div class="tech-card-back rounded-lg text-center">
-                                <h5 class="font-bold mb-2">Practical Applications</h5>
-                                <p class="text-sm">In China, a massive showcase highlighted advancements in AI and robotics, with a new focus on practical, real-world applications. The investment landscape also showed a strong trend toward "Enterprise AI Validation," where companies like Cohere are raising mega-rounds based on their ability to deliver secure and compliant AI solutions for businesses. The focus on utility is driving a new wave of practical AI tools for small to medium businesses.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card p-6 rounded-lg">
-                    <h3 class="text-2xl font-bold text-center mb-6">The Expanding Reach of Agentic AI</h3>
-                    <div id="agentic-icons" class="flex justify-center flex-wrap gap-4 mb-6">
-                        <button data-agent="enterprise" class="agent-icon p-4 rounded-full text-2xl" title="Enterprise Automation">🏢</button>
-                        <button data-agent="sales" class="agent-icon p-4 rounded-full text-2xl" title="Sales">💼</button>
-                        <button data-agent="cloud" class="agent-icon p-4 rounded-full text-2xl" title="Cloud Computing">☁️</button>
-                        <button data-agent="healthcare" class="agent-icon p-4 rounded-full text-2xl" title="Healthcare">🏥</button>
-                        <button data-agent="research" class="agent-icon p-4 rounded-full text-2xl" title="Research">🔬</button>
-                    </div>
-                    <div id="agentic-details" class="p-4 bg-[var(--background-light)]/50 rounded-lg min-h-[120px] text-[var(--primary-dark)]">
-                        <p class="text-center text-[var(--secondary-accent)]">Select an industry icon to see an example of how Agentic AI is automating complex tasks.</p>
-                    </div>
-                </div>
-
-            </section>
-            
-            <section id="impact" class="content-section">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-2">Societal & Economic Implications</h2>
-                    <p class="max-w-3xl mx-auto text-[var(--primary-dark)]">The week's events painted a complex and at times contradictory picture of AI's societal and economic impact, revealing both immense wealth creation and profound labor market disruption. The analysis suggests that while AI is contributing meaningfully to economic growth, it is also restructuring the labor market in a targeted manner.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="card p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-3">The Labor Market Paradox</h3>
-                        <p class="text-[var(--primary-dark)]">The U.S. labor market presents a paradox. Despite a historically low unemployment rate of 4.2%, data shows that AI-related layoffs have affected more than **10,000 jobs** through August. Executives at major firms are explicitly linking these job cuts to AI-driven efficiency gains. For example, Salesforce CEO Marc Benioff justified a reduction of 4,000 jobs in the customer support division by stating that AI's ability to handle millions of customer conversations meant he "needs less heads". Similarly, Oracle and Intel announced thousands of layoffs as they restructure operations and rebalance their workforces in a shift toward AI.</p>
-                    </div>
-                    <div class="card p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-3">Economic Impact: A Double-Edged Sword</h3>
-                        <p class="text-[var(--primary-dark)]">The economic impact is a "double-edged sword". On one hand, AI is contributing to U.S. economic growth through two major avenues: massive capital expenditures and wealth creation. The top four hyperscalers are spending a staggering **$361 billion** in fiscal year 2025 on AI infrastructure. At the same time, AI companies have created nearly **$2.25 trillion** in wealth this year, which is expected to boost consumer spending by up to $112 billion in the next two years. On the other hand, a potential future increase in AI-driven job losses could lead to a "more cautious consumer" and slow overall GDP growth, posing a significant challenge for policymakers.</p>
-                    </div>
-                    <div class="card p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-3">AI and Security</h3>
-                        <p class="text-[var(--primary-dark)]">As AI systems become more complex, new security concerns are emerging. This week, there was a global conference on AI, Security, and Ethics in Geneva. Additionally, there's been a notable trend of major companies acquiring cloud and identity security firms to protect their AI infrastructure, such as Google's planned acquisition of Wiz. This highlights a growing need for security measures that are natively built for AI applications and platforms.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-
+    <div class="flex justify-center gap-4 mb-8">
+      <a href="#" class="btn inline-block font-bold py-2 px-6 rounded-full transition-colors duration-300">Read Full Report</a>
+      <a href="#" class="btn inline-block font-bold py-2 px-6 rounded-full transition-colors duration-300">Listen to Audio Overview</a>
     </div>
-    <footer class="text-center py-8 text-[var(--secondary-accent)]">
-        <p class="text-sm">Powered by Gemini and organized with NotebookLM</p>
-    </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navButtons = document.querySelectorAll('.nav-button');
-            const contentSections = document.querySelectorAll('.content-section');
-            const techCards = document.querySelectorAll('.tech-card');
-            const agenticIcons = document.querySelectorAll('.agent-icon');
-            const agenticDetails = document.getElementById('agentic-details');
 
-            const agenticData = {
-                enterprise: { title: 'AWS Agentic Capabilities', text: 'AWS unveiled new agentic AI capabilities designed to automate complex, multi-step business processes with minimal human input, helping enterprises streamline workflows across applications.' },
-                sales: { title: 'Outreach AI Agents', text: 'The sales platform Outreach introduced new AI agents that autonomously handle prospecting, follow-ups, and email sequences. Trained on sales workflows and CRM data, these agents are designed to boost representative productivity and enable a shift toward "autopilot selling."' },
-                cloud: { title: 'Google Gemini & Agentic Platforms', text: 'Google\'s **Gemini 2.0** is driven by "Large Action Models" (LAMs), enabling AI to interact with a user\'s digital ecosystem and take direct action on applications. This is a core focus across Google Cloud and its various tools.' },
-                healthcare: { title: 'Sanofi\'s AI-Accelerated Research', text: 'The biopharmaceutical company Sanofi highlighted its use of AI and agentic AI to accelerate breakthroughs in medicine. This demonstrates the direct application of autonomous AI systems in complex research and development, a major shift in scientific workflows.' },
-                research: { title: 'AI "Virtual Scientist"', text: 'Stanford researchers created an AI "virtual scientist" capable of designing, running, and analyzing its own biological experiments, iterating on hypotheses and adapting in real time. This system is being tested on genomics and drug discovery, potentially accelerating biomedical breakthroughs. ' }
-            };
-            
-            navButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const target = button.dataset.target;
+    <!-- Executive Summary + SMB Summary -->
+    <div class="card p-6 rounded-lg mb-6">
+      <h3 class="text-xl font-bold mb-3 text-[var(--primary-dark)]">Executive Summary</h3>
+      <p class="text-slate-700">
+        The week underscored a split reality: major advances in agentic capabilities and autonomous reasoning alongside
+        <strong>conflicting adoption signals</strong> and mounting governance friction. Google pushed hands-off task
+        execution into consumer Search; capital clustered into a few outsized rounds; and the EU’s GPAI provisions moved
+        forward as the U.S. leaned into a state-led patchwork. Less favorable currents mattered too: AI-attributed
+        layoffs, reliability concerns (quality drift, tool fragmentation), and a rise in fraud and impersonation cases.
+      </p>
+    </div>
 
-                    navButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
+    <div class="card p-6 rounded-lg mb-10">
+      <h3 class="text-xl font-bold mb-3 text-[var(--primary-dark)]">What This Means for SMBs</h3>
+      <p class="text-slate-700">
+        Survey headlines conflict—self-reported “AI use” is up, yet many SMBs still say it’s “not relevant,” and
+        verifiable <em>production</em> deployments remain limited. That data confusion can hide stalled value: pilots
+        without instrumentation, copy tools mistaken for automation, and unclear ROI baselines. Treat this week as a
+        reset: define what “adoption” means in your org, tag AI-assisted outputs, and track three metrics on every pilot
+        (hours saved, error rate, cycle time). Favor tools with exportable data and clear SLAs to avoid lock-in, and
+        start with one or two concrete workflows (customer triage, sales follow-ups, monthly reporting).
+      </p>
+      <p class="mt-3 text-sm text-[var(--primary-dark)]">
+        Want strategy, structure, and sanity with your AI rollout?
+        <a href="https://www.linkedin.com/in/nicolemdickens/" class="underline font-medium">Let’s talk.</a>
+      </p>
+    </div>
 
-                    contentSections.forEach(section => {
-                        if (section.id === target) {
-                            section.classList.add('active');
-                        } else {
-                            section.classList.remove('active');
-                        }
-                    });
-                });
-            });
-            
-            techCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    card.classList.toggle('flipped');
-                });
-            });
+    <main>
+      <!-- TECHNOLOGY (default open) -->
+      <section id="technology" class="content-section active">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold mb-2 text-white">Breakthroughs in AI Technology</h2>
+          <p class="max-w-3xl mx-auto">Real progress in agentic execution and reasoning—tempered by reliability snags and ecosystem churn.</p>
+        </div>
 
-            agenticIcons.forEach(icon => {
-                icon.addEventListener('click', () => {
-                    const agentKey = icon.dataset.agent;
-                    const data = agenticData[agentKey];
-                    agenticDetails.innerHTML = `<h4 class="font-bold text-lg mb-2">${data.title}</h4><p>${data.text}</p>`;
-                    
-                    agenticIcons.forEach(i => i.classList.remove('active'));
-                    icon.classList.add('active');
-                });
-            });
-            
-            const investmentChartCanvas = document.getElementById('investmentChart');
-            if (investmentChartCanvas) { 
-                const investmentCtx = investmentChartCanvas.getContext('2d');
-                new Chart(investmentCtx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Anthropic (Series F)', 'Cohere', 'Google (Wiz)', 'Salesforce (Informatica)'],
-                        datasets: [{
-                            label: 'Investment Amount (in Billions USD)',
-                            data: [13, 0.5, 32, 8], 
-                            backgroundColor: [
-                                'rgba(160, 106, 180, 0.7)',
-                                'rgba(211, 9, 7, 0.7)', 
-                                'rgba(85, 75, 69, 0.7)',
-                                'rgba(160, 106, 180, 0.7)'
-                            ],
-                            borderColor: [
-                                'rgba(160, 106, 180, 1)', 
-                                'rgba(211, 9, 7, 1)', 
-                                'rgba(85, 75, 69, 1)',
-                                'rgba(160, 106, 180, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        indexAxis: 'y',
-                        plugins: {
-                            legend: {
-                                display: false
-                            },
-                            tooltip: {
-                                callbacks: {
-                                    label: function(context) {
-                                        return ` $${context.raw} Billion`;
-                                    }
-                                }
-                            }
-                        },
-                        scales: {
-                            x: {
-                                beginAtZero: true,
-                                title: {
-                                    display: true,
-                                    text: 'Amount (Billions USD)'
-                                }
-                            }
-                        }
-                    }
-                });
-            } else {
-                console.error("Canvas element with ID 'investmentChart' not found. Chart will not be rendered.");
-            }
+        <h3 class="text-2xl font-bold text-center mb-6 text-white">Highlights (Tap Cards)</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          <div class="tech-card h-64 rounded-lg cursor-pointer">
+            <div class="tech-card-inner rounded-lg shadow-md">
+              <div class="tech-card-front card rounded-lg flex items-center justify-center">
+                <div><h4 class="text-2xl font-bold text-[var(--primary-dark)]">Gemini 2.5</h4><p class="text-[var(--secondary-accent)]">Autonomous Reasoning</p></div>
+              </div>
+              <div class="tech-card-back rounded-lg text-center">
+                <h5 class="font-bold mb-2">From Benchmarks to Work</h5>
+                <p>Specialized variants solved real programming tasks—signal that “reasoning” is moving from games to messy, open-ended problems.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tech-card h-64 rounded-lg cursor-pointer">
+            <div class="tech-card-inner rounded-lg shadow-md">
+              <div class="tech-card-front card rounded-lg flex items-center justify-center">
+                <div><h4 class="text-2xl font-bold text-[var(--primary-dark)]">Agentic Search</h4><p class="text-[var(--secondary-accent)]">Hands-Off Tasks</p></div>
+              </div>
+              <div class="tech-card-back rounded-lg text-center">
+                <h5 class="font-bold mb-2">Mainstream Step</h5>
+                <p>Multi-step actions (e.g., reservations) arrive for consumers—expect similar flows in SMB tools; reliability and audit trails matter.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tech-card h-64 rounded-lg cursor-pointer">
+            <div class="tech-card-inner rounded-lg shadow-md">
+              <div class="tech-card-front card rounded-lg flex items-center justify-center">
+                <div><h4 class="text-2xl font-bold text-[var(--primary-dark)]">Cosmos Reason</h4><p class="text-[var(--secondary-accent)]">Embodied Planning</p></div>
+              </div>
+              <div class="tech-card-back rounded-lg text-center">
+                <h5 class="font-bold mb-2">Digital → Physical</h5>
+                <p>VLM-powered agents reason about space/physics—bridging toward light-touch robotics and complex planning assistants.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-6 rounded-lg">
+          <h3 class="text-2xl font-bold text-center mb-6 text-[var(--primary-dark)]">Autonomous Multi-Agent Labs</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+            <div class="space-y-2 text-slate-700">
+              <p>“Virtual labs” pair planner, executor, and critic agents to design and validate hypotheses—hinting at a new co-pilot model for discovery.</p>
+              <p><strong>Risk reality:</strong> quality drift and changing APIs can break long-running flows; require evals and rollback plans.</p>
+            </div>
+            <div class="p-4 rounded-lg pill">
+              <p class="text-[var(--primary-dark)] font-semibold mb-2">SMB Angle</p>
+              <ul class="list-disc ml-5 text-[var(--primary-dark)]">
+                <li>Adopt agent kits inside tools you already use (CRM, helpdesk) before custom builds.</li>
+                <li>Instrument each flow with pass/fail checks and human-in-the-loop for edge cases.</li>
+              </ul>
+              <p class="mt-3 text-sm text-[var(--primary-dark)]">
+                Ready to turn “AI experiments” into measurable wins?
+                <a href="https://www.linkedin.com/in/nicolemdickens/" class="underline font-medium">Let’s talk.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INVESTMENT -->
+      <section id="investment" class="content-section">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold mb-2 text-white">AI Industry Investment & M&A</h2>
+          <p class="max-w-3xl mx-auto">Capital concentrated in mega-rounds and infra land-grabs—raising platform risk and vendor dependency.</p>
+        </div>
+
+        <div class="card p-6 rounded-lg">
+          <h3 class="font-bold text-xl mb-4 text-center text-[var(--primary-dark)]">Selected Funding & Deals (Aug 17–23)</h3>
+          <div class="chart-container"><canvas id="dealsChart"></canvas></div>
+          <p class="text-center text-sm text-[var(--primary-dark)] mt-4">Illustrative snapshot based on this week’s coverage.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div class="card p-6 rounded-lg">
+            <h4 class="font-semibold text-[var(--primary-dark)] text-lg mb-2">Concentration Trend</h4>
+            <p class="text-slate-700">A handful of platforms captured most deal value—negotiation leverage shifts to vendors; portability matters.</p>
+          </div>
+          <div class="card p-6 rounded-lg">
+            <h4 class="font-semibold text-[var(--primary-dark)] text-lg mb-2">Strategic M&A</h4>
+            <p class="text-slate-700">Security, networking, and rack-level systems deals point to an infrastructure land-grab around agentic deployment.</p>
+          </div>
+        </div>
+
+        <p class="mt-3 text-sm text-[var(--primary-dark)]">
+          Prefer exportable, governable AI (no lock-in)?
+          <a href="https://www.linkedin.com/in/nicolemdickens/" class="underline font-medium">Let’s talk.</a>
+        </p>
+      </section>
+
+      <!-- POLICY -->
+      <section id="policy" class="content-section">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold mb-2 text-white">Global AI Policy & Governance</h2>
+          <p class="max-w-3xl mx-auto">Frontier providers face heavier duties; downstream SMB implementers see lighter, yet evolving expectations.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="card p-6 rounded-lg">
+            <h3 class="font-bold text-xl mb-2 text-[var(--primary-dark)]">🇪🇺 EU AI Act: GPAI Obligations</h3>
+            <ul class="list-disc ml-5 text-slate-700 space-y-2">
+              <li>Provisions in force for GPAI: training-data summaries and copyright strategy disclosures.</li>
+              <li>High compute threshold centers compliance on frontier models; integrators see less overhead.</li>
+              <li>Expect templates, audits, and evolving guidance across 2025–2026.</li>
+            </ul>
+          </div>
+          <div class="card p-6 rounded-lg">
+            <h3 class="font-bold text-xl mb-2 text-[var(--primary-dark)]">🇺🇸 U.S.: Patchwork Reality</h3>
+            <ul class="list-disc ml-5 text-slate-700 space-y-2">
+              <li>States diverge on high-risk definitions, transparency, and disclosure triggers.</li>
+              <li>Procurement signals stress “truthful/neutral” systems; tension with state consumer protection persists.</li>
+              <li>SMB focus: privacy hygiene, labeling, vendor DPAs; avoid over-compliance for low-risk use.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="mt-3 text-sm text-[var(--primary-dark)]">
+          Want a lightweight AI governance checklist tailored to your workflows?
+          <a href="https://www.linkedin.com/in/nicolemdickens/" class="underline font-medium">Let’s talk.</a>
+        </p>
+      </section>
+
+      <!-- IMPACT -->
+      <section id="impact" class="content-section">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold mb-2 text-white">Societal & Economic Impact</h2>
+          <p class="max-w-3xl mx-auto">Opportunity and risk both advanced—growth tailwinds vs. trust, labor, and measurement challenges.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="card p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-3 text-[var(--primary-dark)]">Conflicting Adoption Signals</h3>
+            <p class="text-slate-700">Surveys show rising “use,” yet many SMBs report “not relevant.” Production usage lags pilots; metrics are inconsistent.</p>
+          </div>
+          <div class="card p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-3 text-[var(--primary-dark)]">Labor & Skills</h3>
+            <p class="text-slate-700">AI-attributed layoffs coexist with demand for translational roles; reskilling and change-management matter more than tools.</p>
+          </div>
+          <div class="card p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-3 text-[var(--primary-dark)]">Trust, Fraud & Safety</h3>
+            <p class="text-slate-700">Deepfakes and impersonation drive labeling/watermarking pushes; verify high-risk outputs and protect identity/voice.</p>
+          </div>
+        </div>
+
+        <div class="card p-6 rounded-lg mt-6">
+          <h3 class="text-xl font-bold mb-3 text-[var(--primary-dark)]">SMB Takeaways</h3>
+          <ul class="list-disc ml-5 text-slate-700 space-y-2">
+            <li><strong>Define adoption:</strong> differentiate trials from production; publish a simple rubric org-wide.</li>
+            <li><strong>Instrument pilots:</strong> track hours saved, error rate, and cycle time; label AI-assisted outputs.</li>
+            <li><strong>Reduce platform risk:</strong> favor exportable data, clear SLAs, and roll-back options.</li>
+          </ul>
+          <p class="mt-3 text-sm text-[var(--primary-dark)]">
+            If you want pilots that prove ROI (hours saved, error rate, cycle time),
+            <a href="https://www.linkedin.com/in/nicolemdickens/" class="underline font-medium">let’s talk.</a>
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="text-center py-8 text-[var(--secondary-accent)]">
+    <p class="text-sm">powered by Gemini Deep Research, organized with Notebook LM and developed with chatGPT</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navButtons = document.querySelectorAll('.nav-button');
+      const sections = document.querySelectorAll('.content-section');
+      const techCards = document.querySelectorAll('.tech-card');
+
+      // Nav toggling
+      navButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.dataset.target;
+          navButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          sections.forEach(s => s.id === target ? s.classList.add('active') : s.classList.remove('active'));
         });
-    </script>
+      });
 
+      // Flip cards
+      techCards.forEach(card => card.addEventListener('click', () => card.classList.toggle('flipped')));
+
+      // Deals chart (illustrative)
+      const ctx = document.getElementById('dealsChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['OpenAI', 'Cohere', 'Google↦Wiz', 'HPE↦Juniper', 'AMD↦ZT Systems'],
+          datasets: [{
+            label: 'Deal Value (USD, Billions)',
+            data: [8.3, 0.5, 32, 13.4, 4.9],
+            backgroundColor: 'rgba(200, 191, 106, 0.75)',
+            borderColor: 'rgba(50, 96, 118, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          indexAxis: 'y',
+          plugins: { legend: { display: false } },
+          scales: { x: { beginAtZero: true, title: { display: true, text: 'Amount (Billions USD)' } } }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
