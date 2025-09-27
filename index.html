@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AI Pulse Weekly: Week of September 14 – September 20, 2025</title>
+<title>AI Pulse Weekly: Week of September 20 – September 26, 2025</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -11,15 +11,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
   :root {
-    /* Early Harvest – Fall */
-    --primary-dark: #554B45;       /* Taupe */
-    --secondary-accent: #A06AB4;   /* Lilac */
-    --tertiary-highlight: #D30907; /* Scarlet */
-    --background-light: #DDDBD4;   /* Light Taupe */
+    /* Leafy Green – from your palette library */
+    --primary-dark: #326076;       /* Teal Green */
+    --secondary-accent: #C8BF6A;   /* Olive */
+    --tertiary-highlight: #5F5950; /* Coffee Pot */
+    --background-light: #BDB6AD;   /* Taupe */
   }
   body { font-family: 'Inter', sans-serif; background: var(--background-light); color: #1f2937; }
   .nav-button { transition: all 0.3s ease; }
-  .nav-button.active { background: var(--secondary-accent); color: #fff; font-weight: 600; }
+  .nav-button.active { background: var(--secondary-accent); color: #1f2937; font-weight: 600; }
   .nav-button:not(.active):hover { background: var(--primary-dark); color: #fff; }
   .content-section { display: none; }
   .content-section.active { display: block; }
@@ -39,88 +39,105 @@
     position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden;
     display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 1rem; text-align: center;
   }
-  .tech-card-back { background: var(--secondary-accent); color: #fff; transform: rotateY(180deg); }
-  a.btn { background: var(--secondary-accent); color: #fff; }
+  .tech-card-back { background: var(--secondary-accent); color: #1f2937; transform: rotateY(180deg); }
+  a.btn { background: var(--secondary-accent); color: #1f2937; }
   a.btn:hover { background: var(--primary-dark); color: #fff; }
   .section-title { color: var(--primary-dark); }
   .subtle { color: var(--primary-dark); }
-  .footer-note { color: var(--secondary-accent); }
+  .footer-note { color: var(--primary-dark); }
 </style>
 </head>
 <body>
 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
   <header class="text-center mb-10">
     <h1 class="text-4xl md:text-5xl font-bold text-[var(--primary-dark)] mb-3">AI Pulse Weekly</h1>
-    <p class="text-lg md:text-xl subtle">Interactive Summary • September 14 – September 20, 2025</p>
+    <p class="text-lg md:text-xl subtle">Interactive Summary • September 20 – September 26, 2025</p>
+    <!-- QUICK KPIs -->
     <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
-      <div class="card p-4 rounded-lg kpi"><p class="text-3xl font-bold value">$5B</p><p class="text-sm subtle">NVIDIA ↦ Intel stock investment (this week)</p></div>
-      <div class="card p-4 rounded-lg kpi"><p class="text-3xl font-bold value">£2B</p><p class="text-sm subtle">NVIDIA UK ecosystem pledge</p></div>
-      <div class="card p-4 rounded-lg kpi"><p class="text-3xl font-bold value">56%</p><p class="text-sm subtle">Wage premium for AI skills (PwC/Morgan Stanley)</p></div>
+      <div class="card p-4 rounded-lg kpi">
+        <p class="text-sm uppercase tracking-wide subtle">Technology</p>
+        <p class="text-2xl font-bold value">Reasoning + MCP</p>
+        <p class="text-sm subtle">Agent “senses” (MCP) and planner–executor–critic loops improve reliability.</p>
+      </div>
+      <div class="card p-4 rounded-lg kpi">
+        <p class="text-sm uppercase tracking-wide subtle">Investment</p>
+        <p class="text-2xl font-bold value">Dual-Track Capital</p>
+        <p class="text-sm subtle">Infra megadeals + vertical ROI plays; alliances for data + distribution.</p>
+      </div>
+      <div class="card p-4 rounded-lg kpi">
+        <p class="text-sm uppercase tracking-wide subtle">Policy</p>
+        <p class="text-2xl font-bold value">Auditability Era</p>
+        <p class="text-sm subtle">UN dialogue + national attestations on provenance and safety.</p>
+      </div>
     </div>
   </header>
 
   <div class="flex justify-center gap-4 mb-8">
-    <!-- Replace this link with your hosted PDF/HTML of the full report -->
-    <a class="btn inline-block font-bold py-2 px-6 rounded-full transition-colors duration-300" href="https://nmdickens.github.io/The-Week-in-AI/Inaugural%20AI%20Pulse%20-%2019SEP25-2.pdf" target="_blank" rel="noopener">Read Full Report</a>
-    <a class="btn inline-block font-bold py-2 px-6 rounded-full transition-colors duration-300" href="https://github.com/nmdickens/The-Week-in-AI/raw/refs/heads/main/AI_Revolution_Accelerates__56__Wage_Premium,_Nvidia-Intel_Allia.mp4" target="_blank" rel="noopener">Listen to Audio Overview</a>
+    <!-- SWAP THIS WITH YOUR GITHUB RAW PDF URL -->
+    <a class="btn inline-block font-bold py-2 px-6 rounded-full transition-colors duration-300"
+       href="INSERT_RAW_PDF_RAW_URL_HERE"
+       target="_blank" rel="noopener">Read Full Report</a>
+    <a class="btn inline-block font-bold py-2 px-6 rounded-full transition-colors duration-300"
+       href="#" target="_blank" rel="noopener">Listen to Audio Overview</a>
   </div>
 
   <!-- Executive Summary + SMB Summary -->
   <div class="card p-6 rounded-lg mb-6" id="executive-summary">
     <h3 class="text-xl font-bold mb-3 section-title">Executive Summary</h3>
     <p>
-      The week of September 14, 2025, marked a period of significant strategic realignment and quantifiable economic impact in the artificial intelligence industry.
-      Three primary themes emerged from the week's developments: the strategic consolidation of the AI hardware market, a growing divergence in global regulatory philosophies,
-      and the continued, data-backed evidence of AI's transformative effect on the labor market. The hardware landscape was reshaped by a historic collaboration between two former
-      rivals, Intel and NVIDIA, underscoring the immense demand for compute power. Simultaneously, the global policy discussion splintered, with the United States promoting a
-      "pro-innovation" framework and ideological neutrality, while the European Union and its member states moved from abstract principles to the concrete enforcement of
-      regulations. Finally, new economic data provided a powerful counter-narrative to popular fears of job displacement, revealing that AI is not only a driver of corporate productivity
-      and revenue growth but also a direct catalyst for higher wages for workers who possess AI-related skills.
+      This week marked a clear shift from flashy demos to durable, governed delivery of AI value.
+      Foundation models emphasized reasoning, longer context, and steadier tool use, enabling more reliable workflows.
+      Agentic patterns matured as planner–executor–critic loops incorporated testable checks and rollback strategies.
+      Tool standards like MCP reduced glue work and made enterprise integrations more predictable.
+      Capital flowed along two tracks: defensive infra megadeals and targeted bets on vertical, verifiable apps.
+      Policymakers aligned on transparency, provenance, and auditability while experimenting with pro‑innovation sandboxes.
+      Enterprises advanced beyond pilots by measuring hours saved, error rates, and cycle times in production.
+      SMBs found traction in copilots for drafting, support triage, meeting notes, and document Q&A over private content.
+      Leaders increasingly framed AI adoption as a change‑management journey that blends training, governance, and metrics.
+      Overall, the signal is pragmatic: standardize tooling, instrument outcomes, and scale only what proves ROI.
     </p>
   </div>
 
   <div class="card p-6 rounded-lg mb-10">
     <h3 class="text-xl font-bold mb-3 section-title">What This Means for SMBs</h3>
     <p>
-      The adoption of artificial intelligence by small and medium-sized businesses is accelerating at an unprecedented rate, moving AI from a speculative technology to a core operational asset.
-      The U.S. Chamber of Commerce’s 2025 report reveals that almost 60% of small businesses now utilize an AI platform for business operations, more than doubling since 2023.
-      82% of SMBs that have adopted AI reported an increase in their workforce over the past year—challenging the simple narrative of AI as job elimination and framing it as a growth engine.
-    </p>
-    <p class="mt-3">
-      Primary drivers include high-value use cases: generative marketing/content creation, AI-powered chatbots for 24/7 support, automated transcription/summarization of customer calls,
-      and analysis of unstructured data to surface insights. Barriers remain: smaller orgs are less than half as likely to have a roadmap or dedicated adoption team, and 65% worry that a patchwork
-      of state-level policies will increase compliance costs—disproportionately burdening SMBs versus large enterprises.
+      AI adoption has shifted from early experiments to a mainstream competitive requirement for SMBs. Surveys show 68% of SMB owners now use AI, up from 51% two years ago, while some reports put adoption as high as 77% worldwide. This acceleration is driven by clear efficiency and productivity gains that make AI a necessity for survival and growth. Businesses already using AI are more optimistic, with 74% planning to expand in 2025 versus 65% of non‑adopters. A wave of accessible, low‑cost tools is democratizing advanced capabilities across marketing, sales, service, and finance. In marketing and sales, tools such as Jasper, SurferSEO, and AI‑powered CRMs automate content, optimize SEO, score leads, and recommend next actions. In customer service, platforms like Tidio and Intercom provide 24/7 support, with 95% reporting better response quality and over 92% faster turnaround. In operations and finance, Otter.ai, Motion, and QuickBooks AI handle transcription, scheduling, forecasting, and alerts that once required specialized staff. Enterprise vendors are also embedding AI for smaller clients, exemplified by SAP’s Q3 2025 CX and Sales updates with AI product finders and duplicate‑check tools. Despite high adoption, a sizable implementation gap persists—42% cite limited resources and expertise—so the effective path is phased: target the biggest bottleneck, choose one or two fit‑for‑purpose tools, train the team, and measure ROI before expanding.
     </p>
     <div class="mt-4 overflow-x-auto">
       <table class="min-w-full text-sm">
         <thead>
           <tr class="text-left">
-            <th class="py-2 pr-4">Metric</th>
-            <th class="py-2 pr-4">All SMBs</th>
-            <th class="py-2 pr-4">Maine</th>
-            <th class="py-2 pr-4">New York</th>
+            <th class="py-2 pr-4">Priority</th>
+            <th class="py-2 pr-4">Why it Matters</th>
+            <th class="py-2 pr-4">First Step</th>
           </tr>
         </thead>
         <tbody>
           <tr class="border-t">
-            <td class="py-2 pr-4">Use an AI Platform</td><td class="py-2 pr-4">~60%</td><td class="py-2 pr-4">77%</td><td class="py-2 pr-4">44%</td>
+            <td class="py-2 pr-4">AI Co‑Pilot for Ops</td>
+            <td class="py-2 pr-4">Hours saved + fewer manual errors</td>
+            <td class="py-2 pr-4">Email/chat drafting &amp; meeting notes</td>
           </tr>
           <tr class="border-t">
-            <td class="py-2 pr-4">Use Gen-AI Chatbots</td><td class="py-2 pr-4">58%</td><td class="py-2 pr-4">71%</td><td class="py-2 pr-4">44%</td>
+            <td class="py-2 pr-4">Customer Support</td>
+            <td class="py-2 pr-4">24/7 responses; faster resolutions</td>
+            <td class="py-2 pr-4">FAQ → bot; human‑in‑loop for edge cases</td>
           </tr>
           <tr class="border-t">
-            <td class="py-2 pr-4">Workforce ↑ (among AI users)</td><td class="py-2 pr-4">82%</td><td class="py-2 pr-4">—</td><td class="py-2 pr-4">—</td>
-          </tr>
-          <tr class="border-t">
-            <td class="py-2 pr-4">Concerned about patchwork laws</td><td class="py-2 pr-4">65%</td><td class="py-2 pr-4">80%</td><td class="py-2 pr-4">77%</td>
+            <td class="py-2 pr-4">Unstructured Analytics</td>
+            <td class="py-2 pr-4">Find signals in docs/calls/tickets</td>
+            <td class="py-2 pr-4">Spin up a governed RAG pilot</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="mt-3 text-sm subtle">Ready to turn “AI experiments” into measurable wins? <a class="underline font-medium" href="https://www.linkedin.com/in/nicolemdickens/">Let’s talk.</a></p>
+    <p class="mt-3 text-sm subtle">
+      Want help converting this week’s insights into a 4‑week pilot with scorecards and rollback?
+      <a class="underline font-medium" href="https://www.linkedin.com/in/nicolemdickens/">Let’s design it.</a>
+    </p>
   </div>
 
-  <!-- MENU moved here (after SMBs) -->
+  <!-- NAV (after SMB section) -->
   <nav class="flex justify-center mb-10 bg-white p-2 rounded-full shadow-sm border border-[var(--secondary-accent)] max-w-xl mx-auto">
     <button class="nav-button active flex-1 py-2 px-4 rounded-full text-sm sm:text-base" data-target="technology">Technology</button>
     <button class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base" data-target="investment">Investment</button>
@@ -133,59 +150,65 @@
     <section class="content-section active" id="technology">
       <div class="text-center mb-8">
         <h2 class="text-3xl font-bold mb-2 text-[var(--primary-dark)]">Breakthroughs in AI Technology</h2>
-        <p class="max-w-3xl mx-auto">A qualitative shift toward enhanced reasoning, efficiency, and specialization.</p>
+        <p class="max-w-3xl mx-auto">
+          Model families continued to prioritize reasoning quality and consistent tool use across complex tasks.
+          Multi‑model copilots blended text, vision, and code to support end‑to‑end workflows instead of single prompts.
+          Agent frameworks stabilized with clearer roles for planning, execution, and self‑critique tied to explicit tests.
+          MCP‑style connectors lowered integration friction by standardizing how agents discover and invoke tools.
+          The net effect is fewer brittle demos and more repeatable building blocks that teams can trust in production.
+        </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
         <div class="tech-card h-64 rounded-lg cursor-pointer">
           <div class="tech-card-inner rounded-lg shadow-md">
             <div class="tech-card-front card rounded-lg flex items-center justify-center">
-              <div><h4 class="text-2xl font-bold section-title">OpenAI GPT-5</h4><p class="subtle">Reasoning model • multimodal</p></div>
+              <div><h4 class="text-2xl font-bold section-title">Foundation Models</h4><p class="subtle">Reasoning • Context • Multimodality</p></div>
             </div>
             <div class="tech-card-back rounded-lg text-center">
-              <h5 class="font-bold mb-2">Multi-step problem solving</h5>
-              <p>Dedicated reasoning variant, health & vision upgrades, and open-weight models under Apache 2.0.</p>
+              <h5 class="font-bold mb-2">This week</h5>
+              <p>Improved reasoning and tool‑use stability; multi‑model copilots roll into everyday productivity suites.</p>
             </div>
           </div>
         </div>
         <div class="tech-card h-64 rounded-lg cursor-pointer">
           <div class="tech-card-inner rounded-lg shadow-md">
             <div class="tech-card-front card rounded-lg flex items-center justify-center">
-              <div><h4 class="text-2xl font-bold section-title">Google Gemini 2.5 Pro</h4><p class="subtle">1M-token context</p></div>
+              <div><h4 class="text-2xl font-bold section-title">Agentic Workflows</h4><p class="subtle">Planner • Executor • Critic</p></div>
             </div>
             <div class="tech-card-back rounded-lg text-center">
-              <h5 class="font-bold mb-2">Scale for reasoning</h5>
-              <p>Suited for complex, large-scale tasks; Gemini Nano pushes efficient on-device experiences.</p>
+              <h5 class="font-bold mb-2">This week</h5>
+              <p>Loops incorporate tests and rollbacks to reduce drift; sandboxed runs help verify changes before release.</p>
             </div>
           </div>
         </div>
         <div class="tech-card h-64 rounded-lg cursor-pointer">
           <div class="tech-card-inner rounded-lg shadow-md">
             <div class="tech-card-front card rounded-lg flex items-center justify-center">
-              <div><h4 class="text-2xl font-bold section-title">RAG & Math</h4><p class="subtle">ParaThinker • REFRAG</p></div>
+              <div><h4 class="text-2xl font-bold section-title">Tooling &amp; MCP</h4><p class="subtle">DevTools • Connectors</p></div>
             </div>
             <div class="tech-card-back rounded-lg text-center">
-              <h5 class="font-bold mb-2">Fewer bottlenecks</h5>
-              <p>Parallel reasoning paths reduce tunnel vision; compressed-context RAG cuts latency up to 30×.</p>
+              <h5 class="font-bold mb-2">This week</h5>
+              <p>MCP standardizes tool discovery and invocation, improving testability for production‑grade flows.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="card p-6 rounded-lg">
-        <h3 class="text-2xl font-bold text-center mb-6 section-title">Autonomous Multi-Agent Labs</h3>
+        <h3 class="text-2xl font-bold text-center mb-6 section-title">Autonomous Multi‑Agent Labs</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           <div class="space-y-2">
-            <p>“Virtual labs” pair planner, executor, and critic agents to design and validate hypotheses—hinting at a new co-pilot model for discovery.</p>
-            <p><strong>Risk reality:</strong> quality drift and changing APIs can break long-running flows; require evals and rollback plans.</p>
+            <p>“Virtual labs” combine planner/executor/critic agents to hypothesize, test, and verify fixes—useful for R&amp;D, QA, and ops runbooks.</p>
+            <p><strong>Reality check:</strong> quality drift and changing APIs can break long‑running flows; use evals + rollback.</p>
           </div>
           <div class="p-4 rounded-lg pill">
             <p class="section-title font-semibold mb-2">SMB Angle</p>
             <ul class="list-disc ml-5 subtle">
-              <li>Adopt agent kits inside tools you already use (CRM, helpdesk) before custom builds.</li>
-              <li>Instrument each flow with pass/fail checks and human-in-the-loop for edge cases.</li>
+              <li>Adopt agent kits inside tools you already use (CRM/helpdesk) before custom builds.</li>
+              <li>Instrument each flow with pass/fail checks and human‑in‑the‑loop for edge cases.</li>
             </ul>
             <p class="mt-3 text-sm subtle">
-              Ready to turn “AI experiments” into measurable wins?
-              <a class="underline font-medium" href="https://www.linkedin.com/in/nicolemdickens/">Let’s talk.</a>
+              Curious how MCP‑style connectors or agentic loops could streamline your workflows?
+              <a class="underline font-medium" href="https://www.linkedin.com/in/nicolemdickens/">Let’s scope a safe pilot together.</a>
             </p>
           </div>
         </div>
@@ -196,81 +219,105 @@
     <section class="content-section" id="investment">
       <div class="text-center mb-8">
         <h2 class="text-3xl font-bold mb-2 text-[var(--primary-dark)]">AI Industry Investment &amp; M&amp;A</h2>
-        <p class="max-w-3xl mx-auto">Infrastructure land-grabs, ecosystem bets, and capability-driven deals.</p>
+        <p class="max-w-3xl mx-auto">
+          Funding split between compute capacity, model platforms, and targeted vertical applications.
+          Investors favored companies that demonstrate measurable outcomes and clear routes to unit‑economic leverage.
+          Strategic alliances aimed to secure data access, distribution channels, and compliance advantages.
+          M&amp;A interest grew around evaluation tooling, data governance, and workflow‑native agent platforms.
+          The pattern points to consolidation at the core and experimentation at the edge where industries differ.
+        </p>
       </div>
       <div class="card p-6 rounded-lg">
-        <h3 class="font-bold text-xl mb-4 text-center section-title">Selected Funding &amp; Deals (Sep 14–20)</h3>
+        <h3 class="font-bold text-xl mb-4 text-center section-title">Selected Funding &amp; Deals (Sep 20–26)</h3>
         <div class="chart-container"><canvas id="dealsChart"></canvas></div>
-        <p class="text-center text-sm subtle mt-4">Illustrative snapshot based on this week’s coverage.</p>
+        <p class="text-center text-sm subtle mt-4">Illustrative snapshot based on this week’s coverage in your full report.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
         <div class="card p-6 rounded-lg">
-          <h4 class="font-semibold section-title text-lg mb-2">Intel × NVIDIA</h4>
-          <p>Historic collaboration and $5B NVIDIA stock investment signal consolidation to meet compute demand.</p>
+          <h4 class="font-semibold section-title text-lg mb-2">Infrastructure &amp; Chips</h4>
+          <p>Defensive capital consolidates around foundation model providers and compute capacity expansions.</p>
         </div>
         <div class="card p-6 rounded-lg">
-          <h4 class="font-semibold section-title text-lg mb-2">Ecosystem & Alliances</h4>
-          <p>£2B NVIDIA UK startup push; $1B India Deep Tech Alliance mobilizes capital for semis and AI infra.</p>
+          <h4 class="font-semibold section-title text-lg mb-2">Agentic &amp; Vertical Apps</h4>
+          <p>Startups attract rounds to build verifiable, vertical‑specific apps on top of core models.</p>
         </div>
       </div>
-      <p class="mt-3 text-sm subtle">Prefer exportable, governable AI (no lock-in)? <a class="underline font-medium" href="https://www.linkedin.com/in/nicolemdickens/">Let’s talk.</a></p>
+      <p class="mt-3 text-sm subtle">
+        Wondering if vertical AI apps can deliver ROI in your industry?
+        <a class="underline font-medium" href="https://www.linkedin.com/in/nicolemdickens/">I can map which startups or tools align with your needs before you invest.</a>
+      </p>
     </section>
 
     <!-- POLICY -->
     <section class="content-section" id="policy">
       <div class="text-center mb-8">
         <h2 class="text-3xl font-bold mb-2 text-[var(--primary-dark)]">Global AI Policy &amp; Governance</h2>
-        <p class="max-w-3xl mx-auto">Diverging philosophies: U.S. pro-innovation stance vs. EU enforcement cadence.</p>
+        <p class="max-w-3xl mx-auto">
+          International bodies advanced coordination on model transparency, safety testing, and cross‑border enforcement.
+          National regulators balanced innovation with accountability through sandboxes, procurement reforms, and audits.
+          Sector guidance tightened for sensitive domains like healthcare, finance, and education where risks compound.
+          Provenance and content labeling gained support as practical mechanisms to strengthen user trust.
+          For operators, the takeaway is simple: document data flows, track model versions, and prepare for attestations.
+        </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="card p-6 rounded-lg">
-          <h3 class="font-bold text-xl mb-2 section-title">🇪🇺 EU & Member States</h3>
+          <h3 class="font-bold text-xl mb-2 section-title">Global</h3>
           <ul class="list-disc ml-5 space-y-2">
-            <li>EU AI Act GPAI obligations move from policy to enforcement with new compliance code of practice.</li>
-            <li>Italy passes first comprehensive national AI law: penalties for illegal deepfakes; strict parental consent &lt;14.</li>
+            <li>UN‑led coordination (Global Dialogue on AI Governance) advances multi‑lateral workstreams on safety and transparency.</li>
+            <li>Cross‑border consensus forms around auditability and provenance for high‑impact systems.</li>
           </ul>
         </div>
         <div class="card p-6 rounded-lg">
-          <h3 class="font-bold text-xl mb-2 section-title">🇺🇸 U.S. Landscape</h3>
+          <h3 class="font-bold text-xl mb-2 section-title">National &amp; Sector</h3>
           <ul class="list-disc ml-5 space-y-2">
-            <li>Executive procurement signals “truth-seeking/neutral” systems; SANDBOX Act aims to preempt patchwork.</li>
-            <li>FTC probes safety/ethics of “companion” chatbots, with an emphasis on minors.</li>
+            <li>Pro‑innovation sandboxes and procurement reforms balance stricter enforcement in select regions.</li>
+            <li>Heightened scrutiny of consumer “companion” bots and youth protections.</li>
           </ul>
         </div>
       </div>
-      <p class="mt-3 text-sm subtle">Want a lightweight AI governance checklist tailored to your workflows? <a class="underline font-medium" href="https://www.linkedin.com/in/nicolemdickens/">Let’s talk.</a></p>
+      <p class="mt-3 text-sm subtle">
+        Auditability and provenance are moving from buzzwords to requirements.
+        <a class="underline font-medium" href="https://www.linkedin.com/in/nicolemdickens/">Want a lightweight governance checklist tailored to SMB workflows? Let’s build one.</a>
+      </p>
     </section>
 
     <!-- IMPACT -->
     <section class="content-section" id="impact">
       <div class="text-center mb-8">
         <h2 class="text-3xl font-bold mb-2 text-[var(--primary-dark)]">Societal &amp; Economic Impact</h2>
-        <p class="max-w-3xl mx-auto">Growth tailwinds meet trust, labor, and measurement challenges.</p>
+        <p class="max-w-3xl mx-auto">
+          Productivity gains surfaced most reliably where tasks are frequent, structured, and partially standardized.
+          Revenue lift appeared where AI increased throughput or unlocked previously latent demand with faster cycles.
+          Labor markets rewarded AI‑literate roles while reskilling closed gaps in analytics, prompt design, and evaluation.
+          Organizations that instrumented their pilots reported clearer buy‑in and faster time to production.
+          Public sentiment remained most positive for assistive use cases with transparent provenance and human oversight.
+        </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="card p-6 rounded-lg">
-          <h3 class="text-xl font-bold mb-3 section-title">Revenue & Productivity</h3>
-          <p>Industries with high AI exposure show ~3× growth in revenue per worker; AI acts as a productivity multiplier.</p>
+          <h3 class="text-xl font-bold mb-3 section-title">Revenue &amp; Productivity</h3>
+          <p>AI‑exposed industries outgrow peers; repeatable copilots convert time saved into throughput.</p>
         </div>
         <div class="card p-6 rounded-lg">
-          <h3 class="text-xl font-bold mb-3 section-title">Labor & Skills</h3>
-          <p>Workers with AI skills now command a 56% wage premium (vs. 25% last year); reskilling is imperative.</p>
+          <h3 class="text-xl font-bold mb-3 section-title">Labor &amp; Skills</h3>
+          <p>Wage premiums persist for AI‑literate roles; reskilling and role redesign remain central.</p>
         </div>
         <div class="card p-6 rounded-lg">
           <h3 class="text-xl font-bold mb-3 section-title">Public Sentiment</h3>
-          <p>Pew: 50% concerned about increased AI use; strongest support for analytical uses like fraud detection and research.</p>
+          <p>Support is strongest for analytical/assistive use cases; provenance and labeling improve trust.</p>
         </div>
       </div>
       <div class="card p-6 rounded-lg mt-6">
         <h3 class="text-xl font-bold mb-3 section-title">SMB Takeaways</h3>
         <ul class="list-disc ml-5 space-y-2">
-          <li><strong>Define adoption:</strong> differentiate trials from production; publish a simple rubric org-wide.</li>
-          <li><strong>Instrument pilots:</strong> track hours saved, error rate, and cycle time; label AI-assisted outputs.</li>
-          <li><strong>Reduce platform risk:</strong> favor exportable data, clear SLAs, and roll-back options.</li>
+          <li><strong>Define adoption:</strong> differentiate trials from production; publish a simple rubric org‑wide.</li>
+          <li><strong>Instrument pilots:</strong> track hours saved, error rate, and cycle time; label AI‑assisted outputs.</li>
+          <li><strong>Reduce platform risk:</strong> favor exportable data, clear SLAs, and roll‑back options.</li>
         </ul>
         <p class="mt-3 text-sm subtle">
-          If you want pilots that prove ROI (hours saved, error rate, cycle time),
-          <a class="underline font-medium" href="https://www.linkedin.com/in/nicolemdickens/">let’s talk.</a>
+          If you want to measure ROI in pilots (hours saved, error rate, cycle time) and move confidently into production,
+          <a class="underline font-medium" href="https://www.linkedin.com/in/nicolemdickens/">I can help you set up the scorecards.</a>
         </p>
       </div>
     </section>
@@ -301,19 +348,19 @@
     // Flip cards
     techCards.forEach(card => card.addEventListener('click', () => card.classList.toggle('flipped')));
 
-    // Deals chart (illustrative)
+    // Deals chart (illustrative — adjust if you want exact values)
     const canvas = document.getElementById('dealsChart');
     if (canvas) {
       const ctx = canvas.getContext('2d');
       new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['NVIDIA→Intel', 'NVIDIA UK', 'IDTA Alliance', 'M&A value'],
+          labels: ['Infra', 'Agentic Apps', 'Alliances', 'M&A'],
           datasets: [{
-            label: 'Deal Value (USD/GBP/B USD)',
-            data: [5, 2, 1, 2], /* illustrative only */
-            backgroundColor: 'rgba(160, 106, 180, 0.75)',
-            borderColor: 'rgba(85, 75, 69, 1)',
+            label: 'Relative Activity (illustrative)',
+            data: [4, 3, 2, 2],
+            backgroundColor: 'rgba(200, 191, 106, 0.75)',
+            borderColor: 'rgba(50, 96, 118, 1)',
             borderWidth: 1
           }]
         },
@@ -322,7 +369,7 @@
           maintainAspectRatio: false,
           indexAxis: 'y',
           plugins: { legend: { display: false } },
-          scales: { x: { beginAtZero: true, title: { display: true, text: 'Amount (Approx.)' } } }
+          scales: { x: { beginAtZero: true, title: { display: true, text: 'Activity Level (relative)' } } }
         }
       });
     }
