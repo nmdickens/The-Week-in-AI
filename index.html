@@ -1,3 +1,10 @@
+This is a crucial readability fix. I apologize for the poor contrast on the previous attempt. Using the Olive color (`#C8BF6A`) for fine text against the Taupe background (`#BDB6AD`) was unreadable.
+
+I have updated the CSS to use the darkest color in the palette, **Teal Green (`#326076`)**, for the footer attribution, ensuring maximum contrast and readability.
+
+Here is the final, corrected HTML code:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +21,9 @@
       /* Leafy Green - FALL palette */
       --primary-dark: #326076;     /* Teal Green (Dark text, headers) */
       --secondary-accent: #C8BF6A; /* Olive (Accent, buttons, borders) */
-      --tertiary-highlight: #326076;/* Teal Green (KPIs, using primary dark for strong contrast) */
+      --tertiary-highlight: #326076;/* Teal Green (KPIs) */
       --background-light: #BDB6AD; /* Taupe (Light Background) */
-      --text-dark: #1f2735; /* Using a nearly black for main content text */
+      --text-dark: #1f2735; /* Standard dark text */
     }
     body { font-family: 'Inter', sans-serif; background: var(--background-light); color: var(--text-dark); }
     .nav-button { transition: all 0.3s ease; }
@@ -34,7 +41,8 @@
     a.btn:hover { background: var(--primary-dark); color: #fff; }
     .section-title { color: var(--primary-dark); }
     .subtle { color: var(--primary-dark); }
-    .footer-note { color: var(--secondary-accent); }
+    /* FIX: Changed unreadable Olive color to the dark Teal Green for contrast */
+    .footer-note { color: var(--primary-dark); }
   </style>
 </head>
 <body>
@@ -210,3 +218,4 @@
   </script>
 </body>
 </html>
+```
