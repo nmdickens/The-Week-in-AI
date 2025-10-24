@@ -97,6 +97,8 @@
       <button class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base" data-target="investment">Investment</button>
       <button class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base" data-target="policy">Policy</button>
       <button class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base" data-target="impact">Impact</button>
+      <!-- NEW BUTTON -->
+      <button class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base" data-target="emerging">Players</button>
     </nav>
 
     <main>
@@ -167,6 +169,29 @@
           <a class="underline font-medium" href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener">I’ll help you design it.</a>
         </p>
       </section>
+      
+      <!-- EMERGING PLAYERS (NEW SECTION) -->
+      <section class="content-section" id="emerging">
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Emerging Players: Companies to Watch</h2>
+          <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-4">
+            <p>The venture landscape continues to favor specialized, high-efficiency AI solutions and foundational models that challenge established leaders. These four companies represent the focus of new strategic capital:</p>
+
+            <div class="space-y-3 p-4 card rounded-lg shadow-sm">
+                <p><span class="font-bold text-[var(--tertiary-highlight)]">General Intuition:</span> Having secured a $133.7 million funding round from top-tier VCs, this company is positioned as a significant new entrant focusing on building next-generation foundational models and general agents, signaling investor confidence in long-term, frontier-level AI development.</p>
+                <p><span class="font-bold text-[var(--tertiary-highlight)]">DeepSeek:</span> A key driver in the global efficiency and open-source AI race, known for models (V3, R1, DeepSeek-OCR) that rival industry leaders in performance while operating at significantly reduced operational costs, making sophisticated AI accessible to broader developer communities.</p>
+                <p><span class="font-bold text-[var(--tertiary-highlight)]">Sumble:</span> Strategic investment focused on automating high-value professional roles, such as sales intelligence, targeting specific white spaces where high ROI can be demonstrated rapidly.</p>
+                <p><span class="font-bold text-[var(--tertiary-highlight)]">HubSpot’s AI Marketing Hub and Agents24x7:</span> These platforms represent the new wave of low-cost, high-utility automation accessible to budget-conscious SMBs, offering comprehensive marketing funnel management and extensive autonomous task capabilities.</p>
+            </div>
+
+            <p class="font-bold mt-4">Takeaway: Emerging success lies in cost-efficient specialization or deep foundational model expertise. The market is rewarding platforms that can deliver high ROI to budget-conscious SMBs and automate high-value professional roles.</p>
+          </div>
+        </div>
+        <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
+          Keep ahead of the curve. <span class="font-bold">Let's analyze how these emerging players impact your competitive position.</span>
+          <a class="underline font-medium" href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener">Schedule a strategy session today.</a>
+        </p>
+      </section>
     </main>
   </div>
 
@@ -183,11 +208,26 @@
       navButtons.forEach(btn => {
         btn.addEventListener('click', () => {
           const target = btn.dataset.target;
+          // Deactivate all buttons and sections
           navButtons.forEach(b => b.classList.remove('active'));
+          sections.forEach(s => s.classList.remove('active'));
+
+          // Activate the clicked button and its corresponding section
           btn.classList.add('active');
-          sections.forEach(s => s.id === target ? s.classList.add('active') : s.classList.remove('active'));
+          const targetSection = document.getElementById(target);
+          if (targetSection) {
+            targetSection.classList.add('active');
+          }
         });
       });
+
+      // Ensure the first button is clicked on load if no section is active
+      const activeSectionExists = Array.from(sections).some(s => s.classList.contains('active'));
+      if (!activeSectionExists && navButtons.length > 0) {
+        // Set the Technology button as active by default if no other is set
+        document.querySelector('[data-target="technology"]').classList.add('active');
+        document.getElementById('technology').classList.add('active');
+      }
 
       const canvas = document.getElementById('dealsChart');
       if (canvas) {
