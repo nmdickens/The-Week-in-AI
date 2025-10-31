@@ -1,364 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Pulse Weekly: 25OCT25 - 31OCT25</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-    <style>
-        /* Early Harvest Palette */
-        :root {
-            --color-primary: #554B45; /* Dark Brown/Taupe - Text, Headers */
-            --color-background: #DDDBD4; /* Light Taupe - Background */
-            --color-highlight: #D30907; /* Scarlet - Main CTA, Alert */
-            --color-secondary-accent: #A06AB4; /* Lilac - Secondary Button/Accent */
-            --color-text-light: #F9F9F9; /* Near White */
-            --color-card-bg: #FFFFFF; /* White for cards */
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--color-background);
-            color: var(--color-primary);
-            line-height: 1.6;
-        }
-
-       .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: var(--color-card-bg);
-            border-bottom: 5px solid var(--color-primary);
-            margin-bottom: 20px;
-        }
-
-        header h1 {
-            color: var(--color-highlight);
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.2em;
-            color: var(--color-primary);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-       .section-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-       .summary-card {
-            background-color: var(--color-card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            border-top: 5px solid var(--color-secondary-accent);
-        }
-
-       .summary-card h2 {
-            color: var(--color-primary);
-            font-size: 1.5em;
-            margin-top: 0;
-            border-bottom: 2px solid var(--color-background);
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-
-       .summary-card.setup {
-            font-style: italic;
-            margin-bottom: 15px;
-            font-size: 0.95em;
-        }
-
-       .summary-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 20px 0;
-        }
-
-       .summary-card ul li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-            font-size: 0.9em;
-            color: var(--color-primary);
-        }
-
-       .summary-card ul li strong {
-            color: var(--color-highlight);
-            display: block;
-            margin-bottom: 4px;
-        }
-
-       .summary-card ul li::before {
-            content: '•';
-            color: var(--color-secondary-accent);
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-            position: absolute;
-            left: 0;
-        }
-
-       .summary-card.takeaway {
-            background-color: var(--color-background);
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 5px solid var(--color-highlight);
-            font-size: 0.9em;
-        }
-
-       .cta-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-       .cta-buttons a {
-            display: block; /* Default to block for mobile stacking */
-            padding: 12px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s;
-            text-align: center;
-        }
-
-       .cta-primary {
-            background-color: var(--color-highlight);
-            color: var(--color-text-light);
-            border: 2px solid var(--color-highlight);
-        }
-
-       .cta-primary:hover {
-            background-color: #A30605; /* Darker Scarlet */
-            transform: translateY(-2px);
-        }
-
-       .cta-secondary {
-            background-color: var(--color-secondary-accent);
-            color: var(--color-text-light);
-            border: 2px solid var(--color-secondary-accent);
-        }
-
-       .cta-secondary:hover {
-            background-color: #8C55A0; /* Darker Lilac */
-            transform: translateY(-2px);
-        }
-
-        /* Chart Section Styling */
-       .chart-section {
-            background-color: var(--color-card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            margin-bottom: 30px;
-            border-top: 5px solid var(--color-highlight);
-        }
-
-       .chart-section h2 {
-            text-align: center;
-            color: var(--color-primary);
-            font-size: 1.8em;
-            margin-bottom: 25px;
-        }
-
-        /* Responsiveness: Horizontal buttons on tablet and larger */
-        @media (min-width: 768px) {
-           .cta-buttons {
-                flex-direction: row; /* Horizontal on tablets/desktop */
-            }
-           .cta-buttons a {
-                display: inline-block;
-            }
-        }
-    </style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Pulse Weekly: Week of October 25 – October 31, 2025</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Early Harvest palette: #554B45, #A06AB4, #D30907, #DDDBD4 */
+      --primary-dark: #554B45;     /* Dark Taupe (main text/titles) */
+      --secondary-accent: #A06AB4; /* Lilac (buttons, borders, accents) */
+      --tertiary-highlight: #D30907;/* Scarlet (KPI values) */
+      --background-light: #DDDBD4; /* Light Taupe (light background) */
+    }
+    /* Base Styles */
+    body { font-family: 'Inter', sans-serif; background: var(--background-light); color: var(--primary-dark); }
+    .nav-button { transition: all 0.3s ease; }
+    .nav-button.active { background: var(--secondary-accent); color: #fff; font-weight: 600; }
+    .nav-button:not(.active):hover { background: var(--primary-dark); color: #fff; }
+    .content-section { display: none; }
+    .content-section.active { display: block; }
+    /* Card Styles - Adjusted border color */
+    .card { 
+      background:#fff; 
+      border:1px solid var(--secondary-accent); 
+      transition: transform .3s ease, box-shadow .3s ease; 
+      color:var(--primary-dark);
+      border-radius: 0.75rem; /* Rounded corners */
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px -5px rgba(0,0,0,.15), 0 4px 6px -2px rgba(0,0,0,.08); }
+    .kpi .value { color: var(--tertiary-highlight); }
+    .pill { background:#fff; border:1px solid var(--secondary-accent); color: var(--primary-dark); }
+    .chart-container { position: relative; width: 100%; max-width: 900px; margin: 0 auto; height: 420px; max-height: 55vh; }
+    @media (max-width: 768px) { .chart-container { height: 320px; max-height: 65vh; } }
+    a.btn { background: var(--secondary-accent); color: #fff; }
+    a.btn:hover { background: var(--primary-dark); color: var(--background-light); }
+    .section-title { color: var(--primary-dark); }
+    .subtle { color: #554B45; opacity: 0.7; }
+    .footer-note { color: var(--secondary-accent); }
+    .text-light-contrast { color: var(--background-light); }
+  </style>
 </head>
 <body>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <header class="text-center mb-10">
+      <h1 class="text-4xl md:text-5xl font-bold text-[var(--primary-dark)] mb-3">AI Pulse Weekly</h1>
+      <p class="text-lg md:text-xl subtle">Interactive Summary • October 25 – October 31, 2025</p>
 
-<div class="container">
-    <header>
-        <h1>AI Pulse Weekly: 25OCT25 - 31OCT25</h1>
-        <p>The week was defined by an unprecedented convergence of intense capital competition for compute infrastructure and acute geopolitical friction manifesting in critical supply chains. Strategic investment continued the 'compute war' trend, highlighted by a massive funding round for data-center specialist Crusoe, while a major Dutch chipmaker's wafer halt to China immediately threatened global automotive production. This tension, coupled with environmental pressure demanding regulation of data center energy usage, forced a pivot toward architectural efficiency and mandatory corporate AI governance.[1]</p>
+      <!-- NUMERICAL KPIs - Updated for 31OCT25 content -->
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
+        <div class="card p-4 rounded-xl kpi text-center">
+          <p class="text-3xl font-bold value">$1.38 Billion</p>
+          <p class="text-sm subtle mt-1">Infrastructure funding secured by Crusoe, underscoring the fierce 'compute war'.</p>
+        </div>
+        <div class="card p-4 rounded-xl kpi text-center">
+          <p class="text-3xl font-bold value">200+</p>
+          <p class="text-sm subtle mt-1">Environmental groups demanding regulation on data center energy and water consumption.</p>
+        </div>
+        <div class="card p-4 rounded-xl kpi text-center">
+          <p class="text-3xl font-bold value">75%</p>
+          <p class="text-sm subtle mt-1">Reduction in memory usage achieved by Moonshot AI's new Kimi Linear architecture.</p>
+        </div>
+      </div>
     </header>
 
-    <div class="cta-buttons">
-        <a href="#investment" class="cta-primary">Analyze Compute & Capital Flows</a>
-        <a href="#policy" class="cta-secondary">Review Geopolitical Governance Risk</a>
-        <a href="#smb" class="cta-primary">Implement AI Productivity Benchmarks</a>
+    <!-- Buttons -->
+    <div class="flex justify-center gap-4 mb-8">
+      <a class="btn inline-block font-bold py-2 px-6 rounded-full transition-colors duration-300 shadow-lg" href="https://docs.google.com/document/d/uploaded:AI Report 31OCT25" target="_blank" rel="noopener">Read Full Report</a>
+      <a class="btn inline-block font-bold py-2 px-6 rounded-full transition-colors duration-300 shadow-lg" href="#" rel="noopener">Listen to Audio Overview</a>
     </div>
 
-    <div class="section-grid" style="margin-top: 30px;">
-        <div class="summary-card">
-            <h2>Executive Summary</h2>
-            <p class="setup">The week was defined by an unprecedented convergence of intense capital competition for compute infrastructure and acute geopolitical friction manifesting in critical supply chains. Strategic investment continued the 'compute war' trend, highlighted by a massive funding round for data-center specialist Crusoe, while a major Dutch chipmaker's wafer halt to China immediately threatened global automotive production. This tension, coupled with environmental pressure demanding regulation of data center energy usage, forced a pivot toward architectural efficiency and mandatory corporate AI governance.[1]</p>
-            <ul>
-                <li><strong>The Compute War Tops Capital Markets:</strong> Private venture capital remains hyper-focused on foundational infrastructure, evidenced by Crusoe's $1.38 billion raise, validating dedicated GPU hardware access and scalable power as the most defensible competitive moats in the AI economy.[1]</li>
-                <li><strong>Supply Chain Geopolitics Escalates:</strong> Geopolitical risk is no longer confined to advanced chips; the Nexperia halt of foundational wafer shipments to its China plant exposed the vulnerability of non-advanced component supply chains to state policy, impacting major European automakers.[1]</li>
-                <li><strong>Governance Shifts to Tangible Limits:</strong> Oversight pressure in the U.S. is moving from abstract safety to physical resource limits, as a coalition of environmental groups demanded moratoria on data center energy and water consumption, citing projections that AI demand could double by 2026.[1]</li>
-            </ul>
-            <div class="takeaway">
-                Strategic leaders must stress-test non-advanced component supply chains for geopolitical risk.[1] Future compute investment must prioritize efficiency and verifiable green power sourcing to preempt rising regulatory constraints.[1] AI proficiency is now a mandatory, accountable core competency for staff, driven by the need to capture 20-30% productivity gains.[1]
-            </div>
-        </div>
-
-        <div class="summary-card" id="smb">
-            <h2>What This Means for SMBs</h2>
-            <p class="setup">Small and Medium-Sized Businesses face a mounting competitive imperative where cumulative, incremental AI adoption is the primary lever for survival, offering proven 20% to 30% gains in productivity and speed to market.[1] Nearly half of larger enterprise technology leaders report AI is already fully integrated into their core business strategy, creating a widening productivity deficit that SMBs must rapidly close.[1] This closing requires moving AI from an experimental function to an integral, low-friction operational cost leveraging both dominant consumer-grade tools and targeted vertical solutions.[1]</p>
-            <ul>
-                <li><strong>Productivity Deficit Risk:</strong> SMBs risk rapid obsolescence if they fail to match competitors achieving 20-30% productivity boosts through full AI integration, necessitating immediate strategic adoption to remain competitive.[1]</li>
-                <li><strong>Focus on High-Utility Tools:</strong> Cost-effective integration starts with leveraging globally dominant platforms like ChatGPT (28% market share for content) and Canva (25% for visual design), which offer immediate, multi-language, and creative productivity benefits.[1]</li>
-                <li><strong>Workflow Automation is Key:</strong> The highest value comes from verticalized AI solutions, such as Jasper AI for automating entire marketing campaigns and HubSpot Smart CRM for using an AI Data Agent to transform unstructured data into sales opportunities and predictive insights.[1]</li>
-            </ul>
-            <div class="takeaway">
-                SMB strategy must move AI from experiment to mandatory operational cost.[1] Start with high-utility, market-leading tools for immediate content and communication gains.[1] Invest in verticalized solutions to automate entire marketing or CRM workflows, securing predictive revenue insights.[1]
-            </div>
-        </div>
-
-        <div class="summary-card">
-            <h2>Technology</h2>
-            <p class="setup">Technological innovation during the week underscored a critical shift toward architectural efficiency, directly challenging the fundamental constraints of the dominant Transformer model paradigm.[1] Moonshot AI published details on its revolutionary Kimi Linear model, which leverages a hybrid linear attention architecture to dramatically improve operational metrics.[1] Simultaneously, the scientific community published a powerful critique detailing "systemic flaws" in current AI evaluations, which compromise credibility and fuel market hype.[1]</p>
-            <ul>
-                <li><strong>Efficiency as the New Competitive Edge:</strong> Moonshot AI’s Kimi Linear model, using its bespoke KDA module, demonstrated superior performance while achieving massive efficiency gains, reducing KV cache usage by up to 75% and boosting decoding throughput by up to 6x for long contexts.[1]</li>
-                <li><strong>Democratization Through Optimization:</strong> The Kimi Linear architecture enables high efficiency, suggesting that breakthroughs in architectural optimization, rather than simply scaling parameters, are becoming the key to lowering inference costs and democratizing access to powerful large models.[1]</li>
-                <li><strong>The Evaluation Credibility Crisis:</strong> Systemic flaws in current AI benchmarks, including data contamination and selective reporting, are fueling market exaggeration and eroding public trust, creating an urgent need for independent validation.[1]</li>
-            </ul>
-            <div class="takeaway">
-                Architectural breakthroughs like Kimi Linear are making efficiency a core metric alongside performance.[1] This optimization challenges the high cost and memory constraints of conventional Transformer models.[1] The proposed PeerBench model aims to restore scientific credibility through unified, proctored evaluation systems.[1]
-            </div>
-        </div>
-
-        <div class="summary-card" id="policy">
-            <h2>Policy and Governance</h2>
-            <p class="setup">Global AI governance accelerated along two distinct and increasingly oppositional paths this week: the European pursuit of technological sovereignty and the U.S. debate over environmental constraint.[1] The European Union formalized its "Apply AI Strategy," a proactive industrial policy designed to promote European-made AI tools across critical sectors like defense and healthcare, aiming to reduce dependence on foreign tech.[1] Meanwhile, in the U.S., a coalition of over 200 environmental groups issued urgent demands for Congress to block unregulated AI growth and impose strict limits on data center energy and water consumption.[1]</p>
-            <ul>
-                <li><strong>EU's Industrial Policy Pivot:</strong> The "Apply AI Strategy" rejects laissez-faire development, actively shaping a sovereign European ecosystem through initiatives like GenAI4EU and AI Factories Antennas to stimulate the uptake of compliant, homegrown generative AI tools.[1]</li>
-                <li><strong>Environmental Constraint as the New Policy Metric:</strong> U.S. regulatory scrutiny is shifting to tangible infrastructure, where environmental groups are using projections of AI energy demand doubling by 2026 to push for legislative moratoria and mandatory fossil fuel phase-outs in the supply chain.[1]</li>
-                <li><strong>Geopolitics Disrupts Foundational Components:</strong> The Nexperia halt of critical wafer shipments to its Chinese assembly plant—a core supply source—demonstrates that geopolitical friction has now weaponized even non-advanced components, immediately threatening the supply chains of major automakers.[1]</li>
-            </ul>
-            <div class="takeaway">
-                Europe is actively building a compliant sovereign AI ecosystem with its 'Apply AI Strategy'.[1] The U.S. faces new regulatory constraints driven by data center energy and water demands.[1] Geopolitical risks have expanded to foundational, non-advanced components, exposing new supply chain vulnerabilities.[1]
-            </div>
-        </div>
-
-        <div class="summary-card" id="investment">
-            <h2>Investment</h2>
-            <p class="setup">Global venture funding surged dramatically in Q3 2025, reaching $97 billion, with the Artificial Intelligence sector serving as the overwhelming primary driver of this market resurgence.[1] AI companies captured $45 billion, or approximately 46% of the total global venture capital, continuing the trend of extreme capital concentration into fewer, massive deals.[1] This investment flow confirms an intense ‘compute war,’ prioritizing the foundational infrastructure required to run the AI economy, while strategic M&A accelerates to secure the burgeoning layer of AI-driven identities.[1]</p>
-            <ul>
-                <li><strong>Compute Dominates Mega-Rounds:</strong> The 'compute war' escalated as Crusoe, an AI infrastructure specialist, secured a massive $1.38 billion Series E at a $10 billion valuation, underscoring investor belief that specialized GPU access and scalable power form a highly defensible competitive moat.[1]</li>
-                <li><strong>Capital Concentration Reaches Extremes:</strong> Over 30% of global VC funding flowed into mega-rounds of $500 million or more in Q3 2025, a proportion well above historical norms, reflecting an aggressive prioritization of market leaders and pre-product deals with enormous growth potential.[1]</li>
-                <li><strong>M&A Focus on Agentic Security:</strong> Strategic acquisitions and late-stage funding, such as Defakto's $30.75 million round, are accelerating to address the security risks posed by the proliferation of "non-human identities"—machine identities and AI agents—in enterprise environments.[1]</li>
-            </ul>
-            <div class="takeaway">
-                Investment remains hyper-concentrated in AI, with compute access being the most valuable asset class.[1] Mega-M&A is driven by the need to secure the rapidly expanding Generative AI application layer.[1] Talent wars are resurgent, requiring acqui-hires and specific retention clauses in deal structuring.[1]
-            </div>
-        </div>
-
-        <div class="summary-card">
-            <h2>Societal and Economic Implications</h2>
-            <p class="setup">The assimilation of AI into the corporate world reached a critical turning point as major professional service firms formally tied AI utilization to employee accountability and career progression.[1] KPMG announced that staff usage of its firm-wide AI tools will be incorporated into annual performance reviews, formalizing AI proficiency as a core, measurable competency.[1] This move, following the firm’s rapid adoption of Gemini Enterprise, is set to fundamentally change talent management by establishing clear incentives to capture necessary productivity gains.[1]</p>
-            <ul>
-                <li><strong>Mandatory AI Proficiency:</strong> Integrating AI usage into performance reviews—as exemplified by KPMG—shifts AI from optional experimentation to a mandatory, accountable core competency required for professional productivity and career progression.[1]</li>
-                <li><strong>Elevated ESG Risk for Compute:</strong> The organized demands from over 200 environmental groups for regulation and moratoria on data center energy and water usage introduce acute Environmental, Social, and Governance (ESG) risks to capital-intensive scaling plans.[1]</li>
-                <li><strong>Sustained Global Talent Scarcity:</strong> Aggressive corporate integration and intense capital flows are amplifying a worldwide demand for specialized talent in AI, cybersecurity, and software development, with hire rates outpacing traditional roles, particularly across rapidly digitizing markets.[1]</li>
-            </ul>
-            <div class="takeaway">
-                Corporate success now requires mandatory, measurable AI proficiency baked into staff performance metrics.[1] Companies must proactively address ESG pressure by demonstrating verifiable green power sourcing for compute.[1] The acute global scarcity of AI and security talent will continue to drive M&A focused on "acqui-hires".[1]
-            </div>
-        </div>
+    <!-- Executive Summary - Updated with 31OCT25 content -->
+    <div class="card p-6 rounded-xl mb-6 shadow-md" id="executive-summary">
+      <h3 class="text-xl font-bold mb-3 section-title text-center">Executive Summary</h3>
+      <div class="text-left text-gray-800 leading-relaxed space-y-3">
+        <p>The week of October 25–31, 2025, represented a critical confluence of **capital, governance, and technology**, confirming that the AI industry is shifting from pure expansion to necessary optimization and strategic control. The global ecosystem was simultaneously defined by the fierce, capital-intensive 'compute war,' the application of geopolitical pressure to foundational component supply chains, and mounting environmental and governance demands for constraint. Breakthroughs in architectural efficiency, coupled with the mandatory assimilation of AI into corporate performance metrics, signaled a necessary pivot toward sustainable and accountable growth.</p>
+        <p>Strategic leaders must stress-test non-advanced component supply chains for geopolitical risk. Future compute investment must prioritize efficiency and verifiable green power sourcing to preempt rising regulatory constraints. AI proficiency is now a mandatory, accountable core competency for staff, driven by the need to capture 20-30% productivity gains.</p>
+        <p class="font-bold mt-4">Takeaway: The dominant theme is the convergence of Capital, Geopolitics, and Constraint. The Compute War continues to drive investment, but the industry is now forced to pivot toward **efficiency and verifiable green power sourcing** to meet mounting regulatory and environmental demands.</p>
+      </div>
     </div>
 
-    <div class="chart-section" id="chart-investment">
-        <h2>Q4 2025 Early VC Flow: Concentration in Mega-Rounds (Values in Millions USD)</h2>
-        <canvas id="investmentChart"></canvas>
+    <!-- SMB Impact - Updated with 31OCT25 content and edited CTA -->
+    <div class="card p-6 rounded-xl mb-10 shadow-md">
+      <h3 class="text-xl font-bold mb-3 section-title text-center">What This Means for SMBs</h3>
+      <div class="text-left text-gray-800 leading-relaxed space-y-3">
+        <p>Small and Medium-Sized Businesses face a mounting competitive imperative where cumulative, incremental AI adoption is the primary lever for survival, offering proven **20% to 30% gains** in productivity and speed to market. Nearly half of larger enterprise technology leaders report AI is already fully integrated into their core business strategy, creating a widening productivity deficit that SMBs must rapidly close.</p>
+        <p>The highest value comes from verticalized AI solutions, such as Jasper AI for automating entire marketing campaigns and HubSpot Smart CRM for using an AI Data Agent to transform unstructured data into sales opportunities and predictive insights. Cost-effective integration starts with leveraging globally dominant platforms like ChatGPT (28% market share for content) and Canva (25% for visual design), which offer immediate, multi-language, and creative productivity benefits.</p>
+        <p class="text-sm subtle mt-4">
+          <span class="font-bold">SMB strategy must prioritize Efficiency and Governance.</span> Ready to audit your automation for **compliance risk**?
+          <a class="underline font-medium" href="#" target="_blank" rel="noopener">
+            Let's talk about your compliance strategy.
+          </a>
+        </p>
+      </div>
     </div>
 
-</div>
+    <!-- NAV -->
+    <nav class="flex justify-center mb-10 bg-white p-2 rounded-full shadow-lg border border-[var(--secondary-accent)] max-w-xl mx-auto">
+      <button class="nav-button active flex-1 py-2 px-4 rounded-full text-sm sm:text-base" data-target="technology">Technology</button>
+      <button class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base" data-target="investment">Investment</button>
+      <button class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base" data-target="policy">Policy</button>
+      <button class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base" data-target="impact">Impact</button>
+      <button class="nav-button flex-1 py-2 px-4 rounded-full text-sm sm:text-base" data-target="emerging">Players</button>
+    </nav>
 
-<script>
-    // Chart.js data reflecting key investment deals for the week
-    const ctx = document.getElementById('investmentChart').getContext('2d');
-    const investmentChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            // Updated Labels to reflect the deals: Reflection AI ($2B), Crusoe ($1.38B), Defakto ($30.75M), Matters.AI ($6.25M)
-            labels:,
-            datasets:,
-                backgroundColor:,
-                borderColor: [
-                    'var(--color-secondary-accent)',
-                    'var(--color-highlight)',
-                    'var(--color-primary)',
-                    'var(--color-background)'
-                ],
-                borderWidth: 1
+    <main>
+      <!-- TECHNOLOGY - Updated with 31OCT25 content -->
+      <section class="content-section active" id="technology">
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Breakthroughs in AI Technology</h2>
+          <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
+            <p>Technological innovation during the week underscored a critical shift toward **architectural efficiency**, directly challenging the fundamental constraints of the dominant Transformer model paradigm. Moonshot AI published details on its revolutionary **Kimi Linear** model, which leverages a hybrid linear attention architecture to dramatically improve operational metrics. The model demonstrated superior performance while achieving massive efficiency gains, reducing KV cache usage by up to **75%** and boosting decoding throughput by up to **6x** for long contexts.</p>
+            <p>Simultaneously, the scientific community published a powerful critique detailing **"systemic flaws"** in current AI evaluations, which compromise credibility and fuel market hype. This evaluation crisis highlights the urgent need for independent validation, with the proposed **PeerBench** model offering a community-governed, proctored system to restore scientific trust.</p>
+            <p class="font-bold mt-4">Takeaway: Architectural breakthroughs like Kimi Linear are making **efficiency** a core metric alongside performance, democratizing access to powerful models. However, the industry's credibility is at risk due to flawed evaluation practices, necessitating external, **proctored benchmarking**.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- INVESTMENT - Updated with 31OCT25 content and edited CTA -->
+      <section class="content-section" id="investment">
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">AI Industry Investment &amp; M&amp;A</h2>
+          <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
+            <p>Global venture funding surged dramatically in Q3 2025, reaching $97 billion, with the Artificial Intelligence sector serving as the overwhelming primary driver. AI companies captured **$45 billion**, or approximately **46%** of the total global venture capital, continuing the trend of extreme capital concentration into fewer, massive deals. This investment flow confirms an intense ‘compute war,’ prioritizing the foundational infrastructure required to run the AI economy.</p>
+            <p>The 'compute war' escalated as Crusoe, an AI infrastructure specialist, secured a massive **$1.38 billion** Series E, underscoring investor belief that specialized GPU access and scalable power form a highly defensible competitive moat. Meanwhile, strategic M&A is accelerating to secure the rapidly expanding Generative AI application layer, exemplified by funding for companies like **Defakto** that address the security risks posed by the proliferation of "non-human identities" (AI agents) in enterprise environments.</p>
+            <p class="font-bold mt-4">Takeaway: Investment remains hyper-concentrated in AI, with compute access being the most valuable asset class. Mega-M&A is driven by the need to secure the rapidly expanding Generative AI application layer.</p>
+          </div>
+        </div>
+        <div class="card p-6 rounded-xl shadow-md">
+          <h3 class="font-bold text-xl mb-4 section-title text-center">Top Funding Rounds (Oct 25–31)</h3>
+          <div class="chart-container"><canvas id="dealsChart"></canvas></div>
+          <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
+            The Compute War demands **governance-compliant infrastructure.** Need a strategy brief on **green compute sourcing**?
+            <a class="underline font-medium" href="#" target="_blank" rel="noopener">I can help you package it.</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- POLICY - Updated with 31OCT25 content and edited CTA -->
+      <section class="content-section" id="policy">
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Global AI Policy &amp; Governance</h2>
+          <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
+            <p>Global AI governance accelerated along two distinct and increasingly oppositional paths this week: the European pursuit of **technological sovereignty** and the U.S. debate over **environmental constraint**. The European Union formalized its **"Apply AI Strategy,"** a proactive industrial policy designed to promote European-made AI tools across critical sectors, aiming to reduce dependence on foreign tech.</p>
+            <p>Meanwhile, in the U.S., a coalition of over **200 environmental groups** issued urgent demands for Congress to block unregulated AI growth and impose strict limits on data center energy and water consumption. The final point of friction was geopolitical, as the **Nexperia halt** of critical wafer shipments to its China plant demonstrated that state policy has weaponized even foundational, non-advanced components, immediately threatening global supply chains.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div class="card p-4 rounded-xl shadow-sm"><h3 class="font-bold text-lg mb-2 section-title">EU: Sovereignty Pivot</h3><p class="text-left">The 'Apply AI Strategy' actively promotes European-made AI tools across critical sectors, rejecting laissez-faire development for a compliant sovereign ecosystem.</p></div>
+          <div class="card p-4 rounded-xl shadow-sm"><h3 class="font-bold text-lg mb-2 section-title">U.S.: Environmental Constraint</h3><p class="text-left">Regulatory scrutiny shifts to tangible infrastructure, as environmental groups demand moratoria on data center energy and water consumption.</p></div>
+        </div>
+        <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
+          Global policy is hardening. Let's draft your **AI Governance Framework** to navigate **sovereignty and environmental mandates**.
+          <a class="underline font-medium" href="#" target="_blank" rel="noopener">Start your framework today.</a>
+        </p>
+      </section>
+
+      <!-- IMPACT - Updated with 31OCT25 content and edited CTA -->
+      <section class="content-section" id="impact">
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Societal &amp; Economic Impact</h2>
+          <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
+            <p>The assimilation of AI into the corporate world reached a critical turning point as major professional service firms formally tied AI utilization to employee accountability and career progression. KPMG announced that staff usage of its firm-wide AI tools will be incorporated into **annual performance reviews**, formalizing **AI proficiency** as a core, measurable competency required for professional productivity.</p>
+            <p>This institutional move is set against mounting external pressure. The organized demands from over 200 environmental groups for regulation and moratoria on data center energy and water usage introduce acute **Environmental, Social, and Governance (ESG) risks** to capital-intensive scaling plans. This pressure, combined with sustained **global talent scarcity**, amplifies the need for mandatory, measurable AI proficiency across the workforce.</p>
+            <p class="font-bold mt-4">Takeaway: Corporate success now requires mandatory, measurable AI proficiency baked into staff performance metrics. Companies must proactively address ESG pressure by demonstrating verifiable green power sourcing for compute.</p>
+          </div>
+        </div>
+        <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
+          AI proficiency is mandatory. Let's design the **KPIs and training plan** to formalize **AI competency** across your staff.
+          <a class="underline font-medium" href="#" target="_blank" rel="noopener">Design your reskilling plan.</a>
+        </p>
+      </section>
+      
+      <!-- EMERGING PLAYERS - Updated with 31OCT25 content -->
+      <section class="content-section" id="emerging">
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Emerging Players: Companies to Watch</h2>
+          <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-4">
+            <p>The venture landscape is prioritizing defense against novel AI-driven security risks and strategic automation. These four companies represent key funding trends this week:</p>
+
+            <div class="space-y-3 p-4 card rounded-xl shadow-sm">
+                <p><span class="font-bold text-[var(--tertiary-highlight)]">Reflection AI:</span> Secured a massive $2 Billion round to accelerate its AI tools for automating software development and model workflows.</p>
+                <p><span class="font-bold text-[var(--tertiary-highlight)]">Defakto:</span> Raised $30.75M for specializing in **Non-Human Identity Security**, securing machine identities and AI agents across complex enterprise environments.</p>
+                <p><span class="font-bold text-[var(--tertiary-highlight)]">Resistant AI:</span> Secured $25M for its AI-powered **Fraud Prevention** solutions, targeting high-risk financial services and cybersecurity.</p>
+                <p><span class="font-bold text-[var(--tertiary-highlight)]">Matters.AI:</span> Raised $6.25M in seed funding to develop an **AI-Native Data Security** platform, acting as an autonomous "AI Security Engineer."</p>
+            </div>
+
+            <p class="font-bold mt-4">Takeaway: Strategic capital is flowing into large-scale workflow automation and specialized security against AI agents and machine identities.</p>
+          </div>
+        </div>
+        <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
+          Keep ahead of the curve. <span class="font-bold">Let's analyze how these emerging players impact your competitive position.</span>
+          <a class="underline font-medium" href="#" target="_blank" rel="noopener">Schedule a strategy session today.</a>
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="text-center py-8 footer-note">
+    <p class="text-sm">Summary content powered by Gemini Deep Research, organized with Notebook LM</p>
+    <p class="text-sm mt-1">produced by Nicole Dickens, Fractional AI Consultant</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navButtons = document.querySelectorAll('.nav-button');
+      const sections = document.querySelectorAll('.content-section');
+
+      // --- Navigation Logic ---
+      navButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.dataset.target;
+          // Deactivate all buttons and sections
+          navButtons.forEach(b => b.classList.remove('active'));
+          sections.forEach(s => s.classList.remove('active'));
+
+          // Activate the clicked button and its corresponding section
+          btn.classList.add('active');
+          const targetSection = document.getElementById(target);
+          if (targetSection) {
+            targetSection.classList.add('active');
+          }
+        });
+      });
+
+      // Set the Technology button as active by default
+      const technologyButton = document.querySelector('[data-target="technology"]');
+      const technologySection = document.getElementById('technology');
+      if (technologyButton && technologySection) {
+          technologyButton.classList.add('active');
+          technologySection.classList.add('active');
+      }
+
+      // --- Chart.js Investment Data Update ---
+      const canvas = document.getElementById('dealsChart');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        // Early Harvest Palette: Secondary Accent #A06AB4, Primary Dark #554B45
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            // Data updated to reflect major funding rounds for the week of Oct 25–31
+            // Reflection AI ($2B), Crusoe ($1.38B), Defakto ($30.75M), Resistant AI ($25M), Matters.AI ($6.25M)
+            labels: ['Reflection AI', 'Crusoe', 'Defakto', 'Resistant AI', 'Matters.AI'],
+            datasets: [{
+              label: 'Deal Value ($M)',
+              // Data in millions
+              data: [2000, 1380, 30.75, 25, 6.25], 
+              backgroundColor: 'rgba(160, 106, 180, 0.75)', /* Lilac (#A06AB4) with transparency */
+              borderColor: '#554B45', /* Dark Taupe */
+              borderWidth: 1
             }]
-        },
-        options: {
+          },
+          options: {
             responsive: true,
+            maintainAspectRatio: false,
             scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Funding (Millions USD)',
-                        color: 'var(--color-primary)'
-                    }
-                },
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Emerging Player Focus',
-                        color: 'var(--color-primary)'
-                    }
+              y: { 
+                beginAtZero: true, 
+                title: { 
+                  display: true, 
+                  text: 'Deal Value (Millions USD)',
+                  font: { size: 14 }
                 }
+              },
+              x: {
+                 // Ensure labels fit on mobile
+                 ticks: {
+                    font: { size: 10 }
+                 }
+              }
             },
             plugins: {
                 legend: {
                     display: false
                 },
                 title: {
-                    display: false
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            let label = context.dataset.label |
-
-| '';
-                            if (label) {
-                                label += ': ';
-                            }
-                            if (context.parsed.y!== null) {
-                                if (context.parsed.y >= 1000) {
-                                    label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 }).format(context.parsed.y / 1000) + ' Billion';
-                                } else {
-                                    label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 }).format(context.parsed.y) + ' Million';
-                                }
-                            }
-                            return label;
-                        }
-                    }
+                    display: true,
+                    text: 'Top AI Funding Deals (Oct 25–31, 2025)',
+                    font: { size: 16, weight: 'bold' }
                 }
             }
-        }
+          }
+        });
+      }
     });
-</script>
-
+  </script>
 </body>
 </html>
-
