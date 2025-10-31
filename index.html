@@ -43,6 +43,18 @@
     .subtle { color: #554B45; opacity: 0.7; }
     .footer-note { color: var(--secondary-accent); }
     .text-light-contrast { color: var(--background-light); }
+    
+    /* Mobile-specific fix for nav buttons */
+    @media (max-width: 640px) {
+        .nav-container-mobile-fix {
+            flex-wrap: wrap; /* Allows items to wrap to the next line */
+        }
+        .nav-button {
+            flex-basis: 48%; /* Forces buttons to take up nearly half the width (2 per line) */
+            margin-bottom: 0.5rem; /* Adds vertical spacing between rows */
+            min-width: 0; /* Ensures buttons can shrink */
+        }
+    }
   </style>
 </head>
 <body>
