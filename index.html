@@ -240,7 +240,7 @@
           technologySection.classList.add('active');
       }
 
-      // --- Chart.js Investment Data Update ---
+      // --- Chart.js Investment Data Update with LOGARITHMIC SCALE ---
       const canvas = document.getElementById('dealsChart');
       if (canvas) {
         const ctx = canvas.getContext('2d');
@@ -248,12 +248,11 @@
         new Chart(ctx, {
           type: 'bar',
           data: {
-            // Data updated to reflect major funding rounds for the week of Nov 01–07, 2025
-            // AWS/OpenAI ($38B), Crusoe ($1.38B), Giga AI ($61M), Fastbreak AI ($40M)
+            // Data in Millions of USD
+            // AWS/OpenAI ($38,000M), Crusoe ($1,380M), Giga AI ($61M), Fastbreak AI ($40M)
             labels: ['AWS / OpenAI', 'Crusoe Energy Systems', 'Giga AI', 'Fastbreak AI'],
             datasets: [{
               label: 'Deal Value ($M)',
-              // AWS/OpenAI is $38,000M, Crusoe is $1,380M. Others in millions.
               data: [38000, 1380, 61, 40], 
               backgroundColor: 'rgba(50, 96, 118, 0.75)', /* Teal Green (#326076) with transparency */
               borderColor: '#5F5950', /* Coffee Pot */
@@ -265,11 +264,20 @@
             maintainAspectRatio: false,
             scales: {
               y: { 
-                beginAtZero: true, 
+                type: 'logarithmic', // Key change: Logarithmic scale
+                beginAtZero: false, 
                 title: { 
                   display: true, 
-                  text: 'Deal Value (Millions USD)',
+                  text: 'Deal Value (Millions USD) - Log Scale',
                   font: { size: 14 }
+                },
+                // Optional: Customize log ticks for better readability, skipping labels below 10M
+                ticks: {
+                    callback: function(value, index, values) {
+                        if (value >= 1 && (value === 1 || value === 10 || value === 100 || value === 1000 || value === 10000 || value === 30000)) {
+                            return '$' + value.toLocaleString();
+                        }
+                    }
                 }
               },
               x: {
@@ -285,7 +293,7 @@
                 },
                 title: {
                     display: true,
-                    text: 'Top AI Funding Deals (Nov 01–07, 2025)',
+                    text: 'Top AI Funding Deals (Nov 01–07, 2025) - Logarithmic Scale',
                     font: { size: 16, weight: 'bold' }
                 }
             }
