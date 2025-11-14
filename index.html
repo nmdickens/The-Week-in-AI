@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI Pulse Weekly: Week of November 01 – November 07, 2025</title>
+  <title>AI Pulse Weekly: Week of November 8 – November 14, 2025</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Leafy Green palette: #5F5950, #326076, #C8BF6A, #BDB6AD */
     :root {
-      --primary-dark: #5F5950;     /* Coffee Pot (main text/titles) */
-      --secondary-accent: #326076; /* Teal Green (buttons, borders, accents) */
-      --tertiary-highlight: #C8BF6A;/* Olive (KPI values) */
-      --background-light: #BDB6AD; /* Taupe (light background) */
+      /* Prim and Dapper palette: #1E2022, #5E4748, #C5BDB5, #365164 */
+      --primary-dark: #1E2022;     /* Ebony (main text/titles) [cite: 9, 10, 22, 23]*/
+      --secondary-accent: #5E4748; /* Carafe (buttons, borders, accents) [cite: 11, 12, 22, 24]*/
+      --tertiary-highlight: #365164;/* Charcoal (KPI values) [cite: 15, 16, 22, 26]*/
+      --background-light: #C5BDB5; /* Taupe (light background) [cite: 13, 14, 22, 25]*/
     }
     /* Base Styles */
     body { font-family: 'Inter', sans-serif; background: var(--background-light); color: var(--primary-dark); }
@@ -40,7 +40,7 @@
     a.btn { background: var(--secondary-accent); color: #fff; }
     a.btn:hover { background: var(--primary-dark); color: var(--background-light); }
     .section-title { color: var(--primary-dark); }
-    .subtle { color: #5F5950; opacity: 0.7; }
+    .subtle { color: var(--primary-dark); opacity: 0.7; }
     .footer-note { color: var(--secondary-accent); }
     .text-light-contrast { color: var(--background-light); }
     
@@ -64,47 +64,47 @@
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <header class="text-center mb-10">
       <h1 class="text-4xl md:text-5xl font-bold text-[var(--primary-dark)] mb-3">AI Pulse Weekly</h1>
-      <p class="text-lg md:text-xl subtle">Interactive Summary • November 01 – November 07, 2025</p>
+      <p class="text-lg md:text-xl subtle">Interactive Summary • November 8 – November 14, 2025</p>
 
       <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
         <div class="card p-4 rounded-xl kpi text-center">
-          <p class="text-3xl font-bold value">$5 Trillion</p>
-          <p class="text-sm subtle mt-1">Historic market valuation achieved by chipmaker **Nvidia**.</p>
+          <p class="text-3xl font-bold value">$192.7 Billion</p>
+          <p class="text-sm subtle mt-1">Venture Capital poured into AI startups year-to-date[cite: 176, 227].</p>
         </div>
         <div class="card p-4 rounded-xl kpi text-center">
-          <p class="text-3xl font-bold value">$38 Billion</p>
-          <p class="text-sm subtle mt-1">Value of the multi-year **AWS-OpenAI** strategic compute partnership.</p>
+          <p class="text-3xl font-bold value">5x Surge</p>
+          <p class="text-sm subtle mt-1">In million-dollar lawsuits faced by SMBs due to unchecked AI adoption[cite: 177, 246].</p>
         </div>
         <div class="card p-4 rounded-xl kpi text-center">
-          <p class="text-3xl font-bold value">55%</p>
-          <p class="text-sm subtle mt-1">AI adoption rate among U.S. Small and Mid-sized Businesses (**SMBs**).</p>
+          <p class="text-3xl font-bold value">$1 Trillion</p>
+          <p class="text-sm subtle mt-1">Predicted valuation for the global data center equipment market by 2030[cite: 191, 229].</p>
         </div>
       </div>
     </header>
 
     <div class="flex justify-center gap-4 mb-8">
-      <a class="btn inline-block font-bold py-2 px-6 rounded-full transition-colors duration-300 shadow-lg" href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/a36737594a710698fddd9a219f85e3040be3f037/AI%20Weekly%20Pulse%2007NOV25.pdf" target="_blank" rel="noopener">Read Full Report</a>
-      <a class="btn inline-block font-bold py-2 px-6 rounded-full transition-colors duration-300 shadow-lg" href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/bd81a442e570cbe2ff381f5fde060ed49f7f40dd/The_Silicon_Curtain_vs.m4a" rel="noopener">Listen to Audio Overview</a>
+      <a class="btn inline-block font-bold py-2 px-6 rounded-full transition-colors duration-300 shadow-lg" href="#" target="_blank" rel="noopener">Read Full Report</a>
+      <a class="btn inline-block font-bold py-2 px-6 rounded-full transition-colors duration-300 shadow-lg" href="#" rel="noopener">Listen to Audio Overview</a>
     </div>
 
     <div class="card p-6 rounded-xl mb-6 shadow-md" id="executive-summary">
       <h3 class="text-xl font-bold mb-3 section-title text-center">Executive Summary</h3>
       <div class="text-left text-gray-800 leading-relaxed space-y-3">
-        <p>The week solidified Artificial Intelligence's position as the primary axis of **global technological and geopolitical competition**, characterized by the severe concentration of value in the foundational **compute layer**. This market confidence was epitomized by Nvidia achieving a historic **$5 trillion valuation**, cementing the consensus that advanced compute infrastructure remains the scarcity asset defining this technology decade.</p>
-        <p>Concurrently, global governance began to fragment, with aggressive **US export controls** aimed at China and a softening regulatory approach in the EU. Conversely, the **SMB market** moved decisively past experimentation, with adoption surging to **55%**, proving that accessible, applied AI solutions are now fundamental operational utilities.</p>
-        <p class="font-bold mt-4">Takeaway: Compute infrastructure is the defining competitive asset. Strategic success depends on mitigating **geopolitical risk** exposure in hardware supply chains, while rapidly deploying specialized AI agents internally to capture quantifiable efficiency gains.</p>
+        <p>The AI industry has reached a crucial **inflection point**, shifting focus from raw model capability to systemic constraints and deployment architectures[cite: 174, 225]. This shift is defined by the definitive emergence of **energy scarcity** as the primary constraint on hyperscaler expansion and a central vector of geopolitical rivalry[cite: 174, 226]. The technological frontier is now fully focused on **Agentic AI**, moving beyond basic generative tasks to systems capable of autonomous, multi-step workflow execution[cite: 175, 226].</p>
+        <p>Meanwhile, regulatory focus is maturing, demonstrated by Europe's move toward sector-specific governance, particularly addressing **concentration risk** in the highly dependent financial sector[cite: 174, 180, 226]. Venture capital investment has intensified, surpassing $192.7 billion year-to-date, aggressively favoring companies that provide massive leverage on engineering and business efficiency[cite: 176, 198, 227].</p>
+        <p class="font-bold mt-4">Takeaway: The global AI race is now fundamentally a contest for **power and physical infrastructure**, not just chips[cite: 178, 228]. Enterprise value is rapidly shifting to autonomous agent deployment at scale[cite: 179, 194].</p>
       </div>
     </div>
 
     <div class="card p-6 rounded-xl mb-10 shadow-md">
       <h3 class="text-xl font-bold mb-3 section-title text-center">What This Means for SMBs</h3>
       <div class="text-left text-gray-800 leading-relaxed space-y-3">
-        <p>AI adoption among U.S. small and mid-sized businesses surged significantly, increasing 41% year-over-year to reach **55% in 2025**. The financial returns are concrete, with **91% of SMBs** reporting measurable revenue boosts from their AI usage, and a deep dive into generative AI adopters showing that 51% experienced revenue increases of **10% or more**. Operational savings are substantial, with businesses reporting productivity gains of over **20 hours** and cost reductions ranging from **$500 to $2,000 monthly**.</p>
-        <p>This rapid uptake is largely due to the SMB sector's structural advantage of fewer approval layers and faster decision-making. The highest immediate return is found in application zones with structured data, such as **marketing automation** and **customer operations**.</p>
+        <p>AI adoption among Small and Medium-Sized Businesses (**SMBs**) has reached a critical mass, with 53% of firms currently using AI for tactical and pragmatic benefits like enhanced productivity[cite: 182, 233]. This rapid integration is driven by a strong willingness to pay a premium for AI features seamlessly embedded in existing business applications[cite: 182, 237].</p>
+        <p>However, a dangerous **"productivity-risk paradox"** exists, where high business confidence dangerously coexists with a profound gap in implementation readiness (only 29% feel prepared)[cite: 182, 241]. This is compounded by escalating legal risk, evidenced by a fivefold surge in million-dollar lawsuits specifically tied to rapid, unchecked AI adoption in sensitive areas like HR and finance[cite: 177, 184, 187, 246]. This preparation gap elevates Managed Service Providers (MSPs) to critical "business efficiency consultants"[cite: 183, 188, 242, 243].</p>
         <p class="text-sm subtle mt-4">
-          <span class="font-bold">SMB strategy must prioritize rapid, systematic integration.</span> Ready to capture proven **$500 to $2,000 in monthly savings**?
+          <span class="font-bold">SMB strategy must prioritize Risk Mitigation and Governance.</span> Ready to address your **unmitigated legal exposure**?
           <a class="underline font-medium" href="#" target="_blank" rel="noopener">
-            Start your AI integration audit now.
+            Let's talk about your compliance strategy.
           </a>
         </p>
       </div>
@@ -115,7 +115,7 @@
       <button class="nav-button py-2 px-4 rounded-full text-sm sm:text-base" data-target="investment">Investment</button>
       <button class="nav-button py-2 px-4 rounded-full text-sm sm:text-base" data-target="policy">Policy</button>
       <button class="nav-button py-2 px-4 rounded-full text-sm sm:text-base" data-target="impact">Impact</button>
-      <button class="nav-button py-2 px-4 rounded-full text-sm sm:text-base" data-target="emerging">Players</button>
+      <button class="nav-button py-2 px-4 rounded-full text-sm sm:text-base" data-target="emerging">Agents</button>
     </nav>
     
     <main>
@@ -123,9 +123,9 @@
         <div class="mb-8">
           <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Breakthroughs in AI Technology</h2>
           <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
-            <p>The predominant technological theme is the maturation of **"Agentic Workflows,"** which positions AI models less as passive interfaces and more as **autonomous systems** capable of executing complex, multi-step tasks. This trend is permeating development environments through tools like Cursor 2.0 and mass-market products like **Zoom AI Companion 3.0**.</p>
-            <p>Model **specialization** continues to drive compliance-focused upgrades, evidenced by the release of **Claude for Finance**, which includes features necessary for stringent regulatory review, such as policy-aware redaction and cell lineage. Furthermore, generative media made significant strides in efficiency and capability, with Google announcing the **Veo 3 Fast** model, which offers faster video generation and gained the critical ability to create videos with **sound**.</p>
-            <p class="font-bold mt-4">Takeaway: The core technical shift is from conversational AI toward **autonomous execution**. The market prioritizes specialized models built for high-stakes, **compliance-heavy** enterprise environments.</p>
+            <p>The core technological trajectory is shifting rapidly from content generation via LLMs to highly complex, autonomous **Agentic AI** systems capable of operating full desktops and browsers to complete multi-step workflows[cite: 190, 194, 304, 305]. This shift necessitates a new focus on **system-level resilience**, moving governance and security frameworks beyond the robustness of a single model to encompass the entire distributed agent ecosystem[cite: 190, 209, 275, 306].</p>
+            <p>The greatest bottleneck is now **computation and power**, driving hyperscalers to commit astronomical capital expenditure—projected at $360–370 billion in 2025—to secure resource superiority[cite: 190, 195, 309, 310]. Innovation is intensely focused on specialized, **AI-ready electrical architectures** and innovative cooling techniques, confirming that the constraint is now the ability to deliver power at scale, not just the manufacturing of silicon[cite: 192, 195, 312, 317].</p>
+            <p class="font-bold mt-4">Takeaway: The technology frontier is defined by **autonomous AI agents** [cite: 194] and next-generation compute, relying on the convergence of High-Performance Computing (HPC) and AI using proprietary accelerators[cite: 193, 196, 320].</p>
           </div>
         </div>
       </section>
@@ -134,16 +134,16 @@
         <div class="mb-8">
           <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">AI Industry Investment &amp; M&amp;A</h2>
           <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
-            <p>The investment week affirmed the overwhelming market belief that **AI infrastructure** is the foundation of economic growth, with the chipmaker Nvidia reaching a historic **$5 trillion valuation**. This confidence is underpinned by the competitive imperative for compute capacity, evidenced by Alphabet, Meta, and Microsoft all reporting **"jaw-dropping increases"** in capital expenditures dedicated to securing future AI hardware.</p>
-            <p>The critical dependency on infrastructure providers was quantified by the massive **$38 billion** strategic partnership between **AWS and OpenAI**. Venture Capital also focused on resolving infrastructure bottlenecks, with **Crusoe Energy Systems** securing **$1.38 billion** to convert stranded energy sources into electricity for AI data centers, signaling the escalating importance of power sourcing.</p>
-            <p class="font-bold mt-4">Takeaway: Investment remains hyper-concentrated in core compute infrastructure. Capital is strategically flowing into companies addressing the critical constraints of **power and data center efficiency**.</p>
+            <p>Venture Capital (VC) investment in AI has reached a record-setting pace, with **$192.7 billion** poured into startups so far in 2025, marking the first year AI companies have captured over 50% of total global VC dollars[cite: 198, 281]. This influx is creating a severely **bifurcated market**, where multi-billion-dollar rounds are concentrated in foundational model and high-leverage application firms[cite: 198, 202, 282, 283].</p>
+            <p>The primary investment thesis has shifted to platforms that deliver immediate, large-scale leverage on scarce, high-cost human capital, favoring demonstrable ROI[cite: 198, 285]. The **coding automation sector** is considered "ultra-hot," exemplified by the massive **$2.3 billion Series D** funding for Cursor, which achieved a $29.3 billion valuation[cite: 176, 199, 287]. Strategic M&A underscores AI's criticality in national security (Veritas acquiring MetroStar) and biopharma ($70 billion in M&A)[cite: 200, 203, 294, 296].</p>
+            <p class="font-bold mt-4">Takeaway: IPO diligence now requires **quantifiable proof** of AI's impact on revenue and efficiency, enforcing a new era of financial rigor[cite: 201, 204, 299, 301].</p>
           </div>
         </div>
         <div class="card p-6 rounded-xl shadow-md">
-          <h3 class="font-bold text-xl mb-4 section-title text-center">Top Funding Rounds (Nov 01–07)</h3>
+          <h3 class="font-bold text-xl mb-4 section-title text-center">Top Funding Rounds (Nov 8–14)</h3>
           <div class="chart-container"><canvas id="dealsChart"></canvas></div>
           <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
-            The Compute War demands **guaranteed capacity and green power**. Need a strategy brief on **AI infrastructure dependency and sourcing**?
+            Capital is consolidating. Need a strategy brief on **quantifiable AI ROI** for your next funding round?
             <a class="underline font-medium" href="#" target="_blank" rel="noopener">I can help you package it.</a>
           </p>
         </div>
@@ -153,16 +153,16 @@
         <div class="mb-8">
           <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Global AI Policy &amp; Governance</h2>
           <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
-            <p>Global AI policy hardened the **"Silicon Curtain,"** signaling a deepening, high-stakes competition between the US and China for dominance in advanced semiconductor technology. The most impactful move was the explicit tightening of U.S. export controls, blocking Nvidia from selling even scaled-down variants of its advanced **Blackwell B30A AI chips** to the Chinese market. China is actively responding by channeling **"colossal investments"** into its domestic chip industry.</p>
-            <p>In Europe, the regulatory landscape showed signs of erosion as the European Commission began considering **"targeted implementation delays"** for key provisions of the landmark **EU AI Act**, a direct consequence of heavy lobbying from US technology giants and political pressure from the Trump Administration.</p>
+            <p>Global AI policy is maturing beyond generalized frameworks toward targeted, **sector-specific governance**, with the European Union (EU) leading the effort[cite: 206, 210, 256]. The European Parliament’s ECON report on the financial sector provides a key roadmap, warning specifically about **systemic concentration risk** due to heavy reliance on a small number of Third-Party Technology Providers (TPPs)[cite: 206, 210, 258]. The report calls for continuous monitoring of the Digital Operational Resilience Act (DORA) to manage these critical points of failure[cite: 206, 259].</p>
+            <p>Crucially, policymakers are shifting focus to **implementation** and consistent application of existing legislation, explicitly cautioning against a "one-size-fits-all approach" and "gold-plating" regulations[cite: 207, 262]. A global survey revealed the **EU receives the highest overall public confidence** regarding its ability to manage AI responsibly, a crucial non-economic asset[cite: 208, 211, 269].</p>
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          <div class="card p-4 rounded-xl shadow-sm"><h3 class="font-bold text-lg mb-2 section-title">U.S.-China: Technological Containment</h3><p class="text-left">Export controls escalated, blocking Nvidia’s scaled-down B30A chips, aiming to choke off China's immediate AI training capacity.</p></div>
-          <div class="card p-4 rounded-xl shadow-sm"><h3 class="font-bold text-lg mb-2 section-title">Europe: Regulatory Pressure</h3><p class="text-left">The EU AI Act faces "targeted implementation delays" due to external pressure, risking a dilution of global AI governance standards.</p></div>
+          <div class="card p-4 rounded-xl shadow-sm"><h3 class="font-bold text-lg mb-2 section-title">EU: Concentration Risk</h3><p class="text-left">Targeted governance focusing on financial stability by mitigating the systemic risk of over-reliance on a few dominant AI providers[cite: 206, 210, 258].</p></div>
+          <div class="card p-4 rounded-xl shadow-sm"><h3 class="font-bold text-lg mb-2 section-title">Agents: Governance Gap</h3><p class="text-left">The immediate shift to autonomous Agentic AI systems creates an urgent governance gap, demanding new technical standards for isolation and system resilience[cite: 209, 212, 274, 275].</p></div>
         </div>
         <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
-          The global landscape is **bifurcating**. Let's draft your **Geopolitical Mitigation Strategy** to navigate **export controls and regulatory fragmentation**.
+          Policy is shifting to implementation. Let's draft your **AI Governance Framework** to manage **Agentic AI and concentration risk**.
           <a class="underline font-medium" href="#" target="_blank" rel="noopener">Start your framework today.</a>
         </p>
       </section>
@@ -171,34 +171,34 @@
         <div class="mb-8">
           <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Societal &amp; Economic Impact</h2>
           <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
-            <p>The prevailing narrative of mass AI-driven job displacement was tempered by research finding that AI productivity gains account for less than **one percent of global layoffs in 2025**. However, the analysis highlights a structurally profound impact on labor markets, as many firms adopt a **"growth without hiring"** model, expanding output by leveraging AI tools to absorb increased workload without expanding headcount.</p>
-            <p>This has led to a **"hollowing out"** of entry-level professional roles, with studies showing a sharp **20% decline in junior coding positions** since late 2022. Separately, a British Courts Minister called for a formal debate on the ethical and legal implications of integrating AI into judicial decision-making, including whether AI should calculate damages or serve an adjudicative function.</p>
-            <p class="font-bold mt-4">Takeaway: The immediate societal challenge is protecting the **junior talent pipeline** from structural contraction and ensuring policymakers rapidly address the ethical integration of AI into **specialized, high-stakes domains**.</p>
+            <p>The structural impact of AI on the labor market reveals a sharp polarization that systematically divides professions based on task vulnerability[cite: 214, 331]. **Execution-based creative roles**, such as Computer Graphics Artists and Photographers, are experiencing acute declines in job postings (32.7% and 28.1% year-over-year, respectively) as these production-heavy tasks are automated[cite: 215, 220, 333, 334].</p>
+            <p>**Energy scarcity** has emerged as the most critical structural constraint on AI expansion, fundamentally redefining the US-China competition into a **hyper-competition over energy systems** and critical infrastructure[cite: 217, 221, 342, 344]. Global data center electricity consumption is projected to nearly triple by 2035 (from 415 TWh to 1,200 TWh)[cite: 218, 345]. Furthermore, prioritizing AI innovation over diligent IT hygiene creates severe **legacy operational risk**, as exemplified by the Checkout.com breach which involved an improperly decommissioned cloud file storage system[cite: 219, 222, 348].</p>
+            <p class="font-bold mt-4">Takeaway: The **energy constraint** is now the primary determinant of AI geopolitical supremacy[cite: 221, 342, 345]. Companies must address IT debt to mitigate operational risk[cite: 222, 347].</p>
           </div>
         </div>
         <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
-          Protect your talent pipeline. Let's design a **reskilling program** to build **AI-enhanced competencies** and mitigate **junior role attrition**.
+          The labor market is polarizing. Let's design the **KPIs and training plan** to formalize **AI competency** across your staff and address displacement.
           <a class="underline font-medium" href="#" target="_blank" rel="noopener">Design your reskilling plan.</a>
         </p>
       </section>
       
       <section class="content-section" id="emerging">
         <div class="mb-8">
-          <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Emerging Players: Companies to Watch</h2>
+          <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">The Agentic AI Frontier</h2>
           <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-4">
-            <p>Strategic capital is flowing into solutions that address the critical constraints of compute and power, as well as high-value, specialized vertical applications. These three companies represent key funding trends this week:</p>
+            <p>The immediate technological shift to fully autonomous **Agentic AI** systems—capable of operating a full desktop or browser autonomously [cite: 1, 274, 305]—is creating novel governance and technical challenges. This frontier requires specialized focus on system security and resilience[cite: 1, 275].</p>
 
             <div class="space-y-3 p-4 card rounded-xl shadow-sm">
-                <p><span class="font-bold text-[var(--tertiary-highlight)]">Crusoe Energy Systems:</span> Secured **$1.38 Billion** in financing to accelerate its innovative approach of converting stranded energy into electricity for AI data center workloads.</p>
-                <p><span class="font-bold text-[var(--tertiary-highlight)]">Giga AI:</span> Closed a **$61 Million** Series A round, specializing in automating enterprise customer support using "emotionally intelligent, real-time agents" in high-compliance environments.</p>
-                <p><span class="font-bold text-[var(--tertiary-highlight)]">Fastbreak AI:</span> Secured **$40 Million** in Series A funding to expand its AI-driven sports operations software, a global leader in professional sports scheduling, into the lucrative youth sports market.</p>
+                <p><span class="font-bold text-[var(--tertiary-highlight)]">System-Level Resilience:</span> Future frameworks must address technical standards for **isolation and authenticated communication** across complex, distributed agent ecosystems[cite: 209, 275, 307].</p>
+                <p><span class="font-bold text-[var(--tertiary-highlight)]">Governance Gap:</span> The rise of autonomous agents demands **urgent new technical governance frameworks** focused on incident response that move beyond the robustness of a single foundational model[cite: 212, 275].</p>
+                <p><span class="font-bold text-[var(--tertiary-highlight)]">Local Accountability:</span> Local governments, like the City of Austin, are demonstrating agility by developing **AI Accountability Frameworks** through community engagement, focusing on fairness and transparency[cite: 276, 277].</p>
             </div>
 
-            <p class="font-bold mt-4">Takeaway: Investment validates the need to solve **infrastructure power constraints** and the market's enthusiasm for **specialized, compliant agentic AI** in vertical sectors.</p>
+            <p class="font-bold mt-4">Takeaway: The agent effectively functions as a new operating system layer, necessitating **secure, high-speed integration** across diverse cloud infrastructure[cite: 307].</p>
           </div>
         </div>
         <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
-          Keep ahead of the curve. <span class="font-bold">Let's analyze how the focus on specialized, vertical AI players impacts your competitive position.</span>
+          Keep ahead of the curve. <span class="font-bold">Let's analyze how Agentic AI impacts your operations and security protocols.</span>
           <a class="underline font-medium" href="#" target="_blank" rel="noopener">Schedule a strategy session today.</a>
         </p>
       </section>
@@ -240,22 +240,23 @@
           technologySection.classList.add('active');
       }
 
-      // --- Chart.js Investment Data Update with LOGARITHMIC SCALE ---
+      // --- Chart.js Investment Data Update ---
       const canvas = document.getElementById('dealsChart');
       if (canvas) {
         const ctx = canvas.getContext('2d');
-        // Leafy Green Palette: Secondary Accent #326076, Primary Dark #5F5950
+        // Prim and Dapper Palette: Secondary Accent #5E4748, Primary Dark #1E2022
         new Chart(ctx, {
           type: 'bar',
           data: {
-            // Data in Millions of USD
-            // AWS/OpenAI ($38,000M), Crusoe ($1,380M), Giga AI ($61M), Fastbreak AI ($40M)
-            labels: ['AWS / OpenAI', 'Crusoe Energy Systems', 'Giga AI', 'Fastbreak AI'],
+            // Data updated to reflect major funding rounds for the week of Nov 8–14
+            // Cursor ($2.3B), Alembic ($145M)
+            labels: ['Cursor (Coding Automation)', 'Alembic (Data Analytics)'],
             datasets: [{
               label: 'Deal Value ($M)',
-              data: [38000, 1380, 61, 40], 
-              backgroundColor: 'rgba(50, 96, 118, 0.75)', /* Teal Green (#326076) with transparency */
-              borderColor: '#5F5950', /* Coffee Pot */
+              // Data in millions. $2.3B = 2300M, $145M = 145M
+              data: [2300, 145], 
+              backgroundColor: 'rgba(94, 71, 72, 0.75)', /* Carafe (#5E4748) with transparency */
+              borderColor: '#1E2022', /* Ebony */
               borderWidth: 1
             }]
           },
@@ -264,20 +265,11 @@
             maintainAspectRatio: false,
             scales: {
               y: { 
-                type: 'logarithmic', // Key change: Logarithmic scale
-                beginAtZero: false, 
+                beginAtZero: true, 
                 title: { 
                   display: true, 
-                  text: 'Deal Value (Millions USD) - Log Scale',
+                  text: 'Deal Value (Millions USD)',
                   font: { size: 14 }
-                },
-                // Optional: Customize log ticks for better readability, skipping labels below 10M
-                ticks: {
-                    callback: function(value, index, values) {
-                        if (value >= 1 && (value === 1 || value === 10 || value === 100 || value === 1000 || value === 10000 || value === 30000)) {
-                            return '$' + value.toLocaleString();
-                        }
-                    }
                 }
               },
               x: {
@@ -293,7 +285,7 @@
                 },
                 title: {
                     display: true,
-                    text: 'Top AI Funding Deals (Nov 01–07, 2025) - Logarithmic Scale',
+                    text: 'Top AI Funding Deals (Nov 8–14, 2025)',
                     font: { size: 16, weight: 'bold' }
                 }
             }
