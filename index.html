@@ -12,24 +12,31 @@
   <style>
     /* Early Harvest Palette: #554B45, #A06АВ4, #D30907, #DDDBD4 */
     :root {
-      --primary-dark: #554B45;     /* Taupe/Dark Brown (main text/titles) */
-      --secondary-accent: #A06АВ4; /* Lilac (buttons, borders, accents) */
-      --tertiary-highlight: #D30907;/* Scarlet (KPI values) */
-      --background-light: #DDDBD4; /* Taupe/Light Gray (light background) */
+      --primary-dark: #554B45;     /* Taupe/Dark Brown (main text/titles)*/
+      --secondary-accent: #A06АВ4; /* Lilac (buttons, borders, accents)*/
+      --tertiary-highlight: #D30907;/* Scarlet (KPI values)*/
+      --background-light: #DDDBD4; /* Taupe/Light Gray (light background)*/
       --nav-bar-bg: #fff;
     }
     /* Base Styles */
     body { font-family: 'Inter', sans-serif; background: var(--background-light); color: var(--primary-dark); }
+    
+    /* --- NAVIGATION BUTTON STYLING (MATCHING PROVIDED WORKING TEMPLATE) --- */
     .nav-button { 
         transition: all 0.3s ease; 
-        background: var(--nav-bar-bg);
-        border: 1px solid transparent; 
+        /* The text color inherits from body (var(--primary-dark)) */
     }
-    /* Hover style: Dark Taupe background, White text */
+    .nav-button.active { 
+        background: var(--secondary-accent); 
+        color: #fff; 
+        font-weight: 600; 
+    }
     .nav-button:not(.active):hover { 
         background: var(--primary-dark); 
         color: #fff; 
     }
+    /* --------------------------------------------------------------------- */
+
     .content-section { display: none; }
     .content-section.active { display: block; }
     /* Card Styles - Adjusted border color */
@@ -77,15 +84,15 @@
       <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
         <div class="card p-4 rounded-xl kpi text-center">
           <p class="text-3xl font-bold value">$900 Million</p>
-          [cite_start]<p class="text-sm subtle mt-1">Luma AI's record investment to secure **Project Halo** supercluster access[cite: 1, 2].</p>
+          <p class="text-sm subtle mt-1">Luma AI's record investment to secure **Project Halo** supercluster access.</p>
         </div>
         <div class="card p-4 rounded-xl kpi text-center">
           <p class="text-3xl font-bold value">75%</p>
-          [cite_start]<p class="text-sm subtle mt-1">Proportion of SMBs actively allocating capital toward **AI**[cite: 13].</p>
+          <p class="text-sm subtle mt-1">Proportion of SMBs actively allocating capital toward **AI**.</p>
         </div>
         <div class="card p-4 rounded-xl kpi text-center">
           <p class="text-3xl font-bold value">17 Seconds</p>
-          [cite_start]<p class="text-sm subtle mt-1">New benchmark for high-quality video generation set by **xAI's Grok Imagine**[cite: 6].</p>
+          <p class="text-sm subtle mt-1">New benchmark for high-quality video generation set by **xAI's Grok Imagine**.</p>
         </div>
       </div>
     </header>
@@ -98,17 +105,17 @@
     <div class="card p-6 rounded-xl mb-6 shadow-md" id="executive-summary">
       <h3 class="text-xl font-bold mb-3 section-title text-center">Executive Summary</h3>
       <div class="text-left text-gray-800 leading-relaxed space-y-3">
-        [cite_start]<p>This week marked a pivotal shift in the AI sector, driven by an escalating race for massive computational infrastructure necessary for next-generation models[cite: 2]. [cite_start]Financial markets reacted with a record **$900 million investment** into Luma AI, specifically to secure access to a colossal 2-gigawatt supercluster for training World Models[cite: 1].</p>
-        [cite_start]<p>Concurrently, regulatory tension intensified globally, with the EU introducing a controversial "**Digital Omnibus**" proposal that sparked concerns about eroding fundamental data privacy safeguards[cite: 3]. [cite_start]Compute sovereignty is now the primary competitive differentiator, evidenced by Luma AI's funding explicitly tied to Project Halo infrastructure, redefining market entry costs for AGI developers[cite: 2, 4].</p>
-        [cite_start]<p class="font-bold mt-4">Takeaway: The AGI race is now a **compute race** demanding billion-dollar infrastructure commitments[cite: 7]. [cite_start]Regulatory friction is high, specifically over data privacy and IP rights protection in Europe[cite: 9].</p>
+        [cite_start]<p>This week marked a pivotal shift in the AI sector, driven by an escalating race for massive computational infrastructure necessary for **next-generation models**[cite: 173]. [cite_start]Financial markets reacted with a record **$900 million investment** into Luma AI, specifically to secure access to a colossal 2-gigawatt supercluster for training World Models[cite: 174, 175].</p>
+        [cite_start]<p>Concurrently, regulatory tension intensified globally, with the EU introducing a controversial "**Digital Omnibus**" proposal that sparked concerns about eroding fundamental data privacy safeguards[cite: 174, 177]. [cite_start]Compute sovereignty is now the primary competitive differentiator, evidenced by Luma AI's funding explicitly tied to Project Halo infrastructure, redefining market entry costs for AGI developers[cite: 175].</p>
+        [cite_start]<p class="font-bold mt-4">Takeaway: The AGI race is now a **compute race** demanding billion-dollar infrastructure commitments[cite: 178]. [cite_start]Regulatory friction is high, specifically over data privacy and IP rights protection in Europe[cite: 180].</p>
       </div>
     </div>
 
     <div class="card p-6 rounded-xl mb-10 shadow-md">
       <h3 class="text-xl font-bold mb-3 section-title text-center">What This Means for SMBs</h3>
       <div class="text-left text-gray-800 leading-relaxed space-y-3">
-        [cite_start]<p>AI has transitioned from an experimental capability to an **operational necessity** within the Small and Medium-Sized Business (SMB) ecosystem, with investment momentum confirming its high return on investment[cite: 11]. [cite_start]Three out of four SMBs (**75%**) are actively allocating capital toward AI [cite: 13][cite_start], and growing businesses are nearly twice as likely to be investing compared to stagnating firms[cite: 12].</p>
-        [cite_start]<p>The majority of SMBs (**53%**) are now utilizing AI solutions, confirming a **market-wide strategic shift**[cite: 13]. [cite_start]High-value use cases center on operational resilience, including AI-driven **cybersecurity** for continuous threat monitoring and automated data classification in IT management and finance[cite: 15]. [cite_start]SMBs demonstrate a strong willingness to pay up to **10% more** for AI features integrated directly into existing business applications[cite: 14].</p>
+        [cite_start]<p>AI has transitioned from an experimental capability to an **operational necessity** within the Small and Medium-Sized Business (SMB) ecosystem, with investment momentum confirming its high return on investment[cite: 182, 187]. [cite_start]Three out of four SMBs (**75%**) are actively allocating capital toward AI, and growing businesses are nearly twice as likely to be investing compared to stagnating firms[cite: 183].</p>
+        [cite_start]<p>The majority of SMBs (**53%**) are now utilizing AI solutions, confirming a **market-wide strategic shift**[cite: 184]. [cite_start]High-value use cases center on operational resilience, including AI-driven **cybersecurity** for continuous threat monitoring and automated data classification in IT management and finance[cite: 186]. [cite_start]SMBs demonstrate a strong willingness to pay up to **10% more** for AI features integrated directly into existing business applications[cite: 185].</p>
         <p class="text-sm subtle mt-4">
           <span class="font-bold">SMB strategy must prioritize embedded solutions for maximum ROI.</span> Ready to adopt AI for **operational resilience and compliance**?
           <a class="underline font-medium" href="#" target="_blank" rel="noopener">
@@ -131,9 +138,9 @@
         <div class="mb-8">
           <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Breakthroughs in AI Technology</h2>
           <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
-            [cite_start]<p>The competitive landscape intensified with significant advances in both **multimodal generation speed** and conversational utility [cite: 20][cite_start]. xAI launched **Grok Imagine**, a feature capable of generating short, high-quality video clips from text prompts in approximately **17 seconds**, setting a new benchmark for generative speed[cite: 6, 21].</p>
-            [cite_start]<p>Meanwhile, OpenAI released **GPT-5.1**, focusing on practical enhancements like improved speed, personalization, and the testing of a collaborative **Group Chat** feature[cite: 21]. [cite_start]The industry is rapidly pivoting toward "**World Models**," multimodal AI systems that simulate physical reality and demand 1,000 to 10,000 times the data volume of current Large Language Models (LLMs)[cite: 2, 22].</p>
-            [cite_start]<p class="font-bold mt-4">Takeaway: The strategic shift is toward creating large "**World Models**" that simulate reality[cite: 26]. [cite_start]Future AI dominance depends on access to vast, curated, and diverse training data sets[cite: 27].</p>
+            [cite_start]<p>The competitive landscape intensified with significant advances in both **multimodal generation speed** and conversational utility [cite: 191][cite_start]. xAI launched **Grok Imagine**, a feature capable of generating short, high-quality video clips from text prompts in approximately **17 seconds**, setting a new benchmark for generative speed[cite: 176, 192].</p>
+            [cite_start]<p>Meanwhile, OpenAI released **GPT-5.1**, focusing on practical enhancements like improved speed, personalization, and the testing of a collaborative **Group Chat** feature[cite: 192]. [cite_start]The industry is rapidly pivoting toward "**World Models**," multimodal AI systems that simulate physical reality and demand 1,000 to 10,000 times the data volume of current Large Language Models (LLMs)[cite: 193].</p>
+            [cite_start]<p class="font-bold mt-4">Takeaway: The strategic shift is toward creating large "**World Models**" that simulate reality[cite: 197]. [cite_start]Future AI dominance depends on access to vast, curated, and diverse training data sets[cite: 198].</p>
           </div>
         </div>
       </section>
@@ -142,9 +149,9 @@
         <div class="mb-8">
           <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">AI Industry Investment &amp; M&amp;A</h2>
           <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
-            [cite_start]<p>Global AI investment was dominated by strategically targeted capital injections, emphasizing the acquisition and construction of immense **computational power** for AGI development[cite: 29]. [cite_start]Total startup funding reached **$1.03 billion** for the week, nearly doubling the previous year, driven almost entirely by one mega-deal[cite: 30].</p>
-            [cite_start]<p>**Luma AI** secured a landmark **$900 million Series C** funding from Humain, explicitly linking the capital to guaranteed access to the 2-gigawatt **Project Halo supercluster** in Saudi Arabia[cite: 31]. [cite_start]This focus on compute capacity was mirrored in the joint venture between **TCS and TPG**, committing up to **$2 billion** (₹18,000 crore) to expand the HyperVault AI-ready data center business in India[cite: 32].</p>
-            [cite_start]<p class="font-bold mt-4">Takeaway: Investment is concentrated on securing massive, dedicated **compute infrastructure**[cite: 34]. [cite_start]Financial trends show that AI hardware capacity is the new **barrier to entry**[cite: 36].</p>
+            [cite_start]<p>Global AI investment was dominated by strategically targeted capital injections, emphasizing the acquisition and construction of immense **computational power** for AGI development[cite: 200]. [cite_start]Total startup funding reached **$1.03 billion** for the week, nearly doubling the previous year, driven almost entirely by one mega-deal[cite: 201].</p>
+            [cite_start]<p>**Luma AI** secured a landmark **$900 million Series C** funding from Humain, explicitly linking the capital to guaranteed access to the 2-gigawatt **Project Halo supercluster** in Saudi Arabia[cite: 202]. [cite_start]This focus on compute capacity was mirrored in the joint venture between **TCS and TPG**, committing up to **$2 billion** (₹18,000 crore) to expand the HyperVault AI-ready data center business in India[cite: 203].</p>
+            [cite_start]<p class="font-bold mt-4">Takeaway: Investment is concentrated on securing massive, dedicated **compute infrastructure**[cite: 205]. [cite_start]Financial trends show that AI hardware capacity is the new **barrier to entry**[cite: 207].</p>
           </div>
         </div>
         <div class="card p-6 rounded-xl shadow-md">
@@ -161,13 +168,13 @@
         <div class="mb-8">
           <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Global AI Policy &amp; Governance</h2>
           <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
-            [cite_start]<p>Global governance is grappling with fostering AI innovation versus protecting fundamental rights, leading to significant legislative friction this week[cite: 38]. [cite_start]The European Commission introduced the **Digital Omnibus Regulation Proposal** on November 19, which immediately drew criticism for potentially undermining core **GDPR and ePrivacy safeguards**[cite: 39, 43].</p>
-            [cite_start]<p>The Omnibus risks eroding data privacy protections by potentially redefining "**personal data**" and creating a new broad "**legitimate interest**" basis for AI model training without user consent[cite: 40]. [cite_start]This regulatory volatility was compounded by a formal protest from 39 European creative organizations regarding **insufficient IP protection** in the EU AI Act's implementation[cite: 39, 44].</p>
+            [cite_start]<p>Global governance is grappling with fostering AI innovation versus protecting fundamental rights, leading to significant legislative friction this week[cite: 209]. [cite_start]The European Commission introduced the **Digital Omnibus Regulation Proposal** on November 19, which immediately drew criticism for potentially undermining core **GDPR and ePrivacy safeguards**[cite: 210, 211].</p>
+            [cite_start]<p>The Omnibus risks eroding data privacy protections by potentially redefining "**personal data**" and creating a new broad "**legitimate interest**" basis for AI model training without user consent[cite: 211]. [cite_start]This regulatory volatility was compounded by a formal protest from 39 European creative organizations regarding **insufficient IP protection** in the EU AI Act's implementation[cite: 210, 212].</p>
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          [cite_start]<div class="card p-4 rounded-xl shadow-sm"><h3 class="font-bold text-lg mb-2 section-title">EU: Digital Omnibus Conflict</h3><p class="text-left">The proposal risks fundamentally altering GDPR principles to reduce friction for large model providers, sparking a political battle over data privacy[cite: 40, 43].</p></div>
-          [cite_start]<div class="card p-4 rounded-xl shadow-sm"><h3 class="font-bold text-lg mb-2 section-title">Creative IP Protests</h3><p class="text-left">Creative industries demand robust, mandated IP protection against mass data scraping, arguing the AI Act's current guidelines are insufficient[cite: 41, 44].</p></div>
+          [cite_start]<div class="card p-4 rounded-xl shadow-sm"><h3 class="font-bold text-lg mb-2 section-title">EU: Digital Omnibus Conflict</h3><p class="text-left">The EU is facing a political battle over its Digital Omnibus weakening GDPR[cite: 214].</p></div>
+          [cite_start]<div class="card p-4 rounded-xl shadow-sm"><h3 class="font-bold text-lg mb-2 section-title">Creative IP Protests</h3><p class="text-left">Creative industries demand robust, mandated IP protection against mass data scraping[cite: 215].</p></div>
         </div>
         <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
           The regulatory landscape is highly volatile. Let's draft your **AI governance framework** to ensure **agile compliance and IP protection**.
@@ -179,9 +186,9 @@
         <div class="mb-8">
           <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Societal &amp; Economic Impact</h2>
           <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
-            [cite_start]<p>Widespread strategic implementation is yielding substantial productivity gains, with **96% of asset and wealth management firms** anticipating improved per-employee output[cite: 48]. [cite_start]However, this efficiency is linked to a “**quiet time in the labour market**,” where firms meet increased demand through augmentation rather than expanding headcount[cite: 48].</p>
-            [cite_start]<p>AI has become integral to daily life, with **67% of consumers engaging with AI tools daily** or multiple times per week, primarily for content summarizing and writing tasks[cite: 49]. [cite_start]Despite this high adoption, a significant **trust deficit persists**, as **70% of users double-check AI-generated responses**[cite: 50]. This necessitates a focus on **transparency and provenance** to achieve full consumer reliance.</p>
-            [cite_start]<p class="font-bold mt-4">Takeaway: The immediate economic risk is the **temporary cooling of white-collar hiring**[cite: 52]. [cite_start]The future of governance mandates human accountability and transparent AI supply chains[cite: 54].</p>
+            [cite_start]<p>Widespread strategic implementation is yielding substantial productivity gains, with **96% of asset and wealth management firms** anticipating improved per-employee output[cite: 219]. [cite_start]However, this efficiency is linked to a “**quiet time in the labour market**,” where firms meet increased demand through augmentation rather than expanding headcount[cite: 219].</p>
+            [cite_start]<p>AI has become integral to daily life, with **67% of consumers engaging with AI tools daily** or multiple times per week, primarily for content summarizing and writing tasks[cite: 220]. [cite_start]Despite this high adoption, a significant **trust deficit persists**, as **70% of users double-check AI-generated responses**, suggesting transparency and provenance remain major barriers to full consumer reliance[cite: 221].</p>
+            [cite_start]<p class="font-bold mt-4">Takeaway: AI is creating major efficiency gains, temporarily cooling white-collar hiring demand[cite: 223]. [cite_start]The future of governance mandates human accountability and transparent AI supply chains[cite: 225].</p>
           </div>
         </div>
         <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
@@ -197,12 +204,12 @@
             <p>Strategic capital and market validation were centered on companies enabling next-generation compute and those pioneering rights-respecting data models. These three companies represent key trends this week:</p>
 
             <div class="space-y-3 p-4 card rounded-xl shadow-sm">
-                [cite_start]<p><span class="font-bold text-[var(--tertiary-highlight)]">Luma AI:</span> Secured **$900 Million** Series C funding, explicitly to secure guaranteed access to the **2-gigawatt Project Halo supercluster** for World Model development[cite: 31, 374].</p>
-                [cite_start]<p><span class="font-bold text-[var(--tertiary-highlight)]">KLAY Vision:</span> Formalized an AI licensing deal with **Warner Music Group (WMG)**, making it the first AI company to partner with all three major music labels with a model trained exclusively on **licensed music**[cite: 42, 365].</p>
-                [cite_start]<p><span class="font-bold text-[var(--tertiary-highlight)]">TCS / TPG (HyperVault):</span> Announced a joint venture committing **up to $2 billion** to expand **AI-ready, GW-scale data centers in India**, accelerating regional compute availability[cite: 32].</p>
+                [cite_start]<p><span class="font-bold text-[var(--tertiary-highlight)]">Luma AI:</span> Secured **$900 Million** Series C funding, explicitly to secure guaranteed access to the **2-gigawatt Project Halo supercluster** for World Model development[cite: 202].</p>
+                [cite_start]<p><span class="font-bold text-[var(--tertiary-highlight)]">KLAY Vision:</span> Formalized an AI licensing deal with **Warner Music Group (WMG)**, making it the first AI company to partner with all three major music labels with a model trained exclusively on **licensed music**[cite: 213].</p>
+                [cite_start]<p><span class="font-bold text-[var(--tertiary-highlight)]">TCS / TPG (HyperVault):</span> Announced a joint venture committing **up to $2 billion** to expand **AI-ready, GW-scale data centers in India**, accelerating regional compute availability[cite: 203].</p>
             </div>
 
-            <p class="font-bold mt-4">Takeaway: Investment validates the need to solve **infrastructure power constraints** and the market's enthusiasm for **specialized, compliant agentic AI** in vertical sectors. [cite_start]KLAY provides a viable, rights-respecting model for GenAI commerce[cite: 45].</p>
+            <p class="font-bold mt-4">Takeaway: Investment validates the need to solve **infrastructure power constraints** and the market's enthusiasm for **specialized, compliant agentic AI** in vertical sectors. [cite_start]KLAY provides a viable, rights-respecting model for GenAI commerce[cite: 216].</p>
           </div>
         </div>
         <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
@@ -222,35 +229,17 @@
     document.addEventListener('DOMContentLoaded', () => {
       const navButtons = document.querySelectorAll('.nav-button');
       const sections = document.querySelectorAll('.content-section');
-      
-      // Define colors from CSS variables
-      const primaryDark = getComputedStyle(document.documentElement).getPropertyValue('--primary-dark').trim(); // #554B45
-      const secondaryAccent = getComputedStyle(document.documentElement).getPropertyValue('--secondary-accent').trim(); // #A06АВ4
 
-      // --- Navigation Logic (Guaranteed Inline Color Set with !important) ---
+      // --- Navigation Logic (Pure Class Toggling from working template) ---
       navButtons.forEach(btn => {
-        // Initial setup for inactive buttons
-        btn.style.setProperty('color', primaryDark, 'important');
-        btn.style.setProperty('background-color', 'var(--nav-bar-bg)', 'important');
-
         btn.addEventListener('click', () => {
           const target = btn.dataset.target;
-          
           // Deactivate all buttons and sections
-          navButtons.forEach(b => {
-            b.classList.remove('active');
-            // INACTIVE STATE: Text = Primary Dark, BG = White (set with !important)
-            b.style.setProperty('color', primaryDark, 'important');
-            b.style.setProperty('background-color', 'var(--nav-bar-bg)', 'important');
-          });
+          navButtons.forEach(b => b.classList.remove('active'));
           sections.forEach(s => s.classList.remove('active'));
 
           // Activate the clicked button and its corresponding section
           btn.classList.add('active');
-          // ACTIVE STATE: Text = White, BG = Lilac (secondary accent) (set with !important)
-          btn.style.setProperty('color', '#fff', 'important');
-          btn.style.setProperty('background-color', secondaryAccent, 'important');
-
           const targetSection = document.getElementById(target);
           if (targetSection) {
             targetSection.classList.add('active');
@@ -258,18 +247,15 @@
         });
       });
 
-      // Set the Technology button as active by default (initial load)
+      // Set the Technology button as active by default
       const technologyButton = document.querySelector('[data-target="technology"]');
       const technologySection = document.getElementById('technology');
       if (technologyButton && technologySection) {
           technologyButton.classList.add('active');
           technologySection.classList.add('active');
-          // Ensure initial active state colors are set inline with !important
-          technologyButton.style.setProperty('color', '#fff', 'important'); 
-          technologyButton.style.setProperty('background-color', secondaryAccent, 'important');
       }
 
-      // --- Chart.js Investment Data Update with LINEAR SCALE ---
+      // --- Chart.js Investment Data Update with LINEAR SCALE (FIXED) ---
       const canvas = document.getElementById('dealsChart');
       if (canvas) {
         const ctx = canvas.getContext('2d');
@@ -295,7 +281,7 @@
               y: { 
                 type: 'linear', 
                 beginAtZero: true, 
-                max: 1200, 
+                max: 1200, // Set a max slightly above the highest value ($1000M) for better visual spacing
                 title: { 
                   display: true, 
                   text: 'Deal Value (Millions USD) - Linear Scale',
@@ -308,6 +294,7 @@
                 }
               },
               x: {
+                 // Ensure labels fit on mobile
                  ticks: {
                     font: { size: 10 }
                  }
