@@ -18,30 +18,23 @@
       --background-light: #DDDBD4; /* Taupe/Light Gray (used as inactive button background)*/
       --nav-bar-bg: #fff;
     }
-    /* Base Styles */
-    body { 
-        font-family: 'Inter', sans-serif; 
-        background: var(--background-light); 
-        color: var(--primary-dark); 
-    }
-    
-    /* --- NAVIGATION BUTTON STYLING (FINAL FIX: Uses Light Taupe BG for inactive buttons) --- */
-    .nav-button { 
-        transition: all 0.3s ease; 
-        /* INACTIVE BG: Set to light body background color for contrast against white nav bar */
-        background-color: var(--background-light);
-        /* INACTIVE TEXT: Inherits dark text color */
-        color: var(--primary-dark);
-    }
-    .nav-button.active { 
-        background-color: var(--secondary-accent); /* Lilac Background */
-        color: var(--primary-dark); /* Dark Brown Text */
-        font-weight: 600; 
-    }
-    .nav-button:not(.active):hover { 
-        background-color: var(--tertiary-highlight); /* Scarlet Hover Background */
-        color: var(--background-light); /* Light Taupe Text */
-    }
+   body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-light);
+            color: var(--primary-dark);
+        }
+        .nav-button {
+            transition: all 0.3s ease;
+        }
+        .nav-button.active {
+            background-color: var(--secondary-accent);
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+        .nav-button:not(.active):hover {
+            background-color: var(--tertiary-highlight);
+            color: var(--background-light);
+        }
     /* ---------------------------------------------------------------------------------------- */
 
     .content-section { display: none; }
