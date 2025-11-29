@@ -1,319 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI Pulse Weekly: Week of November 15 – November 21, 2025</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Early Harvest Palette: #554B45, #A06АВ4, #D30907, #DDDBD4 */
-    :root {
-      --primary-dark: #554B45;     /* Taupe/Dark Brown (main text/titles)*/
-      --secondary-accent: #A06АВ4; /* Lilac (buttons, borders, accents)*/
-      --tertiary-highlight: #D30907;/* Scarlet (KPI values and hover BG)*/
-      --background-light: #DDDBD4; /* Taupe/Light Gray (used as inactive button background)*/
-      --nav-bar-bg: #fff;
-    }
-   body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--background-light);
-            color: var(--primary-dark);
-        }
-        .nav-button {
-            transition: all 0.3s ease;
-        }
-        .nav-button.active {
-            background-color: var(--secondary-accent);
-            color: var(--primary-dark);
-            font-weight: 600;
-        }
-        .nav-button:not(.active):hover {
-            background-color: var(--tertiary-highlight);
-            color: var(--background-light);
-        }
-    /* ---------------------------------------------------------------------------------------- */
-
-    .content-section { display: none; }
-    .content-section.active { display: block; }
-    /* Card Styles - Adjusted border color */
-    .card { 
-      background:#fff; 
-      border:1px solid var(--secondary-accent); 
-      transition: transform .3s ease, box-shadow .3s ease; 
-      color:var(--primary-dark);
-      border-radius: 0.75rem; /* Rounded corners */
-    }
-    .card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px -5px rgba(0,0,0,.15), 0 4px 6px -2px rgba(0,0,0,.08); }
-    .kpi .value { color: var(--tertiary-highlight); }
-    .pill { background:#fff; border:1px solid var(--secondary-accent); color: var(--primary-dark); }
-    .chart-container { position: relative; width: 100%; max-width: 900px; margin: 0 auto; height: 420px; max-height: 55vh; }
-    @media (max-width: 768px) { .chart-container { height: 320px; max-height: 65vh; } }
-    a.btn { background: var(--secondary-accent); color: var(--primary-dark); } 
-    a.btn:hover { background: var(--primary-dark); color: var(--background-light); }
-    .section-title { color: var(--primary-dark); }
-    .subtle { color: #554B45; opacity: 0.7; }
-    .footer-note { color: var(--secondary-accent); }
-    .text-light-contrast { color: var(--background-light); }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Pulse Weekly: Nov 22 – Nov 28, 2025</title>
     
-  /* Mobile-specific fix for vertical stacking */
-    @media (max-width: 640px) {
-        /* This container is now set to column flow on mobile */
-        .nav-container-mobile-fix {
-            flex-direction: column; 
-            align-items: stretch; /* Stretch buttons to full width */
-        }
-        /* Each button takes up full width on mobile */
-        .nav-button {
-            width: 100%;
-            margin-bottom: 0.5rem; 
-            min-width: 0; 
-        }
-    }
-  </style>
-</head>
-<body>
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <header class="text-center mb-10">
-      <h1 class="text-4xl md:text-5xl font-bold text-[var(--primary-dark)] mb-3">AI Pulse Weekly</h1>
-      <p class="text-lg md:text-xl subtle">Interactive Summary • November 15 – November 21, 2025</p>
-
-      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
-        <div class="card p-4 rounded-xl kpi text-center">
-          <p class="text-3xl font-bold value">$900 Million</p>
-          <p class="text-sm subtle mt-1">Luma AI's record investment to secure **Project Halo** supercluster access.</p>
-        </div>
-        <div class="card p-4 rounded-xl kpi text-center">
-          <p class="text-3xl font-bold value">75%</p>
-          <p class="text-sm subtle mt-1">Proportion of SMBs actively allocating capital toward **AI**.</p>
-        </div>
-        <div class="card p-4 rounded-xl kpi text-center">
-          <p class="text-3xl font-bold value">17 Seconds</p>
-          <p class="text-sm subtle mt-1">New benchmark for high-quality video generation set by **xAI's Grok Imagine**.</p>
-        </div>
-      </div>
-    </header>
-
-    <div class="flex justify-center gap-4 mb-8">
-      <a class="btn inline-block font-bold py-2 px-6 rounded-full transition-colors duration-300 shadow-lg" href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/ff8c775a1cb2ee35f6a1f4e39192aee521f93f55/AI%20Weekly%20Pulse%2021NOV25.pdf" target="_blank" rel="noopener">Read Full Report</a>
-      <a class="btn inline-block font-bold py-2 px-6 rounded-full transition-colors duration-300 shadow-lg" href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/ff8c775a1cb2ee35f6a1f4e39192aee521f93f55/AGI_Race_Shifts_to_Compute_Power.m4a" rel="noopener">Listen to Audio Overview</a>
-    </div>
-
-    <div class="card p-6 rounded-xl mb-6 shadow-md" id="executive-summary">
-      <h3 class="text-xl font-bold mb-3 section-title text-center">Executive Summary</h3>
-      <div class="text-left text-gray-800 leading-relaxed space-y-3">
-        <p>This week marked a pivotal shift in the AI sector, driven by an escalating race for massive computational infrastructure necessary for **next-generation models**. Financial markets reacted with a record **$900 million investment** into Luma AI, specifically to secure access to a colossal 2-gigawatt supercluster for training World Models.</p>
-        <p>Concurrently, regulatory tension intensified globally, with the EU introducing a controversial "**Digital Omnibus**" proposal that sparked concerns about eroding fundamental data privacy safeguards. Compute sovereignty is now the primary competitive differentiator, evidenced by Luma AI's funding explicitly tied to Project Halo infrastructure, redefining market entry costs for AGI developers.</p>
-        <p class="font-bold mt-4">Takeaway: The AGI race is now a **compute race** demanding billion-dollar infrastructure commitments. Regulatory friction is high, specifically over data privacy and IP rights protection in Europe.</p>
-      </div>
-    </div>
-
-    <div class="card p-6 rounded-xl mb-10 shadow-md">
-      <h3 class="text-xl font-bold mb-3 section-title text-center">What This Means for SMBs</h3>
-      <div class="text-left text-gray-800 leading-relaxed space-y-3">
-        <p>AI has transitioned from an experimental capability to an **operational necessity** within the Small and Medium-Sized Business (SMB) ecosystem, with investment momentum confirming its high return on investment. Three out of four SMBs (**75%**) are actively allocating capital toward AI, and growing businesses are nearly twice as likely to be investing compared to stagnating firms.</p>
-        <p>The majority of SMBs (**53%**) are now utilizing AI solutions, confirming a **market-wide strategic shift**. High-value use cases center on operational resilience, including AI-driven **cybersecurity** for continuous threat monitoring and automated data classification in IT management and finance. SMBs demonstrate a strong willingness to pay up to **10% more** for AI features integrated directly into existing business applications.</p>
-        <p class="text-sm subtle mt-4">
-          <span class="font-bold">SMB strategy must prioritize embedded solutions for maximum ROI.</span> Ready to adopt AI for **operational resilience and compliance**?
-          <a class="underline font-medium" href="#" target="_blank" rel="noopener">
-            Start your AI adoption and compliance audit now.
-          </a>
-        </p>
-      </div>
-    </div>
-
-   <nav class="flex justify-center nav-container-mobile-fix sm:flex-row gap-2 sm:gap-4 mb-10 bg-white p-2 rounded-full shadow-lg border border-[var(--secondary-accent)] max-w-xl mx-auto">
-      <button class="nav-button active py-2 px-4 rounded-full text-sm sm:text-base" data-target="technology">Technology</button>
-      <button class="nav-button py-2 px-4 rounded-full text-sm sm:text-base" data-target="investment">Investment</button>
-      <button class="nav-button py-2 px-4 rounded-full text-sm sm:text-base" data-target="policy">Policy</button>
-      <button class="nav-button py-2 px-4 rounded-full text-sm sm:text-base" data-target="impact">Impact</button>
-      <button class="nav-button py-2 px-4 rounded-full text-sm sm:text-base" data-target="emerging">Players</button>
-    </nav>
-    
-    <main>
-      <section class="content-section active" id="technology">
-        <div class="mb-8">
-          <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Breakthroughs in AI Technology</h2>
-          <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
-            <p>The competitive landscape intensified with significant advances in both **multimodal generation speed** and conversational utility. xAI launched **Grok Imagine**, a feature capable of generating short, high-quality video clips from text prompts in approximately **17 seconds**, setting a new benchmark for generative speed.</p>
-            <p>Meanwhile, OpenAI released **GPT-5.1**, focusing on practical enhancements like improved speed, personalization, and the testing of a collaborative **Group Chat** feature. The industry is rapidly pivoting toward "**World Models**," multimodal AI systems that simulate physical reality and demand 1,000 to 10,000 times the data volume of current Large Language Models (LLMs).</p>
-            <p class="font-bold mt-4">Takeaway: The strategic shift is toward creating large "**World Models**" that simulate reality. Future AI dominance depends on access to vast, curated, and diverse training data sets.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="content-section" id="investment">
-        <div class="mb-8">
-          <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">AI Industry Investment &amp; M&amp;A</h2>
-          <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
-            <p>Global AI investment was dominated by strategically targeted capital injections, emphasizing the acquisition and construction of immense **computational power** for AGI development. Total startup funding reached **$1.03 billion** for the week, nearly doubling the previous year, driven almost entirely by one mega-deal.</p>
-            <p>**Luma AI** secured a landmark **$900 million Series C** funding from Humain, explicitly linking the capital to guaranteed access to the 2-gigawatt **Project Halo supercluster** in Saudi Arabia. This focus on compute capacity was mirrored in the joint venture between **TCS and TPG**, committing up to **$2 billion** (₹18,000 crore) to expand the HyperVault AI-ready data center business in India.</p>
-            <p class="font-bold mt-4">Takeaway: Investment is concentrated on securing massive, dedicated **compute infrastructure**. Financial trends show that AI hardware capacity is the new **barrier to entry**.</p>
-          </div>
-        </div>
-        <div class="card p-6 rounded-xl shadow-md">
-          <h3 class="font-bold text-xl mb-4 section-title text-center">Top AI Infrastructure Deals (Nov 15–21, 2025) - Linear Scale</h3>
-          <div class="chart-container"><canvas id="dealsChart"></canvas></div>
-          <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
-            The World Model race demands **guaranteed, massive compute capacity**. Need a strategy brief on **compute sovereignty and next-generation infrastructure sourcing**?
-            <a class="underline font-medium" href="#" target="_blank" rel="noopener">I can help you package it.</a>
-          </p>
-        </div>
-      </section>
-
-      <section class="content-section" id="policy">
-        <div class="mb-8">
-          <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Global AI Policy &amp; Governance</h2>
-          <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
-            <p>Global governance is grappling with fostering AI innovation versus protecting fundamental rights, leading to significant legislative friction this week. The European Commission introduced the **Digital Omnibus Regulation Proposal** on November 19, which immediately drew criticism for potentially undermining core **GDPR and ePrivacy safeguards**.</p>
-            <p>The Omnibus risks eroding data privacy protections by potentially redefining "**personal data**" and creating a new broad "**legitimate interest**" basis for AI model training without user consent. This regulatory volatility was compounded by a formal protest from 39 European creative organizations regarding **insufficient IP protection** in the EU AI Act's implementation.</p>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          <div class="card p-4 rounded-xl shadow-sm"><h3 class="font-bold text-lg mb-2 section-title">EU: Digital Omnibus Conflict</h3><p class="text-left">The EU is facing a political battle over its Digital Omnibus weakening GDPR.</p></div>
-          <div class="card p-4 rounded-xl shadow-sm"><h3 class="font-bold text-lg mb-2 section-title">Creative IP Protests</h3><p class="text-left">Creative industries demand robust, mandated IP protection against mass data scraping.</p></div>
-        </div>
-        <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
-          The regulatory landscape is highly volatile. Let's draft your **AI governance framework** to ensure **agile compliance and IP protection**.
-          <a class="underline font-medium" href="#" target="_blank" rel="noopener">Start your framework today.</a>
-        </p>
-      </section>
-
-      <section class="content-section" id="impact">
-        <div class="mb-8">
-          <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Societal &amp; Economic Impact</h2>
-          <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-3">
-            <p>Widespread strategic implementation is yielding substantial productivity gains, with **96% of asset and wealth management firms** anticipating improved per-employee output. However, this efficiency is linked to a “**quiet time in the labour market**,” where firms meet increased demand through augmentation rather than expanding headcount.</p>
-            <p>AI has become integral to daily life, with **67% of consumers engaging with AI tools daily** or multiple times per week, primarily for content summarizing and writing tasks. Despite this high adoption, a significant **trust deficit persists**, as **70% of users double-check AI-generated responses**, suggesting transparency and provenance remain major barriers to full consumer reliance.</p>
-            <p class="font-bold mt-4">Takeaway: AI is creating major efficiency gains, temporarily cooling white-collar hiring demand. The future of governance mandates human accountability and transparent AI supply chains.</p>
-          </div>
-        </div>
-        <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
-          Manage the trust deficit and labor shift. Let's design an **AI transparency strategy** and **upskilling program** to secure consumer trust and employee value.
-          <a class="underline font-medium" href="#" target="_blank" rel="noopener">Design your strategy.</a>
-        </p>
-      </section>
-      
-      <section class="content-section" id="emerging">
-        <div class="mb-8">
-          <h2 class="text-3xl font-bold mb-4 text-[var(--primary-dark)] text-center">Emerging Players: Companies to Watch</h2>
-          <div class="text-left max-w-3xl mx-auto leading-relaxed space-y-4">
-            <p>Strategic capital and market validation were centered on companies enabling next-generation compute and those pioneering rights-respecting data models. These three companies represent key trends this week:</p>
-
-            <div class="space-y-3 p-4 card rounded-xl shadow-sm">
-                <p><span class="font-bold text-[var(--tertiary-highlight)]">Luma AI:</span> Secured **$900 Million** Series C funding, explicitly to secure guaranteed access to the **2-gigawatt Project Halo supercluster** for World Model development.</p>
-                <p><span class="font-bold text-[var(--tertiary-highlight)]">KLAY Vision:</span> Formalized an AI licensing deal with **Warner Music Group (WMG)**, making it the first AI company to partner with all three major music labels with a model trained exclusively on **licensed music**.</p>
-                <p><span class="font-bold text-[var(--tertiary-highlight)]">TCS / TPG (HyperVault):</span> Announced a joint venture committing **up to $2 billion** to expand **AI-ready, GW-scale data centers in India**, accelerating regional compute availability.</p>
-            </div>
-
-            <p class="font-bold mt-4">Takeaway: Investment validates the need to solve **infrastructure power constraints** and the market's enthusiasm for **specialized, compliant agentic AI** in vertical sectors. KLAY provides a viable, rights-respecting model for GenAI commerce.</p>
-          </div>
-        </div>
-        <p class="text-sm subtle mt-4 text-left max-w-3xl mx-auto">
-          Analyze the emergence of **rights-respecting AI platforms**. <span class="font-bold">Let's map the competitive advantages of licensed-data models against your current IP and data strategy.</span>
-          <a class="underline font-medium" href="#" target="_blank" rel="noopener">Schedule a strategy session today.</a>
-        </p>
-      </section>
-    </main>
-  </div>
-
-  <footer class="text-center py-8 footer-note">
-    <p class="text-sm">Summary content powered by Gemini Deep Research, organized with Notebook LM</p>
-    <p class="text-sm mt-1">produced by Nicole Dickens, Fractional AI Consultant</p>
-  </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const navButtons = document.querySelectorAll('.nav-button');
-      const sections = document.querySelectorAll('.content-section');
-
-      // --- Navigation Logic (Pure Class Toggling from working template) ---
-      navButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const target = btn.dataset.target;
-          // Deactivate all buttons and sections
-          navButtons.forEach(b => b.classList.remove('active'));
-          sections.forEach(s => s.classList.remove('active'));
-
-          // Activate the clicked button and its corresponding section
-          btn.classList.add('active');
-          const targetSection = document.getElementById(target);
-          if (targetSection) {
-            targetSection.classList.add('active');
-          }
-        });
-      });
-
-      // Set the Technology button as active by default
-      const technologyButton = document.querySelector('[data-target="technology"]');
-      const technologySection = document.getElementById('technology');
-      if (technologyButton && technologySection) {
-          technologyButton.classList.add('active');
-          technologySection.classList.add('active');
-      }
-
-      // --- Chart.js Investment Data Update with LINEAR SCALE (FIXED) ---
-      const canvas = document.getElementById('dealsChart');
-      if (canvas) {
-        const ctx = canvas.getContext('2d');
-        // Early Harvest Palette: Secondary Accent #A06АВ4, Primary Dark #554B45
-        new Chart(ctx, {
-          type: 'bar',
-          data: {
-            // Data in Millions of USD
-            labels: ['Luma AI (Compute Access)', 'TCS & TPG (HyperVault Infra)'],
-            datasets: [{
-              label: 'Deal Value ($M)',
-              // Use $900M for Luma AI and $1000M as the conservative TPG portion for comparison
-              data: [900, 1000], 
-              backgroundColor: 'rgba(160, 106, 174, 0.75)', /* Lilac (#A06АВ4) with transparency */
-              borderColor: '#554B45', /* Dark Taupe */
-              borderWidth: 1
-            }]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-              y: { 
-                type: 'linear', 
-                beginAtZero: true, 
-                max: 1200, // Set a max slightly above the highest value ($1000M) for better visual spacing
-                title: { 
-                  display: true, 
-                  text: 'Deal Value (Millions USD) - Linear Scale',
-                  font: { size: 14 }
-                },
-                ticks: {
-                    callback: function(value, index, values) {
-                        return '$' + value.toLocaleString();
-                    }
-                }
-              },
-              x: {
-                 // Ensure labels fit on mobile
-                 ticks: {
-                    font: { size: 10 }
-                 }
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              leafy: {
+                dark: '#5F5950',    /* Coffee Pot */
+                accent: '#326076',  /* Teal Green */
+                highlight: '#C8BF6A', /* Olive */
+                bg: '#BDB6AD',      /* Taupe */
               }
             },
-            plugins: {
-                legend: {
-                    display: false
-                },
-                title: {
-                    display: true,
-                    text: 'Top AI Infrastructure Deals (Nov 15–21, 2025) - Linear Scale',
-                    font: { size: 16, weight: 'bold' }
-                }
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.5s ease-out',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
             }
           }
-        });
+        }
       }
-    });
-  </script>
+    </script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons (loaded as SVG via script not strictly needed for basic icons, using SVG strings below for zero-dependency) -->
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "chart.js/": "https://aistudiocdn.com/chart.js@^4.5.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-leafy-bg text-leafy-dark font-sans antialiased selection:bg-leafy-accent selection:text-white min-h-screen pb-12">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Header Section -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-leafy-dark mb-3 drop-shadow-sm">
+                AI Pulse Weekly
+            </h1>
+            <p class="text-lg md:text-xl text-leafy-dark font-medium opacity-90 mb-1">
+                Global AI Industry Strategic Report
+            </p>
+            <p class="text-md text-leafy-dark opacity-80 italic">
+                The Synchronization of Reasoning, Robotics, and Regulation • Nov 22 – Nov 28, 2025
+            </p>
+
+            <!-- KPI Cards -->
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                <div class="bg-white border border-leafy-accent p-6 rounded-xl text-center shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
+                    <p class="text-3xl font-bold text-leafy-highlight mb-2">$3.7 Billion</p>
+                    <p class="text-sm text-leafy-dark opacity-80 leading-snug">Total Venture Capital activity this week, rotating heavily toward physical AI and infrastructure.</p>
+                </div>
+                <div class="bg-white border border-leafy-accent p-6 rounded-xl text-center shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
+                    <p class="text-3xl font-bold text-leafy-highlight mb-2">$5.00</p>
+                    <p class="text-sm text-leafy-dark opacity-80 leading-snug">Price per 1M input tokens for Anthropic's Claude Opus 4.5, signaling the commoditization of reasoning.</p>
+                </div>
+                <div class="bg-white border border-leafy-accent p-6 rounded-xl text-center shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
+                    <p class="text-3xl font-bold text-leafy-highlight mb-2">11.7%</p>
+                    <p class="text-sm text-leafy-dark opacity-80 leading-snug">Percentage of the US workforce capable of being replaced by current AI, per MIT/Oak Ridge study.</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-10">
+            <a href="#" class="flex items-center gap-2 bg-leafy-accent text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:bg-leafy-dark hover:scale-105" target="_blank" rel="noopener noreferrer">
+                <!-- FileText Icon SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+                Read Full Report
+            </a>
+            <a href="#" class="flex items-center gap-2 bg-leafy-accent text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:bg-leafy-dark hover:scale-105" rel="noopener noreferrer">
+                <!-- PlayCircle Icon SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                Listen to Audio Overview
+            </a>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="bg-white border border-leafy-accent p-6 md:p-8 rounded-xl mb-8 shadow-md hover:shadow-lg transition-shadow duration-300">
+            <h3 class="text-2xl font-bold mb-4 text-center text-leafy-dark">Executive Summary</h3>
+            <div class="text-left text-gray-800 leading-relaxed space-y-4 font-medium">
+                <p>
+                    The industry has reached a definitive inflection point characterized by the synchronization of 
+                    <span class="font-bold text-leafy-accent"> "agentic" capabilities</span>, 
+                    physical robotics, and regulatory fragmentation. Anthropic's release of 
+                    <span class="font-bold text-leafy-accent"> Claude Opus 4.5</span> and Google's 
+                    <span class="font-bold text-leafy-accent"> Nano Banana Pro</span> signal a shift from simple text generation to complex reasoning and reliable visual construction.
+                </p>
+                <p>
+                    Simultaneously, the physical embodiment of AI accelerated with <span class="font-bold text-leafy-accent">Sunday Robotics</span> and Uber's driverless expansion. Geopolitically, a "splinternet" of compliance is emerging: the US is moving toward aggressive federal preemption to deregulate AI, while the EU harmonizes its safety-first framework via the Digital Omnibus Regulation.
+                </p>
+                <p class="font-bold mt-4 pt-4 border-t border-gray-100 text-leafy-dark">
+                    Strategic Takeaway: The "prompt and pray" era is ending. Success in 2026 depends on integrating cheap, high-reasoning agents into deterministic workflows before the regulatory window closes.
+                </p>
+            </div>
+        </div>
+
+        <!-- SMB Section -->
+        <div class="bg-white border border-leafy-accent p-6 md:p-8 rounded-xl mb-12 shadow-md hover:shadow-lg transition-shadow duration-300">
+            <h3 class="text-2xl font-bold mb-4 text-center text-leafy-dark">What This Means for SMBs</h3>
+            <div class="text-left text-gray-800 leading-relaxed space-y-4">
+                <p>
+                    Small and medium businesses are the primary beneficiaries of the "democratization of intelligence." 
+                    Microsoft's launch of <span class="font-bold text-leafy-accent">Copilot Business at $21.00 per user/month</span> drastically lowers the barrier for administrative automation, effectively giving every employee a digital executive assistant.
+                </p>
+                <p>
+                    However, the rise of "Agentic Commerce"—where AI agents negotiate purchases—demands that retailers optimize their data for machine readability. The 620% surge in AI phishing attacks also necessitates immediate adoption of enterprise-grade security protocols.
+                </p>
+                <div class="mt-6 bg-gray-50 p-4 rounded-lg border-l-4 border-leafy-highlight">
+                    <p class="text-sm text-leafy-dark flex flex-wrap items-center gap-1">
+                        <span class="font-bold">Action Item:</span> Pinpoint 3–5 high-ROI use cases and map your adoption roadmap.
+                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="underline font-bold text-leafy-accent ml-1 hover:text-leafy-dark cursor-pointer flex items-center gap-1">
+                            Book an AI Opportunity Sprint.
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <nav class="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 mb-10 bg-white p-2 rounded-2xl sm:rounded-full shadow-lg border border-leafy-accent max-w-2xl mx-auto">
+            <button onclick="switchTab('technology')" class="nav-btn py-2 px-6 rounded-full text-sm sm:text-base transition-all duration-300 w-full sm:w-auto bg-leafy-accent text-white font-bold shadow-md transform scale-105" data-tab="technology">Technology</button>
+            <button onclick="switchTab('investment')" class="nav-btn py-2 px-6 rounded-full text-sm sm:text-base transition-all duration-300 w-full sm:w-auto bg-transparent text-leafy-dark hover:bg-leafy-dark hover:text-white" data-tab="investment">Investment</button>
+            <button onclick="switchTab('policy')" class="nav-btn py-2 px-6 rounded-full text-sm sm:text-base transition-all duration-300 w-full sm:w-auto bg-transparent text-leafy-dark hover:bg-leafy-dark hover:text-white" data-tab="policy">Policy</button>
+            <button onclick="switchTab('impact')" class="nav-btn py-2 px-6 rounded-full text-sm sm:text-base transition-all duration-300 w-full sm:w-auto bg-transparent text-leafy-dark hover:bg-leafy-dark hover:text-white" data-tab="impact">Impact</button>
+            <button onclick="switchTab('emerging')" class="nav-btn py-2 px-6 rounded-full text-sm sm:text-base transition-all duration-300 w-full sm:w-auto bg-transparent text-leafy-dark hover:bg-leafy-dark hover:text-white" data-tab="emerging">Players</button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="min-h-[400px]">
+            
+            <!-- Technology Section -->
+            <section id="technology" class="content-section animate-fade-in-up block">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-leafy-dark text-center">Breakthroughs: Reasoning & Robotics</h2>
+                    <div class="text-left max-w-4xl mx-auto leading-relaxed space-y-4 text-gray-800">
+                        <p>
+                            Technical competition has shifted from "stochastic parrots" to <strong>"reasoning engines."</strong> 
+                            Anthropic's <strong>Claude Opus 4.5</strong> introduces "context continuity" to maintain logic over long workflows, achieving ~81% on SWE-bench Verified. Crucially, its aggressive pricing ($5/1M input tokens) commoditizes high-level reasoning.
+                        </p>
+                        <p>
+                            In the visual domain, Google's <strong>Nano Banana Pro (Gemini 3 Pro Image)</strong> integrates search-grounded logic to ensure factual accuracy and correct text rendering in generated images. Physically, <strong>Sunday Robotics</strong> debuted "Memo," a wheeled home robot trained on 10 million real-world behavioral episodes, prioritizing data over simulation.
+                        </p>
+                        <div class="mt-6 p-4 bg-white/50 rounded-lg border border-leafy-accent/30">
+                            <p className="font-bold text-leafy-dark">
+                                Takeaway: Developers should pivot stacks to leverage long-context, low-cost reasoning models for autonomous agentic applications rather than simple chatbots.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Investment Section -->
+            <section id="investment" class="content-section animate-fade-in-up hidden">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-leafy-dark text-center">Capital Rotation: Infrastructure & Vertical Agents</h2>
+                    <div class="text-left max-w-4xl mx-auto leading-relaxed space-y-4 text-gray-800">
+                        <p>
+                            Investors are rotating capital into two distinct poles: massive <strong>"World Model" infrastructure</strong> and specialized <strong>"Vertical Agents."</strong> Luma AI's $900M Series C underscores the energy-intensive reality of training physics-aware models. Conversely, Anysphere's $2.3B valuation for the Cursor editor confirms that the interface controlling AI development is prime real estate.
+                        </p>
+                        <p>
+                            Funding for vertical agents like <strong>GreenFi</strong> (ESG) and <strong>Giga</strong> (Voice Support) highlights the market's hunger for automating unsexy, high-value corporate workflows.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white border border-leafy-accent p-6 rounded-xl shadow-md max-w-4xl mx-auto">
+                    <h3 class="font-bold text-xl mb-6 text-center text-leafy-dark">Key Funding Rounds (Nov 22–28, 2025)</h3>
+                    <div class="relative w-full h-[350px] md:h-[400px]">
+                        <canvas id="investmentChart"></canvas>
+                    </div>
+                    <div class="mt-6 text-left">
+                        <p class="text-sm text-leafy-dark opacity-80 mt-4 flex flex-wrap items-center gap-1">
+                            <span class="font-bold">Investment Insight:</span> The gap between "infrastructure" and "application" is widening.
+                            <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="underline font-bold text-leafy-accent ml-1 hover:text-leafy-dark cursor-pointer flex items-center gap-1">
+                                Secure your Fractional AI Leadership today.
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Policy Section -->
+            <section id="policy" class="content-section animate-fade-in-up hidden">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-leafy-dark text-center">The Great Divergence</h2>
+                    <div class="text-left max-w-4xl mx-auto leading-relaxed space-y-4 text-gray-800">
+                        <p>
+                            A transatlantic split has occurred. The <strong>United States</strong> is moving toward federal preemption to override state AI safety laws, aiming to secure a projected $600 billion "abundance dividend" via deregulation.
+                        </p>
+                        <p>
+                            In contrast, the <strong>European Union</strong> introduced the Digital Omnibus Regulation to harmonize GDPR and the AI Act, attempting to streamline compliance without abandoning safety. <strong>China</strong> continues its dual-track strategy of massive state subsidies paired with strict political control over model outputs.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 max-w-4xl mx-auto">
+                    <div class="bg-white border border-leafy-accent p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <h3 class="font-bold text-lg mb-2 text-leafy-dark border-b border-leafy-highlight pb-2">USA: Preemption</h3>
+                        <p class="text-gray-700">Draft Executive Orders aim to nullify state-level safety laws (e.g., California) to prioritize speed and innovation.</p>
+                    </div>
+                    <div class="bg-white border border-leafy-accent p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <h3 class="font-bold text-lg mb-2 text-leafy-dark border-b border-leafy-highlight pb-2">EU: Harmonization</h3>
+                        <p class="text-gray-700">Digital Omnibus Regulation seeks to reduce bureaucratic friction while maintaining a "fortress" of managed safety.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <p class="text-sm text-leafy-dark flex justify-center flex-wrap items-center gap-1">
+                        Navigate the regulatory split with confidence.
+                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="underline font-bold text-leafy-accent ml-1 hover:text-leafy-dark cursor-pointer flex items-center gap-1">
+                            Develop a Responsible AI & Governance Playbook.
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                        </a>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Impact Section -->
+            <section id="impact" class="content-section animate-fade-in-up hidden">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-leafy-dark text-center">The Productivity Paradox</h2>
+                    <div class="text-left max-w-4xl mx-auto leading-relaxed space-y-4 text-gray-800">
+                        <p>
+                            Data presents a conflicting picture: Anthropic projects AI could double US productivity growth, while MIT suggests AI can already replace <strong>11.7% of the workforce</strong>. This tension defines the "Productivity Paradox"—tools for efficiency are available, but labor displacement may outpace the creation of new roles.
+                        </p>
+                        <p>
+                            Simultaneously, trust is eroding. Deepfakes have disrupted elections in Europe, and AI-driven phishing attacks surged <strong>620%</strong> leading up to Black Friday, pushing society toward a "Zero Trust" model for digital communications.
+                        </p>
+                        <div class="mt-6 p-4 bg-white rounded-lg border-l-4 border-leafy-accent shadow-sm">
+                            <p class="font-bold text-leafy-dark">
+                                Societal Shift: We are entering the "Cognitive Industrial Revolution," where the cost of reasoning collapses, disrupting the economics of knowledge work.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="mt-8 text-center">
+                    <p class="text-sm text-leafy-dark flex justify-center flex-wrap items-center gap-1">
+                        Prepare your workforce for the "Cognitive Industrial Revolution."
+                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="underline font-bold text-leafy-accent ml-1 hover:text-leafy-dark cursor-pointer flex items-center gap-1">
+                            Launch 'AI Champion' training and Team Discovery.
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                        </a>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Emerging Players Section -->
+            <section id="emerging" class="content-section animate-fade-in-up hidden">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-leafy-dark text-center">Emerging Players to Watch</h2>
+                    <div class="text-left max-w-4xl mx-auto leading-relaxed space-y-4 text-gray-800">
+                        <p>
+                            Capital is flowing to companies solving specific "unsexy" problems or building physical embodiment.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                           <div class="bg-white p-4 rounded-xl shadow-sm border border-leafy-accent/40">
+                              <p class="font-bold text-leafy-accent text-lg">Sunday Robotics (USA)</p>
+                              <p class="text-sm text-gray-600 mb-2">Series B • $35M</p>
+                              <p class="text-gray-800">Home robotics startup using "Skill Capture Gloves" to train wheeled robots for household chores, prioritizing data over simulation.</p>
+                           </div>
+                           
+                           <div class="bg-white p-4 rounded-xl shadow-sm border border-leafy-accent/40">
+                              <p class="font-bold text-leafy-accent text-lg">Giga (USA)</p>
+                              <p class="text-sm text-gray-600 mb-2">Series A • $61M</p>
+                              <p class="text-gray-800">"Agentic" voice AI for enterprise support, aiming to replace traditional BPO call centers with human-level reasoning agents.</p>
+                           </div>
+                           
+                           <div class="bg-white p-4 rounded-xl shadow-sm border border-leafy-accent/40">
+                              <p class="font-bold text-leafy-accent text-lg">DeepSeek (China)</p>
+                              <p class="text-sm text-gray-600 mb-2">Open Weight Research</p>
+                              <p class="text-gray-800">Challenger lab releasing powerful reasoning models (Math-V2) for free, acting as a deflationary force on intelligence costs.</p>
+                           </div>
+
+                           <div class="bg-white p-4 rounded-xl shadow-sm border border-leafy-accent/40">
+                              <p class="font-bold text-leafy-accent text-lg">GreenFi (Singapore)</p>
+                              <p class="text-sm text-gray-600 mb-2">Seed • $2M</p>
+                              <p class="text-gray-800">ESG compliance agents scouring supply chain data to automate complex regulatory reporting.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <p class="text-sm text-leafy-dark flex justify-center flex-wrap items-center gap-1">
+                        Validate value and track adoption.
+                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="underline font-bold text-leafy-accent ml-1 hover:text-leafy-dark cursor-pointer flex items-center gap-1">
+                            Build your AI Insights Dashboard.
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                        </a>
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="text-center py-8 text-leafy-accent/80 border-t border-leafy-accent/20 mt-12 bg-white/50">
+        <p class="text-sm font-medium">Summary content powered by Gemini Deep Research, organized with Notebook LM</p>
+        <p class="text-sm mt-1">produced by Nicole Dickens, Fractional AI Consultant</p>
+    </footer>
+
+    <script>
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            // Update Tab Buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                if(btn.dataset.tab === tabId) {
+                    btn.classList.remove('bg-transparent', 'text-leafy-dark', 'hover:bg-leafy-dark', 'hover:text-white');
+                    btn.classList.add('bg-leafy-accent', 'text-white', 'font-bold', 'shadow-md', 'transform', 'scale-105');
+                } else {
+                    btn.classList.add('bg-transparent', 'text-leafy-dark', 'hover:bg-leafy-dark', 'hover:text-white');
+                    btn.classList.remove('bg-leafy-accent', 'text-white', 'font-bold', 'shadow-md', 'transform', 'scale-105');
+                }
+            });
+
+            // Update Content Sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                if(section.id === tabId) {
+                    section.classList.remove('hidden');
+                    section.classList.add('block');
+                } else {
+                    section.classList.add('hidden');
+                    section.classList.remove('block');
+                }
+            });
+        }
+
+        // Initialize Chart
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('investmentChart');
+            if(ctx) {
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        // Data in Millions of USD
+                        // Anysphere ($2300M), Luma ($900M), Chaos ($510M), D-Matrix ($275M), Giga ($61M), Sunday ($35M)
+                        labels: ['Anysphere', 'Luma AI', 'Chaos Ind.', 'D-Matrix', 'Giga', 'Sunday Robotics'],
+                        datasets: [{
+                            label: 'Deal Value ($M)',
+                            data: [2300, 900, 510, 275, 61, 35], 
+                            backgroundColor: 'rgba(50, 96, 118, 0.85)', /* Teal Green #326076 */
+                            borderColor: '#5F5950', /* Coffee Pot */
+                            borderWidth: 1,
+                            borderRadius: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: { 
+                                type: 'logarithmic',
+                                beginAtZero: false, 
+                                grid: {
+                                    color: 'rgba(95, 89, 80, 0.1)'
+                                },
+                                title: { 
+                                    display: true, 
+                                    text: 'Deal Value (Millions USD) - Log Scale',
+                                    color: '#5F5950',
+                                    font: { size: 12, weight: 'bold' }
+                                },
+                                ticks: {
+                                    color: '#5F5950',
+                                    callback: function(value) {
+                                        const v = Number(value);
+                                        if (v === 10 || v === 100 || v === 1000 || v === 2000 || v === 3000) {
+                                            return '$' + v.toLocaleString();
+                                        }
+                                        return null;
+                                    }
+                                }
+                            },
+                            x: {
+                                grid: { display: false },
+                                ticks: {
+                                    color: '#5F5950',
+                                    font: { size: 11, weight: 'bold' }
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                backgroundColor: '#5F5950',
+                                titleColor: '#fff',
+                                bodyColor: '#fff',
+                                callbacks: {
+                                    label: function(context) {
+                                        return `$${context.raw} Million`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+<script type="module" src="/index.tsx"></script>
 </body>
 </html>
