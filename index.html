@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Pulse Weekly: Dec 6 – Dec 12, 2025</title>
@@ -8,13 +8,13 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Babel for in-browser JSX transformation -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script>
       tailwind.config = {
@@ -47,8 +47,11 @@
       .animate-fadeIn {
         animation: fadeIn 0.5s ease-out forwards;
       }
+      .hidden {
+        display: none;
+      }
     </style>
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@^19.2.3",
@@ -60,400 +63,330 @@
 }
 </script>
 </head>
-  <body>
-    <div id="root"></div>
-
-    <script type="text/babel" data-presets="react,typescript">
-      import React, { useState } from 'https://esm.sh/react@18.2.0';
-      import ReactDOM from 'https://esm.sh/react-dom@18.2.0/client';
-      import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'https://esm.sh/recharts@2.12.0';
-      import { ExternalLink, ArrowRight, ShieldCheck, FileText, Cpu, Briefcase, Headphones } from 'https://esm.sh/lucide-react@0.330.0';
-
-      // --- Types (Visual Reference for TypeScript) ---
-      // interface KPI { value: string; label: string; }
-      // interface ChartDataPoint { name: string; value: number; }
-
-      // --- Components ---
-
-      const Navigation = ({ activeSection, setActiveSection }) => {
-        const sections = [
-          { id: 'technology', label: 'Technology' },
-          { id: 'investment', label: 'Investment' },
-          { id: 'policy', label: 'Policy' },
-          { id: 'impact', label: 'Impact' },
-        ];
-
-        return (
-          <nav className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 mb-10 bg-white p-2 rounded-xl sm:rounded-full shadow-lg border border-sc-slate max-w-2xl mx-auto">
-            {sections.map((section) => (
-              <button
-                key={section.id}
-                onClick={() => setActiveSection(section.id)}
-                className={`
-                  py-2 px-6 rounded-lg sm:rounded-full text-sm sm:text-base font-medium transition-all duration-300
-                  ${activeSection === section.id 
-                    ? 'bg-sc-slate text-white shadow-md transform scale-105' 
-                    : 'text-sc-dark hover:bg-sc-cream hover:text-sc-slate'
-                  }
-                `}
-              >
-                {section.label}
-              </button>
-            ))}
-          </nav>
-        );
-      };
-
-      const Header = ({ kpis }) => {
-        return (
-          <header className="text-center mb-10 pt-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-sc-dark mb-3 tracking-tight">
-              AI Pulse Weekly
+<body class="min-h-screen pb-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Header -->
+        <header class="text-center mb-10 pt-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-sc-dark mb-3 tracking-tight">
+                AI Pulse Weekly
             </h1>
-            <p className="text-lg md:text-xl text-sc-slate font-medium">
-              Interactive Summary • Dec 6 – Dec 12, 2025
+            <p class="text-lg md:text-xl text-sc-slate font-medium">
+                Interactive Summary • Dec 6 – Dec 12, 2025
             </p>
 
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto px-4">
-              {kpis.map((kpi, index) => (
-                <div 
-                  key={index} 
-                  className="bg-white p-6 rounded-xl border border-sc-slate/30 shadow-sm hover:shadow-md transition-shadow duration-300"
-                >
-                  <p className="text-3xl font-bold text-sc-slate mb-2">{kpi.value}</p>
-                  <p className="text-sm text-gray-600 leading-snug">{kpi.label}</p>
+            <!-- KPIs -->
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto px-4">
+                <div class="bg-white p-6 rounded-xl border border-sc-slate/30 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <p class="text-3xl font-bold text-sc-slate mb-2">$20 Billion</p>
+                    <p class="text-sm text-gray-600 leading-snug">Joint venture for AI data centers (Qatar/Brookfield), signaling sovereign infrastructure scale.</p>
                 </div>
-              ))}
+                <div class="bg-white p-6 rounded-xl border border-sc-slate/30 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <p class="text-3xl font-bold text-sc-slate mb-2">70.9%</p>
+                    <p class="text-sm text-gray-600 leading-snug">GPT-5.2 'Thinking' GDPval score (Junior Associate Level), up from 38.8%.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-sc-slate/30 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <p class="text-3xl font-bold text-sc-slate mb-2">25%</p>
+                    <p class="text-sm text-gray-600 leading-snug">Revenue share 'tax' paid to US Treasury for Nvidia H200 sales to China.</p>
+                </div>
             </div>
             
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <a 
-                href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/9f7d84044b4bfa8b0b483d05f72367a0f8cb431d/AI%20Weekly%20Pulse%2012DEC25.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-sc-slate hover:bg-sc-dark text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2"
-              >
-                <FileText className="w-5 h-5" />
-                Read Full Report
-              </a>
-              <a 
-                href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/9f7d84044b4bfa8b0b483d05f72367a0f8cb431d/GPT-5.m4a"
-                className="bg-white text-sc-slate border-2 border-sc-slate hover:bg-sc-slate hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2"
-              >
-                <Headphones className="w-5 h-5" />
-                Listen to Audio
-              </a>
+            <!-- Actions -->
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+                <a href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/9f7d84044b4bfa8b0b483d05f72367a0f8cb431d/AI%20Weekly%20Pulse%2012DEC25.pdf" target="_blank" rel="noopener noreferrer" class="bg-sc-slate hover:bg-sc-dark text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
+                    <i data-lucide="file-text" class="w-5 h-5"></i>
+                    Read Full Report
+                </a>
+                <a href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/9f7d84044b4bfa8b0b483d05f72367a0f8cb431d/GPT-5.m4a" class="bg-white text-sc-slate border-2 border-sc-slate hover:bg-sc-slate hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
+                    <i data-lucide="headphones" class="w-5 h-5"></i>
+                    Listen to Audio
+                </a>
             </div>
-          </header>
-        );
-      };
+        </header>
 
-      const InvestmentChart = ({ data }) => {
-        return (
-          <div className="w-full h-[300px] sm:h-[400px] mt-6">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                data={data}
-                margin={{
-                  top: 20,
-                  right: 30,
-                  left: 20,
-                  bottom: 5,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" vertical={false} />
-                <XAxis 
-                  dataKey="name" 
-                  tick={{ fill: '#2E3B51', fontSize: 12 }} 
-                  axisLine={false}
-                  tickLine={false}
-                />
-                <YAxis 
-                  tick={{ fill: '#2E3B51', fontSize: 12 }} 
-                  axisLine={false}
-                  tickLine={false}
-                  label={{ value: 'Funding (USD Millions)', angle: -90, position: 'insideLeft', fill: '#8A9EA0', fontSize: 12 }}
-                />
-                <Tooltip 
-                  cursor={{ fill: '#FCFAF0' }}
-                  contentStyle={{ 
-                    backgroundColor: '#fff', 
-                    border: '1px solid #8A9EA0', 
-                    borderRadius: '8px',
-                    color: '#2E3B51'
-                  }}
-                />
-                <Bar dataKey="value" radius={[4, 4, 0, 0]}>
-                  {data.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={index % 2 === 0 ? '#8A9EA0' : '#99B0B0'} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        );
-      };
-
-      const App = () => {
-        const [activeSection, setActiveSection] = useState('technology');
-
-        const kpis = [
-          { value: "$20 Billion", label: "Joint venture for AI data centers (Qatar/Brookfield), signaling sovereign infrastructure scale." },
-          { value: "70.9%", label: "GPT-5.2 'Thinking' GDPval score (Junior Associate Level), up from 38.8%." },
-          { value: "25%", label: "Revenue share 'tax' paid to US Treasury for Nvidia H200 sales to China." }
-        ];
-
-        const chartData = [
-          { name: 'Saviynt (Identity Security)', value: 700 },
-          { name: 'Unconventional AI (Analog Chips)', value: 475 },
-        ];
-
-        const LINKEDIN_URL = "https://www.linkedin.com/in/nicolemdickens/";
-
-        const renderContent = () => {
-          switch (activeSection) {
-            case 'technology':
-              return (
-                <div className="space-y-6 animate-fadeIn">
-                  <div className="mb-8 text-center">
-                    <h2 className="text-3xl font-bold mb-4 text-sc-dark">Breakthroughs in Reasoning</h2>
-                    <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                      The release of <strong>GPT-5.2 "Thinking"</strong> models marks the end of the "Chat" era and the beginning of the "Agentic" era. 
-                      With a massive leap in reasoning capabilities, AI is moving from probabilistic word prediction to reliable, multi-step execution of complex tasks.
-                    </p>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                     <div className="bg-white p-6 rounded-xl border border-sc-slate/30 shadow-sm">
-                       <div className="flex items-center gap-3 mb-3">
-                         <Cpu className="w-6 h-6 text-sc-slate" />
-                         <h3 className="text-xl font-bold text-sc-dark">Deep Reasoning</h3>
-                       </div>
-                       <p className="text-gray-600">
-                         GPT-5.2 achieves a <strong>70.9% score</strong> on professional benchmarks, capable of handling complex Excel financial forecasting without the hallucinations of previous generations.
-                       </p>
-                     </div>
-                     
-                     <div className="bg-white p-6 rounded-xl border border-sc-slate/30 shadow-sm">
-                       <div className="flex items-center gap-3 mb-3">
-                         <FileText className="w-6 h-6 text-sc-slate" />
-                         <h3 className="text-xl font-bold text-sc-dark">Disposable Software</h3>
-                       </div>
-                       <p className="text-gray-600">
-                         Google's new <strong>Disco browser</strong> creates instant, bespoke "GenTabs" applications, threatening single-utility SaaS tools by generating software on-demand.
-                       </p>
-                     </div>
-                  </div>
-
-                  <div className="bg-sc-slate/10 p-6 rounded-xl mt-6">
-                    <h3 className="text-lg font-bold text-sc-dark mb-2">The Artificial Hivemind Risk</h3>
-                    <p className="text-gray-700">
-                      Researchers warn that as models converge on identical training data, they produce strategically identical outputs. Reliance on AI for differentiation leads to "strategic homogenization."
-                    </p>
-                  </div>
-
-                  <div className="flex justify-center mt-8">
-                     <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sc-slate font-bold hover:text-sc-dark transition-colors">
-                       Let's discuss your Agentic Readiness Strategy <ArrowRight className="w-4 h-4" />
-                     </a>
-                  </div>
-                </div>
-              );
-
-            case 'investment':
-              return (
-                <div className="space-y-6 animate-fadeIn">
-                  <div className="mb-8 text-center">
-                    <h2 className="text-3xl font-bold mb-4 text-sc-dark">Capital Markets: The "Barbell" Economy</h2>
-                    <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                      Venture capital has bifurcated. Funding is concentrating on massive infrastructure and deep vertical integration, 
-                      while the middle tier of "AI wrapper" startups faces starvation.
-                    </p>
-                  </div>
-
-                  <div className="bg-white p-6 rounded-xl shadow-md border border-sc-slate/20">
-                    <h3 className="font-bold text-xl mb-6 text-center text-sc-dark">Major Funding Rounds (Dec 6–12, 2025)</h3>
-                    <InvestmentChart data={chartData} />
-                    <p className="text-center text-sm text-gray-500 mt-4 italic">Values in USD Millions</p>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                     <div className="bg-white p-5 rounded-xl border-l-4 border-sc-slate shadow-sm">
-                       <h4 className="font-bold text-lg text-sc-dark mb-2">Infrastructure as Sovereignty</h4>
-                       <p className="text-sm text-gray-600">
-                         <strong>$20 Billion</strong> joint venture between Qatar and Brookfield to build regional AI data centers, treating compute as critical national infrastructure.
-                       </p>
-                     </div>
-                     <div className="bg-white p-5 rounded-xl border-l-4 border-sc-blue-gray shadow-sm">
-                       <h4 className="font-bold text-lg text-sc-dark mb-2">The Analog Bet</h4>
-                       <p className="text-sm text-gray-600">
-                         <strong>$475 Million</strong> seed for Unconventional AI signals a long-term hedge against digital energy limits, betting on biology-inspired analog computing.
-                       </p>
-                     </div>
-                  </div>
-
-                   <div className="flex justify-center mt-8">
-                     <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sc-slate font-bold hover:text-sc-dark transition-colors">
-                       Evaluate your "Defensible Moat" investment thesis <ArrowRight className="w-4 h-4" />
-                     </a>
-                  </div>
-                </div>
-              );
-
-            case 'policy':
-              return (
-                <div className="space-y-6 animate-fadeIn">
-                  <div className="mb-8 text-center">
-                    <h2 className="text-3xl font-bold mb-4 text-sc-dark">Regulatory Civil War</h2>
-                    <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                      A collision between Federal deregulation and State-level safety mandates creates a chaotic legal vacuum. 
-                      Simultaneously, trade policy shifts from "Containment" to "Rent-Seeking."
-                    </p>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="bg-white p-6 rounded-xl shadow-sm border border-sc-slate/20 flex flex-col md:flex-row gap-4 items-start">
-                       <div className="bg-sc-slate/10 p-3 rounded-full shrink-0">
-                         <ShieldCheck className="w-6 h-6 text-sc-slate" />
-                       </div>
-                       <div>
-                         <h3 className="text-xl font-bold text-sc-dark mb-2">Federal Preemption</h3>
-                         <p className="text-gray-600">
-                           Trump's "One Rulebook" Executive Order uses fiscal coercion (withholding broadband funds) to strip states of their ability to regulate AI, targeting laws like the Colorado AI Act.
-                         </p>
-                       </div>
-                    </div>
-
-                    <div className="bg-white p-6 rounded-xl shadow-sm border border-sc-slate/20 flex flex-col md:flex-row gap-4 items-start">
-                       <div className="bg-sc-blue-gray/10 p-3 rounded-full shrink-0">
-                         <Briefcase className="w-6 h-6 text-sc-blue-gray" />
-                       </div>
-                       <div>
-                         <h3 className="text-xl font-bold text-sc-dark mb-2">The Mercantilist Pivot</h3>
-                         <p className="text-gray-600">
-                           The US approved Nvidia H200 sales to China conditioned on a <strong>25% revenue share</strong> to the Treasury. Policy now prioritizes revenue extraction over absolute technology denial.
-                         </p>
-                       </div>
-                    </div>
-                  </div>
-
-                   <div className="bg-sc-cream border border-sc-taupe p-5 rounded-xl mt-4">
-                     <h4 className="font-bold text-sc-dark mb-2">Strategic Takeaway for SMBs</h4>
-                     <p className="text-sm text-gray-700">
-                       Maintain a <strong>"Dual-Track"</strong> compliance strategy. Do not assume federal preemption offers immediate protection from state liability. Document bias testing as if state laws are fully enforceable.
-                     </p>
-                   </div>
-
-                   <div className="flex justify-center mt-8">
-                     <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sc-slate font-bold hover:text-sc-dark transition-colors">
-                       Review your AI Governance Framework <ArrowRight className="w-4 h-4" />
-                     </a>
-                  </div>
-                </div>
-              );
-
-            case 'impact':
-              return (
-                <div className="space-y-6 animate-fadeIn">
-                  <div className="mb-8 text-center">
-                    <h2 className="text-3xl font-bold mb-4 text-sc-dark">The "Code Red" Economy</h2>
-                    <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                      We have moved from experimental tools to mandatory efficiencies. The "Agentic Economy" is displacing labor, not just assisting it.
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-                      <h3 className="font-bold text-lg text-sc-dark mb-3">Outcomes Over Seats</h3>
-                      <p className="text-sm text-gray-600">
-                        SMBs are shifting spend from software seats to outcomes. Platforms like Podium's "Jerry" replace entire scheduling roles, driving 300% revenue growth for AI divisions.
-                      </p>
-                    </div>
-
-                    <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-                      <h3 className="font-bold text-lg text-sc-dark mb-3">Reliability Tax</h3>
-                      <p className="text-sm text-gray-600">
-                        Early adoption of "Thinking" models carries operational risk. Desktop apps are freezing under load. Critical workflows must remain on stable APIs.
-                      </p>
-                    </div>
-
-                    <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-                      <h3 className="font-bold text-lg text-sc-dark mb-3">Seasonal Displacement</h3>
-                      <p className="text-sm text-gray-600">
-                        Retailers successfully deployed AI for holiday returns processing, operating 3x faster than humans and permanently eroding seasonal entry-level jobs.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-8 bg-white p-6 rounded-xl border-l-4 border-red-400 shadow-sm">
-                     <h3 className="font-bold text-lg text-sc-dark mb-2">Security Alert: Agent Hijacking</h3>
-                     <p className="text-gray-600 mb-4">
-                       79% of organizations have no security policy for autonomous agents. Attackers can now compromise an agent's identity to execute business logic attacks (e.g., fraudulent invoices).
-                     </p>
-                     <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-sc-slate font-bold hover:text-sc-dark text-sm flex items-center gap-1">
-                       Get help securing Non-Human Identities <ExternalLink className="w-3 h-3" />
-                     </a>
-                  </div>
-
-                   <div className="flex justify-center mt-8">
-                     <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sc-slate font-bold hover:text-sc-dark transition-colors">
-                       Audit your Workforce for Agentic Readiness <ArrowRight className="w-4 h-4" />
-                     </a>
-                  </div>
-                </div>
-              );
-
-            default:
-              return null;
-          }
-        };
-
-        return (
-          <div className="min-h-screen bg-sc-cream pb-12">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-              <Header kpis={kpis} />
-              
-              {/* Executive Summary Card */}
-              <div className="bg-white p-6 md:p-8 rounded-xl shadow-md border border-sc-slate/30 mb-10 max-w-5xl mx-auto">
-                <h3 className="text-2xl font-bold mb-4 text-center text-sc-dark">Executive Briefing</h3>
-                <div className="text-gray-700 leading-relaxed space-y-4">
-                  <p>
+        <!-- Executive Briefing -->
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-sc-slate/30 mb-10 max-w-5xl mx-auto">
+            <h3 class="text-2xl font-bold mb-4 text-center text-sc-dark">Executive Briefing</h3>
+            <div class="text-gray-700 leading-relaxed space-y-4">
+                <p>
                     The week of December 6–12, 2025, marks the definitive inflection point from "AI Hype" to <strong>"AI Labor."</strong> 
                     Driven by the defensive release of OpenAI’s GPT-5.2 and a sweeping Executive Order from the Trump Administration, 
                     the landscape has shifted to brutal operational efficiency.
-                  </p>
-                  <p>
+                </p>
+                <p>
                     Businesses are now confronted with "Thinking" models capable of autonomous reasoning and a geopolitical environment 
                     that prioritizes revenue extraction over containment. The window for "experimental" AI adoption has closed; the phase of <strong>"mandatory efficiency"</strong> has begun.
-                  </p>
-                  <p className="font-semibold text-sc-slate mt-4">
+                </p>
+                <p class="font-semibold text-sc-slate mt-4">
                     Strategic Takeaway: Audit your digital infrastructure for "Agentic Readiness." If your APIs are messy, your new AI labor force cannot function.
-                  </p>
-                </div>
-                <div className="mt-6 text-center">
-                   <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="inline-block text-sc-blue-gray font-bold border-b-2 border-sc-blue-gray hover:text-sc-dark hover:border-sc-dark transition-all">
-                     Talk to a consultant about your AI Strategy
-                   </a>
-                </div>
-              </div>
+                </p>
+            </div>
+            <div class="mt-6 text-center">
+                <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="inline-block text-sc-blue-gray font-bold border-b-2 border-sc-blue-gray hover:text-sc-dark hover:border-sc-dark transition-all">
+                    Talk to a consultant about your AI Strategy
+                </a>
+            </div>
+        </div>
 
-              <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
-              
-              <main className="max-w-5xl mx-auto min-h-[500px]">
-                {renderContent()}
-              </main>
+        <!-- Navigation Tabs -->
+        <nav class="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 mb-10 bg-white p-2 rounded-xl sm:rounded-full shadow-lg border border-sc-slate max-w-2xl mx-auto">
+            <button onclick="showSection('technology')" id="btn-technology" class="nav-btn py-2 px-6 rounded-lg sm:rounded-full text-sm sm:text-base font-medium transition-all duration-300 bg-sc-slate text-white shadow-md transform scale-105">
+                Technology
+            </button>
+            <button onclick="showSection('investment')" id="btn-investment" class="nav-btn py-2 px-6 rounded-lg sm:rounded-full text-sm sm:text-base font-medium transition-all duration-300 text-sc-dark hover:bg-sc-cream hover:text-sc-slate">
+                Investment
+            </button>
+            <button onclick="showSection('policy')" id="btn-policy" class="nav-btn py-2 px-6 rounded-lg sm:rounded-full text-sm sm:text-base font-medium transition-all duration-300 text-sc-dark hover:bg-sc-cream hover:text-sc-slate">
+                Policy
+            </button>
+            <button onclick="showSection('impact')" id="btn-impact" class="nav-btn py-2 px-6 rounded-lg sm:rounded-full text-sm sm:text-base font-medium transition-all duration-300 text-sc-dark hover:bg-sc-cream hover:text-sc-slate">
+                Impact
+            </button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="max-w-5xl mx-auto min-h-[500px]">
+            
+            <!-- Technology Section -->
+            <div id="technology" class="content-section animate-fadeIn">
+                <div class="mb-8 text-center">
+                    <h2 class="text-3xl font-bold mb-4 text-sc-dark">Breakthroughs in Reasoning</h2>
+                    <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                        The release of <strong>GPT-5.2 "Thinking"</strong> models marks the end of the "Chat" era and the beginning of the "Agentic" era. 
+                        With a massive leap in reasoning capabilities, AI is moving from probabilistic word prediction to reliable, multi-step execution of complex tasks.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl border border-sc-slate/30 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i data-lucide="cpu" class="w-6 h-6 text-sc-slate"></i>
+                            <h3 class="text-xl font-bold text-sc-dark">Deep Reasoning</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            GPT-5.2 achieves a <strong>70.9% score</strong> on professional benchmarks, capable of handling complex Excel financial forecasting without the hallucinations of previous generations.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl border border-sc-slate/30 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i data-lucide="file-text" class="w-6 h-6 text-sc-slate"></i>
+                            <h3 class="text-xl font-bold text-sc-dark">Disposable Software</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Google's new <strong>Disco browser</strong> creates instant, bespoke "GenTabs" applications, threatening single-utility SaaS tools by generating software on-demand.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-sc-slate/10 p-6 rounded-xl mt-6">
+                    <h3 class="text-lg font-bold text-sc-dark mb-2">The Artificial Hivemind Risk</h3>
+                    <p class="text-gray-700">
+                        Researchers warn that as models converge on identical training data, they produce strategically identical outputs. Reliance on AI for differentiation leads to "strategic homogenization."
+                    </p>
+                </div>
+
+                <div class="flex justify-center mt-8">
+                    <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sc-slate font-bold hover:text-sc-dark transition-colors">
+                        Let's discuss your Agentic Readiness Strategy <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
             </div>
 
-            <footer className="text-center py-8 text-sc-slate text-sm mt-12 border-t border-sc-slate/20 max-w-5xl mx-auto">
-              <p>Summary content powered by Gemini Deep Research, organized with Notebook LM</p>
-              <p className="mt-1">Produced by Nicole Dickens, Fractional AI Consultant</p>
-            </footer>
-          </div>
-        );
-      };
+            <!-- Investment Section -->
+            <div id="investment" class="content-section hidden">
+                <div class="mb-8 text-center">
+                    <h2 class="text-3xl font-bold mb-4 text-sc-dark">Capital Markets: The "Barbell" Economy</h2>
+                    <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                        Venture capital has bifurcated. Funding is concentrating on massive infrastructure and deep vertical integration, 
+                        while the middle tier of "AI wrapper" startups faces starvation.
+                    </p>
+                </div>
 
-      const root = ReactDOM.createRoot(document.getElementById('root'));
-      root.render(<App />);
+                <div class="bg-white p-6 rounded-xl shadow-md border border-sc-slate/20">
+                    <h3 class="font-bold text-xl mb-6 text-center text-sc-dark">Major Funding Rounds (Dec 6–12, 2025)</h3>
+                    
+                    <!-- CSS Chart -->
+                    <div class="w-full h-[300px] flex items-end justify-center gap-8 sm:gap-16 pb-6 border-b border-gray-200">
+                        <div class="flex flex-col items-center group w-1/3 sm:w-1/4">
+                            <div class="text-sc-dark font-bold mb-2">$700M</div>
+                            <div class="w-full bg-sc-slate rounded-t-lg transition-all hover:bg-sc-dark" style="height: 250px;"></div>
+                            <div class="mt-2 text-xs sm:text-sm text-center font-medium text-sc-dark">Saviynt<br>(Identity Security)</div>
+                        </div>
+                        <div class="flex flex-col items-center group w-1/3 sm:w-1/4">
+                            <div class="text-sc-dark font-bold mb-2">$475M</div>
+                            <div class="w-full bg-sc-blue-gray rounded-t-lg transition-all hover:bg-sc-slate" style="height: 170px;"></div>
+                            <div class="mt-2 text-xs sm:text-sm text-center font-medium text-sc-dark">Unconventional AI<br>(Analog Chips)</div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-center text-sm text-gray-500 mt-4 italic">Values in USD Millions</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div class="bg-white p-5 rounded-xl border-l-4 border-sc-slate shadow-sm">
+                        <h4 class="font-bold text-lg text-sc-dark mb-2">Infrastructure as Sovereignty</h4>
+                        <p class="text-sm text-gray-600">
+                            <strong>$20 Billion</strong> joint venture between Qatar and Brookfield to build regional AI data centers, treating compute as critical national infrastructure.
+                        </p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border-l-4 border-sc-blue-gray shadow-sm">
+                        <h4 class="font-bold text-lg text-sc-dark mb-2">The Analog Bet</h4>
+                        <p class="text-sm text-gray-600">
+                            <strong>$475 Million</strong> seed for Unconventional AI signals a long-term hedge against digital energy limits, betting on biology-inspired analog computing.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center mt-8">
+                    <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sc-slate font-bold hover:text-sc-dark transition-colors">
+                        Evaluate your "Defensible Moat" investment thesis <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Policy Section -->
+            <div id="policy" class="content-section hidden">
+                <div class="mb-8 text-center">
+                    <h2 class="text-3xl font-bold mb-4 text-sc-dark">Regulatory Civil War</h2>
+                    <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                        A collision between Federal deregulation and State-level safety mandates creates a chaotic legal vacuum. 
+                        Simultaneously, trade policy shifts from "Containment" to "Rent-Seeking."
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-sc-slate/20 flex flex-col md:flex-row gap-4 items-start">
+                        <div class="bg-sc-slate/10 p-3 rounded-full shrink-0">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-sc-slate"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-sc-dark mb-2">Federal Preemption</h3>
+                            <p class="text-gray-600">
+                                Trump's "One Rulebook" Executive Order uses fiscal coercion (withholding broadband funds) to strip states of their ability to regulate AI, targeting laws like the Colorado AI Act.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-sc-slate/20 flex flex-col md:flex-row gap-4 items-start">
+                        <div class="bg-sc-blue-gray/10 p-3 rounded-full shrink-0">
+                            <i data-lucide="briefcase" class="w-6 h-6 text-sc-blue-gray"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-sc-dark mb-2">The Mercantilist Pivot</h3>
+                            <p class="text-gray-600">
+                                The US approved Nvidia H200 sales to China conditioned on a <strong>25% revenue share</strong> to the Treasury. Policy now prioritizes revenue extraction over absolute technology denial.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-sc-cream border border-sc-taupe p-5 rounded-xl mt-4">
+                    <h4 class="font-bold text-sc-dark mb-2">Strategic Takeaway for SMBs</h4>
+                    <p class="text-sm text-gray-700">
+                        Maintain a <strong>"Dual-Track"</strong> compliance strategy. Do not assume federal preemption offers immediate protection from state liability. Document bias testing as if state laws are fully enforceable.
+                    </p>
+                </div>
+
+                <div class="flex justify-center mt-8">
+                    <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sc-slate font-bold hover:text-sc-dark transition-colors">
+                        Review your AI Governance Framework <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Impact Section -->
+            <div id="impact" class="content-section hidden">
+                <div class="mb-8 text-center">
+                    <h2 class="text-3xl font-bold mb-4 text-sc-dark">The "Code Red" Economy</h2>
+                    <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                        We have moved from experimental tools to mandatory efficiencies. The "Agentic Economy" is displacing labor, not just assisting it.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+                        <h3 class="font-bold text-lg text-sc-dark mb-3">Outcomes Over Seats</h3>
+                        <p class="text-sm text-gray-600">
+                            SMBs are shifting spend from software seats to outcomes. Platforms like Podium's "Jerry" replace entire scheduling roles, driving 300% revenue growth for AI divisions.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+                        <h3 class="font-bold text-lg text-sc-dark mb-3">Reliability Tax</h3>
+                        <p class="text-sm text-gray-600">
+                            Early adoption of "Thinking" models carries operational risk. Desktop apps are freezing under load. Critical workflows must remain on stable APIs.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+                        <h3 class="font-bold text-lg text-sc-dark mb-3">Seasonal Displacement</h3>
+                        <p class="text-sm text-gray-600">
+                            Retailers successfully deployed AI for holiday returns processing, operating 3x faster than humans and permanently eroding seasonal entry-level jobs.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-white p-6 rounded-xl border-l-4 border-red-400 shadow-sm">
+                    <h3 class="font-bold text-lg text-sc-dark mb-2">Security Alert: Agent Hijacking</h3>
+                    <p class="text-gray-600 mb-4">
+                        79% of organizations have no security policy for autonomous agents. Attackers can now compromise an agent's identity to execute business logic attacks (e.g., fraudulent invoices).
+                    </p>
+                    <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="text-sc-slate font-bold hover:text-sc-dark text-sm flex items-center gap-1">
+                        Get help securing Non-Human Identities <i data-lucide="external-link" class="w-3 h-3"></i>
+                    </a>
+                </div>
+
+                <div class="flex justify-center mt-8">
+                    <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sc-slate font-bold hover:text-sc-dark transition-colors">
+                        Audit your Workforce for Agentic Readiness <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="text-center py-8 text-sc-slate text-sm mt-12 border-t border-sc-slate/20 max-w-5xl mx-auto">
+            <p>Summary content powered by Gemini Deep Research, organized with Notebook LM</p>
+            <p class="mt-1">Produced by Nicole Dickens, Fractional AI Consultant</p>
+        </footer>
+    </div>
+
+    <!-- Logic -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Tab Switching Logic
+        function showSection(id) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('animate-fadeIn');
+            });
+            
+            // Reset buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-sc-slate', 'text-white', 'shadow-md', 'scale-105');
+                btn.classList.add('text-sc-dark', 'hover:bg-sc-cream', 'hover:text-sc-slate');
+            });
+
+            // Show active section
+            const target = document.getElementById(id);
+            if(target) {
+                target.classList.remove('hidden');
+                // Trigger reflow to restart animation if needed
+                void target.offsetWidth;
+                target.classList.add('animate-fadeIn');
+            }
+
+            // Highlight active button
+            const activeBtn = document.getElementById('btn-' + id);
+            if(activeBtn) {
+                activeBtn.classList.remove('text-sc-dark', 'hover:bg-sc-cream', 'hover:text-sc-slate');
+                activeBtn.classList.add('bg-sc-slate', 'text-white', 'shadow-md', 'scale-105');
+            }
+        }
     </script>
-  </body>
+</body>
 </html>
