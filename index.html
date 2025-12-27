@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Pulse Weekly: Dec 13 – Dec 19, 2025</title>
+    <title>AI Pulse Weekly: Dec 20 – Dec 26, 2025</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,11 +18,11 @@
         theme: {
           extend: {
             colors: {
-              'cmu-dark': '#4E514E',
-              'cmu-taupe': '#988C80',
-              'cmu-honeysuckle': '#E0A39F',
-              'cmu-cream': '#F9EBE1',
-              'cmu-text': '#2D3436',
+              'os-ebony': '#3C3C3D',
+              'os-cornflower': '#5B85A0',
+              'os-charcoal': '#2E3B51',
+              'os-taupe': '#CFCBCE',
+              'os-bg': '#F4F4F5',
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
@@ -36,10 +33,10 @@
     </script>
     <style>
       body {
-        background-color: #F9EBE1; /* Cream 2 */
-        color: #4E514E; /* Gunmetal Gray */
+        background-color: #F4F4F5;
+        color: #3C3C3D;
+        font-family: 'Inter', sans-serif;
       }
-      /* Simple fade in animation */
       @keyframes fadeIn {
         from { opacity: 0; transform: translateY(10px); }
         to { opacity: 1; transform: translateY(0); }
@@ -47,377 +44,365 @@
       .animate-fadeIn {
         animation: fadeIn 0.5s ease-out forwards;
       }
-      .hidden {
-        display: none;
-      }
-      .tab-active {
-        background-color: #E0A39F !important; /* Honeysuckle */
-        color: white !important;
-        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-        transform: scale(1.05);
+      .recharts-cartesian-grid-horizontal line, 
+      .recharts-cartesian-grid-vertical line {
+        stroke: #e5e7eb;
       }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "recharts": "https://esm.sh/recharts@^3.6.0"
-  }
-}
-</script>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+        "recharts": "https://esm.sh/recharts@^3.6.0"
+      }
+    }
+    </script>
 </head>
-<body class="min-h-screen pb-12">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
-        <!-- Header -->
-        <header class="text-center mb-10 pt-8">
-            <h1 class="text-4xl md:text-5xl font-bold text-cmu-dark mb-3 tracking-tight">
-                AI Pulse Weekly
-            </h1>
-            <p class="text-lg md:text-xl text-cmu-taupe font-bold uppercase tracking-widest">
-                Dec 13 – Dec 19, 2025
-            </p>
+<body>
+    <div id="root"></div>
 
-            <!-- KPIs -->
-            <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto px-4">
-                <div class="bg-white p-6 rounded-2xl border-2 border-cmu-honeysuckle shadow-sm hover:shadow-md transition-all duration-300">
-                    <p class="text-3xl font-bold text-cmu-honeysuckle mb-2">$4 Billion</p>
-                    <p class="text-sm text-cmu-text leading-snug">Databricks capital injection at a $138B valuation, confirming "Data Estate" dominance.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border-2 border-cmu-taupe shadow-sm hover:shadow-md transition-all duration-300">
-                    <p class="text-3xl font-bold text-cmu-taupe mb-2">70.9%</p>
-                    <p class="text-sm text-cmu-text leading-snug">GPT-5.2 "GDPval" score against human pros, signaling the era of Labor-to-Compute Arbitrage.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border-2 border-cmu-honeysuckle shadow-sm hover:shadow-md transition-all duration-300">
-                    <p class="text-3xl font-bold text-cmu-honeysuckle mb-2">$1 Billion</p>
-                    <p class="text-sm text-cmu-text leading-snug">Disney's OpenAI equity stake, legitimizing generative video as a core IP strategy.</p>
-                </div>
-            </div>
-            
-            <!-- Actions -->
-            <div class="flex flex-wrap justify-center gap-4 mt-8">
-                <a href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/ab07dc0ef849517dd0e2606c5766216c07539a26/AI%20Weekly%20Pulse%2019DEC25.pdf" target="_blank" rel="noopener noreferrer" class="bg-cmu-dark hover:bg-cmu-taupe text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
-                    <i data-lucide="file-text" class="w-5 h-5"></i>
-                    Read Full Report
-                </a>
-                <a href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/ab07dc0ef849517dd0e2606c5766216c07539a26/AI_Agents_Pass_The_Balance_Sheet_Test.m4a" target="_blank" rel="noopener noreferrer" class="bg-white text-cmu-honeysuckle border-2 border-cmu-honeysuckle hover:bg-cmu-honeysuckle hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
-                    <i data-lucide="headphones" class="w-5 h-5"></i>
-                    Listen to Audio
-                </a>
-            </div>
-        </header>
+    <script type="module">
+        import React, { useState } from 'react';
+        import ReactDOM from 'react-dom/client';
+        import { 
+            FileText, Headphones, ExternalLink, ArrowRight, 
+            ShieldAlert, Cpu, ShoppingCart, Zap, TrendingUp, Briefcase 
+        } from 'lucide-react';
+        import { 
+            BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, 
+            ResponsiveContainer, Cell, LabelList 
+        } from 'recharts';
 
-        <!-- Executive Briefing -->
-        <div class="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-cmu-cream mb-10 max-w-5xl mx-auto">
-            <h3 class="text-2xl font-bold mb-6 text-center text-cmu-dark">Executive Summary: Transition to Agentic Economics</h3>
-            <div class="text-cmu-text leading-relaxed space-y-4">
-                <p>
-                    The week of December 13–19, 2025, marks the definitive shift from the novelty of <em>generation</em> to the paradigm of <strong>action</strong>. The industry has discarded the "Turing Test" in favor of the <strong>"Balance Sheet Test."</strong>
+        // --- Components ---
+
+        const Header = ({ kpis, reportUrl, dateRange }) => (
+            <header className="text-center mb-10 pt-8">
+                <h1 className="text-4xl md:text-5xl font-bold text-os-ebony mb-3 tracking-tight">
+                    AI Pulse Weekly
+                </h1>
+                <p className="text-lg md:text-xl text-os-cornflower font-bold uppercase tracking-widest">
+                    {dateRange}
                 </p>
-                <p>
-                    With the release of GPT-5.2 and its "GDPval" benchmark, we are measuring the ability of AI to perform billable labor at a fraction of human cost. Simultaneously, Shopify’s rollout of "Agentic Storefronts" signal the decline of the browser-based economy and the rise of the "agent-mediated" economy.
-                </p>
-                <p class="bg-cmu-honeysuckle/10 p-4 rounded-xl font-semibold text-cmu-dark border-l-4 border-cmu-honeysuckle">
-                    Strategic Insight: Labor-to-Compute Arbitrage is the new profit lever. For tasks where models show a >70% win rate, routing to compute rather than labor can reduce costs by nearly 97%.
-                </p>
-            </div>
-            <div class="mt-8 text-center">
-                <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="inline-block bg-cmu-taupe/10 text-cmu-taupe font-bold px-6 py-2 rounded-full hover:bg-cmu-taupe hover:text-white transition-all">
-                    Consult with Nicole Dickens on your Agentic Strategy
-                </a>
-            </div>
-        </div>
 
-        <!-- Navigation Tabs -->
-        <nav class="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 mb-10 bg-white p-2 rounded-2xl sm:rounded-full shadow-lg border border-cmu-cream max-w-2xl mx-auto">
-            <button onclick="showSection('technology')" id="btn-technology" class="nav-btn py-2 px-6 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 tab-active">
-                Technology
-            </button>
-            <button onclick="showSection('investment')" id="btn-investment" class="nav-btn py-2 px-6 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 text-cmu-dark hover:bg-cmu-cream">
-                Investment
-            </button>
-            <button onclick="showSection('policy')" id="btn-policy" class="nav-btn py-2 px-6 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 text-cmu-dark hover:bg-cmu-cream">
-                Policy
-            </button>
-            <button onclick="showSection('impact')" id="btn-impact" class="nav-btn py-2 px-6 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 text-cmu-dark hover:bg-cmu-cream">
-                Impact
-            </button>
-        </nav>
-
-        <!-- Main Content Area -->
-        <main class="max-w-5xl mx-auto min-h-[500px]">
-            
-            <!-- Technology Section -->
-            <div id="technology" class="content-section animate-fadeIn">
-                <div class="mb-8 text-center">
-                    <h2 class="text-3xl font-bold mb-4 text-cmu-dark">The Architecture of Agency</h2>
-                    <p class="text-lg text-cmu-text max-w-3xl mx-auto leading-relaxed">
-                        GPT-5.2 introduces a bifurcated structure: <strong>Instant</strong> vs. <strong>Thinking</strong>. The "Thinking" variant allocates compute cycles to solve complex problems step-by-step, drastically reducing hallucinations.
-                    </p>
+                <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto px-4">
+                    {kpis.map((kpi, index) => (
+                        <div 
+                            key={index} 
+                            className={`bg-white p-6 rounded-2xl border-2 shadow-sm hover:shadow-md transition-all duration-300 ${index % 2 === 0 ? 'border-os-cornflower' : 'border-os-charcoal'}`}
+                        >
+                            <p className={`text-3xl font-bold mb-2 ${index % 2 === 0 ? 'text-os-cornflower' : 'text-os-charcoal'}`}>{kpi.value}</p>
+                            <p className="text-sm text-os-ebony/70 leading-snug font-medium">{kpi.label}</p>
+                        </div>
+                    ))}
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-white p-8 rounded-3xl border border-cmu-cream shadow-sm">
-                        <div class="flex items-center gap-3 mb-4">
-                            <i data-lucide="cpu" class="w-8 h-8 text-cmu-honeysuckle"></i>
-                            <h3 class="text-xl font-bold text-cmu-dark">GDPval Benchmarking</h3>
-                        </div>
-                        <p class="text-cmu-text mb-4">
-                            A first-of-its-kind metric evaluating AI on <strong>real-world economically valuable tasks</strong> across 44 occupations. GPT-5.2 scored a 70.9% "win or tie" rate against human professionals.
-                        </p>
-                        <ul class="text-sm space-y-2 text-gray-500">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cmu-honeysuckle"></i> Superior in planning-heavy workflows</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cmu-honeysuckle"></i> Standard for professional knowledge work</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white p-8 rounded-3xl border border-cmu-cream shadow-sm">
-                        <div class="flex items-center gap-3 mb-4">
-                            <i data-lucide="zap" class="w-8 h-8 text-cmu-taupe"></i>
-                            <h3 class="text-xl font-bold text-cmu-dark">Context Compaction</h3>
-                        </div>
-                        <p class="text-cmu-text mb-4">
-                            OpenAI’s new endpoint allows for <strong>"infinite" context</strong> by summarizing previous turns into dense vector representations. This solves the "Goldfish Memory" problem for long-running agents.
-                        </p>
-                        <ul class="text-sm space-y-2 text-gray-500">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cmu-taupe"></i> Retain preferences for months</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cmu-taupe"></i> Zero-latency institutional memory</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-cmu-honeysuckle/5 p-8 rounded-3xl mt-8 border border-cmu-honeysuckle/20">
-                    <h3 class="text-xl font-bold text-cmu-dark mb-3">Model Routing as a Core Competency</h3>
-                    <p class="text-cmu-text">
-                        Routing a simple query to GPT-5.2 "Thinking" is a waste of capital. SMBs must implement <strong>routing logic</strong>—sending simple tasks to commodity models like Gemini 3 Flash ($0.50/1M tokens) and complex reasoning to expensive "Thinking" models.
-                    </p>
-                </div>
-
-                <div class="flex justify-center mt-12">
-                    <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 bg-cmu-honeysuckle text-white font-bold py-4 px-10 rounded-full hover:shadow-xl transition-all">
-                        Optimize your Model Routing Logic <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                <div className="flex flex-wrap justify-center gap-4 mt-8">
+                    <a href={reportUrl} target="_blank" rel="noopener noreferrer" className="bg-os-ebony hover:bg-os-charcoal text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
+                        <FileText className="w-5 h-5" />
+                        Read Full Report
+                    </a>
+                    <a href="#" onClick={(e) => { e.preventDefault(); alert("Audio summary coming soon!"); }} className="bg-white text-os-cornflower border-2 border-os-cornflower hover:bg-os-cornflower hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
+                        <Headphones className="w-5 h-5" />
+                        Listen to Audio
                     </a>
                 </div>
+            </header>
+        );
+
+        const Navigation = ({ activeSection, setActiveSection }) => {
+            const sections = [
+                { id: 'technology', label: 'Technology' },
+                { id: 'investment', label: 'Investment' },
+                { id: 'policy', label: 'Policy' },
+                { id: 'impact', label: 'Impact' },
+            ];
+            return (
+                <nav className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 mb-10 bg-white p-2 rounded-2xl sm:rounded-full shadow-lg border border-os-taupe max-w-2xl mx-auto">
+                    {sections.map((section) => (
+                        <button
+                            key={section.id}
+                            onClick={() => setActiveSection(section.id)}
+                            className={`py-2 px-6 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 ${activeSection === section.id ? 'bg-os-charcoal text-white shadow-md transform scale-105' : 'text-os-ebony hover:bg-os-taupe/30 hover:text-os-charcoal'}`}
+                        >
+                            {section.label}
+                        </button>
+                    ))}
+                </nav>
+            );
+        };
+
+        const InvestmentChart = ({ data }) => (
+            <div className="w-full h-[300px] sm:h-[400px] mt-6">
+                <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={data} layout="vertical" margin={{ top: 20, right: 80, left: 100, bottom: 5 }}>
+                        <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} />
+                        <XAxis type="number" hide />
+                        <YAxis dataKey="name" type="category" tick={{ fill: '#3C3C3D', fontSize: 11, fontWeight: 600 }} axisLine={false} tickLine={false} width={100} />
+                        <Tooltip 
+                            cursor={{ fill: '#CFCBCE', opacity: 0.3 }}
+                            contentStyle={{ backgroundColor: '#fff', border: '1px solid #5B85A0', borderRadius: '12px', color: '#2E3B51', fontWeight: 600 }}
+                            formatter={(value) => [`$${value}M`, 'Funding']}
+                        />
+                        <Bar dataKey="value" radius={[0, 10, 10, 0]} barSize={25}>
+                            {data.map((entry, index) => (
+                                <Cell key={`cell-${index}`} fill={index === 0 ? '#2E3B51' : (index % 2 === 0 ? '#5B85A0' : '#3C3C3D')} />
+                            ))}
+                            <LabelList 
+                                dataKey="value" 
+                                position="right" 
+                                formatter={(val) => `$${val}M`} 
+                                style={{ fill: '#3C3C3D', fontSize: 12, fontWeight: 700 }}
+                                offset={10}
+                            />
+                        </Bar>
+                    </BarChart>
+                </ResponsiveContainer>
             </div>
+        );
 
-            <!-- Investment Section -->
-            <div id="investment" class="content-section hidden">
-                <div class="mb-8 text-center">
-                    <h2 class="text-3xl font-bold mb-4 text-cmu-dark">Capital Inflow: The "Data Holder" Premium</h2>
-                    <p class="text-lg text-cmu-text max-w-3xl mx-auto leading-relaxed">
-                        Investment flows are shifting from "Model Builders" to "Data Holders," confirming that proprietary enterprise data is the only durable moat in the AI economy.
-                    </p>
-                </div>
+        // --- Main App ---
 
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-cmu-cream">
-                    <h3 class="font-bold text-xl mb-8 text-center text-cmu-dark">Major AI Capital Inflows (Dec 13–19)</h3>
-                    
-                    <!-- Horizontal Bar Chart -->
-                    <div class="space-y-6">
-                        <div class="relative pt-1">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase py-1 px-2 rounded-full text-cmu-dark bg-cmu-honeysuckle/20">Databricks ($138B Val)</span>
-                                <span class="text-sm font-bold text-cmu-dark">$4,000M</span>
+        const App = () => {
+            const [activeSection, setActiveSection] = useState('technology');
+
+            const kpis = [
+                { value: "$20 Billion", label: "Nvidia acquires Groq, locking down inference chips and neutralizing a major LPU competitor." },
+                { value: "50%", label: "Reduction in administrative workloads (Fujitsu) via autonomous agents managing end-to-end workflows." },
+                { value: "$150,000", label: "Individual statutory damages sought in the Carreyrou lawsuit, threatening model 'unlearning'." }
+            ];
+
+            const chartData = [
+                { name: 'Nvidia (Groq Acquisition)', value: 20000 },
+                { name: 'Google (Intersect Power)', value: 4750 },
+                { name: 'DP Tech (Scientific AI)', value: 114 },
+                { name: 'Nawah Scientific', value: 23 },
+                { name: 'Ankar (Legal Tech)', value: 20 },
+            ];
+
+            const LINKEDIN_URL = "https://www.linkedin.com/in/nicolemdickens/";
+            const REPORT_URL = "https://raw.githubusercontent.com/nmdickens/The-Week-in-AI/main/AI%20Weekly%20Pulse%2026DEC25.pdf";
+
+            const renderContent = () => {
+                switch (activeSection) {
+                    case 'technology':
+                        return (
+                            <div className="space-y-6 animate-fadeIn">
+                                <div className="mb-8 text-center">
+                                    <h2 className="text-3xl font-bold mb-4 text-os-ebony">The "Digital Employee" Era</h2>
+                                    <p className="text-lg text-os-ebony/80 max-w-3xl mx-auto leading-relaxed">
+                                        The week of Dec 20-26, 2025, marks the structural metamorphosis from Generative AI to <strong>Agentic AI</strong>. We are moving from tools that help you type to software that <em>is</em> the department.
+                                    </p>
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="bg-white p-8 rounded-3xl border border-os-taupe shadow-sm">
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <Cpu className="w-8 h-8 text-os-cornflower" />
+                                            <h3 className="text-xl font-bold text-os-ebony">MiniMax M2.1 & MoE</h3>
+                                        </div>
+                                        <p className="text-os-ebony/70">
+                                            Utilizing a <strong>Mixture-of-Experts (MoE)</strong> architecture, M2.1 activates only 10B out of 230B parameters, drastically lowering inference costs for "always-on" agents managing finance and HR.
+                                        </p>
+                                    </div>
+                                    <div className="bg-white p-8 rounded-3xl border border-os-taupe shadow-sm">
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <Zap className="w-8 h-8 text-os-charcoal" />
+                                            <h3 className="text-xl font-bold text-os-ebony">Secure Inter-Agent Gateway</h3>
+                                        </div>
+                                        <p className="text-os-ebony/70">
+                                            Fujitsu's Kozuchi platform introduces cryptographic protocols allowing agents from different vendors (e.g., buyer and supplier) to negotiate complex B2B transactions without human arbitrage.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="bg-os-cornflower/10 p-8 rounded-3xl mt-8 border border-os-cornflower/20">
+                                    <h3 className="text-xl font-bold text-os-charcoal mb-3">Standardized Deployment: NVIDIA NIM</h3>
+                                    <p className="text-os-ebony/80">
+                                        Underpinning these advances is <strong>NVIDIA NIM (Inference Microservices)</strong>, effectively a "Docker for AI Agents." It allows enterprises to host sovereign agents on private infrastructure, reducing public API dependency.
+                                    </p>
+                                </div>
+                                <div className="flex justify-center mt-12">
+                                    <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 bg-os-cornflower text-white font-bold py-4 px-10 rounded-full hover:shadow-xl transition-all">
+                                        Deploy your "Digital Employee" Strategy <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                    </a>
+                                </div>
                             </div>
-                            <div class="overflow-hidden h-4 text-xs flex rounded-full bg-gray-100">
-                                <div style="width:100%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-cmu-dark"></div>
+                        );
+                    case 'investment':
+                        return (
+                            <div className="space-y-6 animate-fadeIn">
+                                <div className="mb-8 text-center">
+                                    <h2 className="text-3xl font-bold mb-4 text-os-ebony">Infrastructure Supercycle: $25B Consolidation</h2>
+                                    <p className="text-lg text-os-ebony/80 max-w-3xl mx-auto leading-relaxed">
+                                        Big Tech is locking down the physical supply chain—chips and energy. Generic "foundation model" venture capital is dead; vertical SaaS and scientific AI are the new targets.
+                                    </p>
+                                </div>
+                                <div className="bg-white p-8 rounded-3xl shadow-lg border border-os-taupe">
+                                    <h3 className="font-bold text-xl mb-8 text-center text-os-ebony">Major AI Capital Inflows (Dec 20–26)</h3>
+                                    <InvestmentChart data={chartData} />
+                                    <p className="text-center text-sm text-gray-500 mt-6 italic">Values in USD Millions</p>
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                                    <div className="bg-white p-6 rounded-2xl border-l-8 border-os-cornflower shadow-sm">
+                                        <h4 className="font-bold text-lg text-os-ebony mb-2">Vertical SaaS Thesis</h4>
+                                        <p className="text-sm text-os-ebony/70">
+                                            VCs are pouring money into <strong>Vertical Agentic AI</strong>. Ankar's $20M raise for patent law automation validates the view that value lies in deep industry specificity.
+                                        </p>
+                                    </div>
+                                    <div className="bg-white p-6 rounded-2xl border-l-8 border-os-charcoal shadow-sm">
+                                        <h4 className="font-bold text-lg text-os-ebony mb-2">Service-as-Software M&A</h4>
+                                        <p className="text-sm text-os-ebony/70">
+                                            Traditional service firms are becoming tech buyers. 1Point1 Solutions' acquisition of Netcom aims to replace human labor arbitrage with software margin expansion.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="flex justify-center mt-12">
+                                    <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 bg-os-charcoal text-white font-bold py-4 px-10 rounded-full hover:shadow-xl transition-all">
+                                        Review your Vertical Specialization <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                    </a>
+                                </div>
+                            </div>
+                        );
+                    case 'policy':
+                        return (
+                            <div className="space-y-6 animate-fadeIn">
+                                <div className="mb-8 text-center">
+                                    <h2 className="text-3xl font-bold mb-4 text-os-ebony">Schrödinger’s Regulation</h2>
+                                    <p className="text-lg text-os-ebony/80 max-w-3xl mx-auto leading-relaxed">
+                                        The constitutional crisis deepens as Federal preemption attempts to neutralize state-level AI safety laws, creating a chaotic environment for businesses operating across borders.
+                                    </p>
+                                </div>
+                                <div className="space-y-6">
+                                    <div className="bg-white p-8 rounded-3xl shadow-sm border border-os-taupe flex flex-col md:flex-row gap-6 items-start">
+                                        <div className="bg-os-ebony/5 p-4 rounded-2xl shrink-0">
+                                            <ShieldAlert className="w-10 h-10 text-os-ebony" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-os-ebony mb-2">The AI Litigation Task Force</h3>
+                                            <p className="text-os-ebony/70">
+                                                The DOJ has been directed to challenge state AI laws in court, asserting that inconsistent regulations burden interstate commerce. This pits "global dominance" against local safety mandates.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="bg-white p-8 rounded-3xl shadow-sm border border-os-taupe flex flex-col md:flex-row gap-6 items-start">
+                                        <div className="bg-os-cornflower/5 p-4 rounded-2xl shrink-0">
+                                            <TrendingUp className="w-10 h-10 text-os-cornflower" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-os-ebony mb-2">The "Shadow Library" Lawsuit</h3>
+                                            <p className="text-os-ebony/70">
+                                                John Carreyrou's lawsuit targets OpenAI, Google, and Meta, alleging willful theft via piracy hubs. If proven, it could force models to <strong>"unlearn"</strong> vast swaths of training data.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="bg-white border border-os-charcoal p-8 rounded-3xl mt-8">
+                                    <h4 className="font-bold text-os-ebony mb-2">Governance Alert</h4>
+                                    <p className="text-os-ebony/80 italic">
+                                        "Businesses must prepare for a volatile compliance environment where federal and state rules are actively litigated. Reliance on vendor diversification is mandatory to mitigate the risk of models suddenly going offline."
+                                    </p>
+                                </div>
+                                <div className="flex justify-center mt-12">
+                                    <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 bg-os-ebony text-white font-bold py-4 px-10 rounded-full hover:shadow-xl transition-all">
+                                        Audit your Data Provenance <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                    </a>
+                                </div>
+                            </div>
+                        );
+                    case 'impact':
+                        return (
+                            <div className="space-y-6 animate-fadeIn">
+                                <div className="mb-8 text-center">
+                                    <h2 className="text-3xl font-bold mb-4 text-os-ebony">The "Hollow Middle" Crisis</h2>
+                                    <p className="text-lg text-os-ebony/80 max-w-3xl mx-auto leading-relaxed">
+                                        As agents prove capable of replacing entry-level tasks, we face a crisis in human capital development: how do you train senior strategists if junior roles are automated?
+                                    </p>
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div className="bg-white p-8 rounded-3xl shadow-md border border-os-taupe">
+                                        <div className="text-os-cornflower mb-4"><Briefcase className="w-10 h-10" /></div>
+                                        <h3 className="font-bold text-xl text-os-ebony mb-3">Deflationary Labor Shock</h3>
+                                        <p className="text-os-ebony/70">
+                                            Agentic AI can reduce administrative workloads by up to 50%. The roles that served as "apprenticeships" (data entry, junior compliance) are the exact targets of "Digital Employees."
+                                        </p>
+                                    </div>
+                                    <div className="bg-white p-8 rounded-3xl shadow-md border border-os-taupe">
+                                        <div className="text-os-charcoal mb-4"><ShoppingCart className="w-10 h-10" /></div>
+                                        <h3 className="font-bold text-xl text-os-ebony mb-3">The "Slop" Premium</h3>
+                                        <p className="text-os-ebony/70">
+                                            As agent-generated "slop" floods the web, the market value of <strong>verified human judgment</strong> and relationship capital increases. Businesses must automate the back office to reinvest in high-touch human service.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="mt-8 bg-os-charcoal text-white p-10 rounded-3xl shadow-xl">
+                                    <div className="flex flex-col md:flex-row gap-8 items-center">
+                                        <div className="shrink-0">
+                                            <ExternalLink className="w-16 h-16 text-os-taupe" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-bold text-2xl mb-3 text-os-taupe">The Apprentice Crisis</h3>
+                                            <p className="text-os-taupe/80 mb-6">
+                                                Companies must completely redesign how they train and mentor human talent, as the "learning by doing" rung of the career ladder is effectively being removed.
+                                            </p>
+                                            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="bg-os-cornflower text-white font-bold py-3 px-8 rounded-full inline-flex items-center gap-2 hover:bg-white hover:text-os-cornflower transition-colors">
+                                                Redesign your Talent Mentorship <ExternalLink className="w-4 h-4" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    default:
+                        return null;
+                }
+            };
+
+            return (
+                <div className="min-h-screen pb-12">
+                    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                        <Header kpis={kpis} reportUrl={REPORT_URL} dateRange="Dec 20 – Dec 26, 2025" />
+                        
+                        <div className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-os-taupe mb-10 max-w-5xl mx-auto">
+                            <h3 className="text-2xl font-bold mb-6 text-center text-os-ebony">Executive Summary: The Agentic Turn</h3>
+                            <div className="text-os-ebony/90 leading-relaxed space-y-4">
+                                <p>
+                                    The final week of December 2025 will be remembered as the precise moment of AI's structural metamorphosis. We have transitioned from the era of Generative AI to the era of <strong>Agentic AI</strong>, defined by autonomous systems capable of executing end-to-end economic labor.
+                                </p>
+                                <p>
+                                    Driven by the release of MiniMax M2.1 and Fujitsu’s Kozuchi platform, the industry goalpost has moved from text generation to workflow execution. Meanwhile, a "Constitutional Crisis" in US regulation and the Carreyrou copyright suit threaten to reset the competitive landscape entirely.
+                                </p>
+                                <p className="bg-os-taupe/20 p-4 rounded-xl font-semibold text-os-charcoal border-l-4 border-os-cornflower">
+                                    Strategic Takeaway: Stop looking for tools to help employees type faster; start looking for agents that can perform the job of a junior administrator. The winning strategy is to automate the back office ruthlessly while reinvesting in human-led front office service.
+                                </p>
+                            </div>
+                            <div className="mt-8 text-center">
+                                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-os-cornflower/10 text-os-cornflower font-bold px-8 py-2 rounded-full hover:bg-os-cornflower hover:text-white transition-all">
+                                    Consult with Nicole Dickens on the "Agentic Turn"
+                                </a>
                             </div>
                         </div>
-                        <div class="relative pt-1">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase py-1 px-2 rounded-full text-cmu-honeysuckle bg-cmu-honeysuckle/10">OpenAI (Disney Stake)</span>
-                                <span class="text-sm font-bold text-cmu-dark">$1,000M</span>
-                            </div>
-                            <div class="overflow-hidden h-4 text-xs flex rounded-full bg-gray-100">
-                                <div style="width:25%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-cmu-honeysuckle"></div>
-                            </div>
-                        </div>
-                        <div class="relative pt-1">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase py-1 px-2 rounded-full text-cmu-taupe bg-cmu-taupe/10">Cyera (Data Security)</span>
-                                <span class="text-sm font-bold text-cmu-dark">$400M</span>
-                            </div>
-                            <div class="overflow-hidden h-4 text-xs flex rounded-full bg-gray-100">
-                                <div style="width:10%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-cmu-taupe"></div>
-                            </div>
-                        </div>
-                        <div class="relative pt-1">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold uppercase py-1 px-2 rounded-full text-gray-500 bg-gray-100">Radiant (Nuclear Microreactors)</span>
-                                <span class="text-sm font-bold text-cmu-dark">$300M</span>
-                            </div>
-                            <div class="overflow-hidden h-4 text-xs flex rounded-full bg-gray-100">
-                                <div style="width:7.5%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gray-400"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                    <div class="bg-white p-6 rounded-2xl border-l-8 border-cmu-honeysuckle shadow-sm">
-                        <h4 class="font-bold text-lg text-cmu-dark mb-2">Infrastructure as Moat</h4>
-                        <p class="text-sm text-cmu-text">
-                            Databricks' <strong>$4 Billion raise</strong> signals the rise of the "Data Estate." Unstructured data—PDFs, call logs, emails—is now the fuel for the most valuable business agents.
-                        </p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border-l-8 border-cmu-taupe shadow-sm">
-                        <h4 class="font-bold text-lg text-cmu-dark mb-2">The Security Premium</h4>
-                        <p class="text-sm text-cmu-text">
-                            Cyera's valuation tripling to <strong>$9 Billion</strong> reflects the panic among CIOs. Security is the prerequisite for autonomy; you cannot deploy agents if your data hygiene is poor.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-12">
-                    <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 bg-cmu-honeysuckle text-white font-bold py-4 px-10 rounded-full hover:shadow-xl transition-all">
-                        Audit your Data Moat & Hygiene <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Policy Section -->
-            <div id="policy" class="content-section hidden">
-                <div class="mb-8 text-center">
-                    <h2 class="text-3xl font-bold mb-4 text-cmu-dark">Schrödinger’s Compliance</h2>
-                    <p class="text-lg text-cmu-text max-w-3xl mx-auto leading-relaxed">
-                        A constitutional showdown has emerged as the Trump Executive Order attempts to preempt state-level AI regulations like those in California and Colorado.
-                    </p>
-                </div>
-
-                <div class="space-y-6">
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-cmu-cream flex flex-col md:flex-row gap-6 items-start">
-                        <div class="bg-cmu-dark/5 p-4 rounded-2xl shrink-0">
-                            <i data-lucide="landmark" class="w-10 h-10 text-cmu-dark"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-cmu-dark mb-2">Federal Preemption vs. States' Rights</h3>
-                            <p class="text-cmu-text">
-                                The administration argues AI is "interstate commerce," while states assert their "Police Powers" to protect civil rights from AI discrimination. This creates a "dangerous fragmentation" for multi-state SMBs.
-                            </p>
-                        </div>
+                        <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
+                        
+                        <main className="max-w-5xl mx-auto min-h-[500px]">
+                            {renderContent()}
+                        </main>
                     </div>
 
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-cmu-cream flex flex-col md:flex-row gap-6 items-start">
-                        <div class="bg-cmu-honeysuckle/5 p-4 rounded-2xl shrink-0">
-                            <i data-lucide="hand-metal" class="w-10 h-10 text-cmu-honeysuckle"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-cmu-dark mb-2">The "BEAD" Funding Coercion</h3>
-                            <p class="text-cmu-text">
-                                The EO utilizes the "power of the purse," directing the withholding of federal broadband (BEAD) funds from states that enforce "onerous" AI regulations. This politicizes critical infrastructure.
-                            </p>
-                        </div>
-                    </div>
+                    <footer className="text-center py-12 text-os-cornflower text-sm mt-12 border-t border-os-taupe max-w-5xl mx-auto">
+                        <p className="font-bold text-os-ebony mb-2">Nicole Dickens • Fractional AI Consultant</p>
+                        <p>Summary content powered by Gemini Deep Research • Organized with Notebook LM</p>
+                    </footer>
                 </div>
+            );
+        };
 
-                <div class="bg-white border border-cmu-taupe p-8 rounded-3xl mt-8">
-                    <h4 class="font-bold text-cmu-dark mb-2 uppercase text-xs tracking-widest">Prudent SMB Recommendation</h4>
-                    <p class="text-cmu-text italic">
-                        "It is safer to be over-compliant in a deregulated jurisdiction than under-compliant in a regulated one. Continue efforts for the Colorado AI Act to mitigate long-term liability risks."
-                    </p>
-                </div>
-
-                <div class="flex justify-center mt-12">
-                    <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 bg-cmu-dark text-white font-bold py-4 px-10 rounded-full hover:shadow-xl transition-all">
-                        Navigate the Governance Paradox <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Impact Section -->
-            <div id="impact" class="content-section hidden">
-                <div class="mb-8 text-center">
-                    <h2 class="text-3xl font-bold mb-4 text-cmu-dark">The Jevons Paradox of AI Labor</h2>
-                    <p class="text-lg text-cmu-text max-w-3xl mx-auto leading-relaxed">
-                        Data from Vanguard suggests that AI is driving a "hiring boom" in exposed sectors. As efficiency increases, the total consumption of labor resources spikes rather than decreases.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white p-8 rounded-3xl shadow-md border border-cmu-cream">
-                        <div class="text-cmu-honeysuckle mb-4"><i data-lucide="users-2" class="w-10 h-10"></i></div>
-                        <h3 class="font-bold text-xl text-cmu-dark mb-3">Labor-to-Compute Arbitrage</h3>
-                        <p class="text-cmu-text">
-                            The "GDPval Filter" allows SMBs to route tasks like auditing or coding to compute. This elevates existing senior headcount to roles of <strong>quality assurance and strategic oversight</strong>.
-                        </p>
-                    </div>
-
-                    <div class="bg-white p-8 rounded-3xl shadow-md border border-cmu-cream">
-                        <div class="text-cmu-taupe mb-4"><i data-lucide="shopping-cart" class="w-10 h-10"></i></div>
-                        <h3 class="font-bold text-xl text-cmu-dark mb-3">The "Agentic Storefront"</h3>
-                        <p class="text-cmu-text">
-                            Shopify’s feature allows purchase discovery within AI chat interfaces. SMB visibility is now determined by <strong>structured data hygiene</strong> (JSON-LD) rather than visual web design or traditional SEO.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="mt-8 bg-cmu-dark text-white p-10 rounded-3xl shadow-xl">
-                    <div class="flex flex-col md:flex-row gap-8 items-center">
-                        <div class="shrink-0">
-                            <i data-lucide="award" class="w-16 h-16 text-cmu-honeysuckle"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-2xl mb-3 text-cmu-honeysuckle">The "Human Premium" Branding</h3>
-                            <p class="text-gray-300 mb-6">
-                                A market bifurcation is emerging: "Synthetic Brands" (mass media/fast fashion) vs. <strong>"Authentic Brands"</strong>. SMBs can exploit this luxury differentiator by certifying "Human Only" content against the AI machine.
-                            </p>
-                            <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="bg-cmu-honeysuckle text-white font-bold py-3 px-8 rounded-full inline-flex items-center gap-2 hover:bg-white hover:text-cmu-honeysuckle transition-colors">
-                                Differentiate your Brand Authenticity <i data-lucide="external-link" class="w-4 h-4"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </main>
-
-        <footer class="text-center py-12 text-cmu-taupe text-sm mt-12 border-t border-cmu-honeysuckle/20 max-w-5xl mx-auto">
-            <p class="font-bold text-cmu-dark mb-2">Nicole Dickens • Fractional AI Consultant</p>
-            <p>Summary content powered by Gemini Deep Research • Organized with Notebook LM</p>
-            <div class="flex justify-center gap-6 mt-4">
-                <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" class="hover:text-cmu-honeysuckle transition-colors">LinkedIn Profile</a>
-                <a href="#" class="hover:text-cmu-honeysuckle transition-colors">Case Studies</a>
-                <a href="#" class="hover:text-cmu-honeysuckle transition-colors">Contact</a>
-            </div>
-        </footer>
-    </div>
-
-    <!-- Logic -->
-    <script>
-        // Initialize Icons
-        lucide.createIcons();
-
-        // Tab Switching Logic
-        function showSection(id) {
-            // Hide all sections
-            document.querySelectorAll('.content-section').forEach(el => {
-                el.classList.add('hidden');
-                el.classList.remove('animate-fadeIn');
-            });
-            
-            // Reset buttons
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('tab-active');
-                btn.classList.add('text-cmu-dark', 'hover:bg-cmu-cream');
-            });
-
-            // Show active section
-            const target = document.getElementById(id);
-            if(target) {
-                target.classList.remove('hidden');
-                void target.offsetWidth; // Trigger reflow
-                target.classList.add('animate-fadeIn');
-            }
-
-            // Highlight active button
-            const activeBtn = document.getElementById('btn-' + id);
-            if(activeBtn) {
-                activeBtn.classList.remove('text-cmu-dark', 'hover:bg-cmu-cream');
-                activeBtn.classList.add('tab-active');
-            }
+        // --- Mounting ---
+        const rootElement = document.getElementById('root');
+        if (rootElement) {
+            const root = ReactDOM.createRoot(rootElement);
+            root.render(React.createElement(App));
         }
     </script>
 </body>
