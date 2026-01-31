@@ -80,7 +80,7 @@
         import { createRoot } from 'react-dom/client';
         import { 
             Cpu, TrendingUp, ShieldAlert, Briefcase, FileText, Headphones, 
-            Zap, Scale, UserCheck, ExternalLink, Linkedin, MousePointer2, Settings
+            Zap, Scale, UserCheck, ExternalLink, Linkedin, MousePointer2, Settings, Factory, ShieldCheck
         } from 'lucide-react';
         import { 
             BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, 
@@ -90,22 +90,22 @@
         // --- Data ---
         const DATE_RANGE = "Jan 23, 2026 – Jan 30, 2026";
         const LINKEDIN_URL = "https://www.linkedin.com/in/nicolemdickens/";
-        const REPORT_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/5ddf11c8dd48fc8a3d8cd9312e3a16b27918c8bc/AI%20Weekly%20Pulse%2030JAN26.pdf";
-        const AUDIO_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/5ddf11c8dd48fc8a3d8cd9312e3a16b27918c8bc/Agentic%20Digital%20Labor%20and%20AI%20Poisoning.mp3";
+        const REPORT_URL = "https://raw.githubusercontent.com/nmdickens/The-Week-in-AI/main/AI%20Weekly%20Pulse%2030JAN26.pdf";
+        const AUDIO_URL = "https://raw.githubusercontent.com/nmdickens/The-Week-in-AI/main/AI%20Weekly%20Pulse%2030JAN26.mp3";
 
         const KPIS = [
-            { value: "38%", label: "Reduction in operational costs for early adopters of agentic workflows (Automatic.co Benchmark)." },
-            { value: "$57B", label: "Record NVIDIA quarterly revenue, signaling the shift from training to massive inference infrastructure." },
-            { value: "10x", label: "Reduction in inference token costs enabled by the newly unveiled Vera Rubin system-scale platform." }
+            { value: "38%", label: "Average operational cost reduction for firms successfully integrating agentic AI into functional workflows." },
+            { value: "$57B", label: "Record-breaking NVIDIA quarterly revenue, highlighting 'off the charts' demand for inference infrastructure." },
+            { value: "10x", label: "Energy efficiency gain of the Vera Rubin platform, designed to solve the physical 'Energy Wall' bottleneck." }
         ];
 
         const CHART_DATA = [
-            { name: 'Anthropic', value: 10000, label: 'Series Round' },
-            { name: 'Armis', value: 7750, label: 'Acquisition' },
+            { name: 'Anthropic', value: 10000, label: 'Round (Seeking)' },
+            { name: 'Armis', value: 7750, label: 'ServiceNow Acq.' },
             { name: 'Q.ai', value: 2000, label: 'Apple Acquisition' },
             { name: 'Ressio', value: 8.75, label: 'Series A' },
-            { name: 'Theorem', value: 6, label: 'Coding Reliability' },
-            { name: 'BriefCatch', value: 6, label: 'Legal AI' },
+            { name: 'Theorem', value: 6, label: 'Khosla Ventures' },
+            { name: 'BriefCatch', value: 6, label: 'Series A' },
         ];
 
         // --- Components ---
@@ -134,7 +134,7 @@
                 <div className="flex flex-wrap justify-center gap-4 mt-8">
                     <a href={REPORT_URL} target="_blank" rel="noopener noreferrer" className="bg-sc-honeysuckle hover:bg-sc-gunmetal text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
                         <FileText size={20} />
-                        Read Full Executive Brief
+                        Read Executive Brief
                     </a>
                     <a href={AUDIO_URL} target="_blank" rel="noopener noreferrer" className="bg-white text-sc-taupe border-2 border-sc-taupe hover:bg-sc-taupe hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
                         <Headphones size={20} />
@@ -196,7 +196,7 @@
                                 borderRadius: '12px', 
                                 fontSize: '13px'
                             }}
-                            formatter={(value, name, props) => [`$${value >= 1000 ? (value/1000).toFixed(1) + 'B' : value + 'M'} (${props.payload.label})`, 'Deal Value']}
+                            formatter={(value, name, props) => [`$${value >= 1000 ? (value/1000).toFixed(2) + 'B' : value + 'M'} (${props.payload.label})`, 'Deal Value']}
                         />
                         <Bar dataKey="value" radius={[0, 10, 10, 0]} barSize={28}>
                             {CHART_DATA.map((entry, index) => (
@@ -224,38 +224,38 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-gunmetal underline decoration-sc-honeysuckle decoration-4 underline-offset-8">The "Energy Wall" & System-Scale Reasoning</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-gunmetal underline decoration-sc-honeysuckle decoration-4 underline-offset-8">Vera Rubin & Compact Reasoning</h2>
                                     <p className="text-lg text-sc-gunmetal/80 max-w-3xl mx-auto leading-relaxed">
-                                        As we enter the Trillion-Parameter Era, success is dictated by energy efficiency. The industry is pivoting from "What can AI say?" to "What can AI independently execute?".
+                                        We have entered the "Trillion-Parameter Era" where success is dictated by the ability to manage the <strong>Energy Wall</strong>.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="bg-white/85 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
                                         <div className="flex items-center gap-3 mb-4">
                                             <Cpu className="text-sc-taupe" size={32} />
-                                            <h3 className="text-xl font-bold text-sc-gunmetal">Vera Rubin: Infrastructure Maturation</h3>
+                                            <h3 className="text-xl font-bold text-sc-gunmetal">NVIDIA Vera Rubin Platform</h3>
                                         </div>
                                         <p className="text-sc-gunmetal/70 leading-relaxed">
-                                            NVIDIA's successor to Blackwell offers a fundamental redesign for Agentic AI. Featuring the 88-core Vera CPU and HBM4 memory, it delivers a 10x reduction in inference token costs, essential for viable agentic economics.
+                                            A fundamental redesign of the computing rack featuring the Vera CPU and R100 GPU. It provides a 10x reduction in inference energy costs, addressing the physical power grid limits that threaten to derail AI scaling.
                                         </p>
                                     </div>
                                     <div className="bg-white/85 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
                                         <div className="flex items-center gap-3 mb-4">
                                             <Zap className="text-sc-honeysuckle" size={32} />
-                                            <h3 className="text-xl font-bold text-sc-gunmetal">Falcon-H1R: Compact Reasoners</h3>
+                                            <h3 className="text-xl font-bold text-sc-gunmetal">Falcon-H1R: Edge Breakthrough</h3>
                                         </div>
                                         <p className="text-sc-gunmetal/70 leading-relaxed">
-                                            The TII breakthrough model (7B) uses a Transformer-Mamba hybrid to achieve 1,500 tokens/sec. Its "DeepConf" feature filters out low-quality reasoning during scaling, enabling reliable edge-based AI.
+                                            Built on a Transformer-Mamba hybrid architecture, this 7B model achieved 88.1% on math benchmarks. Its "DeepConf" feature filters out low-quality reasoning during scaling, ensuring reliability for "digital labor" tasks.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="bg-sc-honeysuckle/5 p-8 rounded-3xl border border-sc-honeysuckle/20 text-center">
-                                    <h3 className="text-xl font-bold text-sc-gunmetal mb-3">Audit Your Agentic Infrastructure</h3>
+                                    <h3 className="text-xl font-bold text-sc-gunmetal mb-3">Audit Your Operational Infrastructure</h3>
                                     <p className="text-sc-gunmetal/80 mb-6">
-                                        Operationalization starts with understanding your data's readiness. Transition from experimentation to production with a strategy focused on reliable, multi-step workflows.
+                                        Successful operationalization requires moving intelligence closer to the edge. Transition from experimentation to reliable production with high-bandwidth local AI compute.
                                     </p>
                                     <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-sc-gunmetal text-white px-8 py-3 rounded-full font-bold hover:bg-sc-taupe transition-all shadow-md">
-                                        Master Your AI Operationalization Strategy <MousePointer2 size={18} />
+                                        Plan Your AI Operationalization Strategy <MousePointer2 size={18} />
                                     </a>
                                 </div>
                             </div>
@@ -264,31 +264,31 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-gunmetal underline decoration-sc-taupe decoration-4 underline-offset-8">Platform Consolidation & IPO Readiness</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-gunmetal underline decoration-sc-taupe decoration-4 underline-offset-8">Verticalized AI & Infrastructure Consolidation</h2>
                                     <p className="text-lg text-sc-gunmetal/80 max-w-3xl mx-auto leading-relaxed">
-                                        Capital is flowing away from general-purpose assistants toward "Verticalized Agentic" platforms and core hardware infrastructure.
+                                        Venture capital is pivoting away from "feature apps" to double down on hardware-integrated AI and specialized vertical workers.
                                     </p>
                                 </div>
                                 <InvestmentChartComp />
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                                     <div className="bg-white/85 p-6 rounded-2xl border-l-8 border-sc-honeysuckle shadow-sm">
-                                        <h4 className="font-bold text-lg text-sc-gunmetal mb-2">The "After-Code" Revenue Run</h4>
+                                        <h4 className="font-bold text-lg text-sc-gunmetal mb-2">The "After-Code" Revenue Pipeline</h4>
                                         <p className="text-sm text-sc-gunmetal/70">
-                                            Anthropic's "Claude Code" is already generating $720M ARR, proving the monetization potential of agentic coding tools. Databricks has filed for a Q1 IPO, buoyed by its role as the primary engine for Fortune 100 AI.
+                                            Anthropic's Claude Code is already generating $720M ARR, proving the monetization potential of agentic tools. Simultaneously, Apple's $2B acquisition of Q.ai signals a core infrastructure bet on silent speech control.
                                         </p>
                                     </div>
                                     <div className="bg-white/85 p-6 rounded-2xl border-l-8 border-sc-taupe shadow-sm">
-                                        <h4 className="font-bold text-lg text-sc-gunmetal mb-2">Vertical Renaissance</h4>
+                                        <h4 className="font-bold text-lg text-sc-gunmetal mb-2">Verticalization Renaissance</h4>
                                         <p className="text-sm text-sc-gunmetal/70">
-                                            Startups like Codes Health (Medical) and Blossom (Legal) are securing massive rounds to build specialized agents, signaling a pivot toward high-regulation, high-complexity vertical markets.
+                                            Startups like Codes Health and Blossom are securing significant rounds to build psychiatry and medical agents, signaling the rise of specialized "digital professionals" in high-regulation sectors.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="bg-sc-taupe text-white p-8 rounded-3xl mt-8 text-center shadow-lg">
-                                    <h3 className="text-xl font-bold mb-3">Plan Your Vertical AI Roadmap</h3>
-                                    <p className="mb-6 opacity-90">Navigate the "Accountability Phase" by visualizing ROI across your most critical business functions.</p>
+                                    <h3 className="text-xl font-bold mb-3">Roadmap Your Vertical AI Solution</h3>
+                                    <p className="mb-6 opacity-90">Cut through the noise of 'general assistants' and identify the specialized agents that drive immediate ROI in your sector.</p>
                                     <a href={LINKEDIN_URL} target="_blank" className="bg-white text-sc-taupe px-10 py-3 rounded-full font-bold hover:bg-sc-gunmetal transition-all shadow-md">
-                                        Deploy Your AI Insights Dashboard
+                                        Review Your Vertical AI Roadmap
                                     </a>
                                 </div>
                             </div>
@@ -297,7 +297,7 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-gunmetal underline decoration-sc-honeysuckle decoration-4 underline-offset-8">Federal Preemption vs. The "Triple-Threat"</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-gunmetal underline decoration-sc-honeysuckle decoration-4 underline-offset-8">Federal Preemption vs. State Mandates</h2>
                                     <p className="text-lg text-sc-gunmetal/80 max-w-3xl mx-auto leading-relaxed">
                                         The geopolitical landscape is defined by a clash between centralized U.S. federal drive and an increasingly active patchwork of state-level regulations.
                                     </p>
@@ -310,7 +310,7 @@
                                         <div>
                                             <h3 className="text-xl font-bold text-sc-gunmetal mb-2">DOJ Litigation Task Force</h3>
                                             <p className="text-sc-gunmetal/70 leading-relaxed">
-                                                Established to challenge "onerous" state statutes in IL and TX, the task force argues they unconstitutionally regulate interstate commerce. Organizations must now navigate a "compliance patchwork."
+                                                Established specifically to challenge state statutes (IL, TX, CO) that potentially unconstitutionally regulate interstate AI commerce. Organizations must now navigate a "highest common denominator" approach to compliance.
                                             </p>
                                         </div>
                                     </div>
@@ -321,14 +321,14 @@
                                         <div>
                                             <h3 className="text-xl font-bold text-sc-gunmetal mb-2">The Rise of Sovereign AI</h3>
                                             <p className="text-sc-gunmetal/70 leading-relaxed">
-                                                UAE's K2 Think V2 model signals a strategic shift toward technological independence. Built on proprietary pre-training data, it ensures that regional banking and fintech remain under local control.
+                                                UAE's launch of K2 Think V2 signals a strategic move toward regional technical independence. Built on proprietary pre-training data, it ensures that regional banking remains free from foreign cloud control.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="text-center pt-6">
                                     <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-sc-gunmetal text-white px-10 py-4 rounded-full font-bold hover:bg-sc-honeysuckle transition-all shadow-xl">
-                                        Navigate the Regulatory Patchwork <Scale size={18} />
+                                        Navigate the Regulatory Patchwork <ShieldCheck size={18} />
                                     </a>
                                 </div>
                             </div>
@@ -337,32 +337,32 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-gunmetal underline decoration-sc-taupe decoration-4 underline-offset-8">The "Human Premium" & The Labor Gap</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-gunmetal underline decoration-sc-taupe decoration-4 underline-offset-8">Physical AI & Information Integrity</h2>
                                     <p className="text-lg text-sc-gunmetal/80 max-w-3xl mx-auto leading-relaxed">
-                                        As AI outputs become commoditized, human-led governance and emotional intelligence are becoming high-value "premium services."
+                                        AI has officially entered the physical world, creating a "ChatGPT moment" for manufacturing while introducing the crisis of AI Poisoning.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div className="bg-white/85 p-8 rounded-3xl shadow-md border border-sc-honeysuckle/20">
-                                        <Briefcase className="text-sc-taupe mb-4" size={40} />
-                                        <h3 className="font-bold text-xl text-sc-gunmetal mb-3">Restructuring, Not Replacement</h3>
+                                        <Factory className="text-sc-taupe mb-4" size={40} />
+                                        <h3 className="font-bold text-xl text-sc-gunmetal mb-3">The "Atlas Moment"</h3>
                                         <p className="text-sc-gunmetal/70 leading-relaxed">
-                                            High-skill roles in finance and legal are seeing the highest task automation (up to 38% cost reduction). This is leading to a restructuring of the workforce, prioritizing "Agentic Orchestration."
+                                            Boston Dynamics' Atlas has begun field tests at a Hyundai plant, autonomously performing warehouse tasks. This shift addresses the 1M+ manufacturing job shortage by filling "labor gaps" where humans are unavailable.
                                         </p>
                                     </div>
                                     <div className="bg-white/85 p-8 rounded-3xl shadow-md border border-sc-honeysuckle/20">
-                                        <UserCheck className="text-sc-honeysuckle mb-4" size={40} />
-                                        <h3 className="font-bold text-xl text-sc-gunmetal mb-3">The "Literacy Gap" Challenge</h3>
+                                        <ShieldAlert className="text-sc-honeysuckle mb-4" size={40} />
+                                        <h3 className="font-bold text-xl text-sc-gunmetal mb-3">The Crisis of AI Poisoning</h3>
                                         <p className="text-sc-gunmetal/70 leading-relaxed">
-                                            With AI adoption plateauing at 50% for US workers (Gallup), a literacy gap is becoming a primary driver of wage inequality. Human-in-the-loop is now a high-value safety requirement.
+                                            Propaganda campaigns now target the web crawlers that feed training models. This "Invisible Disinformation" challenge means an AI's knowledge can be altered without the user ever realizing the underlying data is poisoned.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="mt-8 glass-card p-10 rounded-3xl shadow-xl flex flex-col md:flex-row gap-8 items-center border-2 border-sc-taupe/30">
                                     <div className="text-center md:text-left">
-                                        <h3 className="font-bold text-2xl mb-3 text-sc-gunmetal">Fractional AI Leadership for the Operator Era</h3>
+                                        <h3 className="font-bold text-2xl mb-3 text-sc-gunmetal">Fractional AI Leadership for the Accountability Era</h3>
                                         <p className="text-sc-gunmetal/80 mb-6 max-w-xl">
-                                            The window for "dabbling" has closed. Businesses that dominate 2026 will be those that aggressively replace manual workflows with autonomous agentic operators.
+                                            The Human Premium is increasing as emotional intelligence and accountability remain uniquely human assets. Lead your team through the "Operator" transition with strategic oversight.
                                         </p>
                                         <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="bg-sc-honeysuckle hover:bg-sc-gunmetal text-white font-bold py-3 px-10 rounded-full inline-flex items-center gap-2 transition-all shadow-lg">
                                             Secure Fractional AI Leadership <ExternalLink size={18} />
@@ -385,10 +385,10 @@
                             <h3 className="text-2xl font-bold mb-6 text-center text-sc-gunmetal">Executive Summary: The Year of the Operator</h3>
                             <div className="text-sc-gunmetal/90 leading-relaxed space-y-4 text-lg">
                                 <p>
-                                    The final week of January 2026 marks the definitive conclusion of the "Generative Hype" cycle and the commencement of the <strong>"Accountability Phase."</strong>
+                                    The final week of January 2026 confirms a shift in the global AI narrative, marking the commencement of the <strong>"Accountability and Operationalization Phase."</strong>
                                 </p>
                                 <p>
-                                    A landmark report from Automatic.co provides the first quantitative evidence of this transition, revealing that organizations are seeing operational cost reductions of up to <strong>38%</strong> by deploying agentic workflows. Simultaneously, NVIDIA's Vera Rubin platform addresses the physical limits of power capacity, delivering a 10x reduction in inference energy costs.
+                                    A landmark report from Automatic.co reveals that organizations deploying agentic AI are seeing cost reductions of up to <strong>38%</strong>. This move marks the transition from "digital tools" to <strong>"digital labor"</strong>, where the competitive barrier is no longer just using AI, but how effectively a business can deploy autonomous operators.
                                 </p>
                                 <p className="bg-sc-cream/50 p-6 rounded-xl font-semibold text-sc-gunmetal border-l-8 border-sc-honeysuckle italic shadow-inner">
                                     "The window for 'dabbling' with AI has closed. Profitability in 2026 is defined by the ability to achieve growth without a linear increase in payroll through the orchestration of digital labor."
