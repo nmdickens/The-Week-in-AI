@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Pulse Weekly: Jan 31 – Feb 06, 2026</title>
+    <title>AI Pulse Weekly: Feb 07 – Feb 13, 2026</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,10 +21,11 @@
         theme: {
           extend: {
             colors: {
-              'os-ebony': '#3C3C3D',
-              'os-cornflower': '#5B85A0',
-              'os-charcoal': '#2E3B51',
-              'os-taupe': '#CFCBCE',
+              'sc-bluegray': '#99B0B0',
+              'sc-taupe': '#B5B2B0',
+              'sc-cream': '#FCFAF0',
+              'sc-slate': '#8A9EA0',
+              'text-dark': '#3C3C3D',
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
@@ -35,8 +36,8 @@
     </script>
     <style>
       body {
-        background-color: #CFCBCE; /* os-taupe */
-        color: #3C3C3D; /* os-ebony */
+        background-color: #FCFAF0; /* sc-cream */
+        color: #3C3C3D; /* text-dark */
         font-family: 'Inter', sans-serif;
         overflow-x: hidden;
       }
@@ -56,7 +57,7 @@
       .glass-card {
         background: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(46, 59, 81, 0.2);
+        border: 1px solid rgba(138, 158, 160, 0.3);
       }
     </style>
     <script type="importmap">
@@ -80,7 +81,7 @@
         import { 
             Cpu, TrendingUp, ShieldAlert, Briefcase, FileText, Headphones, 
             Zap, Scale, UserCheck, ExternalLink, Linkedin, MousePointer2, Settings, Factory, ShieldCheck,
-            Network, BrainCircuit, Globe
+            Network, BrainCircuit, Globe, Users, Microscope, Binary
         } from 'lucide-react';
         import { 
             BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, 
@@ -88,34 +89,33 @@
         } from 'recharts';
 
         // --- Data ---
-        const DATE_RANGE = "Jan 31, 2026 – Feb 06, 2026";
+        const DATE_RANGE = "Feb 07, 2026 – Feb 13, 2026";
         const LINKEDIN_URL = "https://www.linkedin.com/in/nicolemdickens/";
-        const REPORT_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/177941bbd49ca61f02609229d8c30f8c6286ebe8/AI%20Weekly%20Pulse%2006FEB26.pdf";
-        const AUDIO_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/177941bbd49ca61f02609229d8c30f8c6286ebe8/Agentic_Execution_And_The_Infrastructure_Super_Cycle.m4a";
+        const REPORT_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/6892bc51ae54dbb0008c34a376f9a54b4777dd03/AI%20Weekly%20Pulse%2013FEB26.pdf";
+        const AUDIO_URL = "https://raw.githack.com/nmdickens/The-Week-in-AI/6892bc51ae54dbb0008c34a376f9a54b4777dd03/The_Collapse_of_Professional_Expertise.m4a";
 
         const KPIS = [
-            { value: "$70 Billion", label: "Colossal infrastructure injection by Oracle ($50B) and xAI ($20B) for production-scale compute." },
-            { value: "57%", label: "Percentage of U.S. SMBs now investing in AI tools to move from pilot projects to functional digital work." },
-            { value: "15x", label: "Throughput-per-area breakthrough for IBM's new brain-inspired analog AI chip vs traditional designs." }
+            { value: "$30 Billion", label: "Anthropic's record-breaking Series G funding round, valuing the firm at $380B." },
+            { value: "70.9%", label: "Percentage of professional tasks where GPT-5.2 now beats or ties human industry experts (GDPval-AA)." },
+            { value: "1 Million", label: "Token context window in Claude Opus 4.6, enabling AI to 'know' an entire company's historical data." }
         ];
 
         const CHART_DATA = [
-            { name: 'Oracle', value: 50000, label: 'Cloud Infrastructure' },
-            { name: 'xAI', value: 20000, label: 'Foundation Models' },
-            { name: 'Waabi', value: 750, label: 'Physical AI' },
-            { name: 'CesiumAstro', value: 470, label: 'Space/Defense' },
-            { name: 'Genspark', value: 300, label: 'Agentic AI Search' },
-            { name: 'Goodfire', value: 150, label: 'Interpretability' },
+            { name: 'OpenAI (Oracle)', value: 300000, label: 'Cloud Pact' },
+            { name: 'Anthropic', value: 30000, label: 'Series G' },
+            { name: 'xAI', value: 20000, label: 'Series E' },
+            { name: 'Cipher Mining', value: 5500, label: 'AWS Lease' },
+            { name: 'Positron AI', value: 230, label: 'Series B' },
         ];
 
         // --- Components ---
 
         const Header = () => (
             <header className="text-center mb-10 pt-8 animate-fadeIn">
-                <h1 className="text-4xl md:text-5xl font-bold text-os-ebony mb-3 tracking-tight">
+                <h1 className="text-4xl md:text-5xl font-bold text-sc-slate mb-3 tracking-tight">
                     AI Pulse Weekly
                 </h1>
-                <p className="text-lg md:text-xl text-os-charcoal font-bold uppercase tracking-widest">
+                <p className="text-lg md:text-xl text-sc-taupe font-bold uppercase tracking-widest">
                     {DATE_RANGE}
                 </p>
 
@@ -123,20 +123,20 @@
                     {KPIS.map((kpi, index) => (
                         <div 
                             key={index} 
-                            className={`bg-white/80 p-6 rounded-2xl border-2 shadow-sm hover:shadow-md transition-all duration-300 ${index % 2 === 0 ? 'border-os-cornflower' : 'border-os-charcoal'}`}
+                            className={`bg-white/80 p-6 rounded-2xl border-2 shadow-sm hover:shadow-md transition-all duration-300 ${index % 2 === 0 ? 'border-sc-bluegray' : 'border-sc-slate'}`}
                         >
-                            <p className={`text-3xl font-bold mb-2 ${index % 2 === 0 ? 'text-os-cornflower' : 'text-os-charcoal'}`}>{kpi.value}</p>
-                            <p className="text-sm text-os-ebony/80 leading-snug font-medium">{kpi.label}</p>
+                            <p className={`text-3xl font-bold mb-2 ${index % 2 === 0 ? 'text-sc-bluegray' : 'text-sc-slate'}`}>{kpi.value}</p>
+                            <p className="text-sm text-text-dark/80 leading-snug font-medium">{kpi.label}</p>
                         </div>
                     ))}
                 </div>
                 
                 <div className="flex flex-wrap justify-center gap-4 mt-8">
-                    <a href={REPORT_URL} target="_blank" rel="noopener noreferrer" className="bg-os-charcoal hover:bg-os-ebony text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
+                    <a href={REPORT_URL} target="_blank" rel="noopener noreferrer" className="bg-sc-slate hover:bg-sc-bluegray text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
                         <FileText size={20} />
-                        Strategic Briefing
+                        Strategic Analysis
                     </a>
-                    <a href={AUDIO_URL} target="_blank" rel="noopener noreferrer" className="bg-white text-os-cornflower border-2 border-os-cornflower hover:bg-os-cornflower hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
+                    <a href={AUDIO_URL} target="_blank" rel="noopener noreferrer" className="bg-white text-sc-slate border-2 border-sc-slate hover:bg-sc-slate hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
                         <Headphones size={20} />
                         Audio Summary
                     </a>
@@ -152,14 +152,14 @@
                 { id: 'impact', label: 'Impact', icon: Briefcase },
             ];
             return (
-                <nav className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10 bg-white/50 p-2 rounded-2xl sm:rounded-full shadow-lg border border-os-charcoal/10 max-w-2xl mx-auto">
+                <nav className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10 bg-white/60 p-2 rounded-2xl sm:rounded-full shadow-lg border border-sc-taupe/10 max-w-2xl mx-auto">
                     {sections.map((section) => {
                         const Icon = section.icon;
                         return (
                             <button
                                 key={section.id}
                                 onClick={() => setActiveSection(section.id)}
-                                className={`flex items-center gap-2 py-2 px-6 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 ${activeSection === section.id ? 'bg-os-charcoal text-white shadow-md transform scale-105' : 'text-os-ebony hover:bg-os-cornflower/10 hover:text-os-cornflower'}`}
+                                className={`flex items-center gap-2 py-2 px-6 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 ${activeSection === section.id ? 'bg-sc-slate text-white shadow-md transform scale-105' : 'text-sc-slate hover:bg-sc-bluegray/10 hover:text-sc-bluegray'}`}
                             >
                                 <Icon size={18} />
                                 {section.label}
@@ -171,14 +171,14 @@
         };
 
         const InvestmentChartComp = () => (
-            <div className="chart-wrapper bg-white/90 p-6 rounded-3xl border border-os-cornflower/20 shadow-sm">
+            <div className="chart-wrapper bg-white/95 p-6 rounded-3xl border border-sc-taupe/20 shadow-sm">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart 
                         data={CHART_DATA} 
                         layout="vertical" 
                         margin={{ top: 20, right: 120, left: 140, bottom: 20 }}
                     >
-                        <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} stroke="#5B85A0" strokeOpacity={0.2} />
+                        <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} stroke="#B5B2B0" strokeOpacity={0.2} />
                         <XAxis type="number" hide />
                         <YAxis 
                             dataKey="name" 
@@ -189,10 +189,10 @@
                             width={130} 
                         />
                         <Tooltip 
-                            cursor={{ fill: '#5B85A0', opacity: 0.1 }}
+                            cursor={{ fill: '#99B0B0', opacity: 0.1 }}
                             contentStyle={{ 
-                                backgroundColor: '#CFCBCE', 
-                                border: '1px solid #2E3B51', 
+                                backgroundColor: '#FCFAF0', 
+                                border: '1px solid #8A9EA0', 
                                 borderRadius: '12px', 
                                 fontSize: '13px'
                             }}
@@ -200,7 +200,7 @@
                         />
                         <Bar dataKey="value" radius={[0, 10, 10, 0]} barSize={28}>
                             {CHART_DATA.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={index === 0 ? '#2E3B51' : (index % 2 === 0 ? '#5B85A0' : '#3C3C3D')} />
+                                <Cell key={`cell-${index}`} fill={index === 0 ? '#8A9EA0' : (index % 2 === 0 ? '#99B0B0' : '#B5B2B0')} />
                             ))}
                             <LabelList 
                                 dataKey="value" 
@@ -224,38 +224,38 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-os-ebony underline decoration-os-cornflower decoration-4 underline-offset-8">Swarm Swarms & Brain-Inspired Silicon</h2>
-                                    <p className="text-lg text-os-ebony/80 max-w-3xl mx-auto leading-relaxed">
-                                        The industry is moving from conversational tools into "scientific collaborators" and brain-inspired hardware designed for the Edge.
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-bluegray decoration-4 underline-offset-8">Industrialized Reasoning & Parallel Agent Teams</h2>
+                                    <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
+                                        Theoretical AI has become operational discovery. Frontier models are now deriving new physics results while managing 1,500-step enterprise workflows.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="bg-white/80 p-8 rounded-3xl border border-os-cornflower/20 shadow-sm hover:shadow-md transition-all">
+                                    <div className="bg-white/85 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
                                         <div className="flex items-center gap-3 mb-4">
-                                            <BrainCircuit className="text-os-cornflower" size={32} />
-                                            <h3 className="text-xl font-bold text-os-ebony">IBM Analog AI Chip</h3>
+                                            <Users className="text-sc-bluegray" size={32} />
+                                            <h3 className="text-xl font-bold text-sc-slate">Parallel Agent Teams</h3>
                                         </div>
-                                        <p className="text-os-ebony/70 leading-relaxed">
-                                            Mimicking biological neural functions, IBM's 64-core analog chip breaks the 'von Neumann bottleneck' by computing directly in memory, achieving 15x higher throughput-per-area than previous designs.
+                                        <p className="text-text-dark/70 leading-relaxed">
+                                            Anthropic's Agent Teams allow models to spin up multiple independent instances working in parallel. A "Lead Agent" coordinates specialized sub-tasks, breaking the linear prompt bottleneck.
                                         </p>
                                     </div>
-                                    <div className="bg-white/80 p-8 rounded-3xl border border-os-cornflower/20 shadow-sm hover:shadow-md transition-all">
+                                    <div className="bg-white/85 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
                                         <div className="flex items-center gap-3 mb-4">
-                                            <Network className="text-os-charcoal" size={32} />
-                                            <h3 className="text-xl font-bold text-os-ebony">Moonshot AI Kimi K2.5</h3>
+                                            <Microscope className="text-sc-slate" size={32} />
+                                            <h3 className="text-xl font-bold text-sc-slate">GPT-5.2 Scientific Discovery</h3>
                                         </div>
-                                        <p className="text-os-ebony/70 leading-relaxed">
-                                            The first native multimodal "Agent Swarm" model. Capable of coordinating up to 100 sub-agents to manage workflows with 1,500 individual steps, reducing execution time by up to 4.5x.
+                                        <p className="text-text-dark/70 leading-relaxed">
+                                            OpenAI's latest model derived a fundamentally new result in theoretical physics regarding gluon scattering amplitudes. It signals the shift from 'stochastic parroting' to genuine mathematical reasoning.
                                         </p>
                                     </div>
                                 </div>
-                                <div className="bg-os-cornflower/5 p-8 rounded-3xl border border-os-cornflower/20 text-center">
-                                    <h3 className="text-xl font-bold text-os-cornflower mb-3">Audit Your Data for AI-Readiness</h3>
-                                    <p className="text-os-ebony/80 mb-6">
-                                        Agentic swarms fail on "dirty" data. Success requires moving from Suggestion Tools to functional Digital Workers through disciplined data hygiene.
+                                <div className="bg-sc-bluegray/5 p-8 rounded-3xl border border-sc-bluegray/20 text-center">
+                                    <h3 className="text-xl font-bold text-sc-slate mb-3">Industrialize Your Internal Workflows</h3>
+                                    <p className="text-text-dark/80 mb-6">
+                                        The 1-million-token context window means your entire brand history and financial records can be permanently 'known' by your agent teams. Stop prompting; start orchestrating.
                                     </p>
-                                    <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-os-cornflower text-white px-8 py-3 rounded-full font-bold hover:bg-os-charcoal transition-all shadow-md">
-                                        Kickoff Your AI Opportunity Sprint <MousePointer2 size={18} />
+                                    <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-sc-slate text-white px-8 py-3 rounded-full font-bold hover:bg-sc-bluegray transition-all shadow-md">
+                                        Redesign Your Workflows for Agent Teams <MousePointer2 size={18} />
                                     </a>
                                 </div>
                             </div>
@@ -264,30 +264,30 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-os-ebony underline decoration-os-charcoal decoration-4 underline-offset-8">The $70B Infrastructure Super-Cycle</h2>
-                                    <p className="text-lg text-os-ebony/80 max-w-3xl mx-auto leading-relaxed">
-                                        Capital is concentrating in the physical layers of AI, prioritizing the production-scale inference capacity required for total automation.
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-taupe decoration-4 underline-offset-8">The Capex-Intensive Infrastructure Era</h2>
+                                    <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
+                                        Capital is concentrating in the physical backbones—chips, energy, and massive 'power-to-compute' pipelines.
                                     </p>
                                 </div>
                                 <InvestmentChartComp />
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                                    <div className="bg-white/80 p-6 rounded-2xl border-l-8 border-os-cornflower shadow-sm">
-                                        <h4 className="font-bold text-lg text-os-ebony mb-2">Oracle's $50B Expansion</h4>
-                                        <p className="text-sm text-os-ebony/70">
-                                            One of the largest capital raises in software history, intended to build a global data center network for OpenAI, Meta, and xAI. Driven by over $520B in contracted demand.
+                                    <div className="bg-white/85 p-6 rounded-2xl border-l-8 border-sc-bluegray shadow-sm">
+                                        <h4 className="font-bold text-lg text-sc-slate mb-2">The $30B Milestone</h4>
+                                        <p className="text-sm text-text-dark/70">
+                                            Anthropic's Series G round signals a structural shift: frontier labs are now the primary customers for advanced energy and hardware, creating a circular, centralized 'compute economy'.
                                         </p>
                                     </div>
-                                    <div className="bg-white/80 p-6 rounded-2xl border-l-8 border-os-charcoal shadow-sm">
-                                        <h4 className="font-bold text-lg text-os-ebony mb-2">Sovereign AI & MGX</h4>
-                                        <p className="text-sm text-os-ebony/70">
-                                            The participation of Middle Eastern sovereign funds in xAI's $20B round underscores a global push for domestic compute clusters and strategic independence from Silicon Valley.
+                                    <div className="bg-white/85 p-6 rounded-2xl border-l-8 border-sc-taupe shadow-sm">
+                                        <h4 className="font-bold text-lg text-sc-slate mb-2">The AI Landlord Model</h4>
+                                        <p className="text-sm text-text-dark/70">
+                                            Cipher Mining's $5.5B lease with AWS reflects the new reality: the most valuable assets in 2026 are not tokens or software, but the physical infrastructure providing power-to-compute.
                                         </p>
                                     </div>
                                 </div>
-                                <div className="bg-os-charcoal text-white p-8 rounded-3xl mt-8 text-center shadow-lg">
-                                    <h3 className="text-xl font-bold mb-3">Review Your Infrastructure ROI Roadmap</h3>
-                                    <p className="mb-6 opacity-90">Navigate the "Inference Super-Cycle" by aligning your spend with high-impact, low-complexity production workflows.</p>
-                                    <a href={LINKEDIN_URL} target="_blank" className="bg-white text-os-charcoal px-10 py-3 rounded-full font-bold hover:bg-os-taupe hover:text-os-ebony transition-all shadow-md">
+                                <div className="bg-sc-slate text-white p-8 rounded-3xl mt-8 text-center shadow-lg">
+                                    <h3 className="text-xl font-bold mb-3">Audit Your Vertical AI Strategy</h3>
+                                    <p className="mb-6 opacity-90">Navigate the 'Capex-Intensive' phase by identifying the energy-efficient local compute solutions that drive actual margin expansion.</p>
+                                    <a href={LINKEDIN_URL} target="_blank" className="bg-white text-sc-slate px-10 py-3 rounded-full font-bold hover:bg-sc-taupe hover:text-text-dark transition-all shadow-md">
                                         Update Your AI Strategy Roadmap
                                     </a>
                                 </div>
@@ -297,38 +297,38 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-os-ebony underline decoration-os-cornflower decoration-4 underline-offset-8">The Fracturing of Global Consensus</h2>
-                                    <p className="text-lg text-os-ebony/80 max-w-3xl mx-auto leading-relaxed">
-                                        A widening gap has emerged between the precautionary EU model and the innovation-centric Anglo-American approach.
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-bluegray decoration-4 underline-offset-8">G7 Alberta: Prosperity Over Precaution</h2>
+                                    <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
+                                        The global consensus has shifted from 'The Age of Safety' to 'The Age of Industrial Competition'.
                                     </p>
                                 </div>
                                 <div className="space-y-6">
-                                    <div className="bg-white/80 p-8 rounded-3xl shadow-sm border border-os-charcoal/20 flex flex-col md:flex-row gap-6 items-start">
-                                        <div className="bg-os-cornflower/10 p-4 rounded-2xl shrink-0">
-                                            <Globe className="text-os-cornflower" size={40} />
+                                    <div className="bg-white/85 p-8 rounded-3xl shadow-sm border border-sc-taupe/20 flex flex-col md:flex-row gap-6 items-start">
+                                        <div className="bg-sc-bluegray/10 p-4 rounded-2xl shrink-0">
+                                            <Globe className="text-sc-bluegray" size={40} />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-os-ebony mb-2">Paris AI Declaration Dissent</h3>
-                                            <p className="text-os-ebony/70 leading-relaxed">
-                                                The U.S. and UK refusal to sign indicates a pivot toward "National-Security-Centric" AI ecosystems. This shift threatens global collaboration and increases compliance burdens for international firms.
+                                            <h3 className="text-xl font-bold text-sc-slate mb-2">Alberta G7 Declaration</h3>
+                                            <p className="text-text-dark/70 leading-relaxed">
+                                                Liberal democracies are retreating from safety-first rhetoric. The new priority is 'prosperity-focused' industrial policy to secure economic leadership against geopolitical adversaries.
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="bg-white/80 p-8 rounded-3xl shadow-sm border border-os-charcoal/20 flex flex-col md:flex-row gap-6 items-start">
-                                        <div className="bg-os-charcoal/10 p-4 rounded-2xl shrink-0">
-                                            <ShieldAlert className="text-os-charcoal" size={40} />
+                                    <div className="bg-white/85 p-8 rounded-3xl shadow-sm border border-sc-taupe/20 flex flex-col md:flex-row gap-6 items-start">
+                                        <div className="bg-sc-slate/10 p-4 rounded-2xl shrink-0">
+                                            <ShieldCheck className="text-sc-slate" size={40} />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-os-ebony mb-2">Executive Order 14365</h3>
-                                            <p className="text-os-ebony/70 leading-relaxed">
-                                                The Trump administration seeks to preempt state laws (like CA TFAIA) by threatening federal BEAD funding. A new DOJ task force will challenge state mandates on interstate commerce grounds.
+                                            <h3 className="text-xl font-bold text-sc-slate mb-2">The Sovereign AI Model</h3>
+                                            <p className="text-text-dark/70 leading-relaxed">
+                                                Saudi Arabia's Humain and other GCC states are building localized 'full-stack' AI ecosystems to ensure digital independence from Western export controls and political shifts.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="text-center pt-6">
-                                    <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-os-ebony text-white px-10 py-4 rounded-full font-bold hover:bg-os-cornflower transition-all shadow-xl">
-                                        Navigate Parallel AI Ecosystems <ExternalLink size={18} />
+                                    <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-sc-slate text-white px-10 py-4 rounded-full font-bold hover:bg-sc-bluegray transition-all shadow-xl">
+                                        Audit Your Sovereign AI Strategy <ShieldAlert size={18} />
                                     </a>
                                 </div>
                             </div>
@@ -337,35 +337,35 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-os-ebony underline decoration-os-charcoal decoration-4 underline-offset-8">Worker-ification & Labor Polarization</h2>
-                                    <p className="text-lg text-os-ebony/80 max-w-3xl mx-auto leading-relaxed">
-                                        AI has transitioned from a creative tool to a functional digital worker. Success is now defined by the ability to orchestrate agents rather than just execute tasks.
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-taupe decoration-4 underline-offset-8">The Low-Hire, Low-Fire Economy</h2>
+                                    <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
+                                        AI is not replacing workers in bulk; it is replacing the historical need for new entry-level hiring while intensifying the talent crunch for senior orchestrators.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div className="bg-white/80 p-8 rounded-3xl shadow-md border border-os-cornflower/20">
-                                        <Briefcase className="text-os-cornflower mb-4" size={40} />
-                                        <h3 className="font-bold text-xl text-os-ebony mb-3">Orchestration vs. Execution</h3>
-                                        <p className="text-os-ebony/70 leading-relaxed">
-                                            Workers managing high volumes of internal requests (Project EAT) see cognitive load decrease while value increases. Meanwhile, routine-heavy roles face rapid automation displacement.
+                                    <div className="bg-white/85 p-8 rounded-3xl shadow-md border border-sc-bluegray/20">
+                                        <Briefcase className="text-sc-bluegray mb-4" size={40} />
+                                        <h3 className="font-bold text-xl text-sc-slate mb-3">Productivity-Led Displacement</h3>
+                                        <p className="text-text-dark/70 leading-relaxed">
+                                            Junior job postings have declined by nearly 30% as firms use agentic systems to extract more output from existing headcount. Hiring has slowed to a crawl, even as unemployment remains low.
                                         </p>
                                     </div>
-                                    <div className="bg-white/80 p-8 rounded-3xl shadow-md border border-os-cornflower/20">
-                                        <UserCheck className="text-os-charcoal mb-4" size={40} />
-                                        <h3 className="font-bold text-xl text-os-ebony mb-3">Trust as a Premium Asset</h3>
-                                        <p className="text-os-ebony/70 leading-relaxed">
-                                            As models reach 'benchmark saturation', the focus shifts to emotional intelligence (EQ). Human connection remains critical in high-stakes B2B sales and service delivery.
+                                    <div className="bg-white/85 p-8 rounded-3xl shadow-md border border-sc-bluegray/20">
+                                        <UserCheck className="text-sc-slate mb-4" size={40} />
+                                        <h3 className="font-bold text-xl text-sc-slate mb-3">The NOMAD Economy</h3>
+                                        <p className="text-text-dark/70 leading-relaxed">
+                                            A new societal structure is emerging where 'Skill Security' outweighs 'Job Security'. Human value is moving from executing cognitive tasks to overseeing and managing agent teams.
                                         </p>
                                     </div>
                                 </div>
-                                <div className="mt-8 glass-card p-10 rounded-3xl shadow-xl flex flex-col md:flex-row gap-8 items-center border-2 border-os-cornflower/30">
+                                <div className="mt-8 glass-card p-10 rounded-3xl shadow-xl flex flex-col md:flex-row gap-8 items-center border-2 border-sc-bluegray/30">
                                     <div className="text-center md:text-left">
-                                        <h3 className="font-bold text-2xl mb-3 text-os-cornflower">Orchestrate Your Agentic Workforce</h3>
-                                        <p className="text-os-ebony/80 mb-6 max-w-xl">
-                                            The pivot to production is big and messy. Secure fractional leadership to set the guardrails and rules of engagement for your emerging digital workforce.
+                                        <h3 className="font-bold text-2xl mb-3 text-sc-slate">Secure the Human Edge in 2026</h3>
+                                        <p className="text-text-dark/80 mb-6 max-w-xl">
+                                            As professional expertise reaches near-zero cost, your primary differentiator becomes emotional intelligence and ethical oversight. Orchestrate your digital workforce with senior-grade leadership.
                                         </p>
-                                        <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="bg-os-cornflower hover:bg-os-charcoal text-white font-bold py-3 px-10 rounded-full inline-flex items-center gap-2 transition-all shadow-lg">
-                                            Secure Fractional AI Leadership <ExternalLink size={18} />
+                                        <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="bg-sc-slate hover:bg-sc-bluegray text-white font-bold py-3 px-10 rounded-full inline-flex items-center gap-2 transition-all shadow-lg">
+                                            Consult on Fractional AI Leadership <ExternalLink size={18} />
                                         </a>
                                     </div>
                                 </div>
@@ -381,22 +381,22 @@
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
                         <Header />
                         
-                        <div className="bg-white/90 p-6 md:p-10 rounded-3xl shadow-xl border border-os-charcoal/20 mb-10 max-w-5xl mx-auto">
-                            <h3 className="text-2xl font-bold mb-6 text-center text-os-charcoal">Executive Summary: The Pivot to Production</h3>
-                            <div className="text-os-ebony/90 leading-relaxed space-y-4 text-lg">
+                        <div className="bg-white/95 p-6 md:p-10 rounded-3xl shadow-xl border border-sc-taupe/20 mb-10 max-w-5xl mx-auto">
+                            <h3 className="text-2xl font-bold mb-6 text-center text-sc-slate">Executive Summary: The Collapse of Professional Reasoning</h3>
+                            <div className="text-text-dark/90 leading-relaxed space-y-4 text-lg">
                                 <p>
-                                    The transition from 2025 to 2026 has officially marked the end of the "Generative Hype" era and the commencement of the <strong>"Agentic Execution"</strong> cycle.
+                                    The reporting period of February 7 to February 13, 2026, marks the final collapse in the cost of professional expertise. High-level reasoning in finance, law, and engineering is being <strong>commoditized at a price point less than 1% of human labor costs.</strong>
                                 </p>
                                 <p>
-                                    This week serves as a waypoint where theoretical potential solidified into hard industrial infrastructure. At the center is the <strong>"Agentic Enterprise"</strong>—where models like Kimi K2.5 and GPT-5.2 are increasingly capable of independent reasoning and multi-step execution.
+                                    With the launch of <strong>Agent Teams</strong> and 1M context windows, small firms can now operate with the cognitive throughput of massive organizations. Simultaneously, the global landscape has pivoted toward <strong>Industrial Competition</strong>, prioritizing prosperity and national sovereignty over precautionary safety measures.
                                 </p>
-                                <p className="bg-os-taupe/30 p-6 rounded-xl font-semibold text-os-ebony border-l-8 border-os-cornflower italic shadow-inner">
-                                    "The role of the business owner is shifting from doer to orchestrator. Profitability in 2026 is driven by margin expansion through autonomy, requiring data to be 'worker-grade' and AI-ready."
+                                <p className="bg-sc-bluegray/10 p-6 rounded-xl font-semibold text-text-dark border-l-8 border-sc-slate italic shadow-inner">
+                                    "SMBs must move past 'chatbot' isolated tasks toward Workflow Industrialization. Success in the agentic economy depends on redesigning entire business units around parallel, autonomous digital workers."
                                 </p>
                             </div>
                             <div className="mt-10 text-center">
-                                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-os-cornflower text-white font-bold px-10 py-4 rounded-full hover:bg-os-charcoal transition-all shadow-lg text-lg">
-                                    Consult on Your Agentic Strategy
+                                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-sc-slate text-white font-bold px-10 py-4 rounded-full hover:bg-sc-bluegray transition-all shadow-lg text-lg">
+                                    Consult on Your Industrialization Strategy
                                 </a>
                             </div>
                         </div>
@@ -408,15 +408,15 @@
                         </main>
                     </div>
 
-                    <footer className="text-center py-12 text-os-charcoal text-sm mt-12 border-t border-os-charcoal/20 max-w-5xl mx-auto">
-                        <p className="font-bold text-os-ebony mb-2 text-xl">Nicole Dickens • Fractional AI Consultant</p>
+                    <footer className="text-center py-12 text-sc-slate text-sm mt-12 border-t border-sc-taupe/20 max-w-5xl mx-auto">
+                        <p className="font-bold text-text-dark mb-2 text-xl">Nicole Dickens • Fractional AI Consultant</p>
                         <p className="mb-4 text-md opacity-80 italic">AI without a full-time hire — strategy, structure, and sanity included.</p>
                         <div className="flex justify-center gap-8 mt-6">
-                            <a href={LINKEDIN_URL} target="_blank" className="text-os-charcoal font-bold hover:text-os-ebony transition-colors flex items-center gap-2 text-base">
+                            <a href={LINKEDIN_URL} target="_blank" className="text-sc-slate font-bold hover:text-text-dark transition-colors flex items-center gap-2 text-base">
                                 <Linkedin size={20} /> LinkedIn Profile
                             </a>
-                            <span className="text-os-cornflower/30">|</span>
-                            <span className="text-os-ebony/60 text-base">Powered by Gemini Deep Research</span>
+                            <span className="text-sc-taupe/30">|</span>
+                            <span className="text-text-dark/60 text-base">Powered by Gemini Deep Research</span>
                         </div>
                     </footer>
                 </div>
