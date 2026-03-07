@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Pulse Weekly: Feb 21 – Feb 27, 2026</title>
+    <title>AI Pulse Weekly: Feb 28 – Mar 06, 2026</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,11 +21,11 @@
         theme: {
           extend: {
             colors: {
-              'sc-bluegray': '#5B85A0', // Cornflower
-              'sc-taupe': '#CFCBCE',    // Taupe
-              'sc-cream': '#F8F9FA',    // Light Gray/White
-              'sc-slate': '#2E3B51',    // Charcoal
-              'text-dark': '#3C3C3D',   // Ebony
+              'sc-bluegray': '#A7A88A', // Sage
+              'sc-taupe': '#DAA7A2',    // Dusty Rose
+              'sc-cream': '#F7F7F0',    // White
+              'sc-slate': '#37391E',    // Olive Green
+              'text-dark': '#7B6867',   // Taupe
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
@@ -36,8 +36,8 @@
     </script>
     <style>
       body {
-        background-color: #F8F9FA; /* sc-cream */
-        color: #3C3C3D; /* text-dark */
+        background-color: #F7F7F0; /* sc-cream */
+        color: #7B6867; /* text-dark */
         font-family: 'Inter', sans-serif;
         overflow-x: hidden;
       }
@@ -90,23 +90,24 @@
         } from 'recharts';
 
         // --- Data ---
-        const DATE_RANGE = "Feb 21 – Feb 27, 2026";
+        const DATE_RANGE = "Feb 28 – Mar 06, 2026";
         const LINKEDIN_URL = "https://www.linkedin.com/in/nicolemdickens/";
-        const REPORT_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/6915f00a036251ddfd60b4dddd67b8f5f220528d/AI%20Weekly%20Pulse%2027FEB26.pdf";
-        const AUDIO_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/6915f00a036251ddfd60b4dddd67b8f5f220528d/Block_Replaces_Humans_With_Agentic_AI.m4a";
+        const REPORT_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/5ca9d2790d988656551ba9abed2d875c1b3dbe40/AI%20Weekly%20Pulse%2006MAR26.pdf";
+        const AUDIO_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/5ca9d2790d988656551ba9abed2d875c1b3dbe40/Sovereign_compute_and_the_agentic_worker.m4a";
 
         const KPIS = [
-            { value: "$110 Billion", label: "OpenAI's record-setting funding round, the largest single investment in industry history." },
-            { value: "40% Reduction", label: "Block's workforce cut, marking the first major 'headcount hard reset' by a profitable firm." },
-            { value: "77.1% ARC-AGI", label: "Gemini 3.1 Pro's record-breaking benchmark in deep planning and problem-solving." }
+            { value: "$189 Billion", label: "Global venture funding in February, a 780% increase year-over-year from 2025." },
+            { value: "56% ROI Gap", label: "CEOs reporting AI investments have yet to yield measurable revenue gains or cost savings." },
+            { value: "10x Cheaper", label: "Reduction in inference cost per token promised by NVIDIA’s Vera Rubin platform." }
         ];
 
         const CHART_DATA = [
-            { name: 'OpenAI', value: 110000, label: 'Foundation/Infra' },
-            { name: 'Anthropic', value: 30000, label: 'Enterprise Agents' },
-            { name: 'SkildAI', value: 1400, label: 'Robotics' },
-            { name: 'ElevenLabs', value: 500, label: 'Vertical SaaS' },
-            { name: 'Runway', value: 315, label: 'Generative Video' },
+            { name: 'OpenAI', value: 110000, label: 'Foundation Models' },
+            { name: 'Anthropic', value: 30000, label: 'Foundation Models' },
+            { name: 'Waymo', value: 16000, label: 'Autonomous Transport' },
+            { name: 'Sierra Space', value: 550, label: 'AI Defense/Space' },
+            { name: 'Ayar Labs', value: 500, label: 'AI Infrastructure' },
+            { name: 'Science Corp', value: 230, label: 'Neurotech/BCI' },
         ];
 
         // --- Components ---
@@ -190,10 +191,10 @@
                             width={130} 
                         />
                         <Tooltip 
-                            cursor={{ fill: '#99B0B0', opacity: 0.1 }}
+                            cursor={{ fill: '#A7A88A', opacity: 0.1 }}
                             contentStyle={{ 
-                                backgroundColor: '#FCFAF0', 
-                                border: '1px solid #8A9EA0', 
+                                backgroundColor: '#F7F7F0', 
+                                border: '1px solid #37391E', 
                                 borderRadius: '12px', 
                                 fontSize: '13px'
                             }}
@@ -201,7 +202,7 @@
                         />
                         <Bar dataKey="value" radius={[0, 10, 10, 0]} barSize={28}>
                             {CHART_DATA.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={index === 0 ? '#8A9EA0' : (index % 2 === 0 ? '#99B0B0' : '#B5B2B0')} />
+                                <Cell key={`cell-${index}`} fill={index === 0 ? '#37391E' : (index % 2 === 0 ? '#A7A88A' : '#DAA7A2')} />
                             ))}
                             <LabelList 
                                 dataKey="value" 
@@ -225,28 +226,28 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-bluegray decoration-4 underline-offset-8">From Chatbots to Agents: The System 2 Era</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-bluegray decoration-4 underline-offset-8">Extreme Codesign & Physical AI</h2>
                                     <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
-                                        AI has matured from a passive advisor into an active coworker capable of long-horizon project management and direct computer action.
+                                        The simultaneous engineering of hardware and software is maximizing 'Inference per Watt,' pushing AI from the cloud into the physical world.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="bg-white/85 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
                                         <div className="flex items-center gap-3 mb-4">
-                                            <BrainCircuit className="text-sc-bluegray" size={32} />
-                                            <h3 className="text-xl font-bold text-sc-slate">Gemini 3.1 Pro</h3>
+                                            <Cpu className="text-sc-bluegray" size={32} />
+                                            <h3 className="text-xl font-bold text-sc-slate">NVIDIA Vera Rubin</h3>
                                         </div>
                                         <p className="text-text-dark/70 leading-relaxed">
-                                            Google's latest release leapfrogged benchmarks with 'System 2' reasoning, enabling multi-step deep synthesis and autonomous planning across complex state trees.
+                                            The launch of the Rubin platform marks a 10x reduction in inference costs, a critical catalyst for the mainstream adoption of reasoning-heavy agentic AI.
                                         </p>
                                     </div>
                                     <div className="bg-white/85 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
                                         <div className="flex items-center gap-3 mb-4">
-                                            <MousePointer2 className="text-sc-slate" size={32} />
-                                            <h3 className="text-xl font-bold text-sc-slate">FDM-1 Computer Action</h3>
+                                            <Factory className="text-sc-slate" size={32} />
+                                            <h3 className="text-xl font-bold text-sc-slate">AI-Driven Factories</h3>
                                         </div>
                                         <p className="text-text-dark/70 leading-relaxed">
-                                            Trained on 11M hours of video, FDM-1 allows agents to interact directly with GUIs, simulating human-like mouse movements for end-to-end task execution.
+                                            Samsung and Hyundai's 'ChatGPT moment for robotics' involves agentic systems managing entire supply chains and physical operations without human intervention.
                                         </p>
                                     </div>
                                 </div>
@@ -256,7 +257,7 @@
                                         Success in 2026 requires moving from experimentation to production deployment. Audit your internal processes to ensure agentic autonomy isn't impeded by 'broken' workflows.
                                     </p>
                                     <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-sc-slate text-white px-8 py-3 rounded-full font-bold hover:bg-sc-bluegray transition-all shadow-md">
-                                        Audit Your AI Readiness <MousePointer2 size={18} />
+                                        Launch Your AI Opportunity Sprint <MousePointer2 size={18} />
                                     </a>
                                 </div>
                             </div>
@@ -265,23 +266,23 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-taupe decoration-4 underline-offset-8">The Age of Capital Megaliths</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-taupe decoration-4 underline-offset-8">Capital Concentration & Sovereign Wealth</h2>
                                     <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
-                                        A 'Nuclear Renaissance' in AI investment, where the goal is ownership of the entire physical and energy infrastructure stack.
+                                        A record $189B month is characterized by extreme concentration, with 83% of capital captured by just three vertically integrated giants.
                                     </p>
                                 </div>
                                 <InvestmentChartComp />
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                                     <div className="bg-white/85 p-6 rounded-2xl border-l-8 border-sc-bluegray shadow-sm">
-                                        <h4 className="font-bold text-lg text-sc-slate mb-2">OpenAI's $110B Round</h4>
+                                        <h4 className="font-bold text-lg text-sc-slate mb-2">The Infrastructure Pivot</h4>
                                         <p className="text-sm text-text-dark/70">
-                                            The largest single investment in history signals a terminal phase of vertical integration, funding the physical reality of global-scale data centers and energy security.
+                                            Strategic investment is shifting heavily toward the infrastructure layer, with hundreds of millions flowing into Ayar Labs to solve data movement bottlenecks.
                                         </p>
                                     </div>
                                     <div className="bg-white/85 p-6 rounded-2xl border-l-8 border-sc-taupe shadow-sm">
-                                        <h4 className="font-bold text-lg text-sc-slate mb-2">Stargate Initiative</h4>
+                                        <h4 className="font-bold text-lg text-sc-slate mb-2">Sovereign Compute Hubs</h4>
                                         <p className="text-sm text-text-dark/70">
-                                            Amazon's $200B spend on infrastructure aims to solve the 'energy bottleneck' that is currently delaying major data center projects worldwide.
+                                            Middle Eastern funds are deploying tens of billions to build massive data center clusters (Project Stargate), vying to become global hubs for compute.
                                         </p>
                                     </div>
                                 </div>
@@ -289,7 +290,7 @@
                                     <h3 className="text-xl font-bold mb-3">Audit Your Vertical AI Strategy</h3>
                                     <p className="mb-6 opacity-90">Future returns depend on the successful 'productionalization' of AI across high-stakes industries like healthcare and banking.</p>
                                     <a href={LINKEDIN_URL} target="_blank" className="bg-white text-sc-slate px-10 py-3 rounded-full font-bold hover:bg-sc-taupe hover:text-text-dark transition-all shadow-md">
-                                        Update Your AI Strategy Roadmap
+                                        Build Your AI Strategy Roadmap
                                     </a>
                                 </div>
                             </div>
@@ -298,9 +299,9 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-bluegray decoration-4 underline-offset-8">The Fracture of Trust</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-bluegray decoration-4 underline-offset-8">The Sovereign Fracture</h2>
                                     <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
-                                        A significant fracture has emerged between 'Safety-First' ideologies and the pragmatic requirements of national security.
+                                        National security interests are colliding with the safety philosophies of private AI labs, creating a patchwork of incompatible frameworks.
                                     </p>
                                 </div>
                                 <div className="space-y-6">
@@ -311,7 +312,7 @@
                                         <div>
                                             <h3 className="text-xl font-bold text-sc-slate mb-2">Anthropic Gov Ban</h3>
                                             <p className="text-text-dark/70 leading-relaxed">
-                                                The Pentagon labeled Anthropic a 'Supply Chain Risk' after its refusal to lift safeguards for military utility, signaling a bifurcated market for government-ready AI.
+                                                The Pentagon's designation of Anthropic as a 'supply chain risk' signals that the military will no longer tolerate private vendors exercising veto power over operational command.
                                             </p>
                                         </div>
                                     </div>
@@ -320,16 +321,16 @@
                                             <Scale className="text-sc-slate" size={40} />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-sc-slate mb-2">EU AI Act Milestones</h3>
+                                            <h3 className="text-xl font-bold text-sc-slate mb-2">EU AI Act Enforcement</h3>
                                             <p className="text-text-dark/70 leading-relaxed">
-                                                High-risk obligations and prohibited practices are now binding in the EU, while the US faces a constitutional clash over state-level AI safety laws.
+                                                While the U.S. prioritizes 'Innovation First,' the EU is entering the enforcement phase of the AI Act, mandating strict conformity assessments for high-risk systems.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="text-center pt-6">
                                     <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-sc-slate text-white px-10 py-4 rounded-full font-bold hover:bg-sc-bluegray transition-all shadow-xl">
-                                        Consult on Governance & Compliance <ShieldCheck size={18} />
+                                        Secure Your Fractional AI Leadership <ShieldCheck size={18} />
                                     </a>
                                 </div>
                             </div>
@@ -338,30 +339,30 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-taupe decoration-4 underline-offset-8">The Low-Hire Equilibrium</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-taupe decoration-4 underline-offset-8">The Experience Premium</h2>
                                     <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
-                                        The 'Great Efficiency Era' has led to a decoupling of GDP growth from headcount growth, as firms trade human capital for AI-driven efficiency.
+                                        AI is functioning as a complement to experienced professionals while substituting for codifiable tasks typically handled by junior staff.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div className="bg-white/85 p-8 rounded-3xl shadow-md border border-sc-bluegray/20">
-                                        <Briefcase className="text-sc-bluegray mb-4" size={40} />
-                                        <h3 className="font-bold text-xl text-sc-slate mb-3">Headcount Hard Reset</h3>
+                                        <Users className="text-sc-bluegray mb-4" size={40} />
+                                        <h3 className="font-bold text-xl text-sc-slate mb-3">Labor Market Stability</h3>
                                         <p className="text-text-dark/70 leading-relaxed">
-                                            Block's 40% workforce reduction marks a proactive pivot: the transition of AI from a 'chatbot' to a 'worker'. Competitive advantage is shifting to those with efficient agentic workflows.
+                                            Aggregate unemployment remains stable, but a significant 'experience premium' has emerged, widening the gap between entry-level workers and those with deep tacit knowledge.
                                         </p>
                                     </div>
                                     <div className="bg-white/85 p-8 rounded-3xl shadow-md border border-sc-bluegray/20">
-                                        <Factory className="text-sc-slate mb-4" size={40} />
-                                        <h3 className="font-bold text-xl text-sc-slate mb-3">Agent Mode in Word</h3>
+                                        <ShieldCheck className="text-sc-slate mb-4" size={40} />
+                                        <h3 className="font-bold text-xl text-sc-slate mb-3">The Fiduciary Risk</h3>
                                         <p className="text-text-dark/70 leading-relaxed">
-                                            Digital labor is becoming accessible at the desk-level. Microsoft's Agent Mode allows Word to autonomously draft and format documents from disparate data sources.
+                                            The end of the 'black box defense' means courts and regulators now hold boards accountable for the governance and outcomes of autonomous decision-making systems.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="mt-8 glass-card p-10 rounded-3xl shadow-xl flex flex-col md:flex-row gap-8 items-center border-2 border-sc-bluegray/30">
                                     <div className="text-center md:text-left">
-                                        <h3 className="font-bold text-2xl mb-3 text-sc-slate">Secure Your Fractional AI Leadership</h3>
+                                        <h3 className="font-bold text-2xl mb-3 text-sc-slate">Deploy Your AI Insights Dashboard</h3>
                                         <p className="text-text-dark/80 mb-6 max-w-xl">
                                             As professional expertise reaches near-zero cost, your primary differentiator becomes emotional intelligence and strategic oversight. Orchestrate your digital workforce with senior-grade leadership.
                                         </p>
@@ -383,21 +384,21 @@
                         <Header />
                         
                         <div className="bg-white/95 p-6 md:p-10 rounded-3xl shadow-xl border border-sc-taupe/20 mb-10 max-w-5xl mx-auto">
-                            <h3 className="text-2xl font-bold mb-6 text-center text-sc-slate">Executive Summary: The Agentic Rubicon</h3>
+                            <h3 className="text-2xl font-bold mb-6 text-center text-sc-slate">Executive Summary: The Sovereign Compute Era</h3>
                             <div className="text-text-dark/90 leading-relaxed space-y-4 text-lg">
                                 <p>
-                                    The final week of February 2026 marks the 'Agentic Rubicon,' where AI has matured from a conversational assistant into an autonomous engine of professional execution. This transformation is underpinned by a historic influx of capital and a radical restructuring of corporate headcount.
+                                    The week of February 28 to March 6, 2026, marks a definitive shift as the AI industry moves from speculative experimentation toward hardened sovereign infrastructure. A profound restructuring of the relationship between private labs and state power has emerged, highlighted by the U.S. government’s regulatory actions against domestic leaders.
                                 </p>
                                 <p>
-                                    With OpenAI's staggering $110 billion funding round and the emergence of computer-action models like FDM-1, the industry has entered a phase of industrial-scale vertical integration. Profitable firms are now aggressively trading human capital for AI-driven efficiency, signaling the end of the experimental era.
+                                    This era is defined by the rise of 'sovereign compute,' where the primary value resides in the autonomous management of physical and digital systems. Success now depends on navigating the complex intersection of state power and private innovation, as enterprises prepare for a future where compute is a sovereign asset and agents are primary workers.
                                 </p>
                                 <p className="bg-sc-bluegray/10 p-6 rounded-xl font-semibold text-text-dark border-l-8 border-sc-slate italic shadow-inner">
-                                    "Strategic dominance is no longer defined by workforce size. Success requires the seamless integration of autonomous agents into deeply audited business processes. Those who fail to bridge the 'value-realization gap' risk operational obsolescence."
+                                    "Strategic dominance is no longer defined by workforce size. Success requires the seamless integration of autonomous agents into deeply audited business processes. Those who fail to bridge the 'ROI Reckoning' risk operational obsolescence."
                                 </p>
                             </div>
                             <div className="mt-10 text-center">
                                 <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-sc-slate text-white font-bold px-10 py-4 rounded-full hover:bg-sc-bluegray transition-all shadow-lg text-lg">
-                                    Consult on AI Opportunity Sprint
+                                    Launch Your AI Opportunity Sprint
                                 </a>
                             </div>
                         </div>
