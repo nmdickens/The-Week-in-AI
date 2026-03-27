@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Pulse Weekly: Mar 14 – Mar 20, 2026</title>
+    <title>AI Pulse Weekly: Mar 21 – Mar 27, 2026</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,11 +21,11 @@
         theme: {
           extend: {
             colors: {
-              'sc-bluegray': '#A98AB0', // Purple Haze (Highlights)
-              'sc-taupe': '#C4C4C0',    // Taupe (Borders/Accents)
+              'sc-bluegray': '#A7A88A', // Sage (Highlights)
+              'sc-taupe': '#DAA7A2',    // Dusty Rose (Borders/Accents)
               'sc-cream': '#F7F7F0',    // White (Background)
-              'sc-slate': '#495420',    // Olive Green (Dark Accent)
-              'text-dark': '#495420',   // Olive Green
+              'sc-slate': '#37391E',    // Olive Green (Dark Accent)
+              'text-dark': '#7B6867',   // Taupe (Primary Text)
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
@@ -37,7 +37,7 @@
     <style>
       body {
         background-color: #F7F7F0; /* sc-cream */
-        color: #495420; /* text-dark */
+        color: #7B6867; /* text-dark */
         font-family: 'Inter', sans-serif;
         overflow-x: hidden;
       }
@@ -90,23 +90,28 @@
         } from 'recharts';
 
         // --- Data ---
-        const DATE_RANGE = "Mar 14 – Mar 20, 2026";
+        const DATE_RANGE = "Mar 21 – Mar 27, 2026";
         const LINKEDIN_URL = "https://www.linkedin.com/in/nicolemdickens/";
-        const REPORT_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/1fc43a785129d03772c8d1ea7decb4e347ff8b6a/AI%20Weekly%20Pulse%2020MAR26.pdf";
-        const AUDIO_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/1fc43a785129d03772c8d1ea7decb4e347ff8b6a/The_Supervision_Tax_of_AI_Agents.m4a";
+        const REPORT_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/d978fcc9d2a5e947524ca75d5c54e7e6e81b5915/AI%20Weekly%20Pulse%2027MAR26.pdf";
+        const AUDIO_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/af666ef3f6b9f4648520189f7c5826272cfe4408/OpenAI_kills_Sora_for_physical_AI.m4a";
 
         const KPIS = [
-            { value: "$110 Billion", label: "OpenAI's record-breaking funding round, signaling total capital consolidation." },
-            { value: "40% Tax", label: "The 'Supervision Tax'—time saved by AI reclaimed by rigorous quality control." },
-            { value: "Native OS", label: "GPT-5.4's computer interaction capability transforms AI from chat to digital worker." }
+            { value: "$25 Billion", label: "Terafab project—a joint venture for total semiconductor sovereignty." },
+            { value: "Orbital AI", label: "Project Suncatcher moves compute to space to bypass Earth's energy wall." },
+            { value: "Sora Shutdown", label: "OpenAI kills video app to pivot resources toward physical AI and robotics." }
         ];
 
         const CHART_DATA = [
-            { name: 'OpenAI', value: 110000, label: 'Private Funding' },
-            { name: 'Anthropic', value: 30000, label: 'Series G' },
-            { name: 'Cerebras', value: 1000, label: 'Series H' },
-            { name: 'MatX', value: 500, label: 'Series B' },
-            { name: 'Mega', value: 11.5, label: 'Series A' },
+            { name: 'OpenAI', value: 10000, label: 'Megaround' },
+            { name: 'Shield AI', value: 2000, label: 'Series G' },
+            { name: 'CMT', value: 350, label: 'Growth' },
+            { name: 'Harvey', value: 200, label: 'Legal Tech' },
+            { name: 'eMed', value: 200, label: 'Health' },
+            { name: 'Xona', value: 170, label: 'Satellite' },
+            { name: 'Cents', value: 140, label: 'SaaS' },
+            { name: 'Qualified Health', value: 125, label: 'Health AI' },
+            { name: 'Dash0', value: 110, label: 'Observability' },
+            { name: 'PDW', value: 110, label: 'Defense' },
         ];
 
         // --- Components ---
@@ -184,16 +189,16 @@
                         <YAxis 
                             dataKey="name" 
                             type="category" 
-                            tick={{ fill: '#495420', fontSize: 11, fontWeight: 600 }} 
+                            tick={{ fill: '#7B6867', fontSize: 11, fontWeight: 600 }} 
                             axisLine={false} 
                             tickLine={false} 
                             width={130} 
                         />
                         <Tooltip 
-                            cursor={{ fill: '#A98AB0', opacity: 0.1 }}
+                            cursor={{ fill: '#A7A88A', opacity: 0.1 }}
                             contentStyle={{ 
                                 backgroundColor: '#F7F7F0', 
-                                border: '1px solid #495420', 
+                                border: '1px solid #37391E', 
                                 borderRadius: '12px', 
                                 fontSize: '13px'
                             }}
@@ -201,13 +206,13 @@
                         />
                         <Bar dataKey="value" radius={[0, 10, 10, 0]} barSize={28}>
                             {CHART_DATA.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={index === 0 ? '#495420' : (index % 2 === 0 ? '#A98AB0' : '#C4C4C0')} />
+                                <Cell key={`cell-${index}`} fill={index === 0 ? '#37391E' : (index % 2 === 0 ? '#A7A88A' : '#DAA7A2')} />
                             ))}
                             <LabelList 
                                 dataKey="value" 
                                 position="right" 
                                 formatter={(val) => `$${val >= 1000 ? (val/1000).toFixed(1) + 'B' : val + 'M'}`} 
-                                style={{ fill: '#495420', fontSize: 12, fontWeight: 800 }}
+                                style={{ fill: '#37391E', fontSize: 12, fontWeight: 800 }}
                                 offset={12}
                             />
                         </Bar>
@@ -225,35 +230,35 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-bluegray decoration-4 underline-offset-8">Native Computer Use & World Models</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-bluegray decoration-4 underline-offset-8">Vertical Integration & Orbital Compute</h2>
                                     <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
-                                        The release of GPT-5.4 marks the shift from conversational assistance to digital labor, with models capable of native, OS-level interaction.
+                                        The AI industry is shifting from cloud-based assistance to physical agency, driven by massive semiconductor fabs and space-based data centers.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="bg-white/85 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
                                         <div className="flex items-center gap-3 mb-4">
-                                            <Cpu className="text-sc-bluegray" size={32} />
-                                            <h3 className="text-xl font-bold text-sc-slate">GPT-5.4 Native Interaction</h3>
+                                            <Factory className="text-sc-bluegray" size={32} />
+                                            <h3 className="text-xl font-bold text-sc-slate">The Terafab Initiative</h3>
                                         </div>
                                         <p className="text-text-dark/70 leading-relaxed">
-                                            Features 'Native Computer Use,' allowing the model to control desktop applications and navigate web apps directly, bypassing traditional API limitations.
+                                            A $25B joint venture aiming for total semiconductor sovereignty, producing 1 terawatt of annual compute capacity through 2nm process technology.
                                         </p>
                                     </div>
                                     <div className="bg-white/85 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
                                         <div className="flex items-center gap-3 mb-4">
                                             <Globe className="text-sc-slate" size={32} />
-                                            <h3 className="text-xl font-bold text-sc-slate">V-JEPA 2 World Models</h3>
+                                            <h3 className="text-xl font-bold text-sc-slate">Project Suncatcher</h3>
                                         </div>
                                         <p className="text-text-dark/70 leading-relaxed">
-                                            Breakthroughs in 'Physical AI' allow zero-shot robot planning after minimal training, moving spatial intelligence from labs to factory floors.
+                                            Google's pivot to orbital compute, deploying TPUs in sun-synchronous orbits to bypass Earth's energy grid and cooling constraints.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="bg-sc-bluegray/5 p-8 rounded-3xl border border-sc-bluegray/20 text-center">
-                                    <h3 className="text-xl font-bold text-sc-slate mb-3">Audit Your Agentic Readiness</h3>
+                                    <h3 className="text-xl font-bold text-sc-slate mb-3">Audit Your Strategic Realignment</h3>
                                     <p className="text-text-dark/80 mb-6">
-                                        Success in the Agentic Era requires moving from managing prompts to orchestrating autonomous digital workflows.
+                                        The center of gravity has moved from the screen to the factory floor. Ensure your roadmap accounts for the rise of Physical AI.
                                     </p>
                                     <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-sc-slate text-white px-8 py-3 rounded-full font-bold hover:bg-sc-bluegray transition-all shadow-md">
                                         Launch Your AI Opportunity Sprint <MousePointer2 size={18} />
@@ -265,29 +270,29 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-taupe decoration-4 underline-offset-8">Hyper-Concentration & Vertical Integration</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-taupe decoration-4 underline-offset-8">Infrastructure & Defense Concentration</h2>
                                     <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
-                                        Venture capital has shifted to massive bets on technological platforms, with investors buying entire supply chains from chips to orbital compute.
+                                        Capital is consolidating around national security and deep-tech infrastructure, with institutional wealth bracing for massive capital expenditure.
                                     </p>
                                 </div>
                                 <InvestmentChartComp />
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                                     <div className="bg-white/85 p-6 rounded-2xl border-l-8 border-sc-bluegray shadow-sm">
-                                        <h4 className="font-bold text-lg text-sc-slate mb-2">OpenAI's $110B Round</h4>
+                                        <h4 className="font-bold text-lg text-sc-slate mb-2">OpenAI's $10B Megaround</h4>
                                         <p className="text-sm text-text-dark/70">
-                                            A record-breaking round including a $50B commitment from Amazon, setting a new ceiling for private valuations and infrastructure scale.
+                                            Bringing total funding to $120B to sustain 900M weekly users and the massive cost of securing specialized silicon.
                                         </p>
                                     </div>
                                     <div className="bg-white/85 p-6 rounded-2xl border-l-8 border-sc-taupe shadow-sm">
-                                        <h4 className="font-bold text-lg text-sc-slate mb-2">xAI-SpaceX Merger</h4>
+                                        <h4 className="font-bold text-lg text-sc-slate mb-2">Shield AI's $2B Raise</h4>
                                         <p className="text-sm text-text-dark/70">
-                                            Creating a $1.25T conglomerate to bypass terrestrial compute bottlenecks by deploying data centers in space.
+                                            Strategic acquisition of Aechelon Technology to dominate high-fidelity simulation and physics-based autonomous defense.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="bg-sc-slate text-white p-8 rounded-3xl mt-8 text-center shadow-lg">
-                                    <h3 className="text-xl font-bold mb-3">Visualize Your AI ROI</h3>
-                                    <p className="mb-6 opacity-90">The market is beginning to demand evidence of revenue realization. Use predictive dashboards to track adoption ROI.</p>
+                                    <h3 className="text-xl font-bold mb-3">Consult on Infrastructure & Sovereignty</h3>
+                                    <p className="mb-6 opacity-90">Institutional capital is moving into the physical means of production. Align your strategy with the new infrastructure moat.</p>
                                     <a href={LINKEDIN_URL} target="_blank" className="bg-white text-sc-slate px-10 py-3 rounded-full font-bold hover:bg-sc-taupe hover:text-text-dark transition-all shadow-md">
                                         Deploy Your AI Insights Dashboard
                                     </a>
@@ -298,9 +303,9 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-bluegray decoration-4 underline-offset-8">Sovereign AI & Global Compliance</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-bluegray decoration-4 underline-offset-8">The "One Rulebook" Framework</h2>
                                     <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
-                                        Regulation has moved from abstract debate to enforceable standards, with South Korea leading the way in 'high-impact' AI laws.
+                                        The US is moving to centralize AI regulation, preempting state-level regimes to create a unified national standard for innovation.
                                     </p>
                                 </div>
                                 <div className="space-y-6">
@@ -309,9 +314,9 @@
                                             <Scale className="text-sc-bluegray" size={40} />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-sc-slate mb-2">South Korea AI Basic Act</h3>
+                                            <h3 className="text-xl font-bold text-sc-slate mb-2">National AI Legislative Framework</h3>
                                             <p className="text-text-dark/70 leading-relaxed">
-                                                The world's first comprehensive national AI laws took effect, mandating transparency and human oversight for systems in healthcare and finance.
+                                                Signed March 20, this 'One Rulebook' aims to eliminate the patchwork of 50 state regimes, favoring federal preemption to maintain a global lead.
                                             </p>
                                         </div>
                                     </div>
@@ -320,9 +325,9 @@
                                             <ShieldAlert className="text-sc-slate" size={40} />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-sc-slate mb-2">US Federal Preemption</h3>
+                                            <h3 className="text-xl font-bold text-sc-slate mb-2">The Mistral Cultural Levy</h3>
                                             <p className="text-text-dark/70 leading-relaxed">
-                                                A new executive order seeks to create a 'minimally burdensome' national standard, challenging restrictive state-level regulations.
+                                                Europe counters with a 1.5% revenue-based levy on foreign AI providers to fund indigenous cultural and creative sovereignty.
                                             </p>
                                         </div>
                                     </div>
@@ -338,32 +343,32 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-taupe decoration-4 underline-offset-8">The Supervision Tax</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-taupe decoration-4 underline-offset-8">The Sora Shutdown & Physical AI</h2>
                                     <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
-                                        While AI improves productivity, a trust deficit means workers spend 40% of saved time quality-controlling AI outputs.
+                                        OpenAI's abrupt exit from generative video signals a massive reallocation of compute toward world simulation and robotics.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div className="bg-white/85 p-8 rounded-3xl shadow-md border border-sc-bluegray/20">
-                                        <Briefcase className="text-sc-bluegray mb-4" size={40} />
-                                        <h3 className="font-bold text-xl text-sc-slate mb-3">Labor Transformation</h3>
+                                        <Zap className="text-sc-bluegray mb-4" size={40} />
+                                        <h3 className="font-bold text-xl text-sc-slate mb-3">Agentic Reallocation</h3>
                                         <p className="text-text-dark/70 leading-relaxed">
-                                            AI agents are hollowing out middle-management roles as they begin to automate the 'coordination' layer of enterprise operations.
+                                            The pivot from Sora to robotics proves that the highest value in AI is now in 'Agentic AI'—systems that can act independently in the physical world.
                                         </p>
                                     </div>
                                     <div className="bg-white/85 p-8 rounded-3xl shadow-md border border-sc-bluegray/20">
-                                        <Binary className="text-sc-slate mb-4" size={40} />
-                                        <h3 className="font-bold text-xl text-sc-slate mb-3">The Trust Deficit</h3>
+                                        <Microscope className="text-sc-slate mb-4" size={40} />
+                                        <h3 className="font-bold text-xl text-sc-slate mb-3">Sustainability Mandate</h3>
                                         <p className="text-text-dark/70 leading-relaxed">
-                                            77% of frequent users report double-checking AI work, highlighting a persistent trust gap that hampers full productivity gains.
+                                            New tools like 'Carbonlog' allow SMBs to track the environmental impact of AI usage, turning green compliance into a competitive advantage.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="mt-8 glass-card p-10 rounded-3xl shadow-xl flex flex-col md:flex-row gap-8 items-center border-2 border-sc-bluegray/30">
                                     <div className="text-center md:text-left">
-                                        <h3 className="font-bold text-2xl mb-3 text-sc-slate">Orchestrate Your Digital Workforce</h3>
+                                        <h3 className="font-bold text-2xl mb-3 text-sc-slate">Deploy Your AI Sustainability Dashboard</h3>
                                         <p className="text-text-dark/80 mb-6 max-w-xl">
-                                            Move from being an operator to an orchestrator. Success in 2026 belongs to those who can manage AI workflows with senior-grade leadership.
+                                            As data center energy demands skyrocket, corporate clients are demanding verifiable green metrics. Turn your sustainability audit into a win.
                                         </p>
                                         <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="bg-sc-slate hover:bg-sc-bluegray text-white font-bold py-3 px-10 rounded-full inline-flex items-center gap-2 transition-all shadow-lg">
                                             Consult on Fractional AI Leadership <ExternalLink size={18} />
@@ -383,16 +388,16 @@
                         <Header />
                         
                         <div className="bg-white/95 p-6 md:p-10 rounded-3xl shadow-xl border border-sc-taupe/20 mb-10 max-w-5xl mx-auto">
-                            <h3 className="text-2xl font-bold mb-6 text-center text-sc-slate">Executive Summary: The Agentic Shift</h3>
+                            <h3 className="text-2xl font-bold mb-6 text-center text-sc-slate">Executive Summary: The Great Reallocation</h3>
                             <div className="text-text-dark/90 leading-relaxed space-y-4 text-lg">
                                 <p>
-                                    The week of March 14, 2026, marks the definitive transition from generative assistance to agentic autonomy. With the release of GPT-5.4, AI has moved beyond conversational interfaces to become a digital worker capable of native, operating-system-level computer interaction.
+                                    The final week of March 2026 marks a definitive transition from generative hype to physical agency and orbital infrastructure. As terrestrial energy grids hit their limits, the industry is pivoting toward space-based compute and total vertical integration of the semiconductor supply chain.
                                 </p>
                                 <p>
-                                    This shift is accompanied by unprecedented capital consolidation and a deepening geopolitical schism in AI governance. For SMBs, the barrier to enterprise-grade operations has collapsed, but success now requires navigating a 'supervision tax' where saved time is reclaimed by the necessity of rigorous quality control.
+                                    The sudden discontinuation of premier video tools like Sora signals a strategic reallocation of resources toward robotics and world simulation. For SMBs, this period demands technical diversification and a shift toward agentic tools that perform actual business operations rather than just generating media.
                                 </p>
                                 <p className="bg-sc-bluegray/10 p-6 rounded-xl font-semibold text-text-dark border-l-8 border-sc-slate italic shadow-inner">
-                                    "AI has moved from the 'blank page' problem of generating text to the 'active desk' solution of executing workflows. The competitive advantage in 2026 belongs to the orchestrator—those who pivot from being operators to managers of AI workflows."
+                                    "The AI revolution has moved beyond the screen. The competitive advantage in 2026 belongs to those who can manage the intersection of silicon, energy, and physical agency—moving from pixels to physics."
                                 </p>
                             </div>
                             <div className="mt-10 text-center">
