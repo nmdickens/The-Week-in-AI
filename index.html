@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Pulse Weekly: May 16 – May 22, 2026</title>
+    <title>AI Pulse Weekly: May 23 – May 29, 2026</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,11 +21,11 @@
         theme: {
           extend: {
             colors: {
-              'sc-bluegray': '#A98AB0', // Purple Haze (Highlights/UI Accents)
-              'sc-taupe': '#C4C4C0',    // Taupe (Borders/Accents)
-              'sc-cream': '#F7F7F0',    // White/Cream (Background)
-              'sc-slate': '#495420',    // Olive Green (Dark Accent / Content Text)
-              'text-dark': '#495420',   // Olive Green
+              'sc-bluegray': '#DAA7A2', // Dusty Rose (Highlights/UI Accents)
+              'sc-taupe': '#A7A88A',    // Sage (Borders/Accents)
+              'sc-cream': '#E5E1D9',    // Light Taupe (Page Background)
+              'sc-slate': '#37391E',    // Olive Green (Dark Accent / Content Text)
+              'text-dark': '#37391E',   // Olive Green
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
@@ -36,8 +36,8 @@
     </script>
     <style>
       body {
-        background-color: #F7F7F0; /* sc-cream */
-        color: #495420; /* text-dark */
+        background-color: #E5E1D9; /* sc-cream (Light Taupe) */
+        color: #37391E; /* text-dark (Olive Green) */
         font-family: 'Inter', sans-serif;
         overflow-x: hidden;
       }
@@ -55,9 +55,9 @@
         min-height: 480px;
       }
       .glass-card {
-        background: rgba(255, 255, 255, 0.73);
+        background: rgba(255, 255, 255, 0.78);
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(196, 196, 192, 0.4);
+        border: 1px solid rgba(167, 168, 138, 0.35); /* sage colored transparent border */
       }
     </style>
     <script type="importmap">
@@ -82,7 +82,7 @@
         import { 
             Cpu, TrendingUp, ShieldAlert, Briefcase, FileText, Headphones, 
             Zap, Scale, UserCheck, ExternalLink, Linkedin, MousePointer2, Settings, Factory, ShieldCheck,
-            Network, BrainCircuit, Globe, Users, Microscope, Binary, Database, Layout
+            Network, BrainCircuit, Globe, Users, Microscope, Binary, Database, Layout, Sparkles
         } from 'lucide-react';
         import { 
             BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, 
@@ -90,23 +90,23 @@
         } from 'recharts';
 
         // --- Data ---
-        const DATE_RANGE = "May 16 – May 22, 2026";
+        const DATE_RANGE = "May 23 – May 29, 2026";
         const LINKEDIN_URL = "https://www.linkedin.com/in/nicolemdickens/";
-        const REPORT_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/f1ec5e96fe09629c66b80d84ed67a59630dab649/AI%20Weekly%20Pulse%2022MAY26.pdf";
-        const AUDIO_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/55b158259d911864c3962262dcacc0257ead7214/Sovereign_AI_Agents_Replace_Passive_Chatbots.m4a";
+        const REPORT_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/60ef19091563c532dfd1a6a0dc77da796e4dfe5e/AI%20Weekly%20Pulse%2029MAY26.pdf";
+        const AUDIO_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/60ef19091563c532dfd1a6a0dc77da796e4dfe5e/Autonomous_AI_and_the_SaaSpocalypse.m4a";
 
         const KPIS = [
-            { value: "1,500+ Bills", label: "Active AI-specific regulations and state-level compliance guidelines introduced across the US." },
-            { value: "30+ Apps", label: "Third-party tools integrated with always-on background agents to orchestrate complex operations." },
-            { value: "84% Errors", label: "Bookkeeping errors historically made in manual payroll, now optimized via background reconciliation." }
+            { value: "$65 Billion", label: "Series H round secured by Anthropic, achieving an unprecedented $965B post-money valuation." },
+            { value: "69.2% Score", label: "Agentic coding capability scored by Claude Opus 4.8 on SWE-Bench Pro, leading the industry." },
+            { value: "Late 2027/28", label: "Provisional EU AI Act compliance extensions for standalone and product-embedded high-risk systems." }
         ];
 
         const CHART_DATA = [
-            { name: 'Anthropic', value: 30000, label: 'Private Venture Capital' },
-            { name: 'Meta Platforms', value: 13000, label: 'Grid Infrastructure Debt' },
-            { name: 'Cerebras Systems', value: 5550, label: 'Record Chip IPO' },
-            { name: 'Anduril', value: 5000, label: 'Defense Tech Venture' },
-            { name: 'Fervo Energy', value: 2000, label: 'Geothermal Energy IPO' },
+            { name: 'Anthropic', value: 65000, label: 'Series H Venture Capital' },
+            { name: 'Kalshi', value: 1000, label: 'Series F Prediction Markets' },
+            { name: 'Hark', value: 700, label: 'Series A Personalized Intel' },
+            { name: 'Mercury', value: 200, label: 'Series D Bank Expansion' },
+            { name: 'Deep Fission', value: 157, label: 'Subterranean Nuclear pre-IPO' },
         ];
 
         // --- Components ---
@@ -124,10 +124,10 @@
                     {KPIS.map((kpi, index) => (
                         <div 
                             key={index} 
-                            className={`bg-white/85 p-6 rounded-2xl border-2 shadow-sm hover:shadow-md transition-all duration-300 ${index % 2 === 0 ? 'border-sc-bluegray' : 'border-sc-slate'}`}
+                            className={`bg-white/90 p-6 rounded-2xl border-2 shadow-sm hover:shadow-md transition-all duration-300 ${index % 2 === 0 ? 'border-sc-bluegray' : 'border-sc-slate'}`}
                         >
                             <p className={`text-3xl font-bold mb-2 ${index % 2 === 0 ? 'text-sc-bluegray' : 'text-sc-slate'}`}>{kpi.value}</p>
-                            <p className="text-sm text-text-dark/80 leading-snug font-medium">{kpi.label}</p>
+                            <p className="text-sm text-text-dark/85 leading-snug font-medium">{kpi.label}</p>
                         </div>
                     ))}
                 </div>
@@ -153,14 +153,14 @@
                 { id: 'impact', label: 'Impact', icon: Briefcase },
             ];
             return (
-                <nav className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10 bg-white/60 p-2 rounded-2xl sm:rounded-full shadow-lg border border-sc-taupe/10 max-w-2xl mx-auto">
+                <nav className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10 bg-white/70 p-2 rounded-2xl sm:rounded-full shadow-lg border border-sc-taupe/20 max-w-2xl mx-auto">
                     {sections.map((section) => {
                         const Icon = section.icon;
                         return (
                             <button
                                 key={section.id}
                                 onClick={() => setActiveSection(section.id)}
-                                className={`flex items-center gap-2 py-2 px-6 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 ${activeSection === section.id ? 'bg-sc-slate text-white shadow-md transform scale-105' : 'text-sc-slate hover:bg-sc-bluegray/20 hover:text-sc-bluegray'}`}
+                                className={`flex items-center gap-2 py-2 px-6 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 ${activeSection === section.id ? 'bg-sc-slate text-white shadow-md transform scale-105' : 'text-sc-slate hover:bg-sc-bluegray/25 hover:text-sc-slate'}`}
                             >
                                 <Icon size={18} />
                                 {section.label}
@@ -172,42 +172,42 @@
         };
 
         const InvestmentChartComp = () => (
-            <div className="chart-wrapper bg-white/95 p-6 rounded-3xl border border-sc-taupe/20 shadow-sm">
+            <div className="chart-wrapper bg-white/95 p-6 rounded-3xl border border-sc-taupe/30 shadow-sm">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart 
                         data={CHART_DATA} 
                         layout="vertical" 
                         margin={{ top: 20, right: 120, left: 140, bottom: 20 }}
                     >
-                        <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} stroke="#C4C4C0" strokeOpacity={0.2} />
+                        <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} stroke="#A7A88A" strokeOpacity={0.2} />
                         <XAxis type="number" hide />
                         <YAxis 
                             dataKey="name" 
                             type="category" 
-                            tick={{ fill: '#495420', fontSize: 11, fontWeight: 600 }} 
+                            tick={{ fill: '#37391E', fontSize: 11, fontWeight: 600 }} 
                             axisLine={false} 
                             tickLine={false} 
                             width={130} 
                         />
                         <Tooltip 
-                            cursor={{ fill: '#A98AB0', opacity: 0.1 }}
+                            cursor={{ fill: '#DAA7A2', opacity: 0.15 }}
                             contentStyle={{ 
-                                backgroundColor: '#F7F7F0', 
-                                border: '1px solid #495420', 
+                                backgroundColor: '#E5E1D9', 
+                                border: '1px solid #37391E', 
                                 borderRadius: '12px', 
                                 fontSize: '13px'
                             }}
-                            formatter={(value, name, props) => [`$${value >= 1000 ? (value/1000).toFixed(2) + 'B' : value + 'M'} (${props.payload.label})`, 'Deal Value']}
+                            formatter={(value, name, props) => [`$${value >= 1000 ? (value/1000).toFixed(1) + 'B' : value + 'M'} (${props.payload.label})`, 'Deal Value']}
                         />
                         <Bar dataKey="value" radius={[0, 10, 10, 0]} barSize={28}>
                             {CHART_DATA.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={index === 0 ? '#495420' : (index % 2 === 0 ? '#A98AB0' : '#C4C4C0')} />
+                                <Cell key={`cell-${index}`} fill={index === 0 ? '#37391E' : (index % 2 === 0 ? '#DAA7A2' : '#A7A88A')} />
                             ))}
                             <LabelList 
                                 dataKey="value" 
                                 position="right" 
-                                formatter={(val) => `$${val >= 1000 ? (val/1000).toFixed(2) + 'B' : val + 'M'}`} 
-                                style={{ fill: '#495420', fontSize: 12, fontWeight: 800 }}
+                                formatter={(val) => `$${val >= 1000 ? (val/1000).toFixed(1) + 'B' : val + 'M'}`} 
+                                style={{ fill: '#37391E', fontSize: 12, fontWeight: 800 }}
                                 offset={12}
                             />
                         </Bar>
@@ -225,39 +225,41 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-bluegray decoration-4 underline-offset-8">Physics-Compliant Modeling & Secure Commerce</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-bluegray decoration-4 underline-offset-8">Dynamic Workforces & Hardware Sovereignty</h2>
                                     <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
-                                        Foundational world models simultaneously process physics, motion, and energy concepts, while secure decentralized frameworks enable agents to safely transact online.
+                                        Technological progress is shifting from raw parameter scale to specialized execution frameworks, high-bandwidth memories, and localized edge silicon.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="bg-white/85 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
                                         <div className="flex items-center gap-3 mb-4">
                                             <Zap className="text-sc-bluegray" size={32} />
-                                            <h3 className="text-xl font-bold text-sc-slate">Gemini Omni World Modeling</h3>
+                                            <h3 className="text-xl font-bold text-sc-slate">Claude Opus 4.8 & Cowork</h3>
                                         </div>
                                         <p className="text-text-dark/70 leading-relaxed">
-                                            Google's real-time multimodal model demonstrates native understanding of physical rules like gravity, allowing creators to edit complex cinematic video via natural conversation.
+                                            Anthropic's latest release scores 69.2% on SWE-Bench Pro, bringing fourfold improvement in code-flaw detection and native "dynamic workflows" capable of coordinating hundreds of parallel subagents.
                                         </p>
                                     </div>
                                     <div className="bg-white/85 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
                                         <div className="flex items-center gap-3 mb-4">
                                             <Layout className="text-sc-slate" size={32} />
-                                            <h3 className="text-xl font-bold text-sc-slate">Agent Payments Protocol (AP2)</h3>
+                                            <h3 className="text-xl font-bold text-sc-slate">Local Node 12nm Edge Silicon</h3>
                                         </div>
                                         <p className="text-text-dark/70 leading-relaxed">
-                                            This security protocol standardizes tamper-proof digital spending mandates and merchant limits, enabling autonomous background systems to conduct secure financial bookings safely.
+                                            Indian chip designer Netrasemi's mass production of the A2000 Edge AI SoC enables complex reasoning models to run completely locally, bypassing global cloud dependencies and latency.
                                         </p>
                                     </div>
                                 </div>
-                                <div className="bg-sc-bluegray/10 p-8 rounded-3xl border border-sc-bluegray/20 text-center">
-                                    <h3 className="text-xl font-bold text-sc-slate mb-3">Identify Your High-ROI Use Cases</h3>
-                                    <p className="text-text-dark/80 mb-6">
-                                        Stop wasting resources on passive prompts. Map out autonomous workflows to cut operating costs and transition to a background digital labor model today.
+                                <div className="bg-white/90 p-8 rounded-3xl border border-sc-bluegray/30 text-center shadow-sm">
+                                    <h3 className="text-xl font-bold text-sc-slate mb-3">Identify High-ROI Agentic Use Cases</h3>
+                                    <p className="text-text-dark/80 mb-6 max-w-2xl mx-auto">
+                                        Avoid the confusion of ad-hoc chat utilities. Formulate custom, secure agentic structures. Our Opportunity Sprint delivers an AI Readiness Scorecard, isolates 3–5 high-stakes avenues, and outlines an immediate roadmap.
                                     </p>
-                                    <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-sc-slate text-white px-8 py-3 rounded-full font-bold hover:bg-sc-bluegray transition-all shadow-md">
-                                        Launch Your AI Opportunity Sprint <MousePointer2 size={18} />
-                                    </a>
+                                    <div className="flex justify-center">
+                                        <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-sc-slate hover:bg-sc-bluegray text-white px-8 py-3 rounded-full font-bold transition-all shadow-md">
+                                            Book an AI Opportunity Sprint <MousePointer2 size={18} />
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         );
@@ -265,32 +267,36 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-taupe decoration-4 underline-offset-8">Physical Infrastructure Concentration</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-taupe decoration-4 underline-offset-8">Venture Concentration & Grid Infrastructure</h2>
                                     <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
-                                        Capital is prioritizing physical hardware assets, clean energy generation, and defensive security measures over standard retail software.
+                                        Capital is prioritizing physical hardware assets, compact alternative energy generation, and defensive security measures over routine consumer software.
                                     </p>
                                 </div>
                                 <InvestmentChartComp />
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                                     <div className="bg-white/85 p-6 rounded-2xl border-l-8 border-sc-bluegray shadow-sm">
-                                        <h4 className="font-bold text-lg text-sc-slate mb-2">Gigawatt-Scale Clean Energy</h4>
+                                        <h4 className="font-bold text-lg text-sc-slate mb-2">The $65B Capital Consolidation</h4>
                                         <p className="text-sm text-text-dark/70">
-                                            Meta secured a $13B debt financing package to build massive data infrastructure, while geothermal pioneers raised billions to guarantee grid power supplies.
+                                            Anthropic's record Series H funding round signals tight strategic alignment between venture capital, hyperscalers, and memory fabricants seeking to consolidate downmarket channels.
                                         </p>
                                     </div>
-                                    <div className="bg-white/85 p-6 rounded-2xl border-l-8 border-sc-taupe shadow-sm">
-                                        <h4 className="font-bold text-lg text-sc-slate mb-2">Runtime Agent Leak Defense</h4>
+                                    <div className="bg-white/85 p-6 rounded-2xl border-l-8 border-sc-slate shadow-sm">
+                                        <h4 className="font-bold text-lg text-sc-slate mb-2 text-sc-slate">Securing Autonomous Agent Risks</h4>
                                         <p className="text-sm text-text-dark/70">
-                                            Cyera acquired Genie Security to mitigate the severe endpoint vulnerabilities introduced when autonomous assistants require unsupervised local file database access.
+                                            Cyera's $50M acquisition of Genie Security highlights the massive new sub-market forming to defend local devices and local databases against unsupervised agent access.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="bg-sc-slate text-white p-8 rounded-3xl mt-8 text-center shadow-lg">
-                                    <h3 className="text-xl font-bold mb-3">Track Your Autonomous Worker ROI</h3>
-                                    <p className="mb-6 opacity-90">Avoid loose software leaks while measuring physical efficiency gains. Maintain visibility into your background tools with unified dashboards.</p>
-                                    <a href={LINKEDIN_URL} target="_blank" className="bg-white text-sc-slate px-10 py-3 rounded-full font-bold hover:bg-sc-taupe hover:text-text-dark transition-all shadow-md">
-                                        Deploy Your AI Insights Dashboard
-                                    </a>
+                                    <h3 className="text-xl font-bold mb-3">Deploy Your AI Insights Dashboard</h3>
+                                    <p className="mb-6 opacity-90 max-w-2xl mx-auto">
+                                        Reconcile remote ledger statements, verify active adoption ROI, compile precise tool usage metrics, and identify anomalies before "tokenmaxxing" billing spirals or loose leaks emerge.
+                                    </p>
+                                    <div className="flex justify-center">
+                                        <a href={LINKEDIN_URL} target="_blank" className="bg-white text-sc-slate px-10 py-3 rounded-full font-bold hover:bg-sc-bluegray hover:text-white transition-all shadow-md">
+                                            Launch Your AI Insights Dashboard Review
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         );
@@ -298,25 +304,25 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-bluegray decoration-4 underline-offset-8">Sovereignty-by-Design Mandates</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-bluegray decoration-4 underline-offset-8">Sovereign Mandates & Postponed Timelines</h2>
                                     <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
-                                        Geopolitical tension forces multinationals to transition to ring-fenced databases, localized landing zones, and region-specific key management.
+                                        The EU AI Act Omnibus provisional agreement provides developers with a vital buffer by delaying high-risk enforcement while state-level rules advance.
                                     </p>
                                 </div>
                                 <div className="space-y-6">
                                     <div className="bg-white/85 p-8 rounded-3xl shadow-sm border border-sc-taupe/20 flex flex-col md:flex-row gap-6 items-start">
-                                        <div className="bg-sc-bluegray/20 p-4 rounded-2xl shrink-0">
-                                            <Scale className="text-sc-bluegray" size={40} />
+                                        <div className="bg-sc-bluegray/25 p-4 rounded-2xl shrink-0">
+                                            <Scale className="text-sc-slate" size={40} />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-sc-slate mb-2">Federal & State Policy Collision</h3>
+                                            <h3 className="text-xl font-bold text-sc-slate mb-2">EU AI Act Omnibus Deferrals</h3>
                                             <p className="text-text-dark/70 leading-relaxed">
-                                                Over 1,500 state-level AI bills complicate national execution schemas, while safety advocates battle rapid commercial monetization pipelines.
+                                                While synthetic content disclosure and watermarking take effect on December 2, 2026, stand-alone high-risk systems under Annex III receive a 16-month breathing room window delaying compliance to late 2027.
                                             </p>
                                         </div>
                                     </div>
                                     <div className="bg-white/85 p-8 rounded-3xl shadow-sm border border-sc-taupe/20 flex flex-col md:flex-row gap-6 items-start">
-                                        <div className="bg-sc-slate/20 p-4 rounded-2xl shrink-0">
+                                        <div className="bg-sc-slate/10 p-4 rounded-2xl shrink-0">
                                             <ShieldCheck className="text-sc-slate" size={40} />
                                         </div>
                                         <div>
@@ -327,10 +333,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div className="text-center pt-6">
-                                    <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-sc-slate text-white px-10 py-4 rounded-full font-bold hover:bg-sc-bluegray transition-all shadow-xl">
-                                        Build Your Sovereign Strategy Roadmap <ShieldCheck size={18} />
-                                    </a>
+                                <div className="bg-white/90 p-8 rounded-3xl border border-sc-taupe/30 text-center mt-8">
+                                    <h3 className="text-xl font-bold mb-3 text-sc-slate">Prepare with an AI Strategy Roadmap</h3>
+                                    <p className="mb-6 text-text-dark/85 max-w-2xl mx-auto">
+                                        Proactively utilize the provisional compliance buffer to build out a rigorous 10-15 page corporate strategy roadmap. Coordinate safe deployment pathways, metadata boundaries, and solid rollout sequencing.
+                                    </p>
+                                    <div className="flex justify-center">
+                                        <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-sc-slate hover:bg-sc-bluegray text-white px-10 py-3 rounded-full font-bold transition-all shadow-md">
+                                            Build Your AI Strategy Roadmap <ShieldCheck size={18} />
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         );
@@ -338,33 +350,33 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-taupe decoration-4 underline-offset-8">The Sovereign Automation Epoch</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate underline decoration-sc-taupe decoration-4 underline-offset-8">The SaaSpocalypse & Labor Shuffles</h2>
                                     <p className="text-lg text-text-dark/80 max-w-3xl mx-auto leading-relaxed">
-                                        Routine execution-level work is being fully automated, reorganizing human labor into oversight, exception auditing, and strategic modeling.
+                                        The deployment of background digital workers is reorganizing white-collar roles from mechanical execution to persistent auditing, disrupting classical seat-based licensing models.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div className="bg-white/85 p-8 rounded-3xl shadow-md border border-sc-bluegray/20">
                                         <Users className="text-sc-bluegray mb-4" size={40} />
-                                        <h3 className="font-bold text-xl text-sc-slate mb-3">Labor Redistribution</h3>
+                                        <h3 className="font-bold text-xl text-sc-slate mb-3">SaaS Seat Licensing Collapse</h3>
                                         <p className="text-text-dark/70 leading-relaxed">
-                                            Entry-level billing and administration roles are actively transitioning to automated pipelines, requiring humans to pivot towards high-value exception verification.
+                                            As background agents execute multi-step operations independently, enterprises are shifting software choices from standard user seats to paying for completed operational tasks.
                                         </p>
                                     </div>
                                     <div className="bg-white/85 p-8 rounded-3xl shadow-md border border-sc-bluegray/20">
                                         <Factory className="text-sc-slate mb-4" size={40} />
-                                        <h3 className="font-bold text-xl text-sc-slate mb-3">Hardware Supply Squeeze</h3>
+                                        <h3 className="font-bold text-xl text-sc-slate mb-3">Edge-Driven Tech Independency</h3>
                                         <p className="text-text-dark/70 leading-relaxed">
-                                            The massive demand for high-performance AI chips is squeezing secondary silicon nodes, causing manufacturing bottlenecks for automotive and consumer utilities.
+                                            Cheap sovereign AI silicon like Netrasemi's A2000 is fostering regional tech independence, allowing smaller firms to deploy complex local nodes outside the monopoly of cloud giants.
                                         </p>
                                     </div>
                                 </div>
                                 
                                 <div className="mt-8 glass-card p-10 rounded-3xl shadow-xl border-2 border-sc-bluegray/30 text-center">
                                     <div className="max-w-3xl mx-auto">
-                                        <h3 className="font-bold text-2xl mb-3 text-sc-slate">Sovereign Fractional AI Leadership Consultation</h3>
-                                        <p className="text-text-dark/80 mb-6 max-w-xl mx-auto">
-                                            Establish clear bounds for your automated digital employees. Align compliance, data residency, and real-time auditability to safe operational practices without full-time placement costs.
+                                        <h3 className="font-bold text-2xl mb-3 text-sc-slate">Fractional AI & Analytics Leadership</h3>
+                                        <p className="text-text-dark/85 mb-6 max-w-xl mx-auto">
+                                            Build proper oversight structures for always-on background systems. Bring seasoned AI strategy, governance playbooks, and vendor oversight into your business with part-time CxO alignments—sanity, safety, and system structure included.
                                         </p>
                                         <div className="flex justify-center">
                                             <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="bg-sc-slate hover:bg-sc-bluegray text-white font-bold py-3 px-10 rounded-full inline-flex items-center gap-2 transition-all shadow-lg">
@@ -386,21 +398,21 @@
                         <Header />
                         
                         <div className="bg-white/95 p-6 md:p-10 rounded-3xl shadow-xl border border-sc-taupe/20 mb-10 max-w-5xl mx-auto">
-                            <h3 className="text-2xl font-bold mb-6 text-center text-sc-slate">Executive Summary: Sovereign Automation</h3>
+                            <h3 className="text-2xl font-bold mb-6 text-center text-sc-slate">Executive Summary: Capitalizing on Agentic Workforces</h3>
                             <div className="text-text-dark/90 leading-relaxed space-y-4 text-lg">
                                 <p>
-                                    The week of May 22, 2026, marks the definitive maturation from user-prompted assistants to background-running, always-on autonomous agent workforces. This paradigm shift requires corporate boards to treat infrastructure control as an existential priority.
+                                    The week of May 29, 2026, marks the definitive onset of a new software era where artificial intelligence shifts from a simple, chat-based utility to a continuous, autonomous operational workforce. This transition is highlighted by Anthropic's historic pre-market funding and the launch of Claude Opus 4.8, which coordinates hundreds of dynamic parallel subagents within an enterprise environment.
                                 </p>
                                 <p>
-                                    For SMB owners, this transition lowers the technical barrier and overhead of process execution. Highly modular background agents can now be connected directly to target platforms to handle books, forecast cash positions risk-free, and automate continuous CRM operations in months.
+                                    This structural shift coincides with a critical regulatory delay, as European lawmakers provisionally postpone high-risk compliance deadlines to 2027 and 2028. For SMB owners, this provides a vital window of opportunity: a temporary reprieve to establish robust local governance and cost parameters before strict enforcement takes effect.
                                 </p>
                                 <p className="bg-sc-bluegray/10 p-6 rounded-xl font-semibold text-text-dark border-l-8 border-sc-slate italic shadow-inner">
-                                    "The era of active prompting is ending. The winners of 2026 are those who decouple growth from manual labor by hiring background autonomous agents under strict governance parameters."
+                                    "The era of generative assistants is evolving into an autonomous workforce. Future competitiveness belongs to organizations that utilize this temporary compliance window to model secure, high-ROI agentic operations today."
                                 </p>
                             </div>
                             <div className="mt-10 text-center">
-                                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-sc-slate text-white font-bold px-10 py-4 rounded-full hover:bg-sc-bluegray transition-all shadow-lg text-lg">
-                                    Build Your Sovereign Strategy Roadmap
+                                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-sc-slate hover:bg-sc-bluegray text-white font-bold px-10 py-4 rounded-full transition-all shadow-lg text-lg">
+                                    Build Your AI Strategy Roadmap
                                 </a>
                             </div>
                         </div>
@@ -412,7 +424,7 @@
                         </main>
                     </div>
 
-                    <footer className="text-center py-12 text-sc-slate text-sm mt-12 border-t border-sc-taupe/20 max-w-5xl mx-auto">
+                    <footer className="text-center py-12 text-sc-slate text-sm mt-12 border-t border-sc-taupe/25 max-w-5xl mx-auto">
                         <p className="font-bold text-text-dark mb-2 text-xl">Nicole Dickens • Fractional AI Consultant</p>
                         <p className="mb-4 text-md opacity-80 italic">AI without a full-time hire — strategy, structure, and sanity included.</p>
                         <div className="flex justify-center gap-8 mt-6">
@@ -433,3 +445,4 @@
 <script type="module" src="/index.tsx"></script>
 </body>
 </html>
+
