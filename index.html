@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Pulse Weekly: May 30 – June 5, 2026</title>
+    <title>AI Pulse Weekly: June 6 – June 12, 2026</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,12 +21,11 @@
         theme: {
           extend: {
             colors: {
-              'sc-bluegray': '#5DCAD1', // Teal (Highlights/UI Accents)
-              'sc-taupe': '#87796D',    // Taupe (Dark Accent / Content Headers)
-              'sc-cream': '#FBF1D3',    // Cream (Page Background)
-              'sc-slate': '#87796D',    // Taupe (Dark text & layout boundaries)
-              'sc-pewter': '#F3F1F2',   // Pewter (Borders & Secondary glass elements)
-              'text-dark': '#87796D',   // Taupe main text
+              'sc-bluegray': '#A98AB0', // Purple Haze (Highlights/UI Accents)
+              'sc-taupe': '#C4C4C0',    // Taupe (Borders & Muted Elements)
+              'sc-cream': '#F7F7F0',    // White/Cream (Page Background)
+              'sc-slate': '#495420',    // Olive Green (Dark Accent / Content Headers)
+              'text-dark': '#495420',   // Olive Green main text
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
@@ -38,8 +37,8 @@
     </script>
     <style>
       body {
-        background-color: #FBF1D3; /* sc-cream (Cream) */
-        color: #87796D; /* text-dark (Taupe) */
+        background-color: #F7F7F0; /* sc-cream */
+        color: #495420; /* text-dark */
         font-family: 'Inter', sans-serif;
         overflow-x: hidden;
       }
@@ -57,8 +56,8 @@
         min-height: 380px;
       }
       .glass-card {
-        background: rgba(255, 255, 255, 0.92);
-        border: 1px solid rgba(135, 121, 109, 0.25); /* Taupe transparent border */
+        background: rgba(255, 255, 255, 0.90);
+        border: 1px solid rgba(196, 196, 192, 0.4);
       }
       .tab-pulse {
         position: relative;
@@ -71,7 +70,7 @@
         transform: translateX(-50%);
         width: 40%;
         height: 3px;
-        background-color: #5DCAD1;
+        background-color: #A98AB0;
         border-radius: 9999px;
       }
     </style>
@@ -105,28 +104,30 @@
         } from 'recharts';
 
         // --- Data ---
-        const DATE_RANGE = "May 30 – June 5, 2026";
+        const DATE_RANGE = "June 6 – June 12, 2026";
         const LINKEDIN_URL = "https://www.linkedin.com/in/nicolemdickens/";
-        const REPORT_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/71f827a035e69bf0f1291f883a22fc53bb0ea40f/AI%20Weekly%20Pulse%2005JUN26.pdf";
-        const AUDIO_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/52c03c714d71c1eca16b070399565bc4b771e843/The_end_of_flat_rate_AI_billing.m4a";
+        const REPORT_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/e79c1d127df057bbfc51b5fddec78102197ad566/AI%20Weekly%20Pulse%2012JUN26.pdf";
+        const AUDIO_URL = "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/e79c1d127df057bbfc51b5fddec78102197ad566/AI_Starts_Building_the_Physical_World.m4a";
 
         const KPIS = [
-            { value: "$80 Billion", label: "Alphabet's share raise for constructing high-density compute clusters and data center grids." },
-            { value: "288 E-Cores", label: "Intel Xeon 6+ processor density designed specifically for high-concurrency background agent cycles." },
-            { value: "Metered Spend", label: "GitHub Copilot transitions to usage-based credits, ending the era of subsidized flat-fee access." }
+            { value: "57% Funding", label: "Global venture investment captured by AI startups in Q1 2026, dominating late-stage rounds." },
+            { value: "120B+ Edge", label: "NVIDIA RTX Spark and AMD Halo execute massive, multi-billion parameter models directly on local devices." },
+            { value: "206 CVE Fixes", label: "Unprecedented Patch Tuesday record, exposing AI-accelerated codebase bug-seeking wars." }
         ];
 
         const CHART_DATA = [
-            { name: 'Alphabet Compute', value: 80000, label: 'Compute Infrastructure Share Sale' },
-            { name: 'Anthropic Valuation', value: 65000, label: 'Series H Venture Support Valuation' },
-            { name: 'Helion Energy G', value: 465, label: 'Alternative Fusion Funding for Microsoft grid' }
+            { name: 'Anthropic', value: 30000, label: 'Private Venture Capital Round' },
+            { name: 'xAI', value: 20000, label: 'Private Venture Capital Round' },
+            { name: 'Waymo', value: 16000, label: 'Private Venture Funding' },
+            { name: 'Prometheus', value: 12000, label: 'Series B (Bezos AGE Launch)' },
+            { name: 'Kumo AI', value: 400, label: 'Enterprise Prediction Layer Acquisition' }
         ];
 
         // --- Components ---
 
         const Header = () => (
             <header className="text-center mb-10 pt-8 animate-fadeIn">
-                <h1 className="text-4xl md:text-5xl font-bold font-display text-sc-taupe mb-3 tracking-tight">
+                <h1 className="text-4xl md:text-5xl font-bold font-display text-sc-slate mb-3 tracking-tight">
                     AI Pulse Weekly
                 </h1>
                 <p className="text-md md:text-lg text-sc-bluegray font-bold uppercase tracking-widest font-display">
@@ -137,22 +138,22 @@
                     {KPIS.map((kpi, index) => (
                         <div 
                             key={index} 
-                            className={`bg-white/95 p-6 rounded-2xl border-2 shadow-sm hover:shadow-md transition-all duration-300 ${index === 2 ? 'border-sc-bluegray' : 'border-sc-taupe/30'}`}
+                            className={`bg-white/95 p-6 rounded-2xl border-2 shadow-sm hover:shadow-md transition-all duration-300 ${index === 0 ? 'border-sc-bluegray' : 'border-sc-taupe/40'}`}
                         >
-                            <p className={`text-2xl sm:text-3xl font-display font-bold mb-2 ${index === 2 ? 'text-sc-bluegray' : 'text-sc-taupe'}`}>{kpi.value}</p>
+                            <p className={`text-2xl sm:text-3xl font-display font-bold mb-2 ${index === 0 ? 'text-sc-bluegray' : 'text-sc-slate'}`}>{kpi.value}</p>
                             <p className="text-xs sm:text-sm text-text-dark/95 leading-normal font-medium">{kpi.label}</p>
                         </div>
                     ))}
                 </div>
                 
                 <div className="flex flex-wrap justify-center gap-4 mt-8">
-                    <a href={REPORT_URL} target="_blank" rel="noopener noreferrer" className="bg-sc-taupe hover:bg-sc-bluegray text-white font-bold py-3.5 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
+                    <a href={REPORT_URL} target="_blank" rel="noopener noreferrer" className="bg-sc-slate hover:bg-sc-bluegray text-white font-bold py-3.5 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
                         <FileText size={20} />
-                        Strategic Analysis (05JUN26)
+                        Strategic Analysis (12JUN26)
                     </a>
-                    <a href={AUDIO_URL} target="_blank" rel="noopener noreferrer" className="bg-white text-sc-taupe border-2 border-sc-taupe hover:bg-sc-taupe hover:text-white font-bold py-3.5 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
+                    <a href={AUDIO_URL} target="_blank" rel="noopener noreferrer" className="bg-white text-sc-slate border-2 border-sc-slate hover:bg-sc-slate hover:text-white font-bold py-3.5 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
                         <Headphones size={20} />
-                        End of Flat-Rate Audio Summary
+                        Physical AI Audio Summary
                     </a>
                 </div>
             </header>
@@ -174,7 +175,7 @@
                             <button
                                 key={section.id}
                                 onClick={() => setActiveSection(section.id)}
-                                className={`flex items-center gap-2 py-2.5 px-5 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 ${isActive ? 'bg-sc-taupe text-white shadow-md transform scale-105 tab-pulse font-display' : 'text-sc-taupe hover:bg-sc-bluegray/15 hover:text-sc-taupe'}`}
+                                className={`flex items-center gap-2 py-2.5 px-5 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 ${isActive ? 'bg-sc-slate text-white shadow-md transform scale-105 tab-pulse font-display' : 'text-sc-slate hover:bg-sc-bluegray/15 hover:text-sc-slate'}`}
                             >
                                 <Icon size={18} />
                                 {section.label}
@@ -186,10 +187,10 @@
         };
 
         const InvestmentChartComp = () => (
-            <div className="chart-wrapper bg-white/95 p-6 rounded-3xl border border-sc-taupe/25 shadow-sm">
+            <div className="chart-wrapper bg-white/95 p-6 rounded-3xl border border-sc-taupe/30 shadow-sm">
                 <div className="mb-4">
                     <h3 className="text-md font-bold font-display text-sc-slate uppercase tracking-wider text-center">
-                        Key Scaling & Infrastructure Deals This Week ($M)
+                        Key Strategic Venture & Acquisition Inflows ($M)
                     </h3>
                 </div>
                 <ResponsiveContainer width="100%" height="90%">
@@ -198,36 +199,36 @@
                         layout="vertical" 
                         margin={{ top: 20, right: 110, left: 130, bottom: 20 }}
                     >
-                        <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} stroke="#87796D" strokeOpacity={0.15} />
+                        <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} stroke="#C4C4C0" strokeOpacity={0.2} />
                         <XAxis type="number" hide />
                         <YAxis 
                             dataKey="name" 
                             type="category" 
-                            tick={{ fill: '#87796D', fontSize: 11, fontWeight: 600 }} 
+                            tick={{ fill: '#495420', fontSize: 11, fontWeight: 600 }} 
                             axisLine={false} 
                             tickLine={false} 
                             width={120} 
                         />
                         <Tooltip 
-                            cursor={{ fill: '#5DCAD1', opacity: 0.12 }}
+                            cursor={{ fill: '#A98AB0', opacity: 0.12 }}
                             contentStyle={{ 
-                                backgroundColor: '#FBF1D3', 
-                                border: '1px solid #87796D', 
+                                backgroundColor: '#F7F7F0', 
+                                border: '1px solid #495420', 
                                 borderRadius: '12px', 
                                 fontSize: '13px',
-                                color: '#87796D'
+                                color: '#495420'
                             }}
                             formatter={(value, name, props) => [`$${value >= 1000 ? (value/1000).toFixed(1) + 'B' : value + 'M'} (${props.payload.label})`, 'Value']}
                         />
                         <Bar dataKey="value" radius={[0, 10, 10, 0]} barSize={26}>
                             {CHART_DATA.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={index === 2 ? '#5DCAD1' : '#87796D'} />
+                                <Cell key={`cell-${index}`} fill={index === 3 ? '#A98AB0' : '#495420'} />
                             ))}
                             <LabelList 
                                 dataKey="value" 
                                 position="right" 
                                 formatter={(val) => `$${val >= 1000 ? (val/1000).toFixed(1) + 'B' : val + 'M'}`} 
-                                style={{ fill: '#87796D', fontSize: 11, fontWeight: 800 }}
+                                style={{ fill: '#495420', fontSize: 11, fontWeight: 800 }}
                                 offset={12}
                             />
                         </Bar>
@@ -245,48 +246,48 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-taupe font-display underline decoration-sc-bluegray decoration-4 underline-offset-8">Processor Concurrency & Local Edge Ecosystems</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate font-display underline decoration-sc-bluegray decoration-4 underline-offset-8">Local Edge Processing & Controlled Access</h2>
                                     <p className="text-lg text-text-dark/90 max-w-3xl mx-auto leading-relaxed">
-                                        Silicon and hardware developers are actively redesigning their architectures to support localized, power-efficient, and highly concurrent AI workloads to withstand metered compute charges.
+                                        Software and hardware technology progressed rapidly this week, unlocking national security-grade reasoning models for the public while introducing high-capability edge platforms.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                     <div className="bg-white/90 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
                                         <div className="flex items-center gap-3 mb-4">
                                             <Zap className="text-sc-bluegray" size={28} />
-                                            <h3 className="text-lg font-bold font-display text-sc-taupe">Xeon 6+ On 18A</h3>
+                                            <h3 className="text-lg font-bold font-display text-sc-slate">Claude Fable 5</h3>
                                         </div>
                                         <p className="text-sm text-text-dark/85 leading-relaxed">
-                                            Intel showcased Xeon 6+ with up to 288 Efficient-cores, optimizing performance density and watts per rack for persistent background agents with a 45% power efficiency improvement per thread.
+                                            Brings elite reasoning, vision, and coding to the public at 50% lower cost. Built-in automated safety classifiers block cyber-exploitation or biological synthesis prompts.
                                         </p>
                                     </div>
                                     <div className="bg-white/90 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
                                         <div className="flex items-center gap-3 mb-4">
-                                            <Layout className="text-sc-taupe" size={28} />
-                                            <h3 className="text-lg font-bold font-display text-sc-taupe">On-Premises Edge</h3>
+                                            <Layout className="text-sc-slate" size={28} />
+                                            <h3 className="text-lg font-bold font-display text-sc-slate">RTX Spark & Ryzen AI</h3>
                                         </div>
                                         <p className="text-sm text-text-dark/85 leading-relaxed">
-                                            Innodisk's 5-layer edge portfolio running AccelBrain on APEX-X200 enables scalable, fully air-gapped on-premises deployments of open-source models with 100% data sovereignty.
+                                            NVIDIA's Spark superchip and AMD's Ryzen AI Halo run 120B to 200B parameter models entirely locally, though at high energy and thermal design power footprint costs.
                                         </p>
                                     </div>
                                     <div className="bg-white/90 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
                                         <div className="flex items-center gap-3 mb-4">
                                             <Factory className="text-sc-bluegray" size={28} />
-                                            <h3 className="text-lg font-bold font-display text-sc-taupe">Robotic Intelligence</h3>
+                                            <h3 className="text-lg font-bold font-display text-sc-slate">NVIDIA & SK Hynix</h3>
                                         </div>
                                         <p className="text-sm text-text-dark/85 leading-relaxed">
-                                            Sprit AI's physical model Spirit v1.6 surpassed NVIDIA Cosmos3-Nano on the RoboArena leaderboard, signaling massive gains in spatial reasoning and multi-joint sensory tracking.
+                                            Multiyear co-engineering alliance guarantees stable advanced high-bandwidth memory supplies to power Vera Rubin processors and next-gen physical robotics factories.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="bg-white/95 p-8 rounded-3xl border border-sc-bluegray/30 text-center shadow-sm max-w-4xl mx-auto">
-                                    <h3 className="text-xl font-bold font-display text-sc-taupe mb-3">Assess Your Local Edge & Agent Readiness</h3>
+                                    <h3 className="text-xl font-bold font-display text-sc-slate mb-3">Assess Your Edge & Background Process Feasibility</h3>
                                     <p className="text-text-dark/90 mb-6 max-w-2xl mx-auto text-sm leading-relaxed">
-                                        Do not default back to central cloud bottlenecks. Our AI Opportunity Sprint delivers a clean AI Readiness Scorecard, uncovers high-ROI edge or local agent scenarios, and maps an immediate adoption layout.
+                                        Don't waste funds on slow, redundant cloud APIs or resource-heavy local motherboards. Our 2-week AI Opportunity Sprint uncovers 3–5 high-value processes suited for background orchestration or local nodes.
                                     </p>
                                     <div className="flex justify-center">
-                                        <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-sc-taupe hover:bg-sc-bluegray text-white px-8 py-3.5 rounded-full font-bold transition-all shadow-md text-sm sm:text-base">
-                                            Book an AI Opportunity Sprint Audit <MousePointer2 size={18} />
+                                        <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-sc-slate hover:bg-sc-bluegray text-white px-8 py-3.5 rounded-full font-bold transition-all shadow-md text-sm sm:text-base">
+                                            Execute Your AI Opportunity Sprint <MousePointer2 size={18} />
                                         </a>
                                     </div>
                                 </div>
@@ -296,34 +297,34 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-taupe font-display underline decoration-sc-bluegray decoration-4 underline-offset-8">Infrastructure Finance & Clean Energy Horizons</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate font-display underline decoration-sc-bluegray decoration-4 underline-offset-8">Physical AI Frontier & Barbell Funding Distribution</h2>
                                     <p className="text-lg text-text-dark/90 max-w-3xl mx-auto leading-relaxed">
-                                        speculative software startups take a backseat as massive institutional capital flows directly to alternative nuclear power and custom on-premises consulting deployments.
+                                        Venture capital is extremely concentrated in mature mega-rounds, leaving smaller firms in a drought while focus rotates toward industrial execution and data prediction.
                                     </p>
                                 </div>
                                 <InvestmentChartComp />
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                                     <div className="bg-white/90 p-6 rounded-2xl border-l-8 border-sc-bluegray shadow-sm">
-                                        <h4 className="font-bold text-lg font-display text-sc-taupe mb-2">Helion Energy's Series G</h4>
+                                        <h4 className="font-bold text-lg font-display text-sc-slate mb-2">Bezos Backs Prometheus</h4>
                                         <p className="text-sm text-text-dark/85">
-                                            Closed a $465M financing round led by Thrive Capital to accelerate construction of "Orion" (50MW Malaga fusion plant) slated to deliver carbon-free electricity to Microsoft servers by 2028.
+                                            Prometheus raised a $12B Series B valuing the startup at $41B to build an "artificial general engineer" designed to compress design-to-build loops for complex heavy industry.
                                         </p>
                                     </div>
-                                    <div className="bg-white/90 p-6 rounded-2xl border-l-8 border-sc-taupe shadow-sm">
-                                        <h4 className="font-bold text-lg font-display text-sc-taupe mb-2 text-sc-taupe">Direct Customized Deployments</h4>
+                                    <div className="bg-white/90 p-6 rounded-2xl border-l-8 border-sc-slate shadow-sm">
+                                        <h4 className="font-bold text-lg font-display text-sc-slate mb-2 text-sc-slate">NVIDIA Acquires Kumo AI</h4>
                                         <p className="text-sm text-text-dark/85">
-                                            OpenAI's dedicated consultancy-focused deployment company, backed by Bain, Sachs, and SoftBank, shifts efforts past simple SaaS integrations to forward-deploy engineers directly.
+                                            A major software acquisition worth over $400M aimed at integrating graph-based relational foundation models directly into enterprise data warehouses to monetize prediction layers.
                                         </p>
                                     </div>
                                 </div>
-                                <div className="bg-sc-taupe text-white p-8 rounded-3xl mt-8 text-center shadow-lg max-w-4xl mx-auto">
-                                    <h3 className="text-xl font-bold font-display mb-3 text-white">Deploy an AI Insights Dashboard</h3>
+                                <div className="bg-sc-slate text-white p-8 rounded-3xl mt-8 text-center shadow-lg max-w-4xl mx-auto">
+                                    <h3 className="text-xl font-bold font-display mb-3 text-white font-semibold">Track Overage Risks with an AI Insights Dashboard</h3>
                                     <p className="mb-6 opacity-90 max-w-2xl mx-auto text-sm leading-relaxed">
-                                        Mitigate critical overage charges from "tokenmaxxing" or recursive background agents. Visualize live adoption ROI, monitor credit allocations, and verify errors prevented across financial suites.
+                                        Consolidate and monitor active API token allocations. Quantify hours saved, prevent unoptimized background task overruns, and keep close track of system integrations in monthly close scripts.
                                     </p>
                                     <div className="flex justify-center">
-                                        <a href={LINKEDIN_URL} target="_blank" className="bg-white text-sc-taupe px-10 py-3.5 rounded-full font-bold hover:bg-sc-bluegray hover:text-white transition-all shadow-md text-sm sm:text-base">
-                                            Establish Your AI Insights Dashboard
+                                        <a href={LINKEDIN_URL} target="_blank" className="bg-white text-sc-slate px-10 py-3.5 rounded-full font-bold hover:bg-sc-bluegray hover:text-white transition-all shadow-md text-sm sm:text-base">
+                                            Deploy Your Predictive AI Insights Dashboard
                                         </a>
                                     </div>
                                 </div>
@@ -333,43 +334,43 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-taupe font-display underline decoration-sc-bluegray decoration-4 underline-offset-8">SMC Targeted Relief & Defense-First Agendas</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate font-display underline decoration-sc-bluegray decoration-4 underline-offset-8">Voluntary Review Frameworks & Geopolitical Divides</h2>
                                     <p className="text-lg text-text-dark/95 max-w-3xl mx-auto leading-relaxed">
-                                        Global rules are splitting: the EU AI Act Omnibus softens literacy benchmarks and delays high-risk timelines, while the US advances military integrations with severe security audits.
+                                        A market-driven, light-touch federal review model establishes regulatory speed inside the US, while international friction and aggressive state compliance rules proceed nearby.
                                     </p>
                                 </div>
                                 <div className="space-y-6">
                                     <div className="bg-white/90 p-8 rounded-3xl shadow-sm border border-sc-taupe/20 flex flex-col md:flex-row gap-6 items-start">
-                                        <div className="bg-sc-bluegray/10 p-4 rounded-2xl shrink-0">
-                                            <Scale className="text-sc-taupe" size={40} />
+                                        <div className="bg-sc-bluegray/20 p-4 rounded-2xl shrink-0">
+                                            <Scale className="text-sc-slate" size={40} />
                                         </div>
                                         <div>
-                                            <h3 className="text-lg font-bold font-display text-sc-taupe mb-2">Relief for Small Mid-Cap Enterprises</h3>
+                                            <h3 className="text-lg font-bold font-display text-sc-slate mb-2">30-Day Pre-Release Review</h3>
                                             <p className="text-sm text-text-dark/85 leading-relaxed">
-                                                EU's Digital Omnibus on AI delays stand-alone Annex III high-risk compliance deadlines to late 2027 while replacing strict literacy mandates with general supporting measures to provide operational room.
+                                                The newly signed "Promoting Advanced Artificial Intelligence Innovation and Security" U.S. Executive Order avoids mandatory licensing, allowing developers to voluntarily submit frontier systems for defense testing.
                                             </p>
                                         </div>
                                     </div>
                                     <div className="bg-white/90 p-8 rounded-3xl shadow-sm border border-sc-taupe/20 flex flex-col md:flex-row gap-6 items-start">
-                                        <div className="bg-sc-pewter p-4 rounded-2xl shrink-0">
-                                            <ShieldCheck className="text-sc-taupe" size={40} />
+                                        <div className="bg-sc-taupe/20 p-4 rounded-2xl shrink-0">
+                                            <ShieldCheck className="text-sc-slate" size={40} />
                                         </div>
                                         <div>
-                                            <h3 className="text-lg font-bold font-display text-sc-taupe mb-2">US National Security Presidential Memorandum NSPM-11</h3>
+                                            <h3 className="text-lg font-bold font-display text-sc-slate mb-2">The Geopolitical Armaments Tension</h3>
                                             <p className="text-sm text-text-dark/85 leading-relaxed">
-                                                Directs rapid integration of commercial and open-source models on military systems. Concurrently, FISMA guidelines demand immediate termination of vendor softwares violating secure protocols.
+                                                Delegates at the Shangri-La Dialogue clashed over military AI command integration, leaving developers to face strict regional GDPR rules and aggressive state laws without federal preemption.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="bg-white/95 p-8 rounded-3xl border border-sc-taupe/30 text-center mt-8 max-w-4xl mx-auto">
-                                    <h3 className="text-xl font-bold font-display mb-3 text-sc-taupe">Draft Your Regulatory & Security Strategy Roadmap</h3>
+                                    <h3 className="text-xl font-bold font-display mb-3 text-sc-slate">Draft a Compliant AI Strategy Roadmap</h3>
                                     <p className="mb-6 text-text-dark/90 max-w-2xl mx-auto text-sm leading-relaxed">
-                                        Convert the provisional political extensions into an operational defense. Draft a 10-15 page corporate Strategy Roadmap aligning data-metadata compliance with stable rollout structures.
+                                        Convert regional divergence into a resilient, watermarked, privacy-aligned architecture. Formulate a 10-15 page corporate strategy roadmap mapping deployment frameworks, security guardrails, and rollout boundaries.
                                     </p>
                                     <div className="flex justify-center">
-                                        <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-sc-taupe hover:bg-sc-bluegray text-white px-10 py-3.5 rounded-full font-bold transition-all shadow-md text-sm sm:text-base">
-                                            Build Your AI Strategy Roadmap <ShieldCheck size={18} />
+                                        <a href={LINKEDIN_URL} target="_blank" className="inline-flex items-center gap-2 bg-sc-slate hover:bg-sc-bluegray text-white px-10 py-3.5 rounded-full font-bold transition-all shadow-md text-sm sm:text-base">
+                                            Develop Your Custom AI Strategy Roadmap <ShieldCheck size={18} />
                                         </a>
                                     </div>
                                 </div>
@@ -379,37 +380,37 @@
                         return (
                             <div className="space-y-6 animate-fadeIn">
                                 <div className="text-center mb-8">
-                                    <h2 className="text-3xl font-bold mb-4 text-sc-taupe font-display underline decoration-sc-bluegray decoration-4 underline-offset-8">SaaSpocalypse & The Economics of Metered Spend</h2>
+                                    <h2 className="text-3xl font-bold mb-4 text-sc-slate font-display underline decoration-sc-taupe decoration-4 underline-offset-8">Trust Collapse & Probing Cybersecurity Scourges</h2>
                                     <p className="text-lg text-text-dark/95 max-w-3xl mx-auto leading-relaxed">
-                                        The shift from flat subscriptions to usage-based AI Credits on June 1, 2026, penalizes raw "vibe coders," demanding disciplined engineering and structural oversight.
+                                        The rapid deployment of background agents occurs alongside an unprecedented collapse in public digital identity and an AI-accelerated code-probing security threat.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div className="bg-white/90 p-8 rounded-3xl shadow-sm border border-sc-bluegray/20">
                                         <AlertTriangle className="text-sc-bluegray mb-4" size={32} />
-                                        <h3 className="font-bold font-display text-xl text-sc-taupe mb-3">Vibe Coding Penalty</h3>
+                                        <h3 className="font-bold font-display text-xl text-sc-slate mb-3">Escalating Vulnerability Scans</h3>
                                         <p className="text-sm text-text-dark/85 leading-relaxed">
-                                            Unoptimized brute-force copy paste routines are resulting in severe monthly credit overruns up to $3,000, while structured algorithmic engineers easily operate inside core allocations.
+                                            A record-breaking 206 fixes on Patch Tuesday highlights how malicious groups and security testers utilize LLMs to analyze codebases and deploy automated Exploits in near real-time.
                                         </p>
                                     </div>
                                     <div className="bg-white/90 p-8 rounded-3xl shadow-sm border border-sc-bluegray/20">
-                                        <Users className="text-sc-taupe mb-4" size={32} />
-                                        <h3 className="font-bold font-display text-xl text-sc-taupe mb-3">Auditing Over Prompting</h3>
+                                        <Users className="text-sc-slate mb-4" size={32} />
+                                        <h3 className="font-bold font-display text-xl text-sc-slate mb-3">84% Trust Loss</h3>
                                         <p className="text-sm text-text-dark/85 leading-relaxed">
-                                            OpenAI's Dreaming V3 auto-synthesizes multi-year memory lists in the background, forcing users to constantly audit inferred context logs to block background metadata leaks.
+                                            88% of people struggle to tell what's real online, while 84% state video evidence is no longer a trusted proof of identity, prompting cost-intensive manual verifications.
                                         </p>
                                     </div>
                                 </div>
                                 
                                 <div className="mt-8 glass-card p-10 rounded-3xl shadow-lg border-2 border-sc-bluegray/20 text-center max-w-4xl mx-auto">
                                     <div className="max-w-3xl mx-auto">
-                                        <h3 className="font-bold font-display text-2xl mb-3 text-sc-taupe">Install Fractional AI & Analytics Leadership</h3>
+                                        <h3 className="font-bold font-display text-2xl mb-3 text-sc-slate">Secure Core Workflows with Fractional AI Leadership</h3>
                                         <p className="text-text-dark/90 mb-6 max-w-xl mx-auto text-sm leading-relaxed">
-                                            Take control over your metered token infrastructure, establish secure compliance checks, and automate complex tasks with continuous background agents—without expensive full-time placement costs.
+                                            Safeguard company databases, coordinate secure background executions, handle state compliance requirements, and build air-gapped operational layers with expert Fractional AI support—sans the placement overhead.
                                         </p>
                                         <div className="flex justify-center">
-                                            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="bg-sc-taupe hover:bg-sc-bluegray text-white font-bold py-3.5 px-10 rounded-full inline-flex items-center gap-2 transition-all shadow-md text-sm sm:text-base">
-                                                Acquire Fractional AI Leadership Support <ExternalLink size={18} />
+                                            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="bg-sc-slate hover:bg-sc-bluegray text-white font-bold py-3.5 px-10 rounded-full inline-flex items-center gap-2 transition-all shadow-md text-sm sm:text-base">
+                                                Request Fractional AI Leadership Guidance <ExternalLink size={18} />
                                             </a>
                                         </div>
                                     </div>
@@ -427,36 +428,36 @@
                         <Header />
                         
                         <div className="bg-white/95 p-6 md:p-10 rounded-3xl shadow-xl border border-sc-taupe/20 mb-10 max-w-5xl mx-auto">
-                            <h3 className="text-2xl font-bold font-display mb-6 text-center text-sc-taupe underline decoration-sc-bluegray decoration-2 underline-offset-4">Executive Summary: The End of Flat-Rate AI Billing</h3>
+                            <h3 className="text-2xl font-bold font-display mb-6 text-center text-sc-slate underline decoration-sc-bluegray decoration-2 underline-offset-4 font-semibold">Executive Summary: AI Starts Building the Physical World</h3>
                             <div className="text-text-dark/95 leading-relaxed space-y-4 text-base sm:text-lg">
                                 <p>
-                                    The corporate artificial intelligence landscape has reached a critical turning point as the era of heavily subsidized model access officially comes to a close. Enterprise software providers are transitioning away from flat-rate subscription models toward utility-based, token-metered billing structures. This shift occurs just as AI transitions from a passive, prompt-driven chatbot into persistent, "always-on" background agent architectures like Microsoft Scout.
+                                    The second week of June 2026 marked a critical shift in the artificial intelligence landscape as commercial priorities transitioned from simple digital assistants to physical-world execution and background automation. This evolution is supported by a massive influx of late-stage capital into physical engineering platforms like Jeff Bezos-backed Prometheus and the deployment of local edge-based hardware architectures.
                                 </p>
                                 <p>
-                                    Software providers are no longer willing to absorb the astronomical compute costs associated with continuous background model execution, forcing a structural migration toward usage-based credit pricing. This shift introduces immediate budget volatility for corporate users, as unoptimized background loops or multi-agent workflows can trigger massive token consumption and unexpected overage charges.
+                                    This rapid technological advancement occurs alongside a widening integration gap for enterprises, a severe breakdown in digital trust, and a highly fractured global regulatory environment. While the newly signed U.S. executive order establishes a voluntary, light-touch federal review framework to prioritize speed, global enterprises are left to navigate a complex, bifurcated compliance landscape.
                                 </p>
                                 <p>
-                                    Furthermore, escalating public cloud expenses and intense data privacy concerns are driving a major technological shift toward localized edge hardware systems. High-density on-premises platforms are emerging as a practical alternative, allowing businesses to run open-source models with complete data sovereignty and predictable hardware costs.
+                                    Furthermore, next-generation edge processors from NVIDIA and AMD are making advanced intelligence locally accessible to support long-running, autonomous workflows. However, this surge in local capability occurs alongside the largest software vulnerability patch in history, exposing an intensifying cybersecurity arms race driven by AI-assisted code probing.
                                 </p>
-                                <p className="bg-sc-pewter p-6 rounded-xl font-semibold text-sc-taupe border-l-8 border-sc-bluegray italic shadow-inner text-base">
-                                    "The era of subsidized flat pricing has concluded, giving way to persistent autonomous workers and metered tokens. Competitive survival now demands prompt optimization, absolute on-premises edge sovereignty, and token-level accounting."
+                                <p className="bg-white p-6 rounded-xl font-semibold text-sc-slate border-l-8 border-sc-bluegray italic shadow-inner text-base">
+                                    "The era of simple content assistants has given way to physical AI, edge-native execution, and background schedules. Enterprise success now demands shifting from using AI to running on AI, securely backed by offline validation and compliance audit frameworks."
                                 </p>
                             </div>
                             <div className="mt-10 text-center">
-                                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-sc-taupe hover:bg-sc-bluegray text-white font-bold px-10 py-4 rounded-full transition-all shadow-lg text-sm sm:text-base">
-                                    Consult on Your Enterprise Token Optimization Strategy
+                                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-sc-slate hover:bg-sc-bluegray text-white font-bold px-10 py-4 rounded-full transition-all shadow-lg text-sm sm:text-base">
+                                    Consult on Custom Workflow Automation & Secure Physical Auditing
                                 </a>
                             </div>
                         </div>
 
                         <div className="bg-white/95 p-6 md:p-10 rounded-3xl shadow-xl border border-sc-taupe/20 mb-10 max-w-5xl mx-auto">
-                            <h3 className="text-2xl font-semibold text-center text-sc-taupe mb-6 font-display">What This Means for SMBs: Autopilots & Spending Audits</h3>
+                            <h3 className="text-2xl font-semibold text-center text-sc-slate mb-6 font-display font-semibold">What This Means for SMBs: Bridging the Integration Deficit</h3>
                             <div className="text-text-dark/90 leading-relaxed text-sm sm:text-base space-y-4">
                                 <p>
-                                    Small and medium-sized businesses face the daunting challenge of integrating autonomous agents while managing unpredictable operational costs. The release of Microsoft Scout as a persistent background worker across the Microsoft 365 suite exemplifies how virtual employees are becoming standard administrative infrastructure. To assist with budgeting, Microsoft is establishing permanent, bundled pricing tiers that embed these capabilities directly into core business subscription SKUs (Business Standard with Copilot at $23.50/mo and Premium at $32.00/mo) starting July 1, 2026.
+                                    Although a landmark 58% of small businesses have adopted generative AI, a deeper look reveals that most remain stuck using these tools for superficial, ad-hoc drafting. Only a small minority of firms have successfully moved artificial intelligence into their core operational layer to automate daily processes. While 75% are actively investing in these technologies, only slightly more than one-third have fully integrated them into daily operations.
                                 </p>
                                 <p>
-                                    Functional product upgrades like Excel’s "Plan Mode" and ChatGPT's "Dreaming V3" memory change the user's relationship with AI from active prompting to administrative oversight. Rather than instructing the system on what to do or remember, business owners must now audit the step-by-step methodologies and inferred context updates generated automatically by the AI to secure corporate boundaries and block "context bleed" risks.
+                                    Bridging this gap requires business owners to prioritize process documentation over buying flashy software. For automated integration to succeed, firms must first write out every step of a process—including triggers, inputs, and edge cases. In parallel, the release of specialized background execution features, such as Scheduled Managed Agents and Power Platform updates, enables SMBs to deploy autonomous workers on custom schedules to execute routine operations automatically.
                                 </p>
                             </div>
                         </div>
@@ -468,24 +469,15 @@
                         </main>
                     </div>
 
-                    <footer className="text-center py-12 text-sc-taupe text-sm mt-12 border-t border-sc-taupe/20 max-w-5xl mx-auto bg-white/70 rounded-3xl p-6 shadow-sm border">
-                        <p className="font-bold text-sc-taupe mb-1 text-xl font-display">Nicole Dickens • Fractional AI Consultant</p>
+                    <footer className="text-center py-12 text-sc-slate text-sm mt-12 border-t border-sc-taupe/20 max-w-5xl mx-auto bg-white/70 rounded-3xl p-6 shadow-sm border border-sc-taupe/25">
+                        <p className="font-bold text-sc-slate mb-1 text-xl font-display">Nicole Dickens • Fractional AI Consultant</p>
                         <p className="mb-4 text-md opacity-90 italic">AI without a full-time hire — strategy, structure, and sanity included.</p>
                         <div className="flex justify-center gap-8 mt-6">
-                            <a href={LINKEDIN_URL} target="_blank" className="text-sc-taupe font-bold hover:text-sc-bluegray transition-colors flex items-center gap-2 text-base">
+                            <a href={LINKEDIN_URL} target="_blank" className="text-sc-slate font-bold hover:text-sc-bluegray transition-colors flex items-center gap-2 text-base">
                                 <Linkedin size={20} /> LinkedIn Profile
                             </a>
                             <span className="text-sc-taupe/40">|</span>
-                            <span className="text-sc-taupe text-base">Powered by Gemini Deep Research</span>
+                            <span className="text-sc-slate text-base">Powered by Gemini Deep Research</span>
                         </div>
                     </footer>
                 </div>
-            );
-        };
-
-        const root = createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
-<script type="module" src="/index.tsx"></script>
-</body>
-</html>
