@@ -3,716 +3,588 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Pulse Weekly: June 13 – June 19, 2026</title>
+    <title>AI Pulse Weekly: June 20 – June 26, 2026</title>
     
     <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Fonts -->
+    <!-- Google Fonts: Roboto and Raleway -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
-        /* Fade-in Animation utility */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeIn {
-            animation: fadeIn 0.4s ease-out forwards;
-        }
-        
-        /* Custom scrollbar and aesthetics */
+        /* General Custom Styles */
         body {
-            background-color: #FCFEF1;
-            color: #005D9E;
-            font-family: 'Inter', sans-serif;
+            background-color: #F6F0E7; /* Sand Dollar */
+            color: #2C3539;           /* Charcoal */
+            font-family: 'Roboto', sans-serif;
         }
 
-        /* Slide classes for tab content switching */
-        .tab-content {
-            display: none;
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Raleway', sans-serif;
         }
-        .tab-content.active {
-            display: block;
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Interactive Transitions */
+        .tab-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Custom Scrollbar styled for the Stretch of Sand palette */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F6F0E7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #DFD9CE;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #908984;
         }
     </style>
 
     <script>
+      // Tailwind configuration for custom design tokens matching Stretch of Sand
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              'sc-bluegray': '#ff4a3b', // Cinnabar/Accent
-              'sc-taupe': '#7B6867',    // Taupe/Muted Borders
-              'sc-cream': '#FCFEF1',    // Cream Background
-              'sc-slate': '#005D9E',    // Midnight Blue Main
-              'text-dark': '#012A4A',   // Deep Blue Body
+              'coral': '#5CCCCB',       /* Blue Green from Stretch of Sand */
+              'glow-blue': '#1C799E',   /* Blue Grotto from Stretch of Sand */
+              'bg-darkest': '#F6F0E7',  /* Sand Dollar background */
+              'bg-card': '#ffffff',     /* White Card Background */
+              'bg-hover': '#EBE5DC',    /* Soft Cream-Taupe Hover Highlight */
+              'border-subtle': '#DFD9CE',/* Soft Taupe Dividing Border */
+              'text-muted': '#908984',  /* Taupe muted text */
+              'text-bright': '#1C799E', /* Blue Grotto Headings */
+              'text-dark': '#2C3539',   /* Slate Dark Body Text */
             },
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              display: ['Space Grotesk', 'sans-serif'],
+              sans: ['Roboto', 'sans-serif'],
+              display: ['Raleway', 'sans-serif'],
+              mono: ['Fira Code', 'monospace'],
             },
           }
         }
       }
     </script>
 </head>
-<body class="bg-sc-cream min-h-screen text-sc-slate font-sans selection:bg-sc-bluegray/20 selection:text-sc-slate">
+<body class="bg-bg-darkest text-text-dark min-h-screen selection:bg-coral/30 selection:text-glow-blue">
 
-    <!-- Container -->
-    <div id="main-app-container" class="min-h-screen pb-20">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            
-            <!-- App Header Header -->
-            <header id="app-header" class="text-center mb-10 pt-8 animate-fadeIn">
-                <h1 id="app-main-title" class="text-4xl md:text-5xl font-bold font-display text-sc-slate mb-3 tracking-tight">
-                    AI Pulse Weekly
-                </h1>
-                <p id="app-date-subtitle" class="text-md md:text-lg text-sc-bluegray font-bold uppercase tracking-widest font-display">
-                    June 13 – June 19, 2026
-                </p>
-
-                <!-- KPI Grid -->
-                <div id="kpi-grid" class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto px-4">
-                    <!-- KPI 1 -->
-                    <div id="kpi-card-0" class="bg-white/95 p-6 rounded-2xl border-2 border-sc-taupe/40 shadow-sm hover:shadow-md transition-all duration-300">
-                        <p id="kpi-value-0" class="text-2xl sm:text-3xl font-display font-bold mb-2 text-sc-slate">$60B Deal</p>
-                        <p id="kpi-label-0" class="text-xs sm:text-sm text-text-dark/95 leading-normal font-medium">SpaceX acquires AI coding assistant Cursor (Anysphere)—the largest startup developer M&A deal of the year.</p>
-                    </div>
-                    <!-- KPI 2 -->
-                    <div id="kpi-card-1" class="bg-white/95 p-6 rounded-2xl border-2 border-sc-taupe/40 shadow-sm hover:shadow-md transition-all duration-300">
-                        <p id="kpi-value-1" class="text-2xl sm:text-3xl font-display font-bold mb-2 text-sc-slate">84% Compacted</p>
-                        <p id="kpi-label-1" class="text-xs sm:text-sm text-text-dark/95 leading-normal font-medium">Unsloth compresses 744B parameter GLM-5.2 to execute offline, unregulable reasoning directly on local devices.</p>
-                    </div>
-                    <!-- KPI 3 -->
-                    <div id="kpi-card-2" class="bg-white/95 p-6 rounded-2xl border-2 border-sc-bluegray shadow-sm hover:shadow-md transition-all duration-300">
-                        <p id="kpi-value-2" class="text-2xl sm:text-3xl font-display font-bold mb-2 text-sc-bluegray">Export Halt</p>
-                        <p id="kpi-label-2" class="text-xs sm:text-sm text-text-dark/95 leading-normal font-medium">U.S. government defense preemption directive forces Anthropic to globally disable active Claude Fable 5 models.</p>
-                    </div>
-                </div>
+    <!-- Root Structure matching focused-mode targeting rules -->
+    <div id="root">
+        <div id="main-app-container">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 
-                <!-- CTA Buttons -->
-                <div id="header-cta-buttons" class="flex flex-wrap justify-center gap-4 mt-8">
-                    <a id="btn-report-download" href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/d810c81d582f471190581836264961e6c230f706/AI%20Weekly%20Pulse%2019JUN26.pdf" target="_blank" rel="noopener noreferrer" class="bg-sc-slate hover:bg-sc-slate/90 text-white font-bold py-3.5 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
-                        <!-- FileText icon inline -->
-                        <svg class="w-5 h-5 stroke-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
-                        Strategic Analysis (19JUN26)
-                    </a>
-                    <a id="btn-audio-listen" href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/97ce4365cddf1a73064988609531f8bbbb5f3417/Claude_Fable_5_Shutdown_and_Local_AI.m4a" target="_blank" rel="noopener noreferrer" class="bg-white text-sc-slate border-2 border-sc-slate hover:bg-sc-slate hover:text-white font-bold py-3.5 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
-                        <!-- Headphones icon inline -->
-                        <svg class="w-5 h-5 stroke-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
-                        Sovereign Shift Audio Summary
-                    </a>
-                </div>
-            </header>
-
-            <!-- Executive Summary Panel -->
-            <div id="exec-summary-panel" class="bg-white/95 p-6 md:p-10 rounded-3xl shadow-xl border border-sc-taupe/20 mb-10 max-w-5xl mx-auto">
-                <h3 id="exec-panel-title" class="text-2xl font-bold font-display mb-6 text-center text-sc-slate underline decoration-sc-bluegray decoration-2 underline-offset-4">Executive Summary: The Sovereign Shift</h3>
-                <div class="text-text-dark/95 leading-relaxed space-y-4 text-base sm:text-lg">
-                    <p>
-                        The reporting week of June 13 to June 19, 2026, marked a dramatic structural shift where artificial intelligence transitioned from public-cloud generalist tools into highly contested national security assets and specialized enterprise systems. Federal intervention came to the forefront as the U.S. government forced a global suspension of Anthropic's flagship models, highlighting the intense geopolitical friction surrounding dual-use software.
+                <!-- Main Header Briefing -->
+                <header id="app-header" class="text-center mb-10 pt-6 animate-fade-in">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-glow-blue/5 rounded-full border border-border-subtle text-xs font-mono text-glow-blue uppercase tracking-widest mb-4 font-bold">
+                        <span class="inline-block w-2 h-2 rounded-full bg-coral animate-pulse"></span>
+                        Weekly Strategic Briefing
+                    </div>
+                    <h1 id="app-main-title" class="text-4xl md:text-5xl lg:text-6xl font-extrabold font-display text-text-bright tracking-tight mb-3">
+                        AI Pulse Weekly
+                    </h1>
+                    <p id="app-date-subtitle" class="text-md sm:text-lg text-text-muted font-bold uppercase tracking-widest font-display mb-2">
+                        June 20 – June 26, 2026
                     </p>
-                    <p>
-                        Furthermore, SpaceX's monumental $60 billion acquisition of the AI coding assistant Cursor signals a critical integration era where physical infrastructure giants are aggressively purchasing the developer interfaces where software work actually occurs. Concurrently, late-stage venture capital is shifting heavily toward cost-efficient inference orchestration platforms like Baseten, which closed a split-priced $1.5 billion round. Baseten's surge reflects an enterprise push to deploy highly capable open-source models at a fraction of the cost of closed APIs.
+                    <p class="text-xs sm:text-sm text-glow-blue font-semibold italic mb-10 font-display">
+                        Produced by Nicole M. Dickens, Fractional AI Consultant &bull; Powered by Gemini Deep Research
                     </p>
-                    <p class="bg-sc-cream/40 p-6 rounded-xl font-semibold text-sc-slate border-l-8 border-sc-bluegray italic shadow-inner text-base">
-                        "The era of relying on unified, uninterrupted public cloud APIs has officially ended. Agile organizations must immediately build diversified model portfolios that mix premium hosted models with locally hosted, open-source fallback options. Operational resilience and local data ownership are now the primary factors determining business survival."
-                    </p>
-                </div>
-                <div class="mt-10 text-center">
-                    <a id="exec-summary-consult-button" href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="inline-block bg-sc-slate hover:bg-sc-slate/90 text-white font-bold px-10 py-4 rounded-full transition-all shadow-lg text-sm sm:text-base">
-                        Consult on Resilient Multi-Model & Governance Frameworks
-                    </a>
-                </div>
-            </div>
 
-            <!-- What This Means for SMBs Section -->
-            <div id="smb-briefing-panel" class="bg-white/95 p-6 md:p-10 rounded-3xl shadow-xl border border-sc-taupe/20 mb-10 max-w-5xl mx-auto">
-                <h3 id="smb-briefing-title" class="text-xl md:text-2xl font-bold text-center text-sc-slate mb-6 font-display">What This Means for SMBs: The Transition to Agentic Storefronts and GEO</h3>
-                <div class="text-text-dark/95 leading-relaxed text-sm sm:text-base space-y-4">
-                    <p>
-                        The launch of Shopify's Spring '26 Everywhere Edition marks the formal transition of digital commerce from keyword search optimization to autonomous, agent-to-agent transactions. Small business inventory is now natively standardized and projected directly into active AI conversational interfaces like ChatGPT, Gemini, and Microsoft Copilot. This paradigm shift changes the economics of digital customer acquisition by reducing dependency on expensive, competitive search engine ad networks.
-                    </p>
-                    <p>
-                        Under Shopify's Universal Commerce Protocol (UCP), merchants deploy autonomous Storefront Agents that handle complex customer inquiries using the merchant's precise brand voice and complete checkouts independently. Traditional search engine optimization is being replaced by Generative Engine Optimization (GEO), as merchants must optimize their structured product data to rank within generative AI recommendation engines.
-                    </p>
-                    <p>
-                        Additionally, recent transaction data from the JPMorganChase Institute confirms that employer small businesses are deepening their paid AI integrations to transition from targeted experimentation to broader operational deployment. This downstream flow of analytical intelligence allows Main Street firms to monitor critical KPIs like inventory turnover and cash flow without expensive administrative overhead.
-                    </p>
-                </div>
+                    <!-- Core Market Real-Time Status KPIs -->
+                    <div id="kpi-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
+                        <!-- KPI Card 1 -->
+                        <div id="kpi-card-deal" class="bg-bg-card p-6 rounded-2xl border border-border-subtle shadow-md hover:border-glow-blue/60 transition-all duration-300">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-xs font-mono text-text-muted uppercase font-bold">SpaceX Acquisition</span>
+                                <span class="px-2.5 py-0.5 bg-glow-blue/10 text-glow-blue rounded text-xs font-mono font-bold">Consolidated</span>
+                            </div>
+                            <h3 class="text-3xl font-bold font-display text-glow-blue tracking-tight mb-2">$60B Deal</h3>
+                            <p class="text-sm text-text-muted leading-relaxed font-sans">
+                                SpaceX acquires development tool Cursor (Anysphere) in the largest startup transaction in history to secure daily coding telemetry for xAI.
+                            </p>
+                        </div>
 
-                <!-- Agentic Commerce Comparison Table -->
-                <div id="commerce-table-wrapper" class="mt-8 overflow-x-auto border border-sc-taupe/20 rounded-2xl shadow-sm">
-                    <table id="agentic-commerce-table" class="min-w-full text-left text-xs sm:text-sm border-collapse">
-                        <thead>
-                            <tr class="border-b border-sc-taupe/30 bg-sc-cream/50 text-sc-slate font-bold uppercase">
-                                <th class="py-3.5 px-4">Operational Dimension</th>
-                                <th class="py-3.5 px-4">Traditional E-Commerce</th>
-                                <th class="py-3.5 px-4">Agentic Commerce (Spring 2026)</th>
-                                <th class="py-3.5 px-4">Strategic Impact for SMBs</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-sc-taupe/15 text-text-dark/90">
-                            <tr>
-                                <td class="py-3.5 px-4 font-bold">Discovery Channel</td>
-                                <td class="py-3.5 px-4">Keyword search, SEO, and paid Google/Meta search ads.</td>
-                                <td class="py-3.5 px-4 font-semibold text-sc-slate">Direct integration into ChatGPT, Copilot, Gemini, and Shop app.</td>
-                                <td class="py-3.5 px-4">Redirection of traffic away from expensive ad networks to direct AI recommendations.</td>
-                            </tr>
-                            <tr class="bg-sc-cream/10">
-                                <td class="py-3.5 px-4 font-bold">Data Protocol</td>
-                                <td class="py-3.5 px-4">Standard web-scraping, basic product descriptions.</td>
-                                <td class="py-3.5 px-4 font-semibold text-sc-slate font-display">Universal Commerce Protocol (UCP) & Catalog API standardization.</td>
-                                <td class="py-3.5 px-4">Standardization allows AI agents to verify in-stock matches with 2x conversion rates.</td>
-                            </tr>
-                            <tr>
-                                <td class="py-3.5 px-4 font-bold">Performance Tracking</td>
-                                <td class="py-3.5 px-4">Google Analytics, conversion pixels, referral logs.</td>
-                                <td class="py-3.5 px-4 font-semibold text-sc-slate">Admin-integrated "Search Intelligence" & AI channel dashboards.</td>
-                                <td class="py-3.5 px-4">Direct visibility into category-specific AI queries and product data gaps.</td>
-                            </tr>
-                            <tr class="bg-sc-cream/10">
-                                <td class="py-3.5 px-4 font-bold">Customer Interaction</td>
-                                <td class="py-3.5 px-4">Manual site navigation, keyword filters, basic chatbots.</td>
-                                <td class="py-3.5 px-4 font-semibold text-sc-slate">Autonomous "Storefront Agents" with custom brand voice & catalog access.</td>
-                                <td class="py-3.5 px-4">Complete hands-off query resolution, reducing checkout times and friction.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                        <!-- KPI Card 2 -->
+                        <div id="kpi-card-compression" class="bg-bg-card p-6 rounded-2xl border border-border-subtle shadow-md hover:border-glow-blue/60 transition-all duration-300">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-xs font-mono text-text-muted uppercase font-bold">Custom ASIC tape-out</span>
+                                <span class="px-2.5 py-0.5 bg-green-600/10 text-green-700 rounded text-xs font-mono font-bold">Broadcom 3.5D</span>
+                            </div>
+                            <h3 class="text-3xl font-bold font-display text-glow-blue tracking-tight mb-2">Jalapeño Chip</h3>
+                            <p class="text-sm text-text-muted leading-relaxed font-sans">
+                                OpenAI unveils custom LLM inference silicon, leveraging automated timing & Timing Closure agents to collapse design cycles to 9 months.
+                            </p>
+                        </div>
 
-            <!-- Tabbed Section Navigation -->
-            <nav id="section-nav" class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10 bg-white/90 p-2 rounded-2xl sm:rounded-full shadow-lg border border-sc-taupe/20 max-w-2xl mx-auto">
-                <button
-                    id="nav-btn-technology"
-                    class="tab-btn flex items-center gap-2 py-2.5 px-5 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 bg-sc-slate text-white shadow-md transform scale-105 font-display"
-                    onclick="switchTab('technology')"
-                >
-                    <svg class="w-4 h-4 stroke-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 15h3"/><path d="M1 9h3"/><path d="M1 15h3"/></svg>
-                    Technology
-                </button>
-                <button
-                    id="nav-btn-investment"
-                    class="tab-btn flex items-center gap-2 py-2.5 px-5 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 text-sc-slate hover:bg-sc-slate/10"
-                    onclick="switchTab('investment')"
-                >
-                    <svg class="w-4 h-4 stroke-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-                    Investment
-                </button>
-                <button
-                    id="nav-btn-policy"
-                    class="tab-btn flex items-center gap-2 py-2.5 px-5 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 text-sc-slate hover:bg-sc-slate/10"
-                    onclick="switchTab('policy')"
-                >
-                    <svg class="w-4 h-4 stroke-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
-                    Policy
-                </button>
-                <button
-                    id="nav-btn-impact"
-                    class="tab-btn flex items-center gap-2 py-2.5 px-5 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 text-sc-slate hover:bg-sc-slate/10"
-                    onclick="switchTab('impact')"
-                >
-                    <svg class="w-4 h-4 stroke-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H9a1 1 0 0 0-1 1v2H3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-5V3a1 1 0 0 0-1-1z"/><path d="M8 5h8"/><path d="M2 11h20"/></svg>
-                    Impact
-                </button>
-            </nav>
+                        <!-- KPI Card 3 -->
+                        <div id="kpi-card-export" class="bg-bg-card p-6 rounded-2xl border border-coral/40 shadow-md hover:border-coral/80 transition-all duration-300">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-xs font-mono text-glow-blue uppercase font-bold">Geopolitical Shock</span>
+                                <span class="px-2.5 py-0.5 bg-coral/15 text-glow-blue rounded text-xs font-mono font-bold">Sovereignty Warning</span>
+                            </div>
+                            <h3 class="text-3xl font-bold font-display text-glow-blue tracking-tight mb-2">Cloud Revocation</h3>
+                            <p class="text-sm text-text-muted leading-relaxed font-sans">
+                                Sudden US export restrictions on Anthropic's flagship models prove that cloud-based business utilities can be disabled overnight.
+                            </p>
+                        </div>
+                    </div>
 
-            <!-- Main App Content Displays -->
-            <main id="app-main-content-display" class="max-w-5xl mx-auto min-h-[460px]">
+                    <!-- Direct Resources Buttons -->
+                    <div id="navigation-actions" class="flex flex-wrap justify-center gap-4 mt-10">
+                        <a id="btn-report-download" href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/54af4425cd343014f7c1492eaaf892af0f7b3f35/AI%20Weekly%20Pulse%2026JUN26.pdf" target="_blank" rel="noreferrer" class="bg-glow-blue hover:bg-glow-blue/90 text-white font-semibold py-3.5 px-8 rounded-full transition-all duration-200 text-sm flex items-center gap-2 shadow-md hover:shadow-lg font-display">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+                            Strategic Analysis (26JUN26 PDF)
+                        </a>
+                        <a id="btn-audio-listen" href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/54af4425cd343014f7c1492eaaf892af0f7b3f35/The_US_government_just_killed_the_cloud.m4a" target="_blank" rel="noreferrer" class="bg-bg-card hover:bg-bg-hover text-glow-blue border border-border-subtle font-semibold py-3.5 px-8 rounded-full transition-all duration-200 text-sm flex items-center gap-2 shadow-sm font-display">
+                            <svg class="w-4 h-4 text-glow-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                            Sovereignty Shock Audio Summary
+                        </a>
+                    </div>
+                </header>
 
-                <!-- 1. TECHNOLOGY TAB -->
-                <div id="tab-content-technology" class="tab-content active space-y-6 animate-fadeIn">
-                    <div class="text-center mb-8">
-                        <h2 id="tech-header" class="text-3xl font-bold mb-4 text-sc-slate font-display underline decoration-sc-bluegray decoration-4 underline-offset-8">Extreme Edge Compression & Sovereign Alternatives</h2>
-                        <p class="text-lg text-text-dark/90 max-w-3xl mx-auto leading-relaxed">
-                            Strategic technical breakthroughs this week are rapidly closing the capabilities gap between massive, centralized cloud backends and local, unregulable hardware execution—offering full-fidelity, offline-ready software options.
+                <!-- Executive Insight Statement Section -->
+                <section id="executive-summary" class="max-w-5xl mx-auto bg-bg-card rounded-3xl border border-border-subtle p-6 md:p-10 mb-10 shadow-xl animate-fade-in">
+                    <h2 class="text-2xl font-bold font-display text-glow-blue mb-6 text-center underline decoration-coral decoration-2 underline-offset-4">
+                        Executive Summary: The Sovereignty Shock
+                    </h2>
+                    <div class="text-text-dark leading-relaxed space-y-4 text-sm sm:text-base md:text-lg">
+                        <p>
+                            The final week of June 2026 marked a pivotal restructuring of the global artificial intelligence landscape as the borderless cloud paradigm collided with national security priorities. The unilateral suspension of Anthropic's latest models by the United States government demonstrated that cloud-based intelligence can be instantly revoked, triggering a crisis of technological sovereignty among allied nations.
+                        </p>
+                        <p>
+                            Meanwhile, massive infrastructure consolidations and breakthroughs in custom silicon accelerated a shift away from high-priced commercial software toward sovereign, efficient, and localized compute stacks. Relying on a single cloud provider for core business intelligence introduces critical regulatory and geopolitical vulnerabilities. Establishing structural redundancy across commercial APIs and open-weight models is now an essential prerequisite for operational safety.
+                        </p>
+                        <p class="border-l-4 border-glow-blue pl-4 italic text-glow-blue bg-bg-darkest py-4 pr-4 rounded-r-xl font-semibold">
+                            "The era of blind reliance on uninterrupted cloud APIs has officially ended. Agile organizations must immediately build diversified model portfolios that mix premium hosted models with locally hosted, open-source fallback options. Operational resilience and local data ownership are now the primary factors determining business survival."
                         </p>
                     </div>
-                    <div id="tech-card-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <!-- Card 1 -->
-                        <div id="tech-card-unsloth" class="bg-white/90 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
-                            <div class="flex items-center gap-3 mb-4 text-sc-bluegray">
-                                <svg class="w-6 h-6 stroke-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                                <h3 class="text-lg font-bold font-display text-sc-slate">Extreme 84% Compression</h3>
-                            </div>
-                            <p class="text-sm text-text-dark/85 leading-relaxed">
-                                Unsloth successfully quantized Zhipu AI's massive 744-billion-parameter GLM-5.2 model from 1.51TB down to 238GB. This lets the model execute locally on standard 256GB Mac laptops while maintaining 82% of its original accuracy, enabling full local codebase analysis.
-                            </p>
-                        </div>
-                        <!-- Card 2 -->
-                        <div id="tech-card-sovereign" class="bg-white/90 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
-                            <div class="flex items-center gap-3 mb-4 text-sc-slate">
-                                <svg class="w-6 h-6 stroke-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-                                <h3 class="text-lg font-bold font-display text-sc-slate">Sovereign Open Weights</h3>
-                            </div>
-                            <p class="text-sm text-text-dark/85 leading-relaxed">
-                                The releases of Rio de Janeiro’s municipal Rio 3.5 Open 397B and Moonshot AI's 1-trillion parameter Kimi K2.7 MoE model provide downloadable, transferable coding layers. These run directly in local containers, acting as vital hedges against cloud API suspensions.
-                            </p>
-                        </div>
-                        <!-- Card 3 -->
-                        <div id="tech-card-empirical" class="bg-white/90 p-8 rounded-3xl border border-sc-taupe/20 shadow-sm hover:shadow-md transition-all">
-                            <div class="flex items-center gap-3 mb-4 text-sc-bluegray">
-                                <svg class="w-6 h-6 stroke-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 15h3"/><path d="M1 9h3"/><path d="M1 15h3"/></svg>
-                                <h3 class="text-lg font-bold font-display text-sc-slate">Self-Optimizing Engines</h3>
-                            </div>
-                            <p class="text-sm text-text-dark/85 leading-relaxed">
-                                Google Research's Empirical Research Assistance (ERA) automates the developer pipeline. ERA utilizes tree search to propose, write, and evaluate thousands of code variants, recursively upgrading execution details and eliminating human optimization bottlenecks.
-                            </p>
-                        </div>
+                    <div class="mt-8 text-center">
+                        <a id="exec-consult-btn" href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-block bg-glow-blue hover:bg-glow-blue/90 text-white font-bold px-8 py-3.5 rounded-full transition-all shadow-md text-sm sm:text-base font-display">
+                            Consult on Resilient Multi-Model & Governance Frameworks
+                        </a>
+                    </div>
+                </section>
+
+                <!-- What This Means for SMBs Section -->
+                <section id="smb-briefing-panel" class="max-w-5xl mx-auto bg-bg-card rounded-3xl border border-border-subtle p-6 md:p-10 mb-10 shadow-xl animate-fade-in">
+                    <h2 class="text-2xl font-bold font-display text-glow-blue mb-6 text-center">
+                        What This Means for SMBs: Autonomous Workers & Regulatory Safe Harbors
+                    </h2>
+                    <div class="text-text-dark leading-relaxed space-y-4 text-sm sm:text-base">
+                        <p>
+                            For small and medium-sized businesses, the strategic landscape is shifting from simple chatbot integration to the deployment of autonomous digital workers. This transition is taking place amidst a massive regulatory relief window as the European Union extends simplified compliance pathways and delays enforcement for mid-sized firms. Consequently, lean organizations can out-maneuver resource-heavy enterprises by rapidly integrating agile, multi-model workflows without heavy administrative overhead.
+                        </p>
+                        <p>
+                            To mitigate systemic cloud vulnerabilities, small firms must abandon single-model loyalty and adopt a multi-model portfolio strategy. By developing internal workflows and client-facing systems that can seamlessly transition between major commercial platforms and highly performant open-weight alternatives, businesses establish immediate infrastructure redundancy. Additionally, the EU’s decision to delay high-risk compliance deadlines to 2027 and extend simplified frameworks to organizations with up to 750 employees provides a vital 16-month implementation window.
+                        </p>
+                        <p>
+                            Furthermore, operational visibility has been enhanced by newly available administrative tools, such as the Microsoft 365 Copilot Connectors usage reports. These reporting capabilities allow administrators to monitor exactly which proprietary databases are accessed by digital workers, preventing data leaks while ensuring strict auditability.
+                        </p>
                     </div>
 
-                    <!-- Model Release Table -->
-                    <div id="tech-table-container" class="bg-white/90 p-6 rounded-3xl border border-sc-taupe/20 shadow-sm overflow-x-auto mt-6">
-                        <h4 id="tech-table-title" class="text-lg font-bold font-display text-sc-slate mb-4">Key AI Model & Optimization Releases (June 2026)</h4>
-                        <table id="tech-releases-table" class="min-w-full text-left text-xs border-collapse">
+                    <!-- Strategic Comparison Table -->
+                    <div id="smb-table-container" class="mt-8 overflow-x-auto border border-border-subtle rounded-2xl shadow-sm bg-white">
+                        <table id="smb-paradigm-table" class="min-w-full text-left text-xs sm:text-sm border-collapse">
                             <thead>
-                                <tr class="border-b border-sc-taupe/30 text-sc-slate font-bold uppercase">
-                                    <th class="py-2.5 px-4">Model / Technology</th>
-                                    <th className="py-2.5 px-4">Developer</th>
-                                    <th class="py-2.5 px-4">Parameters / Context</th>
-                                    <th class="py-2.5 px-4">Primary Technical Highlight</th>
+                                <tr class="border-b border-border-subtle bg-bg-darkest/50 text-glow-blue font-bold uppercase font-display">
+                                    <th class="py-3.5 px-4">Strategic Dimension</th>
+                                    <th class="py-3.5 px-4">Single-Model Dependency (Pre-June 2026)</th>
+                                    <th class="py-3.5 px-4">Multi-Model Redundancy Strategy</th>
+                                    <th class="py-3.5 px-4">Strategic Impact</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-sc-taupe/15 text-text-dark/90">
+                            <tbody class="divide-y divide-border-subtle/40 text-text-dark">
                                 <tr>
-                                    <td class="py-3 px-4 font-bold">GLM-5.2 (Unsloth Compress)</td>
-                                    <td class="py-3 px-4">Zhipu AI / Unsloth</td>
-                                    <td class="py-3 px-4">744B Parameters / 1M Context</td>
-                                    <td class="py-3 px-4">84% reduction via 2-bit quantization, allowing the 1.51TB model to execute locally on standard 256GB Mac laptops with 82% logical accuracy.</td>
+                                    <td class="py-4 px-4 font-bold">Operational Risk</td>
+                                    <td class="py-4 px-4">High: Core business systems vulnerable to unilateral geopolitical model recalls.</td>
+                                    <td class="py-4 px-4 font-semibold text-glow-blue">Low: Automated swapping between proprietary APIs and open-weight models.</td>
+                                    <td class="py-4 px-4 text-text-muted">Establishes continuous operational safety regardless of foreign regulatory actions.</td>
                                 </tr>
-                                <tr class="bg-sc-cream/30">
-                                    <td class="py-3 px-4 font-bold">Rio 3.5 Open 397B</td>
-                                    <td class="py-3 px-4">IplanRIO (Rio de Janeiro Municipal IT)</td>
-                                    <td class="py-3 px-4">397B Parameters / MIT License</td>
-                                    <td class="py-3 px-4">Fine-tune of Qwen 3.5 paired with SwiReasoning, bypassing direct dependency on U.S. hosted API networks.</td>
+                                <tr class="bg-bg-darkest/10">
+                                    <td class="py-4 px-4 font-bold">Cost Structure</td>
+                                    <td class="py-4 px-4">Fragile: Exposure to retail-versus-wholesale margin traps via proprietary APIs.</td>
+                                    <td class="py-4 px-4 font-semibold text-glow-blue">Optimized: Low-cost routing of routine tasks to specialized local small models.</td>
+                                    <td class="py-4 px-4 text-text-muted">Protects operational margins by avoiding financial reseller margin traps.</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-3 px-4 font-bold">Kimi K2.7 Code</td>
-                                    <td class="py-3 px-4">Moonshot AI</td>
-                                    <td class="py-3 px-4">1T MoE (32B Active) / 256K Context</td>
-                                    <td class="py-3 px-4">Next-generation coding successor requiring up to 30% fewer reasoning tokens to compile.</td>
-                                </tr>
-                                <tr class="bg-sc-cream/30">
-                                    <td class="py-3 px-4 font-bold">Empirical Research Assistance (ERA)</td>
-                                    <td class="py-3 px-4">Google Research</td>
-                                    <td class="py-3 px-4">Proprietary Research Engine</td>
-                                    <td class="py-3 px-4">Iteratively explores and audits thousands of developer code variants using tree search.</td>
+                                    <td class="py-4 px-4 font-bold">Governance & Compliance</td>
+                                    <td class="py-4 px-4">Opaque: Minimal administrative visibility into data-source utilization.</td>
+                                    <td class="py-4 px-4 font-semibold text-glow-blue">Proactive: Precise monitoring of database connectors and user-level model selection.</td>
+                                    <td class="py-4 px-4 text-text-muted">Utilizes Microsoft Connectors & safe harbors to satisfy upcoming audit compliance.</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                </section>
 
-                    <!-- CTA Opportunities -->
-                    <div id="tech-cta-box" class="bg-white/95 p-8 rounded-3xl border border-sc-bluegray/30 text-center shadow-sm max-w-4xl mx-auto mt-8">
-                        <h3 id="tech-cta-title" class="text-xl font-bold font-display text-sc-slate mb-3">Safeguard Business Continuity with an AI Opportunity Sprint</h3>
-                        <p class="text-text-dark/95 mb-6 max-w-2xl mx-auto text-sm leading-relaxed">
-                            Don't leave your firm vulnerable to global API disruptions, compliance reviews, or sudden shutdowns. Our structured 2-week AI Opportunity Sprint maps safe edge-processing possibilities, evaluates local model capabilities, and identifies 3–5 resilient fallback workflows.
-                        </p>
-                        <div class="flex justify-center">
-                            <a id="tech-cta-button" href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" class="inline-flex items-center gap-2 bg-sc-slate hover:bg-sc-slate/90 text-white px-8 py-3.5 rounded-full font-bold transition-all shadow-md text-sm sm:text-base">
-                                Analyze Edge & Node Feasibility via an AI Opportunity Sprint
-                                <svg class="w-4 h-4 ml-1 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 12 3.76 10.3a.5.5 0 0 0 .94-.16l2.22-7.64 7.64-2.22a.5.5 0 0 0 .16-.94L13 8v4z"/><path d="m8 8-4-4"/></svg>
-                            </a>
-                        </div>
+                <!-- Interactive Sector Tab Controls -->
+                <div class="max-w-5xl mx-auto mb-8">
+                    <div class="flex border-b border-border-subtle overflow-x-auto space-x-1 sm:space-x-2 scrollbar-none" id="tabs-container">
+                        <button onclick="changeSection('tech')" id="btn-sec-tech" class="px-5 py-3 hover:text-glow-blue text-xs sm:text-sm font-semibold font-display border-b-2 border-glow-blue text-glow-blue tab-transition flex items-center gap-2 whitespace-nowrap">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"></path></svg>
+                            Technology
+                        </button>
+                        <button onclick="changeSection('invest')" id="btn-sec-invest" class="px-5 py-3 text-text-muted hover:text-glow-blue text-xs sm:text-sm font-semibold font-display border-b-2 border-transparent tab-transition flex items-center gap-2 whitespace-nowrap">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.281-2.281 5.94M18 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path></svg>
+                            Investment
+                        </button>
+                        <button onclick="changeSection('policy')" id="btn-sec-policy" class="px-5 py-3 text-text-muted hover:text-glow-blue text-xs sm:text-sm font-semibold font-display border-b-2 border-transparent tab-transition flex items-center gap-2 whitespace-nowrap">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-.778.099-1.533.284-2.253"></path></svg>
+                            Policy
+                        </button>
+                        <button onclick="changeSection('impact')" id="btn-sec-impact" class="px-5 py-3 text-text-muted hover:text-glow-blue text-xs sm:text-sm font-semibold font-display border-b-2 border-transparent tab-transition flex items-center gap-2 whitespace-nowrap">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.467 5.99 5.99 0 0 0-1.925-3.546 5.974 5.974 0 0 0-2.133-1.001A3.75 3.75 0 0 0 3 9.75V18a1.5 1.5 0 0 0 1.5 1.5h15A1.5 1.5 0 0 0 21 18v-4.5a3.75 3.75 0 0 0-3.351-3.722A5.991 5.991 0 0 0 12 18z"></path></svg>
+                            Impact
+                        </button>
                     </div>
                 </div>
 
-                <!-- 2. INVESTMENT TAB -->
-                <div id="tab-content-investment" class="tab-content space-y-6 animate-fadeIn">
-                    <div class="text-center mb-8">
-                        <h2 id="investment-header" class="text-3xl font-bold mb-4 text-sc-slate font-display underline decoration-sc-bluegray decoration-4 underline-offset-8">Capital Pivot & Interface Consolidation</h2>
-                        <p class="text-lg text-text-dark/90 max-w-3xl mx-auto leading-relaxed">
-                            Venture capital and enterprise acquirers have pivoted decisively. Rather than pouring billions solely into training expensive basic foundation models, capital is consolidating developer interfaces and scaling cost-efficient inference software.
-                        </p>
-                    </div>
-
-                    <!-- Pure HTML Responsive Horizontal Bar Chart -->
-                    <div id="chart-container" class="bg-white/95 p-6 rounded-3xl border border-sc-taupe/30 shadow-sm mb-6">
-                        <div class="mb-6 text-center animate-fadeIn">
-                            <h3 id="chart-title" class="text-sm sm:text-base font-bold font-display text-sc-slate uppercase tracking-wider">
-                                Key Strategic Venture & Acquisition Inflows ($M)
-                            </h3>
-                            <p class="text-xs text-sc-taupe mt-1">Hover over bars or values to inspect strategic transaction highlights</p>
-                        </div>
-                        
-                        <!-- Chart Rows -->
-                        <div class="space-y-5 max-w-3xl mx-auto">
-                            <!-- Row 1: SpaceX -->
-                            <div class="group flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-2xl hover:bg-sc-cream/50 transition-all duration-200">
-                                <div class="w-40 shrink-0">
-                                    <span class="font-bold text-sc-slate block text-base leading-tight">SpaceX (Cursor)</span>
-                                    <span class="text-xs text-sc-taupe font-medium">Anysphere Acquire</span>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="relative w-full bg-slate-100 rounded-full h-8 overflow-hidden">
-                                        <div class="bg-sc-bluegray h-full rounded-full transition-all duration-500 origin-left hover:brightness-105" style="width: 100%;"></div>
-                                        <span class="absolute inset-y-0 right-4 flex items-center text-white font-bold text-sm">$60,000M ($60B)</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Row 2: Baseten Group -->
-                            <div class="group flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-2xl hover:bg-sc-cream/50 transition-all duration-200">
-                                <div class="w-40 shrink-0">
-                                    <span class="font-bold text-sc-slate block text-base leading-tight">Baseten Group</span>
-                                    <span class="text-xs text-sc-taupe font-medium">Inference Scaling</span>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="relative w-full bg-slate-100 rounded-full h-8 overflow-hidden">
-                                        <!-- Using custom proportional visuals to make it show up nicely against the giant 60B -->
-                                        <div class="bg-sc-slate h-full rounded-full transition-all duration-500 origin-left hover:brightness-105 animate-grow" style="width: 35%;"></div>
-                                        <span class="absolute inset-y-0 left-[38%] flex items-center text-sc-slate font-bold text-sm">$1,500M ($1.5B)</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Row 3: PhysicsX Ltd -->
-                            <div class="group flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-2xl hover:bg-sc-cream/50 transition-all duration-200">
-                                <div class="w-40 shrink-0">
-                                    <span class="font-bold text-sc-slate block text-base leading-tight">PhysicsX Ltd</span>
-                                    <span class="text-xs text-sc-taupe font-medium">Series C Simulation</span>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="relative w-full bg-slate-100 rounded-full h-8 overflow-hidden">
-                                        <div class="bg-sc-slate h-full rounded-full transition-all duration-500 origin-left hover:brightness-105" style="width: 18%;"></div>
-                                        <span class="absolute inset-y-0 left-[21%] flex items-center text-sc-slate font-bold text-sm">$300M</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Row 4: CNTXT AI -->
-                            <div class="group flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-2xl hover:bg-sc-cream/50 transition-all duration-200">
-                                <div class="w-40 shrink-0">
-                                    <span class="font-bold text-sc-slate block text-base leading-tight">CNTXT AI</span>
-                                    <span class="text-xs text-sc-taupe font-medium">Series A Sovereign</span>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="relative w-full bg-slate-100 rounded-full h-8 overflow-hidden">
-                                        <div class="bg-sc-slate h-full rounded-full transition-all duration-500 origin-left hover:brightness-105" style="width: 10%;"></div>
-                                        <span class="absolute inset-y-0 left-[13%] flex items-center text-sc-slate font-bold text-sm">$60M</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Significant AI Financial Transactions Table -->
-                    <div id="financial-table-container" class="bg-white/90 p-6 rounded-3xl border border-sc-taupe/20 shadow-sm overflow-x-auto mt-6">
-                        <h4 id="financial-table-title" class="text-lg font-bold font-display text-sc-slate mb-4">Significant AI Financial Transactions (June 2026)</h4>
-                        <table id="financial-transactions-table" class="min-w-full text-left text-xs border-collapse">
-                            <thead>
-                                <tr class="border-b border-sc-taupe/30 text-sc-slate font-bold uppercase">
-                                    <th class="py-2.5 px-4">Target Entity</th>
-                                    <th class="py-2.5 px-4">Acquirer / Lead Investors</th>
-                                    <th class="py-2.5 px-4">Deal Value / Valuation</th>
-                                    <th class="py-2.5 px-4">Primary Strategic Focus</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-sc-taupe/15 text-text-dark/90">
-                                <tr>
-                                    <td class="py-3 px-4 font-bold">Anysphere (Cursor)</td>
-                                    <td class="py-3 px-4">SpaceX</td>
-                                    <td class="py-3 px-4">Haltingly high $60 Billion (All-Stock)</td>
-                                    <td class="py-3 px-4">Secure the principal front-door developer environment to capture real-time training telemetry for xAI.</td>
-                                </tr>
-                                <tr class="bg-sc-cream/30">
-                                    <td class="py-3 px-4 font-bold">Baseten</td>
-                                    <td class="py-3 px-4">Altimeter Capital, Conviction, Sands Capital, Spark, Wellington</td>
-                                    <td class="py-3 px-4">$1.5 Billion Round (Up to $13B Valuation)</td>
-                                    <td class="py-3 px-4">Scale enterprise inference systems that help clients cut task processing fees by up to 70%.</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-3 px-4 font-bold">PhysicsX</td>
-                                    <td class="py-3 px-4">Temasek (Lead), Nvidia, Siemens, Atomico</td>
-                                    <td class="py-3 px-4">$300 Million (Series C)</td>
-                                    <td class="py-3 px-4">Run machine learning-driven physical engineering design and heavy industrial workflow simulations.</td>
-                                </tr>
-                                <tr class="bg-sc-cream/30">
-                                    <td class="py-3 px-4 font-bold">CNTXT AI</td>
-                                    <td class="py-3 px-4">VentureOne (AI71)</td>
-                                    <td class="py-3 px-4">$60 Million (Series A)</td>
-                                    <td class="py-3 px-4">Deploy region-locked, secure sovereign enterprise AI infrastructure worldwide.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Investment Info Cards -->
-                    <div id="investment-card-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                        <div id="invest-card-cursor" class="bg-white/90 p-8 rounded-3xl border-l-8 border-sc-bluegray shadow-sm">
-                            <h4 class="font-bold text-lg font-display text-sc-slate mb-2">The Monolithic SpaceX Acquisition</h4>
-                            <p class="text-sm text-text-dark/95 leading-relaxed">
-                                Seeking to control the interface where millions of software engineers construct code daily, SpaceX acquired Cursor for $60 billion in an all-stock deal. This deal provides SpaceX-xAI with massive, real-time developer feedback telemetry to run on their Colossus compute grid, side-stepping years of manual developer tool setup.
-                            </p>
-                        </div>
-                        <div id="invest-card-baseten" class="bg-white/90 p-8 rounded-3xl border-l-8 border-sc-slate shadow-sm">
-                            <h4 class="font-bold text-lg font-display text-sc-slate mb-2 text-sc-slate">Inference Scaling & Strategic Moats</h4>
-                            <p class="text-sm text-text-dark/95 leading-relaxed text-text-dark">
-                                Baseten's $1.5B capital infusion signifies a monumental shift. Enterprises are aggressively migrating workloads to cheaper, customized open alternatives to reduce reliance on closed API platforms. Concurrently, specialized firms like PhysicsX and CNTXT AI are building region-locked cloud environments where standard public models cannot compete.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- CTA Dashboard -->
-                    <div id="investment-cta-box" class="bg-sc-slate text-white p-8 rounded-3xl mt-8 text-center shadow-lg max-w-4xl mx-auto">
-                        <h3 id="investment-cta-title" class="text-xl font-bold font-display mb-3 text-white">Quantize and Control Costs with an AI Insights Dashboard</h3>
-                        <p class="mb-6 opacity-95 max-w-2xl mx-auto text-sm leading-relaxed">
-                            With industry focus pivoting to execution efficiency, track your organization's compute footprint in real-time. Setup a custom AI Insights Dashboard to aggregate active model run metrics, screen for unoptimized cloud API calls, track anomaly detection, and quantify adoption ROI.
-                        </p>
-                        <div class="flex justify-center">
-                            <a id="investment-cta-button" href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" class="bg-white text-sc-slate px-10 py-3.5 rounded-full font-bold hover:bg-sc-bluegray hover:text-white transition-all shadow-md text-sm sm:text-base">
-                                Formulate Your Custom AI Insights Dashboard
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. POLICY TAB -->
-                <div id="tab-content-policy" class="tab-content space-y-6 animate-fadeIn">
-                    <div class="text-center mb-8">
-                        <h2 id="policy-header" class="text-3xl font-bold mb-4 text-sc-slate font-display underline decoration-sc-bluegray decoration-4 underline-offset-8">National Security Preemptions & Sovereign Interdependence</h2>
-                        <p class="text-lg text-text-dark/90 max-w-3xl mx-auto leading-relaxed">
-                            The illusion of a globalized, borderless AI software marketplace shattered this week as advanced reasoning systems were treated as restricted digital weapons, forcing global teams to seek localized sovereign control.
-                        </p>
-                    </div>
+                <!-- Display Content Screen -->
+                <main id="tab-content-area" class="max-w-5xl mx-auto bg-bg-card border border-border-subtle rounded-3xl p-6 md:p-8 shadow-lg min-h-[460px] animate-fade-in">
                     
-                    <div id="policy-info-cards" class="space-y-6">
-                        <!-- Card 1 -->
-                        <div id="policy-card-fable" class="bg-white/90 p-8 rounded-3xl shadow-sm border border-sc-taupe/20 flex flex-col md:flex-row gap-6 items-start">
-                            <div class="bg-sc-bluegray/10 p-4 rounded-2xl shrink-0">
-                                <svg class="w-10 h-10 stroke-current text-sc-slate" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.4-1.92.4-2.8 0l-.2-.1-.2.1c-.88.4-1.93.4-2.8 0z"/><path d="m2 16 3-8 3 8c-.87.4-1.92.4-2.8 0l-.2-.1-.2.1c-.88.4-1.93.4-2.8 0z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h18"/></svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold font-display text-sc-slate mb-2">Bureau of Industry Directive Blocks Anthropic</h3>
-                                <p class="text-sm text-text-dark/95 leading-relaxed">
-                                    The Bureau of Industry and Security ordered Anthropic to suspend foreign national access to Claude Fable 5 and Mythos 5, citing a jailbreak exploit that exposed sensitive dual-use cyber and molecular reasoning. Lacking real-time system capability to verify user citizenship instantly at the API level, Anthropic was forced to implement an immediate global shutdown of both models.
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Card 2 -->
-                        <div id="policy-card-sanders" class="bg-white/90 p-8 rounded-3xl shadow-sm border border-sc-taupe/20 flex flex-col md:flex-row gap-6 items-start">
-                            <div class="bg-sc-taupe/10 p-4 rounded-2xl shrink-0">
-                                <svg class="w-10 h-10 stroke-current text-sc-slate" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6z"/><path d="m9 12 2 2 4-4"/></svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold font-display text-sc-slate mb-2">American AI Sovereign Wealth Fund Act & Regional clouds</h3>
-                                <p class="text-sm text-text-dark/95 leading-relaxed">
-                                    Senator Bernie Sanders introduced legislation proposing a one-time 50% stock tax on major infrastructure firms earning over $200M to construct a $7 trillion public fund. Concurrently, nations like the UK and EU are rolling out strict sovereign clouds. Research from NTT DATA indicates that 95% of organizations consider private or sovereign AI critical to safety, with 35% of CAIOs identifying it as their primary hurdle.
-                                </p>
-                            </div>
-                        </div>
+                    <!-- DYNAMIC PORTION LOADED BY JS ENGINE -->
+                    <div id="dynamic-viewport" class="space-y-6">
+                        <!-- Replaced dynamically by vanilla script -->
                     </div>
 
-                    <!-- Policy Table -->
-                    <div id="policy-table-container" class="bg-white/90 p-6 rounded-3xl border border-sc-taupe/20 shadow-sm overflow-x-auto mt-6">
-                        <h4 id="policy-table-title" class="text-lg font-bold font-display text-sc-slate mb-4">Policy & Regulatory Actions (June 2026)</h4>
-                        <table id="policy-acts-table" class="min-w-full text-left text-xs border-collapse">
-                            <thead>
-                                <tr class="border-b border-sc-taupe/30 text-sc-slate font-bold uppercase">
-                                    <th class="py-2.5 px-4">Policy / Regulatory Action</th>
-                                    <th class="py-2.5 px-4">Primary Statutory Mechanism</th>
-                                    <th class="py-2.5 px-4">Intended Objective</th>
-                                    <th class="py-2.5 px-4">Unintended Structural Consequence</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-sc-taupe/15 text-text-dark/90">
-                                <tr>
-                                    <td class="py-3 px-4 font-bold">Federal Export Control Directive</td>
-                                    <td class="py-3 px-4">Export Administration Regulations (EAR) via BIS</td>
-                                    <td class="py-3 px-4">Prevent foreign access to dual-use cyber/bio capabilities.</td>
-                                    <td class="py-3 px-4">Forced a total global shutdown of Fable 5 due to API verification limits, leaving clients without fallback layers.</td>
-                                </tr>
-                                <tr class="bg-sc-cream/30">
-                                    <td class="py-3 px-4 font-bold">American AI Sovereign Wealth Fund Act</td>
-                                    <td class="py-3 px-4">Proposed 50% stock excise tax on firms with &gt;$200M revenue</td>
-                                    <td class="py-3 px-4">Construct a $7T public fund to pay dividends & implement democratic oversight.</td>
-                                    <td class="py-3 px-4">Dilutes private shareholders and potentially prompts corporate flight and structural stagnation.</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-3 px-4 font-bold">Japan APPI Amendment</td>
-                                    <td class="py-3 px-4">Act on Protection of Personal Information Updates</td>
-                                    <td class="py-3 px-4">Exclude "statistical processing" from opt-in consent to speed model training.</td>
-                                    <td class="py-3 px-4">Establishes Japan as a regulatory outlier, risking compliance friction with the EU's strict precautionary AI Act.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                </main>
 
-                    <!-- CTA roadmap -->
-                    <div id="policy-cta-box" class="bg-white/95 p-8 rounded-3xl border border-sc-taupe/30 text-center mt-8 max-w-4xl mx-auto">
-                        <h3 id="policy-cta-title" class="text-xl font-bold font-display mb-3 text-sc-slate">Construct a Resilient Corporate Architecture with an AI Strategy Roadmap</h3>
-                        <p class="mb-6 text-text-dark/95 max-w-2xl mx-auto text-sm leading-relaxed">
-                            Convert sudden regulatory blockages and unilateral export lockdowns into a strong, compliant, and diversified playbook. Formulate a bespoke 10–15 page AI Strategy Roadmap mapping localized sovereign fallbacks, regulatory boundaries, and containerized on-prem deployment.
-                        </p>
-                        <div class="flex justify-center">
-                            <a id="policy-cta-button" href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" class="inline-flex items-center gap-2 bg-sc-slate hover:bg-sc-slate/90 text-white px-10 py-3.5 rounded-full font-bold transition-all shadow-md text-sm sm:text-base">
-                                Develop Your Bespoke AI Strategy Roadmap
-                                <svg class="w-4 h-4 ml-1 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6z"/><path d="m9 12 2 2 4-4"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. IMPACT TAB -->
-                <div id="tab-content-impact" class="tab-content space-y-6 animate-fadeIn">
-                    <div class="text-center mb-8">
-                        <h2 id="impact-header" class="text-3xl font-bold mb-4 text-sc-slate font-display underline decoration-sc-taupe decoration-4 underline-offset-8">Energy Capacity Thresholds & Workforce Restructuring</h2>
-                        <p class="text-lg text-text-dark/95 max-w-3xl mx-auto leading-relaxed">
-                            Computational demands are hitting absolute safety constraints on local energy grids, while software development is transitioning from handcraft coding to strategic supervisor roles.
-                        </p>
-                    </div>
-
-                    <div id="impact-info-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <!-- Card 1 -->
-                        <div id="impact-card-env" class="bg-white/90 p-8 rounded-3xl shadow-sm border border-sc-bluegray/20">
-                            <svg class="w-8 h-8 stroke-current text-sc-bluegray mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                            <h3 class="font-bold font-display text-xl text-sc-slate mb-3">Environmental Grid Constraints</h3>
-                            <p class="text-sm text-text-dark/95 leading-relaxed">
-                                Stanford's AI Index 2026 reports training Grok 4 reached over 72,000 tons of CO2 equivalent (equal to driving 17,000 cars), while global data center draw hit 29.6 GW, matching the peak demand of New York state. Annual GPT-4o inference cooling has pushed water usage past the drinking needs of 1.2 million people.
-                            </p>
-                        </div>
-                        <!-- Card 2 -->
-                        <div id="impact-card-labor" class="bg-white/90 p-8 rounded-3xl shadow-sm border border-sc-bluegray/20">
-                            <svg class="w-8 h-8 stroke-current text-sc-slate mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            <h3 class="font-bold font-display text-xl text-sc-slate mb-3">Software Workforce Restructuring</h3>
-                            <p class="text-sm text-text-dark/95 leading-relaxed">
-                                The spread of coding tools like Cursor has led large enterprises to pare back basic software engineering pipelines. Instead of writing manual syntax, developer roles are rapidly shifting toward supervising and auditing autonomous agentic loops that execute long-horizon software engineering tasks.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Stanford Table -->
-                    <div id="impact-table-container" class="bg-white/90 p-6 rounded-3xl border border-sc-taupe/20 shadow-sm overflow-x-auto mt-6 block">
-                        <h4 id="impact-table-title" class="text-lg font-bold font-display text-sc-slate mb-4">Stanford AI Index 2026 Impact Metrics</h4>
-                        <table id="stanford-index-table" class="min-w-full text-left text-xs border-collapse">
-                            <thead>
-                                <tr class="border-b border-sc-taupe/30 text-sc-slate font-bold uppercase">
-                                    <th class="py-2.5 px-4">Impact Category</th>
-                                    <th class="py-2.5 px-4">Observed Metric</th>
-                                    <th class="py-2.5 px-4">Comparative Scale</th>
-                                    <th class="py-2.5 px-4">Structural Consequence</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-sc-taupe/15 text-text-dark/90">
-                                <tr>
-                                    <td class="py-3 px-4 font-bold">Training Emissions</td>
-                                    <td class="py-3 px-4">72,816 Tons of CO2 equivalent (Grok 4)</td>
-                                    <td class="py-3 px-4">Driving 17,000 passenger cars for one year</td>
-                                    <td class="py-3 px-4">Heightened regulatory and environmental audits for massive model training operations.</td>
-                                </tr>
-                                <tr class="bg-sc-cream/30">
-                                    <td class="py-3 px-4 font-bold">Power Capacity</td>
-                                    <td class="py-3 px-4">29.6 GW global data center draw</td>
-                                    <td class="py-3 px-4">Peak electricity demand of New York State</td>
-                                    <td class="py-3 px-4">Grid instability challenges and rising conflicts over regional electricity distribution.</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-3 px-4 font-bold">Inference Water Use</td>
-                                    <td class="py-3 px-4">GPT-4o cumulative cooling water</td>
-                                    <td class="py-3 px-4">Annual drinking water needs of 1.2M people</td>
-                                    <td class="py-3 px-4">Escalating utility overhead and resource conflicts in core data center environments.</td>
-                                </tr>
-                                <tr class="bg-sc-cream/30">
-                                    <td class="py-3 px-4 font-bold">Talent Inflow</td>
-                                    <td class="py-3 px-4">U.S. inflow of foreign scholars down 89% since 2017</td>
-                                    <td class="py-3 px-4">Decline of 80% in the last year alone</td>
-                                    <td class="py-3 px-4">Erosion of historic American research dominance, creating a highly multipolar global race.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <!-- CTA leadership -->
-                    <div id="impact-cta-box" class="mt-8 bg-white/95 p-10 rounded-3xl shadow-lg border-2 border-sc-bluegray/20 text-center max-w-4xl mx-auto">
-                        <div class="max-w-3xl mx-auto">
-                            <h3 id="impact-cta-title" class="font-bold font-display text-2xl mb-3 text-sc-slate">Establish Resilience with Fractional AI & Analytics Leadership</h3>
-                            <p class="text-text-dark/95 mb-6 max-w-xl mx-auto text-sm leading-relaxed">
-                                Safeguard your enterprise from cybersecurity liabilities, manage localized compliance boundaries, integrate autonomous sales channels, and orchestrate resource-efficient systems with specialized Fractional AI expertise on a flexible, part-time timeline.
-                            </p>
-                            <div class="flex justify-center">
-                                <a id="impact-cta-button" href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="bg-sc-slate hover:bg-sc-slate/90 text-white font-bold py-3.5 px-10 rounded-full inline-flex items-center gap-2 transition-all shadow-md text-sm sm:text-base">
-                                    Secure Your Fractional AI Strategy & Analytics Leadership
-                                    <svg class="w-5 h-5 ml-1 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </main>
-
-            <!-- App Footer -->
-            <footer id="app-footer" class="text-center py-12 text-sc-slate text-sm mt-12 border-t border-sc-taupe/20 max-w-5xl mx-auto bg-white/70 rounded-3xl p-6 shadow-sm border border-sc-taupe/25">
-                <p id="footer-author-name" class="font-bold text-sc-slate mb-1 text-xl font-display">Nicole Dickens • Fractional AI Consultant</p>
-                <p id="footer-tagline" class="mb-4 text-md opacity-90 italic">AI without a full-time hire — strategy, structure, and sanity included.</p>
-                <div id="footer-links-container" class="flex justify-center gap-8 mt-6 font-semibold">
-                    <a id="footer-linkedin-link" href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" class="text-sc-slate hover:text-sc-bluegray transition-colors flex items-center gap-2 text-base">
-                        <svg class="w-5 h-5 stroke-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                        LinkedIn Profile
-                    </a>
-                    <span class="text-sc-taupe/40">|</span>
-                    <span id="footer-attribution-text" class="text-sc-slate text-base">Powered by Gemini Deep Research</span>
-                </div>
-            </footer>
-
+            </div>
         </div>
     </div>
 
-    <!-- JavaScript Engine Variables & Tab Control at the bottom -->
+    <!-- STANDARD JAVASCRIPT ENGINE & LOGIC AT THE BOTTOM OF THE FILE -->
     <script>
-        // Engine variables matching original content state
-        const CONFIG_ENGINE = {
-            activeTab: "technology",
-            dateRange: "June 13 – June 19, 2026",
-            author: "Nicole Dickens",
-            colors: {
-                cinnabar: "#ff4a3b",
-                slate: "#005D9E",
-                taupe: "#7B6867",
-                cream: "#FCFEF1"
+        // Synthesized weekly dataset structured as requested in a clear, accessible JavaScript array
+        const AI_WEEKLY_PULSE_DATA = [
+            {
+                id: "tech",
+                title: "Custom Silicon & Parameter-Efficient Logic",
+                subtitle: "How physical hardware optimization and compressed reasoning models are driving down the transactional footprint.",
+                highlights: [
+                    {
+                        headline: "OpenAI-Broadcom Jalapeño ASIC",
+                        body: "Unveiled on June 24, 2026, OpenAI's custom Jalapeño chip utilizes advanced 3.5D Face-to-Face stacking and deployed timing closure agents to collapse traditional 18-month design pipelines down to a record 9 months, offering unprecedented performance-per-watt gains."
+                    },
+                    {
+                        headline: "Verifiable Logic with VibeThinker-3B",
+                        body: "Built on Qwen2.5-Coder-3B, VibeThinker-3B matches models hundreds of times its size on mathematical logic, reaching a 97.1 AIME26 score. It uses Spectrum-to-Signal post-training reinforcement loops to solve complex coding tasks at a fraction of standard token footprints."
+                    },
+                    {
+                        headline: "Structural Looping & Context Segregation",
+                        body: "FastContext separates repository exploration from task solving, reducing agentic token overhead by 60%. Meanwhile, research on LoopCoder-v2 proves that exactly two transformer logic loops maximize execution efficiency."
+                    }
+                ],
+                extraInfo: {
+                    title: "Notable Model & Custom Silicon Advancements",
+                    headers: ["Method / Technology", "Operating Mechanism", "Key Performance Breakthrough"],
+                    rows: [
+                        ["Jalapeño ASIC", "LLM-optimized data paths; Broadcom 3.5D F2F stacking", "Nine-month design cycle; substantially improved performance per watt"],
+                        ["VibeThinker-3B", "Spectrum-to-Signal RL; Claim-Level Reliability (CLR)", "97.1 AIME26 score; 96.1% acceptance rate on unseen LeetCode contests"],
+                        ["LoopCoder-v2", "7B looped Transformer architecture", "Peak efficiency at exactly two loops, boosting code resolution to 64.4"],
+                        ["FastContext", "Decouples codebase exploration from agent task-solving", "Reduces agentic token consumption by 60%"]
+                    ]
+                }
+            },
+            {
+                id: "invest",
+                title: "Market Inflows & Interface Consolidation",
+                subtitle: "Strategic investment has firmly moved past simple wrappers to consolidate custom silicon, compute pipelines, and autonomous research platforms.",
+                highlights: [
+                    {
+                        headline: "SpaceX Acquires Cursor ($60B)",
+                        body: "SpaceX completed a $60 billion all-stock acquisition of Cursor (Anysphere). The transaction represents the largest venture-backed startup exit in history, securing daily coding developer telemetry to train xAI's Grok models."
+                    },
+                    {
+                        headline: "Baseten's $1.5B Financing Round",
+                        body: "Baseten raised $1.5 billion in a Series F round co-led by Altimeter Capital, Spark Capital, and Conviction Partners. Heavy capital commitments emphasize high demand for specialized inference software as workloads migrate to cheaper open alternatives."
+                    },
+                    {
+                        headline: "Mirendil Autonomous R&D",
+                        body: "Mirendil emerged from stealth with a $200 million seed round at a $1 billion valuation, backed by a16z, Kleiner Perkins, and NVIDIA, focusing on recursively self-improving networks designed to automate advanced research itself."
+                    }
+                ],
+                chart: {
+                    title: "Strategic Venture & M&A capital flows ($M)",
+                    items: [
+                        { name: "SpaceX (Cursor)", value: 60000, label: "$60,000M" },
+                        { name: "Baseten Series F", value: 1500, label: "$1,500M" },
+                        { name: "Groq Growth", value: 650, label: "$650M" },
+                        { name: "Mirendil Seed", value: 200, label: "$200M" },
+                        { name: "Quantifind Round", value: 200, label: "$200M" },
+                        { name: "Taktile Series C", value: 110, label: "$110M" }
+                    ]
+                }
+            },
+            {
+                id: "policy",
+                title: "Geopolitics & Federal Preemption Controls",
+                subtitle: "Geopolitical interventions are dismantling the illusion of a borderless, globally unified cloud-computing environment.",
+                highlights: [
+                    {
+                        headline: "Unilateral U.S. Export Restrictions",
+                        body: "The Bureau of Industry and Security ordered Anthropic to suspend foreign access to Claude Fable 5 due to cyber jailbreak exposures. This action triggered a global scramble for tech sovereignty, as foreign firms realize cloud access can be revoked overnight."
+                    },
+                    {
+                        headline: "EU AI Act Delay & Amendments",
+                        body: "European Parliament delayed standalone high-risk artificial intelligence compliance rules to December 2, 2027. Crucially, the amendments extended the simplified compliance benefits to Small Mid-Cap (SMC) companies."
+                    },
+                    {
+                        headline: "Canada's AI for All Initiative",
+                        body: "In response to rising geopolitical tech risks, Canada launched a national strategy to fund domestic, sovereign physical compute clusters under regional governance, insuring their local economy from external policy shocks."
+                    }
+                ],
+                extraInfo: {
+                    title: "Policy & Sovereign Regulatory Impact Matrix",
+                    headers: ["Jurisdiction", "Key Regulatory Policy Action", "Core Strategic Impact"],
+                    rows: [
+                        ["United States", "Executive Order 14409 / BIS Export Directives", "Unilateral model suspension; mandatory 30-day pre-release risk vetting"],
+                        ["European Union", "Digital Omnibus on AI (Approved June 16, 2026)", "High-risk rules delayed to 2027/2028; introduction of targeted synthetic content bans"],
+                        ["Canada", "'AI for All' Sovereign Strategy", "Dedicated public funding for domestic, sovereign physical compute infrastructure"],
+                        ["United Kingdom", "Sovereign AI Venture Capital Initiative", "£500M public fund; localized chip development grants to bypass foreign dominance"]
+                    ]
+                }
+            },
+            {
+                id: "impact",
+                title: "Societal, Environmental & Economic Impact",
+                subtitle: "The transition of artificial intelligence into core corporate infrastructure is driving deep environmental, infrastructural, and labor shifts.",
+                highlights: [
+                    {
+                        headline: "Inference Resource & Cooling Demands",
+                        body: "A United Nations University study warns that by 2030, day-to-day AI water consumption could equal the annual domestic needs of 1.3 billion people. Global data centers are projected to consume 945 TWh of electricity annually, nearly tripling current footprints."
+                    },
+                    {
+                        headline: "Permitting Bottlenecks & Grid Stagnation",
+                        body: "Up to half of scheduled US data center openings are currently stalled due to power limitations, representing $1.5 trillion in projects trapped in permitting pipelines, risking capital and hardware flight to foreign jurisdictions."
+                    },
+                    {
+                        headline: "Stripe Atlas Single-Founder Surges",
+                        body: "Lowered technical entry barriers are catalyzing micro-ventures. Stripe Atlas corporate registrations reveal a record 63% of companies incorporated in Q2 2026 were single-founder entities, scaling output using specialized agentic systems."
+                    }
+                ],
+                extraInfo: {
+                    title: "Societal & Infrastructure Tension Areas",
+                    headers: ["Dimension", "Current Observed Metric", "Long-Term Projected Trajectory"],
+                    rows: [
+                        ["Environmental Strain", "Daily usage drives high carbon and water footprints.", "Global AI water consumption to equal the domestic needs of 1.3B people by 2030."],
+                        ["Grid Infrastructure", "30% to 50% of 2026 U.S. data center builds are currently stalled.", "Permitting bottlenecks risk driving AI physical infrastructure to foreign nations."],
+                        ["Labor Reorganization", "63% of Q2 2026 Stripe Atlas corporations are single-founder entities.", "Hyper-efficient single-person enterprises replace traditional mid-sized operational structures."],
+                        ["Algorithmic Safety", "Independent labs openly fund recursive self-improvement R&D.", "Deepening divisions between academic safety advocates and self-improving software builders."]
+                    ]
+                }
             }
-        };
+        ];
 
-        // Tab Switching Engine
-        function switchTab(tabId) {
-            // Update active state
-            CONFIG_ENGINE.activeTab = tabId;
+        // Renders content based on selected section ID
+        function renderSection(sectionId) {
+            const data = AI_WEEKLY_PULSE_DATA.find(item => item.id === sectionId);
+            if (!data) return;
 
-            // Hide all tab contents
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => {
-                content.classList.remove('active');
-            });
-
-            // Show active tab content
-            const activeContent = document.getElementById('tab-content-' + tabId);
-            if (activeContent) {
-                activeContent.classList.add('active');
-            }
-
-            // Update tab button styles
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => {
-                // Change classes back to inactive
-                btn.className = "tab-btn flex items-center gap-2 py-2.5 px-5 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 text-sc-slate hover:bg-sc-slate/10";
-            });
-
-            // Set active class for selected tab button
-            const activeBtn = document.getElementById('nav-btn-' + tabId);
-            if (activeBtn) {
-                activeBtn.className = "tab-btn flex items-center gap-2 py-2.5 px-5 rounded-xl sm:rounded-full text-sm sm:text-base font-bold transition-all duration-300 bg-sc-slate text-white shadow-md transform scale-105 font-display";
-            }
+            const viewport = document.getElementById('dynamic-viewport');
             
-            // Scroll to the top of the tabbed display smoothly for clarity
-            const displayEl = document.getElementById('section-nav');
-            if (displayEl) {
-                displayEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // Generate highlights HTML
+            let highlightsHTML = `<div class="grid grid-cols-1 md:grid-cols-3 gap-6">`;
+            data.highlights.forEach((hl, index) => {
+                const borderAccent = index === 0 ? 'border-coral' : 'border-border-subtle';
+                const pillColor = index === 0 ? 'bg-coral/20 text-glow-blue' : 'bg-glow-blue/5 text-glow-blue';
+                highlightsHTML += `
+                    <div class="bg-bg-card p-6 rounded-2xl border ${borderAccent} shadow-sm hover:translate-y-[-2px] transition-all duration-300">
+                        <div class="mb-3">
+                            <span class="px-2.5 py-0.5 ${pillColor} rounded text-2xs font-mono font-bold uppercase tracking-wider">Highlight 0${index + 1}</span>
+                        </div>
+                        <h4 class="text-md font-bold font-display text-text-bright mb-2">${hl.headline}</h4>
+                        <p class="text-xs sm:text-sm text-text-dark leading-relaxed font-normal">${hl.body}</p>
+                    </div>
+                `;
+            });
+            highlightsHTML += `</div>`;
+
+            // Table or extra information
+            let extraHTML = '';
+            if (data.extraInfo) {
+                let headersHTML = '';
+                data.extraInfo.headers.forEach(header => {
+                    headersHTML += `<th class="py-3 px-4 text-glow-blue uppercase tracking-wider font-mono font-bold text-xs">${header}</th>`;
+                });
+
+                let rowsHTML = '';
+                data.extraInfo.rows.forEach((row, i) => {
+                    const rowBg = i % 2 === 0 ? 'bg-bg-darkest/40' : 'bg-bg-darkest/10';
+                    rowsHTML += `<tr class="${rowBg} border-b border-border-subtle hover:bg-bg-hover/30 transition-all">`;
+                    row.forEach((cell, idx) => {
+                        const cellStyle = idx === 0 ? 'font-semibold text-glow-blue' : 'text-text-dark';
+                        rowsHTML += `<td class="py-3.5 px-4 text-xs sm:text-sm ${cellStyle}">${cell}</td>`;
+                    });
+                    rowsHTML += `</tr>`;
+                });
+
+                extraHTML = `
+                    <div class="mt-8 bg-white border border-border-subtle rounded-2xl overflow-hidden shadow-sm">
+                        <div class="bg-bg-hover/30 px-6 py-4 border-b border-border-subtle">
+                            <h4 class="text-xs font-bold font-display text-glow-blue uppercase tracking-wider">${data.extraInfo.title}</h4>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full text-left text-xs sm:text-sm border-collapse">
+                                <thead>
+                                    <tr class="border-b border-border-subtle bg-bg-darkest/65">${headersHTML}</tr>
+                                </thead>
+                                <tbody class="divide-y divide-border-subtle/20">${rowsHTML}</tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
             }
+
+            // Custom SVG Chart for Investment Data
+            let chartHTML = '';
+            if (data.chart) {
+                let barRows = '';
+                // Standardize proportion mapping relative to SpaceX Cursor acquisition
+                const maxVal = Math.max(...data.chart.items.map(i => i.value));
+                data.chart.items.forEach(item => {
+                    // Make logarithmic or high contrast proportions to make smaller deals visible
+                    const percentage = Math.max(8, (item.value / maxVal) * 100);
+                    const colorBar = item.value > 10000 ? 'bg-glow-blue' : 'bg-coral';
+                    barRows += `
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-2 py-3 border-b border-border-subtle/20 group hover:bg-bg-hover/30 rounded-xl px-2 transition-all duration-200">
+                            <div class="w-40 shrink-0">
+                                <span class="font-bold text-sm text-text-dark block">${item.name}</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="relative w-full bg-bg-darkest rounded-full h-8 overflow-hidden">
+                                    <div class="${colorBar} h-full rounded-full transition-all duration-700 hover:brightness-115" style="width: ${percentage}%"></div>
+                                    <span class="absolute inset-y-0 left-3 flex items-center text-2xs md:text-xs font-mono font-bold text-text-dark drop-shadow-sm">${item.label}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                chartHTML = `
+                    <div class="mt-8 bg-white border border-border-subtle rounded-2xl p-6 shadow-sm">
+                        <div class="mb-4 text-center">
+                            <h4 class="text-xs font-bold font-display text-glow-blue uppercase tracking-widest">${data.chart.title}</h4>
+                            <p class="text-[11px] text-text-muted font-mono mt-1">Reflecting global transaction value trends for custom hardware channels, inference clouds, and autonomous R&D platforms.</p>
+                        </div>
+                        <div class="space-y-4 max-w-3xl mx-auto">${barRows}</div>
+                    </div>
+                `;
+            }
+
+            // Tailored CTAs matching Nicole's offerings (no pricing details)
+            let offeringsCTAHTML = '';
+            if (sectionId === 'tech') {
+                offeringsCTAHTML = `
+                    <div class="mt-8 bg-bg-hover/40 border border-border-subtle rounded-2xl p-6 text-center shadow-sm">
+                        <h4 class="text-md font-bold font-display text-glow-blue mb-2">Build Resilient Architectures with the AI Opportunity Sprint</h4>
+                        <p class="text-xs sm:text-sm text-text-dark mb-4 max-w-2xl mx-auto font-sans leading-relaxed">
+                            Pinpoint 3–5 high-ROI local and cloud model use cases to secure your developer pipeline and map a clear, unregulable technology adoption roadmap.
+                        </p>
+                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-6 py-2.5 bg-glow-blue text-white rounded-lg text-xs font-semibold hover:bg-glow-blue/90 transition-all shadow font-display">
+                            Schedule Your AI Opportunity Sprint
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"></path></svg>
+                        </a>
+                    </div>
+                `;
+            } else if (sectionId === 'invest') {
+                offeringsCTAHTML = `
+                    <div class="mt-8 bg-bg-hover/40 border border-border-subtle rounded-2xl p-6 text-center shadow-sm">
+                        <h4 class="text-md font-bold font-display text-glow-blue mb-2">Escape the Retail Margin Trap with Fractional AI Leadership</h4>
+                        <p class="text-xs sm:text-sm text-text-dark mb-4 max-w-2xl mx-auto font-sans leading-relaxed">
+                            Ensure sustainable cost structures and avoid reselling traps. Leverage on-prem parameter-efficient systems, custom API routing, and ongoing strategy governance without the overhead of a full-time hire.
+                        </p>
+                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-6 py-2.5 bg-glow-blue text-white rounded-lg text-xs font-semibold hover:bg-glow-blue/90 transition-all shadow font-display">
+                            Engage Fractional AI Leadership
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"></path></svg>
+                        </a>
+                    </div>
+                `;
+            } else if (sectionId === 'policy') {
+                offeringsCTAHTML = `
+                    <div class="mt-8 bg-bg-hover/40 border border-border-subtle rounded-2xl p-6 text-center shadow-sm">
+                        <h4 class="text-md font-display text-glow-blue mb-2 font-bold">Mitigate Regulatory & Sovereign Risks with an AI Strategy Roadmap</h4>
+                        <p class="text-xs sm:text-sm text-text-dark mb-4 max-w-2xl mx-auto font-sans leading-relaxed">
+                            Navigate the EU AI Act timeline extensions and federal export preemption orders. Receive a comprehensive plan blending ROI analysis, compliance sandboxes, and automated rollout sequencing.
+                        </p>
+                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-6 py-2.5 bg-glow-blue text-white rounded-lg text-xs font-semibold hover:bg-glow-blue/90 transition-all shadow font-display">
+                            Formulate Your AI Strategy Roadmap
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"></path></svg>
+                        </a>
+                    </div>
+                `;
+            } else if (sectionId === 'impact') {
+                offeringsCTAHTML = `
+                    <div class="mt-8 bg-bg-hover/40 border border-border-subtle rounded-2xl p-6 text-center shadow-sm">
+                        <h4 class="text-md font-bold font-display text-glow-blue mb-2">Measure Environmental Footprints & Track ROI with an AI Insights Dashboard</h4>
+                        <p class="text-xs sm:text-sm text-text-dark mb-4 max-w-2xl mx-auto font-sans leading-relaxed">
+                            Ensure operational safety, monitor your compute footprints, track multi-model redundancy triggers, and visualize hours saved or costs reduced.
+                        </p>
+                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-6 py-2.5 bg-glow-blue text-white rounded-lg text-xs font-semibold hover:bg-glow-blue/90 transition-all shadow font-display">
+                            Deploy Your AI Insights Dashboard
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"></path></svg>
+                        </a>
+                    </div>
+                `;
+            }
+
+            // Assemble dynamic layout
+            viewport.innerHTML = `
+                <div class="space-y-2 animate-fade-in">
+                    <h3 class="text-2xl font-bold font-display text-glow-blue tracking-tight">${data.title}</h3>
+                    <p class="text-sm text-text-muted mb-6 leading-relaxed max-w-3xl font-medium font-display">${data.subtitle}</p>
+                </div>
+                ${highlightsHTML}
+                ${extraHTML}
+                ${chartHTML}
+                ${offeringsCTAHTML}
+            `;
         }
+
+        // Section tab click handler
+        function changeSection(sectionId) {
+            // Update Tab active states
+            const buttons = [
+                { id: 'tech', elementId: 'btn-sec-tech' },
+                { id: 'invest', elementId: 'btn-sec-invest' },
+                { id: 'policy', elementId: 'btn-sec-policy' },
+                { id: 'impact', elementId: 'btn-sec-impact' }
+            ];
+
+            buttons.forEach(btn => {
+                const el = document.getElementById(btn.elementId);
+                if (btn.id === sectionId) {
+                    el.classList.add('border-glow-blue', 'text-glow-blue');
+                    el.classList.remove('border-transparent', 'text-text-muted');
+                } else {
+                    el.classList.remove('border-glow-blue', 'text-glow-blue');
+                    el.classList.add('border-transparent', 'text-text-muted');
+                }
+            });
+
+            // Re-render
+            renderSection(sectionId);
+        }
+
+        // Initialize active state on boot
+        window.addEventListener('DOMContentLoaded', () => {
+            renderSection('tech');
+        });
     </script>
 </body>
 </html>
