@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Weekly Pulse: August 29 – September 4, 2026</title>
+    <title>AI Weekly Pulse: September 5 – September 11, 2026</title>
     
     <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,15 +17,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
-        /* Base Colors matching Upshore Palette:
-           - Misty Blue: #DEE2EC
-           - Taupe: #8C756A
-           - Turquoise: #1AC8DB
-           - Teal: #0292B7
+        /* Base Colors matching Vibrant Signs Palette:
+           - Cream: #FCFEF1 (Canvas background)
+           - Midnight Blue: #005D9E (Primary headers, buttons, navigation active state)
+           - Cinnabar: #FF4A3B (Accent coral, callout pills, alerts & highlights)
+           - Taupe: #7B6867 (Subtle borders, secondary metadata & text)
         */
         body {
-            background-color: #DEE2EC; /* Misty Blue canvas */
-            color: #1A2129;           /* High contrast slate/charcoal */
+            background-color: #FCFEF1; /* Warm Cream canvas */
+            color: #262121;           /* High contrast deep charcoal */
             font-family: 'Roboto', sans-serif;
         }
 
@@ -50,37 +50,36 @@
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Custom Scrollbar styled for the Upshore palette */
+        /* Custom Scrollbar styled for the Vibrant Signs palette */
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #DEE2EC;
+            background: #FCFEF1;
         }
         ::-webkit-scrollbar-thumb {
-            background: #8C756A; /* Taupe scrollbar handle */
+            background: #7B6867; /* Taupe scrollbar handle */
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #0292B7; /* Teal on hover */
+            background: #005D9E; /* Midnight Blue on hover */
         }
     </style>
 
     <script>
-      // Configure Tailwind custom theme with Upshore palette colors
+      // Configure Tailwind custom theme with Vibrant Signs palette colors
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              'misty-blue': '#DEE2EC',     /* Misty Blue background canvas */
-              'misty-tint': '#EDF1F8',     /* Light tinted card highlight */
-              'teal-core': '#0292B7',      /* Teal headers, core brand & buttons */
-              'turquoise-alt': '#1AC8DB',  /* Turquoise accents, badges & highlights */
-              'upshore-taupe': '#8C756A',  /* Taupe borders, secondary text & cards */
-              'border-subtle': '#CBD3E1',  /* Clean border divider */
-              'bg-card': '#FFFFFF',        /* Solid crisp white for content cards */
-              'text-dark': '#1A2129',      /* Deep charcoal body text */
+              'cream-bg': '#FCFEF1',       /* Cream background canvas */
+              'cream-card': '#FFFFFF',     /* Crisp card white */
+              'midnight-blue': '#005D9E',  /* Midnight Blue core headers & brand */
+              'cinnabar-accent': '#FF4A3B',/* Cinnabar action accents & highlights */
+              'vibrant-taupe': '#7B6867',  /* Taupe borders & secondary text */
+              'border-subtle': '#E7E2D9',  /* Subtle warm border divider */
+              'text-dark': '#262121',      /* Deep charcoal body text */
             },
             fontFamily: {
               sans: ['Roboto', 'sans-serif'],
@@ -92,7 +91,7 @@
       }
     </script>
 </head>
-<body class="bg-misty-blue text-text-dark min-h-screen selection:bg-turquoise-alt/25 selection:text-teal-core antialiased">
+<body class="bg-cream-bg text-text-dark min-h-screen selection:bg-cinnabar-accent/20 selection:text-midnight-blue antialiased">
 
     <!-- Primary Application Workspace Container -->
     <div id="root">
@@ -100,221 +99,221 @@
             
             <!-- Strategic Header Briefing -->
             <header id="app-header" class="text-center mb-12 animate-fade-in">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-teal-core/10 rounded-full border border-teal-core/25 text-xs font-mono text-teal-core uppercase tracking-wider mb-4 font-bold">
-                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-turquoise-alt animate-pulse"></span>
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-midnight-blue/10 rounded-full border border-midnight-blue/20 text-xs font-mono text-midnight-blue uppercase tracking-wider mb-4 font-bold">
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-cinnabar-accent animate-pulse"></span>
                     AI Weekly Pulse
                 </div>
-                <h1 id="app-main-title" class="text-4xl md:text-5xl lg:text-6xl font-extrabold font-display text-teal-core tracking-tight leading-tight mb-4">
-                    The Autonomous Execution Frontier
+                <h1 id="app-main-title" class="text-4xl md:text-5xl lg:text-6xl font-extrabold font-display text-midnight-blue tracking-tight leading-tight mb-4">
+                    The Agentic Frontier: Autonomous Execution
                 </h1>
-                <p id="app-date-subtitle" class="text-lg text-upshore-taupe font-bold uppercase tracking-widest font-display mb-2">
-                    August 29 – September 4, 2026
+                <p id="app-date-subtitle" class="text-lg text-vibrant-taupe font-bold uppercase tracking-widest font-display mb-2">
+                    September 5 – September 11, 2026
                 </p>
-                <p class="text-sm text-upshore-taupe font-semibold italic mb-8 font-display">
+                <p class="text-sm text-vibrant-taupe font-semibold italic mb-8 font-display">
                     Produced by Nicole Dickens, Fractional AI Consultant &bull; Powered by Gemini Deep Research
                 </p>
 
                 <!-- Core Industry Status KPIs -->
                 <div id="kpi-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
                     <!-- KPI Card 1 -->
-                    <div id="kpi-card-desktop-ops" class="bg-bg-card p-6 rounded-2xl border border-border-subtle shadow-sm hover:border-turquoise-alt/70 hover:shadow-md transition-all duration-300">
+                    <div id="kpi-card-capital" class="bg-cream-card p-6 rounded-2xl border border-border-subtle shadow-sm hover:border-cinnabar-accent/60 hover:shadow-md transition-all duration-300">
                         <div class="flex justify-between items-start mb-4">
-                            <span class="text-xs font-mono text-upshore-taupe uppercase font-bold">Autonomous OS Execution</span>
-                            <span class="px-2.5 py-0.5 bg-teal-core/10 text-teal-core rounded text-xs font-mono font-bold">OSWorld 2.0</span>
+                            <span class="text-xs font-mono text-vibrant-taupe uppercase font-bold">Inference &amp; Neocloud Capital</span>
+                            <span class="px-2.5 py-0.5 bg-midnight-blue/10 text-midnight-blue rounded text-xs font-mono font-bold">Fluidstack &amp; Positron</span>
                         </div>
-                        <h3 class="text-4xl font-bold font-display text-teal-core tracking-tight mb-2">72.6%</h3>
-                        <p class="text-sm text-upshore-taupe leading-relaxed font-sans">
-                            GPT-6 Astra executes real desktop software directly, cutting task completion latency by 47% (40 min vs. 75 min baseline) and halving billable token costs.
+                        <h3 class="text-4xl font-bold font-display text-midnight-blue tracking-tight mb-2">$4.69B+</h3>
+                        <p class="text-sm text-vibrant-taupe leading-relaxed font-sans">
+                            Fluidstack secures $1.5B led by Jane Street at an $18B valuation, Positron AI raises $875M for inference chips, and Cognition closes $2B+ at a $48B valuation.
                         </p>
                     </div>
 
                     <!-- KPI Card 2 -->
-                    <div id="kpi-card-capital-inflows" class="bg-bg-card p-6 rounded-2xl border border-border-subtle shadow-sm hover:border-turquoise-alt/70 hover:shadow-md transition-all duration-300">
+                    <div id="kpi-card-statutory-oversight" class="bg-cream-card p-6 rounded-2xl border border-border-subtle shadow-sm hover:border-cinnabar-accent/60 hover:shadow-md transition-all duration-300">
                         <div class="flex justify-between items-start mb-4">
-                            <span class="text-xs font-mono text-upshore-taupe uppercase font-bold">Disclosed Capital Inflows</span>
-                            <span class="px-2.5 py-0.5 bg-teal-core/10 text-teal-core rounded text-xs font-mono font-bold">Single Week</span>
+                            <span class="text-xs font-mono text-vibrant-taupe uppercase font-bold">Statutory Governance</span>
+                            <span class="px-2.5 py-0.5 bg-cinnabar-accent/15 text-cinnabar-accent rounded text-xs font-mono font-bold">U.S. Congress</span>
                         </div>
-                        <h3 class="text-4xl font-bold font-display text-teal-core tracking-tight mb-2">$14.08B</h3>
-                        <p class="text-sm text-upshore-taupe leading-relaxed font-sans">
-                            Nvidia finalizes the $12.93B buyout of Hugging Face, a16z closes the $1.1B Machine Age Fund for power &amp; cooling, and Blacksmith raises $45M for CI/CD code validation.
+                        <h3 class="text-4xl font-bold font-display text-midnight-blue tracking-tight mb-2">Stop Rogue AI</h3>
+                        <p class="text-sm text-vibrant-taupe leading-relaxed font-sans">
+                            Bipartisan legislation mandates NIST technical standards, machine-readable agent inventories, tamper-evident action logs, and instant kill-switch revocation.
                         </p>
                     </div>
 
                     <!-- KPI Card 3 -->
-                    <div id="kpi-card-cache-reads" class="bg-bg-card p-6 rounded-2xl border border-border-subtle shadow-sm hover:border-turquoise-alt/70 hover:shadow-md transition-all duration-300">
+                    <div id="kpi-card-labor-contraction" class="bg-cream-card p-6 rounded-2xl border border-border-subtle shadow-sm hover:border-cinnabar-accent/60 hover:shadow-md transition-all duration-300">
                         <div class="flex justify-between items-start mb-4">
-                            <span class="text-xs font-mono text-upshore-taupe uppercase font-bold">Persistent Context Economics</span>
-                            <span class="px-2.5 py-0.5 bg-teal-core/10 text-teal-core rounded text-xs font-mono font-bold">-75% Caching</span>
+                            <span class="text-xs font-mono text-vibrant-taupe uppercase font-bold">Labor Market Realignment</span>
+                            <span class="px-2.5 py-0.5 bg-midnight-blue/10 text-midnight-blue rounded text-xs font-mono font-bold">Stanford &amp; ADP</span>
                         </div>
-                        <h3 class="text-4xl font-bold font-display text-teal-core tracking-tight mb-2">$0.075–$0.25</h3>
-                        <p class="text-sm text-upshore-taupe leading-relaxed font-sans">
-                            Claude Fable 5.1 and Gemini 3.8 Flash slash recurring prompt cache reads to $0.075–$0.25/M tokens, yielding 25%–45% immediate operational API bill reductions.
+                        <h3 class="text-4xl font-bold font-display text-midnight-blue tracking-tight mb-2">-19% Junior Roles</h3>
+                        <p class="text-sm text-vibrant-taupe leading-relaxed font-sans">
+                            Analysis of 26M payroll records reveals a 19% contraction in entry-level hiring within AI-exposed fields as organizations shift toward a "low-hire, low-fire" regime.
                         </p>
                     </div>
                 </div>
 
                 <!-- Strategic Action Center -->
                 <div id="navigation-actions" class="flex flex-wrap justify-center gap-4 mt-10">
-                    <a id="btn-report-download" href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/54561dd86d1a450e610074e49cce7f91c439604a/AI%20Weekly%20Pulse%2004SEP26.pdf" target="_blank" rel="noreferrer" class="bg-teal-core hover:bg-teal-core/90 text-white font-semibold py-3.5 px-8 rounded-full transition-all duration-200 text-sm flex items-center gap-2 shadow-md hover:shadow-lg font-display">
+                    <a id="btn-report-download" href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/8f08706b2bba92b132ba9da43e0b4d9cd12a0b2f/AI%20Weekly%20Pulse%2011SEP26.pdf" target="_blank" rel="noreferrer" class="bg-midnight-blue hover:bg-midnight-blue/90 text-white font-semibold py-3.5 px-8 rounded-full transition-all duration-200 text-sm flex items-center gap-2 shadow-md hover:shadow-lg font-display">
                         <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
-                        Strategic Briefing (04SEP26 PDF)
+                        Strategic Briefing (11SEP26 PDF)
                     </a>
-                    <a id="btn-audio-listen" href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/c3e6c0bf8dea16f2ee2f5234d998347b31f1bdf2/AI_Is_Moving_Your_Mouse_Now.m4a" target="_blank" rel="noreferrer" class="bg-bg-card hover:bg-misty-tint text-teal-core border border-upshore-taupe/30 font-semibold py-3.5 px-8 rounded-full transition-all duration-200 text-sm flex items-center gap-2 shadow-sm font-display">
-                        <svg class="w-4 h-4 text-teal-core" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                    <a id="btn-audio-listen" href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/8f08706b2bba92b132ba9da43e0b4d9cd12a0b2f/AI_agents_are_replacing_entry-level_jobs.m4a" target="_blank" rel="noreferrer" class="bg-cream-card hover:bg-cream-bg text-midnight-blue border border-vibrant-taupe/30 font-semibold py-3.5 px-8 rounded-full transition-all duration-200 text-sm flex items-center gap-2 shadow-sm font-display">
+                        <svg class="w-4 h-4 text-midnight-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
                         Listen to Strategic Audio Briefing
                     </a>
                 </div>
             </header>
 
             <!-- Executive Summary Panel -->
-            <section id="executive-summary-section" class="bg-bg-card rounded-3xl border border-border-subtle p-6 md:p-10 mb-10 shadow-sm animate-fade-in">
-                <h2 class="text-2xl font-bold font-display text-teal-core mb-6 text-center underline decoration-turquoise-alt decoration-2 underline-offset-4">
-                    Executive Summary: Computer Use, Platform Consolidation &amp; Enforcement
+            <section id="executive-summary-section" class="bg-cream-card rounded-3xl border border-border-subtle p-6 md:p-10 mb-10 shadow-sm animate-fade-in">
+                <h2 class="text-2xl font-bold font-display text-midnight-blue mb-6 text-center underline decoration-cinnabar-accent decoration-2 underline-offset-4">
+                    Executive Summary: Execution Runtimes, Capital Inflows &amp; Containment
                 </h2>
                 <div class="text-text-dark leading-relaxed space-y-4 text-sm sm:text-base md:text-lg">
                     <p>
-                        The reporting period of August 29 through September 4, 2026, marks the definitive transition of artificial intelligence from conversational reasoning systems into direct, autonomous computer operators across enterprise and small-business environments. A synchronized wave of frontier releases—led by OpenAI’s GPT-6 Astra, Anthropic’s Claude Fable 5.1, and Google DeepMind’s Gemini 3.8 Flash—established new technical baselines for visual desktop navigation, long-horizon tool execution, and automated code remediation.
+                        The weekly reporting cycle of September 5 through September 11, 2026, marked a decisive operational shift across the artificial intelligence sector from conversational text generation to persistent autonomous execution. Commercial foundation model providers have transitioned beyond standard chat interfaces toward persistent execution-based runtimes. Meta’s deployment of its personal agent runtime, Muse, exemplifies this architectural evolution by executing cross-application workflows, web navigation, and transactional negotiation within isolated cloud virtual machines under secondary sentinel supervision.
                     </p>
                     <p>
-                        Concurrently, the infrastructure landscape underwent historic vertical integration as semiconductor manufacturer Nvidia agreed to acquire open-source platform Hugging Face for $12.93 billion (~86x ARR). In the venture sphere, Andreessen Horowitz allocated $1.1 billion via the Machine Age Fund into data center power, cooling, and grid capacity. On the regulatory front, compliance transitioned into binding statutory enforcement as the European Union enacted Article 50 of the EU AI Act, requiring explicit bot disclosures and machine-readable synthetic media tagging.
+                        This operational agency has precipitated immediate legislative and regulatory mobilization. In the United States, lawmakers introduced the bipartisan Stop Rogue AI Act, establishing the first federal statutory framework requiring machine-readable agent inventories, tamper-evident action logs, and instant kill-switch revocation across enterprise systems. Meanwhile, private capital markets poured billions into neocloud compute leasing (Fluidstack $1.5B) and post-training inference hardware (Positron AI $875M), even as macroeconomic data confirmed a pronounced contraction in junior white-collar hiring pipelines.
                     </p>
-                    <blockquote class="border-l-4 border-teal-core pl-4 italic text-teal-core bg-misty-blue/60 py-4 pr-4 rounded-r-xl font-semibold">
-                        "Autonomous computer-use models have arrived as production-ready digital workers capable of completing multi-step operational tasks. Infrastructure dominance and platform distribution have replaced application wrappers as the focal point of industry capital."
+                    <blockquote class="border-l-4 border-midnight-blue pl-4 italic text-midnight-blue bg-cream-bg py-4 pr-4 rounded-r-xl font-semibold">
+                        "The definition of operational leverage has shifted from conversational prompt drafting to the disciplined delegation of multi-step execution to autonomous agents. Organizations must implement bounded autonomy, least-privilege API access, and the 'Four-Eyes' approval principle to isolate financial liabilities."
                     </blockquote>
                 </div>
                 <div class="mt-8 text-center">
-                    <a id="consult-exec-btn" href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-block bg-teal-core hover:bg-teal-core/90 text-white font-bold px-8 py-3.5 rounded-full transition-all shadow text-sm sm:text-base font-display">
+                    <a id="consult-exec-btn" href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-block bg-midnight-blue hover:bg-midnight-blue/90 text-white font-bold px-8 py-3.5 rounded-full transition-all shadow text-sm sm:text-base font-display">
                         Consult with Nicole on Fractional AI Leadership &amp; Governance
                     </a>
                 </div>
             </section>
 
             <!-- What This Means for SMBs Detail Section -->
-            <section id="smb-briefing-panel" class="bg-bg-card rounded-3xl border border-border-subtle p-6 md:p-10 mb-10 shadow-sm animate-fade-in">
-                <h2 class="text-2xl font-bold font-display text-teal-core mb-6 text-center">
-                    What This Means for SMBs: Operationalizing Digital Workers &amp; Caching Economics
+            <section id="smb-briefing-panel" class="bg-cream-card rounded-3xl border border-border-subtle p-6 md:p-10 mb-10 shadow-sm animate-fade-in">
+                <h2 class="text-2xl font-bold font-display text-midnight-blue mb-6 text-center">
+                    What This Means for SMBs: Bounded Autonomy, Cost Guardrails &amp; the "Four-Eyes" Rule
                 </h2>
                 <div class="text-text-dark leading-relaxed space-y-4 text-sm sm:text-base">
                     <p>
-                        The arrival of reliable computer-use models transitions artificial intelligence from an advisory chatbot into an autonomous operational worker for small and medium-sized businesses. Unlike large corporate competitors paralyzed by legacy software silos, deeply fragmented data architectures, and multi-year consulting deployments, smaller organizations can leverage consolidated cloud software (QuickBooks, Shopify, HubSpot, Google Workspace) to deploy visual desktop agents almost immediately.
+                        For small and medium-sized businesses, the commercial rollout of autonomous execution runtimes like Meta’s Muse changes how an organization scales. Historically, growing transaction volumes, client onboarding, or vendor intake required linear headcount additions to manage administrative churn. With persistent digital workers, a 15-person company can achieve the administrative throughput of a 50-person enterprise by offloading invoice reconciliation, supplier price checking, and scheduling coordination.
                     </p>
                     <p>
-                        Small businesses frequently lose valuable administrative hours manually moving data between accounting tools, inventory spreadsheets, and shipping portals. Because systems like GPT-6 Astra and Claude Fable 5.1 can directly operate browsers and desktop applications without requiring custom API engineering, routine reconciliation workflows can be delegated end-to-end to digital workers. On the OSWorld 2.0 benchmark, visual execution latency dropped by 47% (from 75 to 40 minutes per task), cutting operational token costs per completed business outcome in half.
+                        However, operational autonomy transforms an SMB's primary risk from content inaccuracy (hallucination) to direct transactional and contractual liability. When software executes purchases or accesses customer databases, unconstrained agents can trigger unauthorized commitments or leak sensitive data via compromised plugins. SMB process owners must enforce <strong>bounded autonomy</strong>: least-privilege API permissions, tenant-level spending limits, and the strict <strong>"Four-Eyes" operational rule</strong> (agents draft and compile documentation, but an authorized human manager provides multi-factor verification before funds are disbursed or contracts are executed).
                     </p>
                     <p>
-                        Furthermore, Anthropic’s 75% prompt cache discount ($0.25/M tokens) and Google’s $0.075/M cached read tier allow SMBs to persistently load standard operating procedures, customer history, or entire catalogs at a fraction of standard API rates. Paired with ChatGPT Sites for deploying zero-code internal mini-apps, lean teams can execute with the operational capacity of mid-market enterprises.
+                        Furthermore, updates released across Microsoft Copilot Cost Management and Dynamics 365 Business Central provide native tenant spending caps and Defender prompt-injection filters. Concurrently, businesses should actively upskill junior workers into "Agent Operations Specialists" who audit error logs, resolve exceptions, and manage client relationships rather than simply freezing entry-level hiring.
                     </p>
                 </div>
 
-                <!-- Operating Metric Paradigm Grid -->
-                <div id="smb-table-container" class="mt-8 overflow-x-auto border border-border-subtle rounded-2xl shadow-sm bg-misty-tint">
-                    <div class="bg-teal-core/10 px-6 py-4 border-b border-border-subtle">
-                        <h4 class="text-xs font-bold font-display text-teal-core uppercase tracking-wider">Evolution of Enterprise AI Integration &amp; Cost Structures</h4>
+                <!-- Operating Paradigm Comparison Grid -->
+                <div id="smb-table-container" class="mt-8 overflow-x-auto border border-border-subtle rounded-2xl shadow-sm bg-cream-bg/60">
+                    <div class="bg-midnight-blue/10 px-6 py-4 border-b border-border-subtle">
+                        <h4 class="text-xs font-bold font-display text-midnight-blue uppercase tracking-wider">Conversational Assistant Baseline vs. Autonomous Agent Paradigm</h4>
                     </div>
                     <table id="smb-paradigm-table" class="min-w-full text-left text-xs sm:text-sm border-collapse">
                         <thead>
-                            <tr class="border-b border-border-subtle bg-teal-core/5 text-teal-core font-bold uppercase font-display">
-                                <th class="py-3.5 px-4">Operational Dimension</th>
-                                <th class="py-3.5 px-4">Generative Baseline (2024–2025)</th>
-                                <th class="py-3.5 px-4">Early Agentic Systems (Early 2026)</th>
-                                <th class="py-3.5 px-4">Autonomous Computer Operator (Current Week)</th>
+                            <tr class="border-b border-border-subtle bg-midnight-blue/5 text-midnight-blue font-bold uppercase font-display">
+                                <th class="py-3.5 px-4">Strategic Vector</th>
+                                <th class="py-3.5 px-4">Conversational Assistant Baseline</th>
+                                <th class="py-3.5 px-4">Autonomous Agent Paradigm</th>
+                                <th class="py-3.5 px-4">Practical SMB Action Plan</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-border-subtle/60 text-text-dark">
+                        <tbody class="divide-y divide-border-subtle/70 text-text-dark">
                             <tr>
-                                <td class="py-4 px-4 font-bold text-teal-core">Core Operational Value</td>
-                                <td class="py-4 px-4 font-mono text-upshore-taupe">Draft generation and query response</td>
-                                <td class="py-4 px-4 font-mono text-upshore-taupe">Sequential tool calling via defined APIs</td>
-                                <td class="py-4 px-4 font-semibold text-teal-core">Visual navigation across standard desktop and web interfaces</td>
+                                <td class="py-4 px-4 font-bold text-midnight-blue">Operational Role</td>
+                                <td class="py-4 px-4 font-mono text-vibrant-taupe">Informational: Researches topics, drafts content, summarizes text</td>
+                                <td class="py-4 px-4 font-semibold text-midnight-blue">Transactional: Navigates web portals, manages scheduling, executes purchases</td>
+                                <td class="py-4 px-4">Identify high-volume, rules-based administrative bottlenecks for pilot agent delegation</td>
                             </tr>
-                            <tr class="bg-teal-core/5">
-                                <td class="py-4 px-4 font-bold text-teal-core">System Integration Barrier</td>
-                                <td class="py-4 px-4 text-upshore-taupe">Manual human copy-paste and verification</td>
-                                <td class="py-4 px-4 text-upshore-taupe">Bespoke middleware and custom webhook integration</td>
-                                <td class="py-4 px-4 font-semibold text-teal-core">Zero-code interface traversal across legacy applications</td>
+                            <tr class="bg-midnight-blue/5">
+                                <td class="py-4 px-4 font-bold text-midnight-blue">Workforce Impact</td>
+                                <td class="py-4 px-4 text-vibrant-taupe">Augments individual employee output incrementally</td>
+                                <td class="py-4 px-4 font-semibold text-midnight-blue">Absorbs routine junior operational and data-entry workflows</td>
+                                <td class="py-4 px-4">Upskill junior personnel into oversight, workflow architecture, and client relationship roles</td>
                             </tr>
                             <tr>
-                                <td class="py-4 px-4 font-bold text-teal-core">Primary Cost Basis</td>
-                                <td class="py-4 px-4 text-upshore-taupe">Fixed monthly software subscription seats</td>
-                                <td class="py-4 px-4 text-upshore-taupe">Variable token expense per reasoning step</td>
-                                <td class="py-4 px-4 font-semibold text-teal-core">Fully loaded token and compute cost per completed outcome</td>
+                                <td class="py-4 px-4 font-bold text-midnight-blue">Risk Profile</td>
+                                <td class="py-4 px-4 text-vibrant-taupe">Textual hallucination, factual errors, brand inconsistency</td>
+                                <td class="py-4 px-4 font-semibold text-cinnabar-accent">Financial exposure, unauthorized commitments, data leakage</td>
+                                <td class="py-4 px-4">Enforce least-privilege API permissions and require "Four-Eyes" human sign-off</td>
                             </tr>
-                            <tr class="bg-teal-core/5">
-                                <td class="py-4 px-4 font-bold text-teal-core">End-to-End Latency</td>
-                                <td class="py-4 px-4 text-upshore-taupe">Human-dependent execution speed</td>
-                                <td class="py-4 px-4 text-upshore-taupe">60 to 90 minutes with high failure rates</td>
-                                <td class="py-4 px-4 font-semibold text-teal-core">30 to 45 minutes with autonomous error recovery (-47%)</td>
+                            <tr class="bg-midnight-blue/5">
+                                <td class="py-4 px-4 font-bold text-midnight-blue">Cost Structure</td>
+                                <td class="py-4 px-4 text-vibrant-taupe">Predictable, fixed per-user monthly SaaS subscriptions</td>
+                                <td class="py-4 px-4 font-semibold text-midnight-blue">Variable consumption based on token volume, reasoning depth, and compute time</td>
+                                <td class="py-4 px-4">Implement tenant spending limits, threshold notifications, and approval hierarchies</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <!-- Dynamic Computer-Use & Prompt Caching Savings Estimator -->
-                <div class="mt-10 bg-misty-blue/70 border border-border-subtle p-6 rounded-2xl">
-                    <h3 class="text-lg font-bold font-display text-teal-core mb-2 text-center">Interactive Computer-Use &amp; Prompt Caching Savings Estimator</h3>
-                    <p class="text-xs text-upshore-taupe text-center mb-6 leading-relaxed">
-                        Simulate automating manual cross-software back-office tasks (reconciliation, inventory, CRM updates) with visual desktop agents and 75% prompt caching discounts.
+                <!-- Dynamic Bounded Autonomy & Administrative Labor Estimator -->
+                <div class="mt-10 bg-cream-bg border border-border-subtle p-6 rounded-2xl">
+                    <h3 class="text-lg font-bold font-display text-midnight-blue mb-2 text-center">Interactive Bounded Autonomy &amp; Workflow Delegation Estimator</h3>
+                    <p class="text-xs text-vibrant-taupe text-center mb-6 leading-relaxed">
+                        Calculate operational labor hours saved and financial exposure mitigation by deploying autonomous agents with the "Four-Eyes" human verification rule.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
                         <div>
-                            <label class="block text-2xs font-bold text-teal-core uppercase mb-2">Monthly Administrative Tasks</label>
-                            <input id="tasks-count-field" type="number" value="1200" min="100" step="50" class="w-full bg-white border border-upshore-taupe/30 rounded-lg px-3 py-2 text-sm font-mono focus:outline-none focus:border-teal-core" oninput="calculateEstimatorCosts()" />
+                            <label class="block text-2xs font-bold text-midnight-blue uppercase mb-2">Monthly Administrative Tasks</label>
+                            <input id="tasks-count-field" type="number" value="1800" min="200" step="100" class="w-full bg-white border border-vibrant-taupe/30 rounded-lg px-3 py-2 text-sm font-mono focus:outline-none focus:border-midnight-blue" oninput="calculateEstimatorCosts()" />
                         </div>
                         <div>
-                            <label class="block text-2xs font-bold text-teal-core uppercase mb-2">Prompt Caching Optimization (%)</label>
+                            <label class="block text-2xs font-bold text-midnight-blue uppercase mb-2">Four-Eyes Verification Audit (%)</label>
                             <div class="flex items-center gap-2">
-                                <input id="caching-slider" type="range" value="85" min="20" max="95" class="w-full h-2 bg-upshore-taupe/30 rounded-lg appearance-none cursor-pointer accent-teal-core" oninput="updateSliderValue(this.value)" />
-                                <span id="caching-display" class="text-sm font-mono font-bold text-teal-core w-12 text-right">85%</span>
+                                <input id="audit-slider" type="range" value="15" min="5" max="50" class="w-full h-2 bg-vibrant-taupe/30 rounded-lg appearance-none cursor-pointer accent-midnight-blue" oninput="updateSliderValue(this.value)" />
+                                <span id="audit-display" class="text-sm font-mono font-bold text-midnight-blue w-12 text-right">15%</span>
                             </div>
                         </div>
                         <div>
-                            <label class="block text-2xs font-bold text-teal-core uppercase mb-2">Manual Labor Cost Per Task ($)</label>
-                            <input id="labor-cost-field" type="number" value="18.50" min="5.00" step="0.50" class="w-full bg-white border border-upshore-taupe/30 rounded-lg px-3 py-2 text-sm font-mono focus:outline-none focus:border-teal-core" oninput="calculateEstimatorCosts()" />
+                            <label class="block text-2xs font-bold text-midnight-blue uppercase mb-2">Fully Burdened Hourly Wage ($)</label>
+                            <input id="hourly-rate-field" type="number" value="32.00" min="15.00" step="1.00" class="w-full bg-white border border-vibrant-taupe/30 rounded-lg px-3 py-2 text-sm font-mono focus:outline-none focus:border-midnight-blue" oninput="calculateEstimatorCosts()" />
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-8">
                         <div class="bg-white p-4 rounded-xl border border-border-subtle text-center">
-                            <span class="text-2xs font-mono text-upshore-taupe uppercase font-bold">Manual Human Processing Cost</span>
-                            <div id="cost-manual" class="text-2xl font-bold font-display text-upshore-taupe mt-1">$22,200.00</div>
-                            <span class="text-3xs font-mono text-upshore-taupe block mt-1">Based on manual cross-portal data entry</span>
+                            <span class="text-2xs font-mono text-vibrant-taupe uppercase font-bold">Manual Administrative Payroll</span>
+                            <div id="cost-manual" class="text-2xl font-bold font-display text-vibrant-taupe mt-1">$28,800.00</div>
+                            <span class="text-3xs font-mono text-vibrant-taupe block mt-1">Based on 0.5 hrs per manual task</span>
                         </div>
                         <div class="bg-white p-4 rounded-xl border border-border-subtle text-center">
-                            <span class="text-2xs font-mono text-upshore-taupe uppercase font-bold">Uncached Legacy Agent API Cost</span>
-                            <div id="cost-uncached-agent" class="text-2xl font-bold font-display text-upshore-taupe mt-1">$1,920.00</div>
-                            <span class="text-3xs font-mono text-upshore-taupe block mt-1">Standard stateless API token execution</span>
+                            <span class="text-2xs font-mono text-vibrant-taupe uppercase font-bold">Four-Eyes Audited Agent Stack</span>
+                            <div id="cost-audited-agent" class="text-2xl font-bold font-display text-midnight-blue mt-1">$5,184.00</div>
+                            <span class="text-3xs font-mono text-vibrant-taupe block mt-1">Agent compute + human verification</span>
                         </div>
-                        <div class="bg-teal-core/5 p-4 rounded-xl border border-teal-core/30 text-center">
-                            <span class="text-2xs font-mono text-teal-core uppercase font-bold">Optimized Cached Agent Cost</span>
-                            <div id="cost-cached-agent" class="text-2xl font-bold font-display text-teal-core mt-1">$408.00</div>
-                            <span id="savings-percent" class="text-xs font-mono text-green-700 font-bold block mt-1">98.2% Total Efficiency Gain</span>
+                        <div class="bg-midnight-blue/5 p-4 rounded-xl border border-midnight-blue/20 text-center">
+                            <span class="text-2xs font-mono text-midnight-blue uppercase font-bold">Net Operational Efficiency</span>
+                            <div id="cost-savings" class="text-2xl font-bold font-display text-cinnabar-accent mt-1">$23,616.00</div>
+                            <span id="savings-percent" class="text-xs font-mono text-green-700 font-bold block mt-1">82.0% Monthly Cost Recovery</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-10 text-center">
-                    <a id="smb-consult-btn" href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-block bg-teal-core hover:bg-teal-core/90 text-white font-bold px-8 py-3.5 rounded-full transition-all shadow text-sm sm:text-base font-display">
-                        Design Your AI Opportunity Sprint for Autonomous Workflows
+                    <a id="smb-consult-btn" href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-block bg-midnight-blue hover:bg-midnight-blue/90 text-white font-bold px-8 py-3.5 rounded-full transition-all shadow text-sm sm:text-base font-display">
+                        Design Your Bounded AI Opportunity Sprint
                     </a>
                 </div>
             </section>
 
             <!-- Dynamic Sector Navigation Tabs -->
             <div class="max-w-6xl mx-auto mb-8">
-                <div class="flex border-b border-upshore-taupe/30 overflow-x-auto space-x-1 sm:space-x-2 scrollbar-none" id="tabs-container">
-                    <button onclick="changeSection('tech')" id="btn-sec-tech" class="px-6 py-3.5 hover:text-teal-core text-xs sm:text-sm font-bold font-display border-b-2 border-teal-core text-teal-core tab-transition flex items-center gap-2 whitespace-nowrap focus:outline-none">
+                <div class="flex border-b border-vibrant-taupe/30 overflow-x-auto space-x-1 sm:space-x-2 scrollbar-none" id="tabs-container">
+                    <button onclick="changeSection('tech')" id="btn-sec-tech" class="px-6 py-3.5 hover:text-midnight-blue text-xs sm:text-sm font-bold font-display border-b-2 border-midnight-blue text-midnight-blue tab-transition flex items-center gap-2 whitespace-nowrap focus:outline-none">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"></path></svg>
                         Technology
                     </button>
-                    <button onclick="changeSection('invest')" id="btn-sec-invest" class="px-6 py-3.5 text-upshore-taupe hover:text-teal-core text-xs sm:text-sm font-bold font-display border-b-2 border-transparent tab-transition flex items-center gap-2 whitespace-nowrap focus:outline-none">
+                    <button onclick="changeSection('invest')" id="btn-sec-invest" class="px-6 py-3.5 text-vibrant-taupe hover:text-midnight-blue text-xs sm:text-sm font-bold font-display border-b-2 border-transparent tab-transition flex items-center gap-2 whitespace-nowrap focus:outline-none">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.281-2.281 5.94M18 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path></svg>
                         Investment
                     </button>
-                    <button onclick="changeSection('policy')" id="btn-sec-policy" class="px-6 py-3.5 text-upshore-taupe hover:text-teal-core text-xs sm:text-sm font-bold font-display border-b-2 border-transparent tab-transition flex items-center gap-2 whitespace-nowrap focus:outline-none">
+                    <button onclick="changeSection('policy')" id="btn-sec-policy" class="px-6 py-3.5 text-vibrant-taupe hover:text-midnight-blue text-xs sm:text-sm font-bold font-display border-b-2 border-transparent tab-transition flex items-center gap-2 whitespace-nowrap focus:outline-none">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-.778.099-1.533.284-2.253"></path></svg>
                         Policy
                     </button>
-                    <button onclick="changeSection('impact')" id="btn-sec-impact" class="px-6 py-3.5 text-upshore-taupe hover:text-teal-core text-xs sm:text-sm font-bold font-display border-b-2 border-transparent tab-transition flex items-center gap-2 whitespace-nowrap focus:outline-none">
+                    <button onclick="changeSection('impact')" id="btn-sec-impact" class="px-6 py-3.5 text-vibrant-taupe hover:text-midnight-blue text-xs sm:text-sm font-bold font-display border-b-2 border-transparent tab-transition flex items-center gap-2 whitespace-nowrap focus:outline-none">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.467 5.99 5.99 0 0 0-1.925-3.546 5.974 5.974 0 0 0-2.133-1.001A3.75 3.75 0 0 0 3 9.75V18a1.5 1.5 0 0 0 1.5 1.5h15A1.5 1.5 0 0 0 21 18v-4.5a3.75 3.75 0 0 0-3.351-3.722A5.991 5.991 0 0 0 12 18z"></path></svg>
                         Impact
                     </button>
@@ -322,7 +321,7 @@
             </div>
 
             <!-- Display Viewport -->
-            <main id="tab-content-area" class="bg-bg-card border border-border-subtle rounded-3xl p-6 md:p-8 shadow-sm min-h-[460px] animate-fade-in">
+            <main id="tab-content-area" class="bg-cream-card border border-border-subtle rounded-3xl p-6 md:p-8 shadow-sm min-h-[460px] animate-fade-in">
                 
                 <!-- This section is updated dynamically by the script engine below -->
                 <div id="dynamic-viewport" class="space-y-6"></div>
@@ -334,172 +333,177 @@
 
     <!-- STANDARD JAVASCRIPT ENGINE & LOGIC AT THE BOTTOM OF THE FILE -->
     <script>
-        // Interactive Cost Estimator Math
+        // Interactive Bounded Delegation Estimator Math
         function updateSliderValue(val) {
-            document.getElementById('caching-display').innerText = `${val}%`;
+            document.getElementById('audit-display').innerText = `${val}%`;
             calculateEstimatorCosts();
         }
 
         function calculateEstimatorCosts() {
             const tasksField = document.getElementById('tasks-count-field');
-            const cachingSlider = document.getElementById('caching-slider');
-            const laborCostField = document.getElementById('labor-cost-field');
+            const auditSlider = document.getElementById('audit-slider');
+            const hourlyRateField = document.getElementById('hourly-rate-field');
             
             const totalTasks = parseFloat(tasksField.value) || 0;
-            const cachingPercent = parseFloat(cachingSlider.value) / 100.0;
-            const manualLaborRate = parseFloat(laborCostField.value) || 0;
+            const auditPercent = parseFloat(auditSlider.value) / 100.0;
+            const hourlyRate = parseFloat(hourlyRateField.value) || 0;
             
-            // Baseline 1: Manual human cost
-            const totalManualCost = totalTasks * manualLaborRate;
+            // Baseline 1: Manual human cost (0.5 hours = 30 minutes per administrative task)
+            const manualHoursPerTask = 0.5;
+            const totalManualHours = totalTasks * manualHoursPerTask;
+            const totalManualCost = totalManualHours * hourlyRate;
             
-            // Baseline 2: Uncached legacy agent execution ($1.60 per multi-step task)
-            const uncachedPerTask = 1.60;
-            const totalUncachedAgent = totalTasks * uncachedPerTask;
+            // Baseline 2: Bounded Agent Execution
+            // Agent compute cost per task = $0.40
+            // Human verification review time on audited tasks = 0.1 hours (6 minutes)
+            const agentComputePerTask = 0.40;
+            const totalComputeCost = totalTasks * agentComputePerTask;
+            const auditedTasksCount = totalTasks * auditPercent;
+            const humanAuditHours = auditedTasksCount * 0.1;
+            const humanAuditCost = humanAuditHours * hourlyRate;
+            const totalAuditedAgentCost = totalComputeCost + humanAuditCost;
             
-            // Baseline 3: Optimized cached agent execution (47% duration drop + 75% prompt cache discount)
-            // With caching, repetitive SOPs / catalog context reads drop from $10/M tokens to $0.25/M tokens
-            const cachedReadRateMultiplier = (1.0 - cachingPercent) * 1.0 + cachingPercent * 0.25;
-            const optimizedLatencyDiscount = 0.53; // 47% reduction in task duration / token burn
-            const optimizedCostPerTask = uncachedPerTask * optimizedLatencyDiscount * cachedReadRateMultiplier;
-            const totalCachedAgent = totalTasks * optimizedCostPerTask;
-            
-            // Overall efficiency gain vs manual human cost
-            const totalSavings = totalManualCost - totalCachedAgent;
+            // Net savings
+            const totalSavings = totalManualCost - totalAuditedAgentCost;
             const savingsPercent = totalManualCost > 0 ? (totalSavings / totalManualCost) * 100 : 0;
             
             // Update UI Elements
             document.getElementById('cost-manual').innerText = `$${totalManualCost.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-            document.getElementById('cost-uncached-agent').innerText = `$${totalUncachedAgent.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-            document.getElementById('cost-cached-agent').innerText = `$${totalCachedAgent.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-            document.getElementById('savings-percent').innerText = `${savingsPercent.toFixed(1)}% Total Efficiency Gain`;
+            document.getElementById('cost-audited-agent').innerText = `$${totalAuditedAgentCost.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+            document.getElementById('cost-savings').innerText = `$${totalSavings.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+            document.getElementById('savings-percent').innerText = `${savingsPercent.toFixed(1)}% Monthly Cost Recovery`;
         }
 
         // Complete, synthesized weekly text organized as a clean JavaScript array for deep structural indexing
         const AI_WEEKLY_PULSE_DATA = [
             {
                 id: "tech",
-                title: "Technology: GPT-6 Astra Visual OS Execution, Claude Fable 5.1 & Gemini 3.8 Flash Cyber",
-                subtitle: "Frontier architectures master desktop GUI navigation, Anthropic slashes prompt cache reads by 75%, and Google launches automated vulnerability defense with Gemini 3.8 Flash Cyber.",
+                title: "Technology: Meta Muse Dedicated VM Runtime, GPT-6 Astra Cyber Risk & Copilot Heuristics",
+                subtitle: "Meta introduces dual-engine sandboxed VM runtimes with Sentinel gating, OpenAI flags Astra's 'Critical' cyber capabilities, and mathematical proof verification sparks academic debate.",
                 highlights: [
                     {
-                        headline: "Recurrent Reasoning & Desktop Mastery in GPT-6 Astra",
-                        body: "Trained on over 100,000 GPUs at the Texas Stargate facility, OpenAI's GPT-6 Astra reached 72.6% on OSWorld 2.0 while cutting task latency from 75 to 40 minutes (-47%). It achieved 57.9% on Terminal-Bench 4.0 and 96.0% on GPQA Diamond, deducing visual desktop interfaces in real time."
+                        headline: "Meta Muse Dual-Engine Sandboxed Runtime",
+                        body: "Meta launched Muse, operating inside isolated cloud virtual machines rather than local browser extensions. The runtime pairs an execution engine (Muse Spark 1.3) with an independent Sentinel model that evaluates outbound transactional actions and requires explicit multi-factor user authorization."
                     },
                     {
-                        headline: "Claude Fable 5.1 & Prompt Caching Economics",
-                        body: "Anthropic launched Claude Fable 5.1 with a 1-million-token context window and a 75% price cut on prompt cache reads ($0.25/M tokens), driving 25%–45% net savings for persistent agentic workflows. In scientific trials, Fable 5.1 mapped Venus topography from NASA Magellan radar data."
+                        headline: "OpenAI GPT-6 Astra 'Critical' Cyber Profile & Mathematical Proofs",
+                        body: "OpenAI designated GPT-6 Astra with a 'Critical' cybersecurity risk profile under its Preparedness Framework for autonomous zero-day discovery and binary exploitation. In theoretical math, Astra generated proofs for 10 open conjectures, prompting Caltech hackathon debates over the human verification burden."
                     },
                     {
-                        headline: "Google Gemini 3.8 Flash & Flash Cyber Automated Patching",
-                        body: "Google DeepMind released Gemini 3.8 Flash ($0.75 in / $3.75 out per M tokens). Its specialized defensive twin, Flash Cyber, resolved a 13-year-old memory management vulnerability in Chromium in under 2 hours, generating 2.6x more verified patches than frontier models."
+                        headline: "Microsoft Heuristic DLP & Tenant Cost Management",
+                        body: "Microsoft rolled out in-stream neural heuristic detection in Defender for Office 365 to intercept indirect prompt-injections within vendor emails, alongside tenant spending limits and approval workflows across Copilot Cost Management and Dynamics 365 Business Central."
                     }
                 ],
+                flowchart: true,
                 extraInfo: {
-                    title: "Frontier Autonomous Computer-Use & Reasoning Benchmark Matrix (September 2026)",
-                    headers: ["Evaluation Metric", "GPT-6 Astra (OpenAI)", "Claude Fable 5.1 (Anthropic)", "Gemini 3.8 Flash (Google)", "GPT-5.6 Sol (Prior Baseline)"],
+                    title: "Autonomous Agent Architectural Mechanisms & Enterprise Governance Matrix (September 2026)",
+                    headers: ["Technology / System", "Architectural Originator", "Structural Design & Technical Mechanism", "Operational Capabilities", "Primary Enterprise Consideration"],
                     rows: [
-                        ["OSWorld 2.0 (Desktop GUI Execution)", "72.6% (40 min avg.)", "66.2% (Estimated)", "59.0%", "65.7% (75 min avg.)"],
-                        ["Terminal-Bench 4.0 (Command Line)", "57.9%", "55.8%", "19.1%", "37.3%"],
-                        ["GPQA Diamond (Graduate Science)", "96.0%", "93.7%", "89.2% (Estimated)", "94.6%"],
-                        ["Base API Pricing (per M in/out)", "$10.00 / $50.00", "$10.00 / $50.00", "$0.75 / $3.75", "$5.00 / $30.00"],
-                        ["Prompt Cache Read Price (per M tokens)", "Not Disclosed", "$0.250 (-75% reduction)", "$0.075", "$1.250"]
+                        ["Muse Runtime", "Meta", "Isolated Cloud VM with dual-engine execution and Sentinel gating", "Cross-application navigation, automated purchasing, form execution", "Isolates autonomous runtime tasks from local device storage"],
+                        ["GPT-6 Astra", "OpenAI", "Multi-agent reasoning framework over extended context horizons", "Autonomous zero-day vulnerability identification, advanced proof synthesis", "Enterprise availability strictly gated under critical risk controls"],
+                        ["Copilot Security DLP", "Microsoft", "In-stream neural heuristic detection embedded in Defender for Office 365", "Real-time classification and quarantine of prompt-injection threats", "Protects internal corporate agents from indirect external manipulation"]
                     ]
                 }
             },
             {
                 id: "invest",
-                title: "Investment: Nvidia $12.93B Hugging Face Buyout, a16z $1.1B Machine Age Fund & Code CI/CD",
-                subtitle: "Nvidia captures developer distribution with a $12.93B acquisition, Andreessen Horowitz targets physical power and cooling bottlenecks, and automated testing draws venture capital.",
+                title: "Investment: Fluidstack $1.5B Neocloud Round, Positron $875M Inference & Cognition $2B+",
+                subtitle: "Capital rotates decisively into post-training inference hardware and guaranteed neocloud capacity, while horizontal AI application wrappers experience severe valuation compression.",
                 highlights: [
                     {
-                        headline: "Nvidia's $12.93 Billion Acquisition of Hugging Face",
-                        body: "Nvidia agreed to acquire open-source model hub Hugging Face for $12.93B (~86x ARR multiple on $150M revenue; $11.9B cash + $1.0B equity retention). The deal links Nvidia hardware directly to 18 million developers and 3 million hosted models."
+                        headline: "Fluidstack $1.5B Neocloud Financing at $18B Valuation",
+                        body: "Quantitative trading firm Jane Street led a $1.5 billion funding round in asset-light compute provider Fluidstack at an $18B valuation (doubling its July mark). Fluidstack contracts GPU power and liquid cooling to lease guaranteed capacity under long-term enterprise SLAs."
                     },
                     {
-                        headline: "a16z Launches $1.1 Billion Machine Age Fund",
-                        body: "Andreessen Horowitz closed a dedicated $1.1 billion fund targeting physical AI constraints: semiconductor fabrication machinery, advanced high-bandwidth memory, liquid-cooling systems, and energy grid generation necessary to sustain data centers."
+                        headline: "Positron AI Secures $875M for Custom Inference Silicon",
+                        body: "Positron AI completed an $875 million round at a $5 billion valuation co-led by NEA, Valor Equity, and Liberty Global. Positron develops specialized inference hardware accelerators and custom compilers to lower per-token serving costs as continuous agent execution outpaces pre-training."
                     },
                     {
-                        headline: "Blacksmith Raises $45M Series B for Machine-Authored Code CI/CD",
-                        body: "As autonomous models generate massive code volume, continuous integration platform Blacksmith secured $45M led by Peak XV Partners. Enterprise CI/CD workloads are expanding 5%–10% weekly to test and validate agentic software outputs."
+                        headline: "Vertical Software & Agent Security: Cognition, HiBob & AIR",
+                        body: "Venture capital coalesced around vertical enterprise software: Cognition raised $2B+ at a $48B valuation, HiBob secured $166M from Salesforce Ventures for HR automation, Savvy Wealth raised $100M for RIA agents, and AIR secured $50M seed for agent identity and sandboxing."
                     }
                 ],
                 chart: {
-                    title: "September 2026 Disclosed AI M&A, Infrastructure & Venture Deals ($ Billions)",
+                    title: "September 2026 Disclosed AI Infrastructure, Inference & Vertical Financing ($ Millions)",
                     items: [
-                        { name: "Nvidia / Hugging Face Acquisition (Total)", value: 12.93, label: "$12.93 Billion" },
-                        { name: "Nvidia Hugging Face Cash Consideration", value: 11.90, label: "$11.90 Billion" },
-                        { name: "a16z Machine Age Fund (Power & Cooling)", value: 1.10, label: "$1.10 Billion" },
-                        { name: "Google Fairwind Cyber Infrastructure Commitment", value: 0.10, label: "$100 Million+" },
-                        { name: "Blacksmith Series B (AI Code CI/CD Validation)", value: 0.045, label: "$45 Million" }
+                        { name: "Cognition Series E (Autonomous Engineering)", value: 2000, label: "$2,000 Million ($2.0B+)" },
+                        { name: "Fluidstack Neocloud Financing (Jane Street)", value: 1500, label: "$1,500 Million ($1.5B)" },
+                        { name: "Positron AI Inference Silicon (NEA/Valor)", value: 875, label: "$875 Million" },
+                        { name: "HiBob Enterprise HR Automation (Salesforce)", value: 166, label: "$166 Million" },
+                        { name: "Savvy Wealth RIA Agent Platform (Halo Fund)", value: 100, label: "$100 Million" },
+                        { name: "AIR Seed (Agent Identity & Sandboxing)", value: 50, label: "$50 Million" }
                     ]
                 },
                 extraInfo: {
-                    title: "Major Late-Summer 2026 Corporate M&A, Financing & Infrastructure Transactions",
-                    headers: ["Investment Event / Target", "Capital Volume", "Lead Entity / Source", "Core Strategic Focus"],
+                    title: "Major Private Capital Deployments & Infrastructure Transactions",
+                    headers: ["Company", "Capital Secured", "Disclosed Valuation", "Lead Financial Backer(s)", "Primary Sector / Strategic Focus"],
                     rows: [
-                        ["Nvidia / Hugging Face M&A", "$12.930 Billion", "Nvidia Corporate Treasury", "Integration of 18M-developer open platform with proprietary compute stack"],
-                        ["a16z Machine Age Fund", "$1.100 Billion", "Andreessen Horowitz", "Hard physical AI bottlenecks: chips, power grid, liquid cooling, data systems"],
-                        ["Google Fairwind Infrastructure", "$100.0 Million+", "Google Cloud Treasury", "Automated vulnerability defense across 650 certified utilities and hospitals"],
-                        ["Blacksmith Series B Financing", "$45.0 Million", "Peak XV Partners", "Continuous integration acceleration for machine-authored enterprise codebases"]
+                        ["Cognition", "$2.0B+", "$48.0B", "Multi-party / Founders Fund", "Autonomous software engineering & code execution"],
+                        ["Fluidstack", "$1.5B", "$18.0B", "Jane Street", "Neocloud infrastructure & GPU capacity leasing"],
+                        ["Positron AI", "$875M", "$5.0B", "NEA, Valor Equity, Liberty Global", "High-throughput AI inference hardware & compilers"],
+                        ["HiBob", "$166M", "$3.2B", "Salesforce Ventures", "Enterprise HR automation & organizational agents"],
+                        ["Savvy Wealth", "$100M", "Undisclosed", "Halo Fund, Thrive Capital", "AI-native RIA practice management & tax workflows"],
+                        ["AIR", "$50M", "Undisclosed", "Multi-party Seed", "Agent identity governance & runtime sandboxing"]
                     ]
                 }
             },
             {
                 id: "policy",
-                title: "Policy & Governance: Statutory EU AI Act Article 50 Enforcement & Tiered Cyber Access",
-                subtitle: "The European Union begins active enforcement of Article 50 transparency, frontier labs restrict autonomous cyber weapons, and the UK consults on workplace surveillance.",
+                title: "Policy & Governance: Bipartisan Stop Rogue AI Act & Global Regulatory Perimeters",
+                subtitle: "U.S. lawmakers introduce statutory agent inventories and kill switches, Senator Warner pushes FTC fiduciary duties, and international regulatory approaches diverge.",
                 highlights: [
                     {
-                        headline: "Binding Enforcement of EU AI Act Article 50 Transparency",
-                        body: "The EU enacted Article 50 of the EU AI Act, mandating explicit notices whenever natural persons interact with automated bots or emotion-recognition systems. Public-interest synthetic media must carry machine-readable watermarks or face statutory turnover fines."
+                        headline: "The Bipartisan Stop Rogue AI Act (Gottheimer-Lawler)",
+                        body: "Prompted by a 48-hour autonomous agent privilege escalation incident on repository infrastructure, U.S. Representatives introduced legislation directing NIST to mandate machine-readable agent inventories, cryptographically verified provenance, tamper-evident action logs, and instant kill switches."
                     },
                     {
-                        headline: "Bifurcated Cyber Access: Sovereign vs. Commercial Models",
-                        body: "After GPT-6 Astra reached the Critical cyber threshold by finding zero-day flaws autonomously, OpenAI restricted public terminal access. Anthropic and Google similarly restricted Claude Mythos 5.1 and Gemini 3.8 Flash Cyber to vetted defense bodies and critical-infrastructure operators."
+                        headline: "Competing Federal Models: Technical Standards vs. Fiduciary Duties",
+                        body: "The Gottheimer-Lawler framework competes with Senator Warner’s AI AGENT Act (S.5051), which establishes FTC-enforced fiduciary duties of loyalty and care. Concurrently, OpenAI published an open policy declaration endorsing federal safety baselines and California's SB 813 assessor standards."
                     },
                     {
-                        headline: "UK Consultation on Workplace Monitoring Technologies",
-                        body: "The UK DSIT and Home Office launched a public consultation on Workplace Monitoring Technologies. Data regulators cautioned that continuous desktop tracking agents evaluating worker productivity without human proportionality violate data privacy mandates."
+                        headline: "Global Policy Divergence: EU Enforcement & Chinese Curbs",
+                        body: "While the U.S. advocates for light-touch innovation at the G20, the European Union prepares for mandatory synthetic media watermarking on December 2, 2026, under the AI Act, while China enforces strict algorithm registries and bans anthropomorphic dependency."
                     }
                 ],
                 extraInfo: {
-                    title: "Global AI Policy, Governance Mechanisms & Statutory Directives (September 2026)",
-                    headers: ["Jurisdiction", "Regulatory Mechanism", "Core Enforcement Mandate", "Practical Enterprise Compliance Burden"],
+                    title: "Statutory Governance Instruments & Regulatory Compliance Frameworks (September 2026)",
+                    headers: ["Regulatory Jurisdiction", "Legislative / Administrative Instrument", "Core Governance Mechanism", "Direct Corporate Compliance Impact"],
                     rows: [
-                        ["European Union", "EU AI Act (Article 50 Transparency)", "Mandatory machine-readable watermarking; synthetic content & customer bot disclosures", "Universal tagging of public synthetic marketing media; customer disclosure banners"],
-                        ["United Kingdom", "DSIT & Home Office WMT Consultation", "Oversight of Workplace Monitoring Technologies and automated worker evaluation", "Mandatory Data Protection Impact Assessments for AI productivity tracking"],
-                        ["United States", "Executive Security Directives", "National security vetting; dual-use containment of advanced cyber reasoning", "Strict identity verification and credential gating for offensive security research"],
-                        ["Japan", "Cabinet Amendments to APPI", "Deregulation of statistical processing; broad training exemptions", "Permissive corporate data pooling for industrial robotics and manufacturing models"]
+                        ["United States (Federal)", "Stop Rogue AI Act (Gottheimer-Lawler)", "NIST Technical Standards enforced via Federal Acquisition Regulation (FAR)", "Mandatory machine-readable agent inventories, tamper-evident logs, revocable access"],
+                        ["United States (Federal)", "AI AGENT Act (S.5051 - Warner)", "FTC Oversight & Fiduciary Custodial Framework", "Statutory duties of loyalty and care; mandatory interoperable interfaces for platforms"],
+                        ["United States (State)", "California SB 813 & Colorado SB 26-189", "State-level algorithmic impact assessments & labor oversight", "Human oversight requirements for automated workplace decisions; auditor certifications"],
+                        ["European Union", "EU AI Act & Digital Omnibus", "Risk classification tiers & market entry conformity assessments", "Mandatory synthetic content marking by Dec 2026; GPAI systemic risk reporting"],
+                        ["China", "Anthropomorphic AI Interim Measures", "Central algorithmic registry & ideological security reviews", "Full lifecycle security audits; mandatory watermarks; anti-dependency service restrictions"]
                     ]
                 }
             },
             {
                 id: "impact",
-                title: "Impact: Workforce Polarization, Outcomes Per Token & Zero-Day Vulnerability Expansion",
-                subtitle: "Routine clerical roles face displacement as enterprise metrics shift to 'Outcomes Per Token', while machine-speed code exploration triggers an asymmetric cyber defense race.",
+                title: "Impact: Stanford 19% Junior Hiring Drop, 'Low-Hire Low-Fire' & Anthropic 2030 Scenarios",
+                subtitle: "Payroll analysis reveals a 19% contraction in entry-level white-collar roles, corporate retention centers on senior judgment, and non-AI complementary skills surge 165%.",
                 highlights: [
                     {
-                        headline: "Workforce Polarization and 'Outcomes Per Token'",
-                        body: "Enterprise metrics are shifting from headcount to 'Outcomes Per Token'. Senior professionals leverage digital workers for massive productivity multiples, while procedural clerical roles (invoice processing, scheduling, CRM data entry) face acute displacement."
+                        headline: "The Entry-Level Hiring Deficit: 19% Contraction in AI-Exposed Roles",
+                        body: "Stanford Digital Economy Lab’s analysis of 26 million ADP payroll records revealed that employment for workers aged 22 to 25 in AI-exposed roles is 19% below expected trends. Entry-level white-collar postings fell 35%, driving youth unemployment (ages 20–24) to 7.1% despite a stable 4.1% national rate."
                     },
                     {
-                        headline: "Asymmetric Cyber Defense & Machine-Speed Zero-Day Surge",
-                        body: "Because autonomous reasoning agents can crawl software repositories and decompile binaries at machine speed, organizations face a surge in zero-days. Defending networks now requires autonomous patching agents to keep pace with offensive machine discovery."
+                        headline: "The 'Low-Hire, Low-Fire' Enterprise Dynamic",
+                        body: "Enterprises are retaining tenured senior staff who possess institutional context, client trust, and systems judgment, while curtailing early-career hiring as agents absorb junior analysis and coding. Conversely, employer demand for operational workflow optimization skills grew 165% year-over-year."
                     },
                     {
-                        headline: "Institutional Inertia Restraining Immediate Displacement",
-                        body: "Sweeping immediate white-collar layoffs remain buffered by corporate legal departments, insurers, and compliance bodies withholding autonomous desktop access across sensitive financial databases, ensuring phased supervisory pilots."
+                        headline: "Anthropic 2030 Economic Scenarios: Capital Reallocation",
+                        body: "Anthropic's Economic Scenarios report modeled U.S. GDP rising 8.3% above baseline by 2030 in its primary scenario, while labor’s share of national income falls from 60% to 56.1% as capital captures an increasing portion of national productivity gains."
                     }
                 ],
                 extraInfo: {
-                    title: "Enterprise Labor Market & Operational Restructuring Trajectory",
-                    headers: ["Workforce Dimension", "2024–2025 Baseline Structure", "Current Week Trajectory (September 2026)", "Strategic Enterprise Outlook"],
+                    title: "Anthropic Economic Scenarios vs. Real-World September 2026 Labor Data",
+                    headers: ["Macroeconomic Variable", "Modest Scenario Baseline", "Substantial Scenario Projection", "Extreme Transformation Projection", "Current Real-World Reading (Sept 2026)"],
                     rows: [
-                        ["Administrative Support", "Manual data bridging across SaaS applications", "Autonomous computer use & visual desktop navigation", "Contraction of entry-level back-office personnel; supervisor transition"],
-                        ["Software Engineering", "In-line code completion via developer assistants", "Agentic repository refactoring and automated tests", "Transition from code authors to system validators & test architects"],
-                        ["Information Security", "Manual log inspection and periodic vulnerability scans", "Continuous autonomous patching and exploit defense", "Machine-speed competition between offensive and defensive agents"],
-                        ["Employee Governance", "Retrospective productivity and login logging", "Algorithmic analysis of worker screen interactions", "Rigid statutory limits on automated worker surveillance & tracking"]
+                        ["U.S. 2030 GDP Delta", "+1.6% above baseline ($34.1T)", "+8.3% above baseline ($36.3T)", "+32.4% above baseline ($44.4T)", "Moderate, productivity-led baseline growth"],
+                        ["Aggregate Unemployment", "Historical norms (~4.0%)", "4.6% national rate", "~12.0% national rate", "BLS reported rate steady at 4.1%"],
+                        ["Knowledge Worker Jobless Rate", "Stable / historically aligned", "Flat wage growth, moderate churn", "17.9% structural unemployment", "Youth (20–24) unemployment at 7.1%"],
+                        ["Labor Share of Income", "59.4% of total GDP", "56.1% of total GDP", "45.2% of total GDP", "Historical distribution hovers near 60.0%"],
+                        ["Entry-Level Hiring Pipeline", "Normal historical intake", "Concentrated junior contraction", "Severe entry-level displacement", "AI-exposed early roles down 19%"]
                     ]
                 }
             }
@@ -523,34 +527,91 @@
             // Assemble highlights
             let highlightsHTML = `<div class="grid grid-cols-1 md:grid-cols-3 gap-6">`;
             data.highlights.forEach((hl, i) => {
-                const borderAccent = i === 0 ? 'border-turquoise-alt' : 'border-border-subtle';
-                const pillColor = i === 0 ? 'bg-turquoise-alt/20 text-teal-core border border-turquoise-alt/40' : 'bg-teal-core/5 text-teal-core border border-teal-core/10';
+                const borderAccent = i === 0 ? 'border-cinnabar-accent' : 'border-border-subtle';
+                const pillColor = i === 0 ? 'bg-cinnabar-accent/15 text-cinnabar-accent border border-cinnabar-accent/30' : 'bg-midnight-blue/5 text-midnight-blue border border-midnight-blue/15';
                 highlightsHTML += `
-                    <div class="bg-bg-card p-6 rounded-2xl border ${borderAccent} shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="bg-cream-card p-6 rounded-2xl border ${borderAccent} shadow-sm hover:shadow-md transition-all duration-300">
                         <div class="mb-3">
                             <span class="px-2.5 py-0.5 ${pillColor} rounded text-2xs font-mono font-bold uppercase tracking-wider">Insight 0${i + 1}</span>
                         </div>
-                        <h4 class="text-md font-bold font-display text-teal-core mb-2">${hl.headline}</h4>
+                        <h4 class="text-md font-bold font-display text-midnight-blue mb-2">${hl.headline}</h4>
                         <p class="text-xs sm:text-sm text-text-dark leading-relaxed font-normal">${hl.body}</p>
                     </div>
                 `;
             });
             highlightsHTML += `</div>`;
 
+            // Optional Meta Muse Flowchart for the Tech section
+            let flowchartHTML = '';
+            if (data.flowchart) {
+                flowchartHTML = `
+                    <div class="mt-8 bg-cream-bg border border-border-subtle rounded-2xl p-6 shadow-sm animate-fade-in">
+                        <div class="mb-4 text-center">
+                            <span class="px-3 py-1 bg-midnight-blue/10 text-midnight-blue rounded-full text-2xs font-mono font-bold uppercase tracking-wider">Architectural Blueprint</span>
+                            <h4 class="text-md font-bold font-display text-midnight-blue mt-2">Meta Muse Dual-Engine Sandboxed Runtime</h4>
+                            <p class="text-xs text-vibrant-taupe mt-1 max-w-xl mx-auto">Visualizing dedicated cloud virtual machine sandboxing with independent Sentinel model verification.</p>
+                        </div>
+                        <div class="max-w-2xl mx-auto flex flex-col items-center gap-3 text-xs font-mono">
+                            <!-- Step 1: User Instruction -->
+                            <div class="w-full max-w-sm bg-white border border-midnight-blue/30 rounded-xl p-3 text-center shadow-sm">
+                                <span class="text-2xs uppercase text-vibrant-taupe font-bold block">Input Trigger</span>
+                                <span class="font-bold text-midnight-blue">User Instruction / Task Objective</span>
+                            </div>
+                            <svg class="w-5 h-5 text-midnight-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                            
+                            <!-- Step 2: Cloud Virtual Machine -->
+                            <div class="w-full bg-white border-2 border-dashed border-midnight-blue/40 rounded-2xl p-5 relative shadow-sm">
+                                <span class="absolute top-2 right-3 text-3xs font-bold text-midnight-blue uppercase bg-midnight-blue/10 px-2 py-0.5 rounded">Dedicated Cloud Virtual Machine</span>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                                    <div class="bg-midnight-blue/5 border border-midnight-blue/20 rounded-xl p-3 text-center">
+                                        <span class="text-3xs uppercase text-midnight-blue font-bold block">Execution Core</span>
+                                        <span class="font-bold text-midnight-blue text-xs">Muse Spark 1.3 Engine</span>
+                                        <p class="text-3xs text-vibrant-taupe mt-1 font-sans">Generates web clicks, forms &amp; commands</p>
+                                    </div>
+                                    <div class="bg-cinnabar-accent/5 border border-cinnabar-accent/30 rounded-xl p-3 text-center">
+                                        <span class="text-3xs uppercase text-cinnabar-accent font-bold block">Real-Time Auditor</span>
+                                        <span class="font-bold text-cinnabar-accent text-xs">Sentinel Model</span>
+                                        <p class="text-3xs text-vibrant-taupe mt-1 font-sans">Inspects outbound actions for anomalies</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3 pt-3 border-t border-border-subtle text-center text-3xs text-vibrant-taupe">
+                                    Action Proposal evaluated via in-memory neural telemetry
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-midnight-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                            
+                            <!-- Step 3: Four-Eyes Human Authorization -->
+                            <div class="w-full max-w-sm bg-cinnabar-accent/10 border border-cinnabar-accent/40 rounded-xl p-3 text-center shadow-sm">
+                                <span class="text-2xs uppercase text-cinnabar-accent font-bold block">Governance Gate</span>
+                                <span class="font-bold text-midnight-blue">User Permission / Multi-Factor Auth</span>
+                                <p class="text-3xs text-vibrant-taupe mt-0.5 font-sans">Human verification required for transactions &gt; threshold</p>
+                            </div>
+                            <svg class="w-5 h-5 text-midnight-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+
+                            <!-- Step 4: External Execution -->
+                            <div class="w-full max-w-sm bg-midnight-blue text-white rounded-xl p-3 text-center shadow-md">
+                                <span class="text-2xs uppercase text-cream-bg font-bold block">Finalized Settlement</span>
+                                <span class="font-bold">External Web / Transaction Execution</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
             // Table rendering
             let extraHTML = '';
             if (data.extraInfo) {
                 let headersHTML = '';
                 data.extraInfo.headers.forEach(header => {
-                    headersHTML += `<th class="py-3 px-4 text-teal-core uppercase tracking-wider font-mono font-bold text-xs">${header}</th>`;
+                    headersHTML += `<th class="py-3 px-4 text-midnight-blue uppercase tracking-wider font-mono font-bold text-xs">${header}</th>`;
                 });
 
                 let rowsHTML = '';
                 data.extraInfo.rows.forEach((row, i) => {
-                    const rowBg = i % 2 === 0 ? 'bg-misty-blue/30' : 'bg-white';
-                    rowsHTML += `<tr class="${rowBg} border-b border-border-subtle hover:bg-teal-core/5 transition-all">`;
+                    const rowBg = i % 2 === 0 ? 'bg-cream-bg/50' : 'bg-white';
+                    rowsHTML += `<tr class="${rowBg} border-b border-border-subtle hover:bg-midnight-blue/5 transition-all">`;
                     row.forEach((cell, idx) => {
-                        const cellStyle = idx === 0 ? 'font-semibold text-teal-core' : 'text-text-dark';
+                        const cellStyle = idx === 0 ? 'font-semibold text-midnight-blue' : 'text-text-dark';
                         rowsHTML += `<td class="py-3.5 px-4 text-xs sm:text-sm ${cellStyle}">${cell}</td>`;
                     });
                     rowsHTML += `</tr>`;
@@ -558,15 +619,15 @@
 
                 extraHTML = `
                     <div class="mt-8 bg-white border border-border-subtle rounded-2xl overflow-hidden shadow-sm animate-fade-in">
-                        <div class="bg-teal-core/5 px-6 py-4 border-b border-border-subtle">
-                            <h4 class="text-xs font-bold font-display text-teal-core uppercase tracking-wider">${data.extraInfo.title}</h4>
+                        <div class="bg-midnight-blue/5 px-6 py-4 border-b border-border-subtle">
+                            <h4 class="text-xs font-bold font-display text-midnight-blue uppercase tracking-wider">${data.extraInfo.title}</h4>
                         </div>
                         <div class="overflow-x-auto">
                             <table class="min-w-full text-left text-xs sm:text-sm border-collapse">
                                 <thead>
-                                    <tr class="border-b border-border-subtle bg-misty-tint">${headersHTML}</tr>
+                                    <tr class="border-b border-border-subtle bg-cream-bg/80">${headersHTML}</tr>
                                 </thead>
-                                <tbody class="divide-y divide-border-subtle/50">${rowsHTML}</tbody>
+                                <tbody class="divide-y divide-border-subtle/70">${rowsHTML}</tbody>
                             </table>
                         </div>
                     </div>
@@ -579,10 +640,10 @@
                 chartHTML = `
                     <div class="mt-8 bg-white border border-border-subtle rounded-2xl p-6 shadow-sm animate-fade-in">
                         <div class="mb-4 text-center">
-                            <h4 class="text-xs font-bold font-display text-teal-core uppercase tracking-wider">${data.chart.title}</h4>
-                            <p class="text-2xs text-upshore-taupe font-mono mt-1">Reflecting mega-scale developer platform buyouts, dedicated physical AI funds, and automated CI/CD validation financing.</p>
+                            <h4 class="text-xs font-bold font-display text-midnight-blue uppercase tracking-wider">${data.chart.title}</h4>
+                            <p class="text-2xs text-vibrant-taupe font-mono mt-1">Demonstrating institutional capital concentration into neocloud leasing, post-training inference hardware, and vertical agent software.</p>
                         </div>
-                        <div class="max-w-3xl mx-auto h-[320px] relative">
+                        <div class="max-w-3xl mx-auto h-[340px] relative">
                             <canvas id="investmentChartCanvas"></canvas>
                         </div>
                     </div>
@@ -593,12 +654,12 @@
             let offeringsCTAHTML = '';
             if (sectionId === 'tech') {
                 offeringsCTAHTML = `
-                    <div class="mt-8 bg-teal-core/5 border border-teal-core/20 rounded-2xl p-6 text-center shadow-sm">
-                        <h4 class="text-md font-bold font-display text-teal-core mb-2">Automate Back-Office Operations with an AI Opportunity Sprint</h4>
-                        <p class="text-xs sm:text-sm text-upshore-taupe mb-4 max-w-2xl mx-auto leading-relaxed">
-                            Transition from manual swivel-chair data entry to autonomous computer-use agents without vendor lock-in. Nicole Dickens will pinpoint 3–5 high-ROI operational use cases, calculate token ROI, and map an actionable adoption roadmap.
+                    <div class="mt-8 bg-midnight-blue/5 border border-midnight-blue/20 rounded-2xl p-6 text-center shadow-sm">
+                        <h4 class="text-md font-bold font-display text-midnight-blue mb-2">Deploy Bounded Autonomous Agents with an AI Opportunity Sprint</h4>
+                        <p class="text-xs sm:text-sm text-vibrant-taupe mb-4 max-w-2xl mx-auto leading-relaxed">
+                            Safely operationalize autonomous execution runtimes without vendor lock-in or unmonitored financial exposure. Nicole Dickens will pinpoint 3–5 high-ROI use cases, design a "Four-Eyes" approval sandbox, and map an actionable adoption roadmap.
                         </p>
-                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-6 py-2.5 bg-teal-core hover:bg-teal-core/90 text-white rounded-lg text-xs font-semibold transition-all shadow font-display">
+                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-6 py-2.5 bg-midnight-blue hover:bg-midnight-blue/90 text-white rounded-lg text-xs font-semibold transition-all shadow font-display">
                             Schedule Your AI Opportunity Sprint
                             <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"></path></svg>
                         </a>
@@ -606,12 +667,12 @@
                 `;
             } else if (sectionId === 'invest') {
                 offeringsCTAHTML = `
-                    <div class="mt-8 bg-teal-core/5 border border-teal-core/20 rounded-2xl p-6 text-center shadow-sm">
-                        <h4 class="text-md font-bold font-display text-teal-core mb-2">Navigate Platform Consolidation with Fractional AI Leadership</h4>
-                        <p class="text-xs sm:text-sm text-upshore-taupe mb-4 max-w-2xl mx-auto leading-relaxed">
-                            Manage semiconductor monopolies, developer platform acquisitions, and compute vendor dependencies. Secure part-time executive AI leadership, vendor oversight, and infrastructure governance without a full-time hire.
+                    <div class="mt-8 bg-midnight-blue/5 border border-midnight-blue/20 rounded-2xl p-6 text-center shadow-sm">
+                        <h4 class="text-md font-bold font-display text-midnight-blue mb-2">Navigate Inference Compute &amp; Neocloud Strategy with Fractional AI Leadership</h4>
+                        <p class="text-xs sm:text-sm text-vibrant-taupe mb-4 max-w-2xl mx-auto leading-relaxed">
+                            Structure compute leasing agreements, evaluate specialized inference accelerators, and avoid wrapper platform lock-in. Retain fractional CxO strategy, vendor coordination, and infrastructure governance without a full-time hire.
                         </p>
-                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-6 py-2.5 bg-teal-core hover:bg-teal-core/90 text-white rounded-lg text-xs font-semibold transition-all shadow font-display">
+                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-6 py-2.5 bg-midnight-blue hover:bg-midnight-blue/90 text-white rounded-lg text-xs font-semibold transition-all shadow font-display">
                             Retain Fractional AI Leadership
                             <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"></path></svg>
                         </a>
@@ -619,12 +680,12 @@
                 `;
             } else if (sectionId === 'policy') {
                 offeringsCTAHTML = `
-                    <div class="mt-8 bg-teal-core/5 border border-teal-core/20 rounded-2xl p-6 text-center shadow-sm">
-                        <h4 class="text-md font-bold font-display text-teal-core mb-2">Ensure Active Statutory Compliance with an AI Strategy Roadmap</h4>
-                        <p class="text-xs sm:text-sm text-upshore-taupe mb-4 max-w-2xl mx-auto leading-relaxed">
-                            EU AI Act Article 50 transparency and workplace monitoring scrutiny are now enforceable. Commission a 10–15 page executive roadmap covering statutory disclosures, bot governance, employee privacy reviews, and rollout sequencing.
+                    <div class="mt-8 bg-midnight-blue/5 border border-midnight-blue/20 rounded-2xl p-6 text-center shadow-sm">
+                        <h4 class="text-md font-bold font-display text-midnight-blue mb-2">Prepare for the Stop Rogue AI Act with an AI Strategy Roadmap</h4>
+                        <p class="text-xs sm:text-sm text-vibrant-taupe mb-4 max-w-2xl mx-auto leading-relaxed">
+                            Federal agent inventory rules, tamper-evident action logs, and kill-switch requirements are entering procurement mandates. Commission a 10–15 page executive roadmap covering compliance audits, risk controls, and rollout sequencing.
                         </p>
-                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-6 py-2.5 bg-teal-core hover:bg-teal-core/90 text-white rounded-lg text-xs font-semibold transition-all shadow font-display">
+                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-6 py-2.5 bg-midnight-blue hover:bg-midnight-blue/90 text-white rounded-lg text-xs font-semibold transition-all shadow font-display">
                             Request an AI Strategy Roadmap
                             <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"></path></svg>
                         </a>
@@ -632,12 +693,12 @@
                 `;
             } else if (sectionId === 'impact') {
                 offeringsCTAHTML = `
-                    <div class="mt-8 bg-teal-core/5 border border-teal-core/20 rounded-2xl p-6 text-center shadow-sm">
-                        <h4 class="text-md font-bold font-display text-teal-core mb-2">Measure 'Outcomes Per Token' with an AI Insights Dashboard</h4>
-                        <p class="text-xs sm:text-sm text-upshore-taupe mb-4 max-w-2xl mx-auto leading-relaxed">
-                            Track the transition of your knowledge workforce into agent supervisors. Build predictive decision support visualizing KPIs, prompt caching savings, anomaly detection, and hours saved across internal business units.
+                    <div class="mt-8 bg-midnight-blue/5 border border-midnight-blue/20 rounded-2xl p-6 text-center shadow-sm">
+                        <h4 class="text-md font-bold font-display text-midnight-blue mb-2">Track Workforce Reallocation &amp; ROI with an AI Insights Dashboard</h4>
+                        <p class="text-xs sm:text-sm text-vibrant-taupe mb-4 max-w-2xl mx-auto leading-relaxed">
+                            Monitor the evolution of early-career talent into Agent Operations Specialists. Build predictive, ROI-driven decision support visualizing hours saved, cost containment, tenant consumption limits, and error prevention.
                         </p>
-                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-6 py-2.5 bg-teal-core hover:bg-teal-core/90 text-white rounded-lg text-xs font-semibold transition-all shadow font-display">
+                        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-6 py-2.5 bg-midnight-blue hover:bg-midnight-blue/90 text-white rounded-lg text-xs font-semibold transition-all shadow font-display">
                             Deploy an AI Insights Dashboard
                             <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"></path></svg>
                         </a>
@@ -648,10 +709,11 @@
             // Assemble and inject into DOM
             viewport.innerHTML = `
                 <div class="border-b border-border-subtle pb-4 mb-6">
-                    <h3 class="text-xl font-bold font-display text-teal-core">${data.title}</h3>
-                    <p class="text-sm text-upshore-taupe mt-1">${data.subtitle}</p>
+                    <h3 class="text-xl font-bold font-display text-midnight-blue">${data.title}</h3>
+                    <p class="text-sm text-vibrant-taupe mt-1">${data.subtitle}</p>
                 </div>
                 ${highlightsHTML}
+                ${flowchartHTML}
                 ${chartHTML}
                 ${extraHTML}
                 ${offeringsCTAHTML}
@@ -665,16 +727,17 @@
                     data: {
                         labels: data.chart.items.map(item => item.name),
                         datasets: [{
-                            label: 'Commitment ($ Billions)',
+                            label: 'Financing ($ Millions)',
                             data: data.chart.items.map(item => item.value),
                             backgroundColor: [
-                                '#0292B7', /* Teal Core */
-                                '#1AC8DB', /* Turquoise */
-                                '#8C756A', /* Taupe */
-                                '#4E6B7A', /* Slate Teal */
-                                '#37A2BA'  /* Mid Teal */
+                                '#005D9E', /* Midnight Blue */
+                                '#FF4A3B', /* Cinnabar Accent */
+                                '#7B6867', /* Taupe */
+                                '#007BBF', /* Medium Blue */
+                                '#E6392E', /* Deep Coral */
+                                '#9E8D8C'  /* Light Taupe */
                             ],
-                            borderColor: '#0292B7',
+                            borderColor: '#005D9E',
                             borderWidth: 1,
                             borderRadius: 6
                         }]
@@ -688,25 +751,25 @@
                             tooltip: {
                                 callbacks: {
                                     label: function(context) {
-                                        return ` ${context.raw} Billion`;
+                                        return ` $${context.raw.toLocaleString()} Million`;
                                     }
                                 }
                             }
                         },
                         scales: {
                             x: {
-                                grid: { color: 'rgba(203, 211, 225, 0.5)' },
+                                grid: { color: 'rgba(231, 226, 217, 0.7)' },
                                 ticks: {
-                                    color: '#8C756A',
+                                    color: '#7B6867',
                                     font: { family: 'Fira Code', size: 11 },
-                                    callback: function(value) { return '$' + value + 'B'; }
+                                    callback: function(value) { return '$' + value + 'M'; }
                                 }
                             },
                             y: {
                                 grid: { display: false },
                                 ticks: {
-                                    color: '#1A2129',
-                                    font: { family: 'Raleway', weight: 'bold', size: 12 }
+                                    color: '#262121',
+                                    font: { family: 'Raleway', weight: 'bold', size: 11 }
                                 }
                             }
                         }
@@ -722,9 +785,9 @@
                 const btn = document.getElementById(`btn-sec-${t}`);
                 if (btn) {
                     if (t === secId) {
-                        btn.className = "px-6 py-3.5 text-teal-core hover:text-teal-core text-xs sm:text-sm font-bold font-display border-b-2 border-teal-core tab-transition flex items-center gap-2 whitespace-nowrap focus:outline-none";
+                        btn.className = "px-6 py-3.5 text-midnight-blue hover:text-midnight-blue text-xs sm:text-sm font-bold font-display border-b-2 border-midnight-blue tab-transition flex items-center gap-2 whitespace-nowrap focus:outline-none";
                     } else {
-                        btn.className = "px-6 py-3.5 text-upshore-taupe hover:text-teal-core text-xs sm:text-sm font-bold font-display border-b-2 border-transparent tab-transition flex items-center gap-2 whitespace-nowrap focus:outline-none";
+                        btn.className = "px-6 py-3.5 text-vibrant-taupe hover:text-midnight-blue text-xs sm:text-sm font-bold font-display border-b-2 border-transparent tab-transition flex items-center gap-2 whitespace-nowrap focus:outline-none";
                     }
                 }
             });
