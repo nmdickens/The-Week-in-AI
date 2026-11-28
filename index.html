@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Weekly Pulse - 20NOV26 | Nicole Dickens</title>
-  <meta name="description" content="AI Weekly Pulse (November 14–20, 2026): Record Capital Meets Market Reckoning as Autonomous Agents Enter Production and Regulation Tightens. Executive intelligence by Nicole Dickens.">
-  <meta property="og:title" content="AI Weekly Pulse - 20NOV26">
-  <meta property="og:description" content="Record Capital Meets Market Reckoning as Autonomous Agents Enter Production and Regulation Tightens. Strategic insights and operational guidance for executive leadership.">
+  <title>AI Weekly Pulse - 27NOV26 | Nicole Dickens</title>
+  <meta name="description" content="AI Weekly Pulse (November 21–27, 2026): Agentic Threats, Governance Reversals, and the Reliability Divide. Executive intelligence by Nicole Dickens.">
+  <meta property="og:title" content="AI Weekly Pulse - 27NOV26">
+  <meta property="og:description" content="Agentic Threats, Governance Reversals, and the Reliability Divide. Strategic insights and operational guidance for executive leadership.">
 
   <!-- Google Fonts: Roboto and Raleway -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,43 +19,39 @@
   <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- Tailwind Configuration with Leafy Green - FALL Palette -->
+  <!-- Tailwind Configuration with Prim and Dapper - FALL Palette -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            teal: {
-              DEFAULT: '#326076',
-              50: '#f0f6f9',
-              100: '#dceaf0',
-              200: '#bad6e2',
-              600: '#326076',
-              700: '#274e61',
-              800: '#1e3d4c',
-              900: '#152b36',
+            ebony: {
+              DEFAULT: '#1E2022',
+              dark: '#141517',
+              light: '#2d3034',
             },
-            olive: {
-              DEFAULT: '#C8BF6A',
-              light: '#ddd690',
-              dark: '#9e9442',
-              50: '#faf9f0',
-              100: '#f4f2dd',
+            carafe: {
+              DEFAULT: '#5E4748',
+              dark: '#483637',
+              light: '#785d5e',
+              50: '#f9f6f6',
+              100: '#f1ebeb',
             },
             taupe: {
-              DEFAULT: '#BDB6AD',
-              light: '#dcd8d2',
-              dark: '#9d9489',
-              50: '#f9f8f7',
-              100: '#eeebe7',
+              DEFAULT: '#C5BDB5',
+              light: '#ded8d2',
+              dark: '#a89f96',
+              50: '#faf8f6',
+              100: '#f3efec',
             },
-            coffee: {
-              DEFAULT: '#5F5950',
-              light: '#7e776c',
-              dark: '#454039',
-              900: '#2f2c27',
+            charcoal: {
+              DEFAULT: '#365164',
+              dark: '#273b49',
+              light: '#4b6e86',
+              50: '#f1f5f8',
+              100: '#e1ebf1',
             },
-            sand: '#F7F6F2',
+            sand: '#F7F6F3',
           },
           fontFamily: {
             sans: ['Roboto', 'sans-serif'],
@@ -69,65 +65,65 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #F7F6F2;
-      color: #2f2c27;
+      background-color: #F7F6F3;
+      color: #1E2022;
       margin: 0;
       padding: 0;
     }
     h1, h2, h3, h4, h5, h6, .font-heading {
       font-family: 'Raleway', sans-serif;
     }
-    .leafy-gradient {
-      background: linear-gradient(135deg, #1e3d4c 0%, #326076 55%, #274e61 100%);
+    .prim-gradient {
+      background: linear-gradient(135deg, #141517 0%, #1E2022 55%, #273b49 100%);
     }
     .tab-btn.active {
-      background-color: #326076;
+      background-color: #365164;
       color: #ffffff;
-      border-color: #326076;
-      box-shadow: 0 4px 6px -1px rgba(50, 96, 118, 0.25);
+      border-color: #365164;
+      box-shadow: 0 4px 6px -1px rgba(54, 81, 100, 0.28);
     }
     .tab-btn {
       transition: all 0.2s ease;
     }
     .metric-card {
       background: white;
-      border: 1px solid #dcd8d2;
+      border: 1px solid #ded8d2;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .metric-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 15px -3px rgba(95, 89, 80, 0.1);
+      box-shadow: 0 10px 15px -3px rgba(30, 32, 34, 0.08);
     }
     input[type=range] {
-      accent-color: #326076;
+      accent-color: #365164;
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased selection:bg-olive selection:text-coffee-900">
+<body class="min-h-screen flex flex-col antialiased selection:bg-taupe selection:text-ebony">
 
   <!-- TOP BRANDING & NAVIGATION HEADER -->
-  <header class="leafy-gradient text-white border-b-4 border-olive shadow-lg sticky top-0 z-50">
+  <header class="prim-gradient text-white border-b-4 border-carafe shadow-lg sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 sm:py-4">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <div>
-          <div class="flex items-center space-x-2 text-olive text-xs font-semibold uppercase tracking-wider">
-            <span class="inline-block w-2.5 h-2.5 rounded-full bg-olive animate-pulse"></span>
+          <div class="flex items-center space-x-2 text-taupe text-xs font-semibold uppercase tracking-wider">
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-taupe animate-pulse"></span>
             <span class="font-bold text-white">AI Weekly Pulse</span>
-            <span class="text-taupe-light">&bull; November 14 – November 20, 2026</span>
+            <span class="text-taupe-light">&bull; November 21 – November 27, 2026</span>
           </div>
           <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-0.5 font-heading">
             AI Weekly Pulse
           </h1>
           <p class="text-xs sm:text-sm text-taupe-light font-medium max-w-2xl">
-            Record Capital Meets Market Reckoning as Autonomous Agents Enter Production and Regulation Tightens
+            Agentic Threats, Governance Reversals, and the Reliability Divide
           </p>
         </div>
 
         <div class="flex flex-wrap items-center gap-2 sm:gap-3">
-          <a href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/9627a3219e97ef3cb68144f3e22cb4e8ef958859/AI%20Weekly%20Pulse%2020NOV26.pdf" 
+          <a href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/58d913a722816324dacdd0b01c7d6f04da2cc037/AI%20Weekly%20Pulse%2027NOV26.pdf" 
              target="_blank" 
              rel="noopener noreferrer" 
-             class="inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold bg-olive hover:bg-olive-light text-coffee-900 shadow transition">
+             class="inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold bg-taupe hover:bg-taupe-light text-ebony-dark shadow transition">
             <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
             </svg>
@@ -156,7 +152,7 @@
       <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         
         <div class="flex items-start space-x-3 sm:space-x-4">
-          <button id="playBtn" onclick="toggleAudio()" class="w-12 h-12 rounded-full bg-teal text-white flex items-center justify-center hover:bg-teal-700 focus:outline-none focus:ring-4 focus:ring-teal/30 shadow-md transition flex-shrink-0" aria-label="Play Audio Brief">
+          <button id="playBtn" onclick="toggleAudio()" class="w-12 h-12 rounded-full bg-charcoal text-white flex items-center justify-center hover:bg-charcoal-dark focus:outline-none focus:ring-4 focus:ring-charcoal/30 shadow-md transition flex-shrink-0" aria-label="Play Audio Brief">
             <svg id="playIcon" class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z"/>
             </svg>
@@ -167,16 +163,16 @@
           
           <div>
             <div class="flex items-center space-x-2">
-              <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-olive/25 text-coffee-900 border border-olive/40">
+              <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-carafe/15 text-carafe border border-carafe/30">
                 AUDIO EXECUTIVE BRIEF
               </span>
-              <span class="text-xs text-teal font-semibold" id="audioTitleDisplay">The True Cost of Autonomous AI Agents</span>
+              <span class="text-xs text-charcoal-dark font-semibold" id="audioTitleDisplay">Skyrocketing AI Valuations Face Fragile Reality</span>
             </div>
-            <h2 class="text-base sm:text-lg font-bold text-coffee-900 font-heading mt-0.5">
-              Listen: "Two-Bill" AI Pricing, Anthropic's $119.5B IPO &amp; Agent Liability in Production
+            <h2 class="text-base sm:text-lg font-bold text-ebony font-heading mt-0.5">
+              Listen: Agentic Cyber Intrusions, Nvidia's Governance Reversal &amp; The 85.8% Consistency Ceiling
             </h2>
-            <p class="text-xs text-coffee-light">
-              Synthesized audio briefing by Nicole Dickens unpacking variable agent credit burn, exploit_agent, and why enterprise oversight determines true AI ROI.
+            <p class="text-xs text-charcoal-light">
+              Synthesized audio briefing by Nicole Dickens examining why 75x private valuations and rapid AI agent rollouts collide with visual reliability gaps and 24-hour cyber patch mandates.
             </p>
           </div>
         </div>
@@ -184,25 +180,25 @@
         <!-- Audio scrubber & speed controls -->
         <div class="flex-grow max-w-xl w-full flex flex-col space-y-1.5">
           <audio id="briefingAudio" preload="metadata">
-            <source src="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/5b99e615a4f9707d6cff981fdd2567849d944765/The_True_Cost_of_Autonomous_AI_Agents.m4a" type="audio/mp4">
+            <source src="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/58d913a722816324dacdd0b01c7d6f04da2cc037/Skyrocketing_AI_Valuations_Face_Fragile_Reality.m4a" type="audio/mp4">
             Your browser does not support audio playback.
           </audio>
           
           <div class="flex items-center space-x-3">
-            <span id="currentTime" class="text-xs font-mono text-coffee font-medium w-10 text-right">0:00</span>
+            <span id="currentTime" class="text-xs font-mono text-ebony font-medium w-10 text-right">0:00</span>
             <input type="range" id="seekSlider" min="0" value="0" step="1" class="w-full h-1.5 bg-taupe-light rounded-lg cursor-pointer transition">
-            <span id="totalDuration" class="text-xs font-mono text-coffee font-medium w-10">--:--</span>
+            <span id="totalDuration" class="text-xs font-mono text-ebony font-medium w-10">--:--</span>
           </div>
 
-          <div class="flex items-center justify-between text-xs text-coffee pt-1">
+          <div class="flex items-center justify-between text-xs text-ebony pt-1">
             <div class="flex items-center space-x-1.5">
-              <span class="text-[11px] font-medium text-coffee-light">Speed:</span>
-              <button onclick="setSpeed(1.0, this)" class="speed-btn px-1.5 py-0.5 rounded text-[11px] font-semibold bg-teal text-white">1x</button>
-              <button onclick="setSpeed(1.25, this)" class="speed-btn px-1.5 py-0.5 rounded text-[11px] font-medium hover:bg-taupe-light text-coffee">1.25x</button>
-              <button onclick="setSpeed(1.5, this)" class="speed-btn px-1.5 py-0.5 rounded text-[11px] font-medium hover:bg-taupe-light text-coffee">1.5x</button>
-              <button onclick="setSpeed(2.0, this)" class="speed-btn px-1.5 py-0.5 rounded text-[11px] font-medium hover:bg-taupe-light text-coffee">2x</button>
+              <span class="text-[11px] font-medium text-charcoal">Speed:</span>
+              <button onclick="setSpeed(1.0, this)" class="speed-btn px-1.5 py-0.5 rounded text-[11px] font-semibold bg-charcoal text-white">1x</button>
+              <button onclick="setSpeed(1.25, this)" class="speed-btn px-1.5 py-0.5 rounded text-[11px] font-medium hover:bg-taupe-light text-ebony">1.25x</button>
+              <button onclick="setSpeed(1.5, this)" class="speed-btn px-1.5 py-0.5 rounded text-[11px] font-medium hover:bg-taupe-light text-ebony">1.5x</button>
+              <button onclick="setSpeed(2.0, this)" class="speed-btn px-1.5 py-0.5 rounded text-[11px] font-medium hover:bg-taupe-light text-ebony">2x</button>
             </div>
-            <a href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/5b99e615a4f9707d6cff981fdd2567849d944765/The_True_Cost_of_Autonomous_AI_Agents.m4a" download class="text-[11px] text-teal hover:underline font-semibold flex items-center">
+            <a href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/58d913a722816324dacdd0b01c7d6f04da2cc037/Skyrocketing_AI_Valuations_Face_Fragile_Reality.m4a" download class="text-[11px] text-charcoal hover:underline font-semibold flex items-center">
               <svg class="w-3.5 h-3.5 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
               Direct Audio Download
             </a>
@@ -214,20 +210,20 @@
 
     <!-- STRATEGIC EXECUTIVE SUMMARY HERO -->
     <section class="bg-white rounded-xl border border-taupe-light shadow-sm overflow-hidden mb-6">
-      <div class="p-6 sm:p-7 border-b border-taupe-light/70 bg-gradient-to-r from-teal-50/50 via-white to-olive-50/50">
+      <div class="p-6 sm:p-7 border-b border-taupe-light/70 bg-gradient-to-r from-charcoal-50/60 via-white to-carafe-50/40">
         <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-teal text-white">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-charcoal text-white">
             Executive Synthesis
           </span>
-          <span class="text-xs text-coffee-light font-medium">Produced by Nicole Dickens, Fractional AI Consultant &bull; As of Nov 20, 2026</span>
+          <span class="text-xs text-charcoal-dark font-medium">Produced by Nicole Dickens, Fractional AI Consultant &bull; November 21–27, 2026</span>
         </div>
         
-        <h2 class="text-xl sm:text-2xl font-bold text-coffee-900 tracking-tight font-heading">
-          Record IPO Scale Meets Market Reckoning as Autonomous Agents Enter Production
+        <h2 class="text-xl sm:text-2xl font-bold text-ebony tracking-tight font-heading">
+          The Reliability Divide: Confirmed Agentic Intrusions, Governance Reversals &amp; Valuation Scrutiny
         </h2>
         
-        <p class="mt-2.5 text-sm sm:text-base text-coffee leading-relaxed">
-          The week of November 14–20, 2026 delivered the largest initial public offering in financial history alongside a sharp public-market repricing of the AI infrastructure trade. <strong class="text-teal font-semibold">Anthropic closed a $93.5B Nasdaq IPO</strong> (with full greenshoe) plus a <strong class="text-teal font-semibold">$26.0B supplier placement</strong> for $119.5B in combined gross proceeds, yet shares slid toward their $83 offer price on November 20, dragging the Nasdaq down 4.5%. Simultaneously, <strong class="text-coffee-900">Nvidia posted $115.84B in Q3 revenue</strong> (+103% YoY) before falling ~12% amid reports of an SEC accounting inquiry. Beneath market turbulence, headline API prices fell across <strong class="text-teal font-semibold">Qwen4-Max, GPT-6.2 Astra &amp; Sol, MAI Code 2, and Gemini 4 Neon</strong>—just as Google confirmed the first fully autonomous cyber campaign (<code>exploit_agent</code>) and California's Attorney General sued OpenAI over sandbox escapes and 80+ alleged agent loss-of-control incidents.
+        <p class="mt-2.5 text-sm sm:text-base text-ebony/85 leading-relaxed">
+          The week of November 21–27 exposed a widening fault line between rapid AI milestones and the security, governance, and reliability frameworks required to contain them. Switzerland's NCSC confirmed its first <strong class="text-carafe font-semibold">AI-assisted intrusions (4 compromises in 5 incidents)</strong> urging 24-hour critical patching, while Google DeepMind's <strong class="text-charcoal font-semibold">Humanity's First Exam</strong> showed top models plunging from 96%–98% single-shot accuracy to an <strong>85.8% strict consistency average</strong> due to visual perception errors. Simultaneously, Nvidia reinstated <strong class="text-charcoal font-semibold">Jensen Huang</strong> 11 days after his exit (+31% stock jump) on the exact day BIS blacklisted <strong class="text-carafe font-semibold">Megaspeed International and an Alibaba Singapore unit</strong>, and capital markets placed multi-billion-dollar bets against Nvidia's software moat via Amazon's reported ~$7.5B Decart deal and Marlowe's $277M multi-silicon seed.
         </p>
       </div>
 
@@ -237,60 +233,60 @@
         <!-- Pillar 1 -->
         <div class="p-5 flex flex-col justify-between">
           <div>
-            <div class="text-xs font-bold text-teal uppercase tracking-wider">Historic Capital Event</div>
-            <div class="mt-1 text-2xl font-extrabold text-coffee-900 font-heading">$119.5B Gross</div>
-            <p class="mt-1.5 text-xs text-coffee-light leading-relaxed">
-              Anthropic closed a $93.5B Class A IPO ($83/share) + $26.0B Class N supplier placement, surpassing SpaceX's $85.7B June 2026 listing before retreating Day 2.
+            <div class="text-xs font-bold text-carafe uppercase tracking-wider">Confirmed Cyber Threats</div>
+            <div class="mt-1 text-2xl font-extrabold text-ebony font-heading">4 / 5 Compromised</div>
+            <p class="mt-1.5 text-xs text-ebony/70 leading-relaxed">
+              Swiss &amp; UK NCSC confirm AI agents are exploiting familiar flaws (weak passwords, unpatched servers), prompting 24-hour patch guidance.
             </p>
           </div>
-          <div class="mt-3 pt-3 border-t border-taupe-light/40 flex items-center justify-between text-[11px] text-coffee-light">
-            <span>Nasdaq: ANT</span>
-            <span class="text-teal font-semibold">Profit Scrutiny</span>
+          <div class="mt-3 pt-3 border-t border-taupe-light/40 flex items-center justify-between text-[11px] text-charcoal">
+            <span>Swiss NCSC (Nov 26)</span>
+            <span class="text-carafe font-bold">24-Hr Patch SLA</span>
           </div>
         </div>
 
         <!-- Pillar 2 -->
         <div class="p-5 flex flex-col justify-between">
           <div>
-            <div class="text-xs font-bold text-olive-dark uppercase tracking-wider">Nvidia &amp; Hardware</div>
-            <div class="mt-1 text-2xl font-extrabold text-coffee-900 font-heading">$115.84B Q3 Rev</div>
-            <p class="mt-1.5 text-xs text-coffee-light leading-relaxed">
-              Up 103% YoY ($130B Q4 guide assuming $0 China DC revenue), while Vera Rubin swept MLPerf v6.1 with up to 2x per-GPU gains over GB300.
+            <div class="text-xs font-bold text-charcoal uppercase tracking-wider">Reliability Ceiling</div>
+            <div class="mt-1 text-2xl font-extrabold text-ebony font-heading">85.8% Consistency</div>
+            <p class="mt-1.5 text-xs text-ebony/70 leading-relaxed">
+              DeepMind's Humanity's First Exam reveals top-5 models drop from 96%–98% pass@1; 73% of errors stem from basic visual perception.
             </p>
           </div>
-          <div class="mt-3 pt-3 border-t border-taupe-light/40 flex items-center justify-between text-[11px] text-coffee-light">
-            <span>&gt;10x tok/W Inference</span>
-            <span class="text-olive-dark font-semibold">SEC Inquiry Reports</span>
+          <div class="mt-3 pt-3 border-t border-taupe-light/40 flex items-center justify-between text-[11px] text-charcoal">
+            <span>Astra Leads (92.4%)</span>
+            <span class="text-charcoal font-bold">Human Gates Vital</span>
           </div>
         </div>
 
         <!-- Pillar 3 -->
         <div class="p-5 flex flex-col justify-between">
           <div>
-            <div class="text-xs font-bold text-coffee uppercase tracking-wider">Model Price Floor</div>
-            <div class="mt-1 text-2xl font-extrabold text-coffee-900 font-heading">$0.50 to $8 / 1M</div>
-            <p class="mt-1.5 text-xs text-coffee-light leading-relaxed">
-              MAI Code 2 ($0.50/$2.50 promo), Qwen4-Max ($1.50/$4.50), GPT-6.2 Sol ($2/$10), Gemini 4 Neon ($3/$15), and Astra ($8/$40) slash per-token rates.
+            <div class="text-xs font-bold text-carafe uppercase tracking-wider">Governance &amp; Blacklists</div>
+            <div class="mt-1 text-2xl font-extrabold text-ebony font-heading">Huang Reinstated</div>
+            <p class="mt-1.5 text-xs text-ebony/70 leading-relaxed">
+              Nvidia reverses exit Nov 22 (+31% Nov 23), while BIS blacklists Megaspeed &amp; Alibaba Apex and reports cite SE Asia server pauses.
             </p>
           </div>
-          <div class="mt-3 pt-3 border-t border-taupe-light/40 flex items-center justify-between text-[11px] text-coffee-light">
-            <span>"Two-Bill" Economics</span>
-            <span class="text-coffee font-semibold">Credit Metering</span>
+          <div class="mt-3 pt-3 border-t border-taupe-light/40 flex items-center justify-between text-[11px] text-charcoal">
+            <span>BIS 91 FR 76148</span>
+            <span class="text-carafe font-bold">Presumption of Denial</span>
           </div>
         </div>
 
         <!-- Pillar 4 -->
         <div class="p-5 flex flex-col justify-between">
           <div>
-            <div class="text-xs font-bold text-teal uppercase tracking-wider">Autonomous Risk &amp; Law</div>
-            <div class="mt-1 text-2xl font-extrabold text-coffee-900 font-heading">exploit_agent</div>
-            <p class="mt-1.5 text-xs text-coffee-light leading-relaxed">
-              First in-the-wild autonomous cyber campaign verified Nov 16, same day California AG sued OpenAI and BIS closed overseas AI chip loopholes.
+            <div class="text-xs font-bold text-charcoal uppercase tracking-wider">Non-Nvidia Capital Push</div>
+            <div class="mt-1 text-2xl font-extrabold text-ebony font-heading">~$7.5B / $30B Val</div>
+            <p class="mt-1.5 text-xs text-ebony/70 leading-relaxed">
+              Amazon buys Decart optimization tech &amp; team (~$7.5B reported), Marlowe raises $277M seed, and Sierra raises $1.75B Series F at 75x ARR.
             </p>
           </div>
-          <div class="mt-3 pt-3 border-t border-taupe-light/40 flex items-center justify-between text-[11px] text-coffee-light">
-            <span>Dec 2 &amp; Dec 9 EU Dates</span>
-            <span class="text-teal font-semibold">Strict Governance</span>
+          <div class="mt-3 pt-3 border-t border-taupe-light/40 flex items-center justify-between text-[11px] text-charcoal">
+            <span>SpaceX $44B GPU Debt</span>
+            <span class="text-charcoal font-bold">ANT -9.8% Post-IPO</span>
           </div>
         </div>
 
@@ -303,19 +299,19 @@
         <button onclick="switchTab('technology')" id="tab-technology" class="tab-btn active px-4 py-2.5 rounded-lg border border-transparent font-heading font-semibold text-xs sm:text-sm whitespace-nowrap">
           Technology
         </button>
-        <button onclick="switchTab('investment')" id="tab-investment" class="tab-btn px-4 py-2.5 rounded-lg border border-taupe-light bg-white text-coffee hover:bg-taupe-50 font-heading font-semibold text-xs sm:text-sm whitespace-nowrap">
+        <button onclick="switchTab('investment')" id="tab-investment" class="tab-btn px-4 py-2.5 rounded-lg border border-taupe-light bg-white text-ebony hover:bg-taupe-50 font-heading font-semibold text-xs sm:text-sm whitespace-nowrap">
           Investment
         </button>
-        <button onclick="switchTab('policy')" id="tab-policy" class="tab-btn px-4 py-2.5 rounded-lg border border-taupe-light bg-white text-coffee hover:bg-taupe-50 font-heading font-semibold text-xs sm:text-sm whitespace-nowrap">
+        <button onclick="switchTab('policy')" id="tab-policy" class="tab-btn px-4 py-2.5 rounded-lg border border-taupe-light bg-white text-ebony hover:bg-taupe-50 font-heading font-semibold text-xs sm:text-sm whitespace-nowrap">
           Policy
         </button>
-        <button onclick="switchTab('impact')" id="tab-impact" class="tab-btn px-4 py-2.5 rounded-lg border border-taupe-light bg-white text-coffee hover:bg-taupe-50 font-heading font-semibold text-xs sm:text-sm whitespace-nowrap">
+        <button onclick="switchTab('impact')" id="tab-impact" class="tab-btn px-4 py-2.5 rounded-lg border border-taupe-light bg-white text-ebony hover:bg-taupe-50 font-heading font-semibold text-xs sm:text-sm whitespace-nowrap">
           Impact
         </button>
-        <button onclick="switchTab('auditor')" id="tab-auditor" class="tab-btn px-4 py-2.5 rounded-lg border border-olive bg-olive/15 text-coffee-900 hover:bg-olive/30 font-heading font-semibold text-xs sm:text-sm whitespace-nowrap">
-          "Two-Bill" Agent Cost Auditor
+        <button onclick="switchTab('auditor')" id="tab-auditor" class="tab-btn px-4 py-2.5 rounded-lg border border-carafe bg-carafe/10 text-ebony hover:bg-carafe/20 font-heading font-semibold text-xs sm:text-sm whitespace-nowrap">
+          Reliability &amp; Cyber Auditor
         </button>
-        <button onclick="switchTab('advisory')" id="tab-advisory" class="tab-btn px-4 py-2.5 rounded-lg border border-taupe-light bg-white text-coffee hover:bg-taupe-50 font-heading font-semibold text-xs sm:text-sm whitespace-nowrap">
+        <button onclick="switchTab('advisory')" id="tab-advisory" class="tab-btn px-4 py-2.5 rounded-lg border border-taupe-light bg-white text-ebony hover:bg-taupe-50 font-heading font-semibold text-xs sm:text-sm whitespace-nowrap">
           Advisory &amp; Offerings
         </button>
       </nav>
@@ -324,116 +320,122 @@
     <!-- ================= TAB CONTENT 1: TECHNOLOGY ================= -->
     <div id="content-technology" class="tab-content space-y-6">
       
-      <!-- Feature Card: 72-Hour Model Specialization Sprint -->
+      <!-- Feature Card: Reliability Divide & Formal Math -->
       <div class="bg-white rounded-xl border border-taupe-light p-6 shadow-sm">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-4">
           <div>
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-teal text-white">
-              INFERENCE ECONOMICS &amp; SPECIALIZATION
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-carafe text-white">
+              BENCHMARKS &amp; FORMAL VERIFICATION
             </span>
-            <h3 class="text-xl font-bold text-coffee-900 font-heading mt-1">
-              72-Hour Release Wave: Gemini 4 Neon, GPT-6.2 Sol/Astra, MAI Code 2 &amp; Qwen4-Max
+            <h3 class="text-xl font-bold text-ebony font-heading mt-1">
+              Humanity's First Exam Visual Gaps vs. Lean 4 Mathematical Proofs
             </h3>
           </div>
-          <div class="text-xs font-mono bg-taupe-50 px-3 py-1.5 rounded-md border border-taupe-light text-teal font-semibold">
-            Trend: Reasoning Tokens &amp; Agent Loops Drive Spend
+          <div class="text-xs font-mono bg-taupe-50 px-3 py-1.5 rounded-md border border-taupe-light text-charcoal font-semibold">
+            73% of HFE Errors Are Visual Perception
           </div>
         </div>
 
-        <p class="text-sm text-coffee leading-relaxed mb-4">
-          Within 72 hours across November 16–18, four hyperscale providers shipped specialized models prioritizing sparse activation, lower per-token rates, and task routing. Yet independent benchmarks exposed sharp trade-offs behind vendor claims—including elevated hallucination scores under max-effort testing on OpenAI's new flagships and unverified Microsoft coding claims.
+        <p class="text-sm text-ebony/90 leading-relaxed mb-4">
+          Technical milestones revealed a striking paradox: AI systems verified a 17-million-line formal proof of the Riemann Hypothesis in Lean 4, yet Google DeepMind's November 24 <strong>Humanity's First Exam (HFE)</strong> proved frontier models still stumble on elementary counting, spatial layouts, and cross-variant consistency.
         </p>
 
-        <!-- Benchmark Comparison Table -->
+        <!-- Technical Releases & Benchmarks Table -->
         <div class="overflow-x-auto rounded-lg border border-taupe-light mb-4">
           <table class="min-w-full text-xs text-left">
-            <thead class="bg-taupe-50 text-coffee-900 font-bold border-b border-taupe-light">
+            <thead class="bg-taupe-50 text-ebony font-bold border-b border-taupe-light">
               <tr>
-                <th class="px-4 py-3">Model (Release Date)</th>
-                <th class="px-4 py-3">Architecture &amp; Context</th>
-                <th class="px-4 py-3">API Price (In / Out per 1M)</th>
-                <th class="px-4 py-3">Verified Benchmarks &amp; Caveats</th>
+                <th class="px-4 py-3">Release / Benchmark (Date)</th>
+                <th class="px-4 py-3">Core Demonstrated Result</th>
+                <th class="px-4 py-3">Verification / Readiness</th>
+                <th class="px-4 py-3">Critical Caveat or Limitation</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-taupe-light bg-white text-coffee">
-              <tr class="bg-teal-50/40 font-medium">
-                <td class="px-4 py-2.5 font-bold text-teal">Google Gemini 4 Neon (Nov 18)</td>
-                <td class="px-4 py-2.5">Paid-only, 4 thinking levels, 1,048,576 context</td>
-                <td class="px-4 py-2.5 font-mono text-teal font-bold">$3.00 / $15.00 <span class="text-[10px] text-coffee-light font-normal">(thinking billed at $15)</span></td>
-                <td class="px-4 py-2.5">#1 AA Coding Index (58.6), #1 Zapier AutomationBench (56.3%), #4 BenchLM (86.3/100), 95.2% GraphWalks (256K–1M), 110 tok/s.</td>
+            <tbody class="divide-y divide-taupe-light bg-white text-ebony/85">
+              <tr class="bg-charcoal-50/50 font-medium">
+                <td class="px-4 py-2.5 font-bold text-charcoal">DeepMind Humanity's First Exam (Nov 24)</td>
+                <td class="px-4 py-2.5">Top-5 avg: 96%–98% pass@1 &rarr; <strong>85.8% strict pass⁴</strong> (Astra 92.4%, Sol 86.9%, Neon 85.8%)</td>
+                <td class="px-4 py-2.5">Kaggle public benchmark (544 prompts / 136 families)</td>
+                <td class="px-4 py-2.5 text-carafe font-semibold">Flash-Lite drops 68.7% &rarr; 18.6%; 73% errors visual (31% spatial, 23% counting); extra reasoning barely helps vision (69.9% vs 66.8%).</td>
               </tr>
               <tr>
-                <td class="px-4 py-2.5 font-bold text-coffee-900">Microsoft MAI Code 2 (Nov 17)</td>
-                <td class="px-4 py-2.5">Sparse MoE (2.8T / 77B active), ~50T train tokens, 1.05M</td>
-                <td class="px-4 py-2.5 font-mono">$0.50 / $2.50 promo <span class="text-[10px] text-coffee-light">($1/$5 May 2027)</span></td>
-                <td class="px-4 py-2.5">Part of 7 MAI models at Ignite; vendor claims 96% of Opus 5.5 at 5% cost lack independent validation; extra reasoning raises latency.</td>
+                <td class="px-4 py-2.5 font-bold text-ebony">Claude-Assisted Riemann Proof (Nov 21 &amp; 26)</td>
+                <td class="px-4 py-2.5">Formal Lean 4 proof of RH &amp; GRH (~17M lines; compact 76k lines verified Nov 26)</td>
+                <td class="px-4 py-2.5">Machine-verified by Lean FRO, Mathlib, nanoda &amp; MIT</td>
+                <td class="px-4 py-2.5">Lacks human-readable exposition; heavy human guidance; Clay Prize requires publication + &ge;2 years review.</td>
               </tr>
               <tr>
-                <td class="px-4 py-2.5 font-bold text-coffee-900">OpenAI GPT-6.2 Sol &amp; Astra (Nov 17)</td>
-                <td class="px-4 py-2.5">Frontier reasoning &amp; everyday tiers</td>
-                <td class="px-4 py-2.5 font-mono">Sol: $2/$10 &bull; Astra: $8/$40 <span class="text-[10px] text-coffee-light">(-20%)</span></td>
-                <td class="px-4 py-2.5">Astra #1 AA Robotics, but flat on Coding Index; Sol -3 pts; AA-Omniscience max-effort hallucinations hit 59% (Astra) &amp; 55% (Sol); &gt;272K doubles input.</td>
+                <td class="px-4 py-2.5 font-bold text-ebony">Anthropic &amp; OpenAI VP &ne; VNP (Nov 23)</td>
+                <td class="px-4 py-2.5">Competing AI-authored proofs of Valiant's 1979 arithmetic complexity conjecture</td>
+                <td class="px-4 py-2.5">Automated Lean 4 checks only; no human review</td>
+                <td class="px-4 py-2.5">Anthropic's <code>Statement.lean</code> self-defined rather than imported from vetted Mathlib; does not settle Boolean P vs. NP.</td>
               </tr>
               <tr>
-                <td class="px-4 py-2.5 font-bold text-coffee-900">Alibaba Qwen4-Max (Nov 16)</td>
-                <td class="px-4 py-2.5">Closed sparse MoE (2.4T / 71B active), 1M context</td>
-                <td class="px-4 py-2.5 font-mono">$1.50 / $4.50 <span class="text-[10px] text-coffee-light">($0.075 cached)</span></td>
-                <td class="px-4 py-2.5">25% fewer active params than Qwen3.8-Max; BenchLM #17 (74.5/100); slower 56 tok/s due to internal self-checking; open weights pending.</td>
+                <td class="px-4 py-2.5 font-bold text-ebony">Cisco &amp; OpenAI Shirudo (Nov 23)</td>
+                <td class="px-4 py-2.5">Open-source eBPF/bytecode runtime for TPM 2.0-verified Linux exploit shields</td>
+                <td class="px-4 py-2.5 font-mono text-carafe font-bold">Pre-release (BSD 2-Clause); non-production</td>
+                <td class="px-4 py-2.5">Blocked Java4Shell on Elasticsearch in Java bytecode (not eBPF); requires patched Linux kernel; exploratory NGINX shield broke valid traffic.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2.5 font-bold text-ebony">DeepL Aure v2 Speech Model (Nov 26)</td>
+                <td class="px-4 py-2.5">RL speech-to-speech translation: 50% lower median delay vs v1; -32% EN-JA errors vs Gemini 3.5</td>
+                <td class="px-4 py-2.5">GA in DeepL Voice (6 languages)</td>
+                <td class="px-4 py-2.5">Internal 1-min clip tests only; dropped Italian, Portuguese &amp; auto-language detection compared to v1.</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-coffee">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-ebony">
           <div class="p-3.5 bg-taupe-50 rounded-lg border border-taupe-light">
-            <strong class="text-coffee-900 block font-heading mb-1 text-sm">Nvidia Vera Rubin NVL72 Sweeps MLPerf v6.1:</strong>
-            On November 16, Nvidia's Vera Rubin NVL72 swept all seven MLPerf Training v6.1 benchmarks—delivering up to 2x per-GPU gains over GB300 NVL72 and scaling to 1,024 GPUs on DeepSeek-V3 671B at ~97% efficiency (cutting training from 16 to 4 minutes). On MLPerf Endpoints v1.0 (provisional), a 32-GPU Vera Rubin rack delivered 41,414 tok/s (&gt;10x throughput/watt vs GB300), though no rival chipmakers submitted entries.
+            <strong class="text-ebony block font-heading mb-1 text-sm">Parallel Model Releases (Nov 23–24):</strong>
+            Alibaba added real-time <code>qwen-audio-3.1-live</code>, Z.AI shipped the open-weight ~700B MoE coding model <strong>GLM-5.4</strong>, and S1 and Reax debuted <strong>S1 Fast, S1 Pro, and REAX 1</strong>—expanding specialized options outside closed U.S. APIs.
           </div>
           <div class="p-3.5 bg-taupe-50 rounded-lg border border-taupe-light">
-            <strong class="text-coffee-900 block font-heading mb-1 text-sm">Scientific Reality Check &amp; Genie 4:</strong>
-            Google DeepMind published the model card for <strong>Genie 4</strong> (real-time 720p/24fps interactive world simulator built on Gemini Omni Flash). Meanwhile, an OpenAI study of 580,186 messages from 1,819 scientists found 98% expect AI to accelerate breakthroughs, yet over half of usage was reading/writing and only 6.4% reported no bottlenecks—with physical wet-lab synthesis still gating discovery.
+            <strong class="text-ebony block font-heading mb-1 text-sm">Jakub Pachocki's Log-Perplexity Governance Proposal:</strong>
+            On Nov 22, OpenAI Chief Scientist Jakub Pachocki proposed shared safety limits tied to log-perplexity loss thresholds (projecting transformative leaps near 0.68–0.70 vs GPT-4 ~0.91 and cyber/math &lt;0.8) alongside next-gen CoT monitors—while noting 4 caveats including blindness to post-pretraining reasoning.
           </div>
         </div>
       </div>
 
-      <!-- Feature Card: Autonomous Cyber & Infrastructure Fragility -->
+      <!-- Feature Card: Claude Ship & Duplex Calling for SMB Workflows -->
       <div class="bg-white rounded-xl border border-taupe-light p-6 shadow-sm">
         <div class="flex items-center space-x-2 mb-2">
-          <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-olive text-coffee-900">
-            AUTONOMOUS CYBER THREATS
+          <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-charcoal text-white">
+            SMB WORKFLOW DEPLOYMENTS
           </span>
-          <span class="text-xs text-coffee-light font-medium">In-the-Wild Exploitation &bull; Runtime Patching</span>
+          <span class="text-xs text-charcoal-dark font-medium">Anthropic Claude Ship &bull; Google Gemini Duplex</span>
         </div>
-        <h3 class="text-xl font-bold text-coffee-900 font-heading mb-2">
-          exploit_agent &amp; ARTEX: Autonomous Vulnerability Exploitation Arrives in the Wild
+        <h3 class="text-xl font-bold text-ebony font-heading mb-2">
+          Claude Ship for GitHub &amp; Gemini Duplex Voice Agents Hit Main Street Channels
         </h3>
-        <p class="text-sm text-coffee leading-relaxed mb-4">
-          On November 16, Google's Threat Intelligence Group and Mandiant confirmed the first fully automated, in-the-wild vulnerability discovery and exploitation framework—<strong>exploit_agent</strong>—operated by Russian-speaking actors targeting French media, entertainment, and education organizations without human intervention. The same day, the FBI warned of surging abuse of the open-source <strong>ARTEX</strong> pentesting framework.
+        <p class="text-sm text-ebony/90 leading-relaxed mb-4">
+          On November 23, Anthropic launched <strong>Claude Ship</strong> for GitHub-hosted repositories (excluding GitLab and Bitbucket), combining generally available <strong>Code Review</strong> with beta <strong>PR Steward</strong>, <strong>Claude Approvals</strong>, and a <code>/ship</code> CLI command. Meanwhile, Google detailed Gemini-powered <strong>Duplex phone calling</strong> inside Gemini Tasks for adult U.S. users to call verified businesses for quotes and bookings.
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
           <div class="p-4 bg-taupe-50 rounded-lg border border-taupe-light">
-            <span class="text-teal font-bold text-sm block mb-1">Optimizely Supply-Chain Hit</span>
-            <p class="text-coffee-light">Attackers injected malicious JavaScript into Optimizely Web Experimentation projects (Nov 16–17), hitting 178 organizations—68 of which lacked a basic Content Security Policy.</p>
+            <span class="text-charcoal font-bold text-sm block mb-1">Claude Ship Metering Traps</span>
+            <p class="text-ebony/75 leading-relaxed">Requires Claude Team or Enterprise seats plus separate token-billed usage credits. Admins can cap Code Review &amp; PR Steward spend, but <strong>Claude Approvals still bills classifier &amp; triggered-review charges even in observe mode</strong>.</p>
           </div>
           <div class="p-4 bg-taupe-50 rounded-lg border border-taupe-light">
-            <span class="text-teal font-bold text-sm block mb-1">Critical Runtime Flaws</span>
-            <p class="text-coffee-light">Defenders rushed to patch <strong>Java4Shell (CVE-2026-114938)</strong>, 18 PHP flaws, and recent PHP2Shell / Node.js Brotli bugs as automated scanners probe web runtimes in minutes.</p>
+            <span class="text-carafe font-bold text-sm block mb-1">Hard Compliance Exclusions</span>
+            <p class="text-ebony/75 leading-relaxed">Claude Ship is <strong>unavailable for Zero Data Retention (ZDR), HIPAA, or CMEK</strong> at launch—meaning healthcare and regulated fintech SMBs must strictly exclude protected repositories.</p>
           </div>
           <div class="p-4 bg-taupe-50 rounded-lg border border-taupe-light">
-            <span class="text-teal font-bold text-sm block mb-1">Legacy Ground-Stop Lesson</span>
-            <p class="text-coffee-light">Officials traced the Nov 13–15 U.S. aviation ground stop ($345M airline cost) not to AI cyber warfare, but to a botched L3Harris copper-to-fiber router upgrade flooding FAA systems.</p>
+            <span class="text-charcoal font-bold text-sm block mb-1">Gemini Duplex State Rules</span>
+            <p class="text-ebony/75 leading-relaxed">Mandatory AI call disclosure; payments/financial data barred. Excluded in LA, IN, MN, and MT (NE Sunday/holiday calls restricted 1–9 p.m.). Businesses can opt out via Profile settings or live by saying <em>"Please stop calling my business."</em></p>
           </div>
         </div>
       </div>
 
       <!-- Strategic Call to Action for Tech -->
-      <div class="p-5 rounded-xl bg-teal-50 border border-teal-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="p-5 rounded-xl bg-charcoal-50 border border-charcoal/20 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <h4 class="text-sm font-bold text-teal-800 font-heading">Stop paying flagship rates for routine loops—and secure your agent boundaries.</h4>
-          <p class="text-xs text-coffee">Architect multi-model routing to low-cost workhorses like Gemini 4 Neon or GPT-6.2 Sol while gating autonomous agents inside audited sandboxes.</p>
+          <h4 class="text-sm font-bold text-charcoal-dark font-heading">Is your automation trusting 85.8% probabilistic consistency on zero-error workflows?</h4>
+          <p class="text-xs text-ebony/80">Audit your AI architecture for visual reliability gaps, ZDR/HIPAA exclusions, and variable token caps before scaling agentic code or invoice tools.</p>
         </div>
-        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-teal hover:bg-teal-700 text-white text-xs font-semibold whitespace-nowrap shadow transition">
+        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-charcoal hover:bg-charcoal-dark text-white text-xs font-semibold whitespace-nowrap shadow transition">
           Commission an AI Strategy Roadmap &rarr;
         </a>
       </div>
@@ -447,25 +449,25 @@
       <div class="bg-white rounded-xl border border-taupe-light p-6 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
           <div>
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-olive text-coffee-900">
-              CAPITAL MARKETS &amp; DEAL FLOW
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-carafe text-white">
+              SILICON LEVERAGE &amp; AGENT VALUATIONS
             </span>
-            <h3 class="text-xl font-bold text-coffee-900 font-heading mt-1">
-              Anthropic's Historic $119.5B Raise, Nvidia Buybacks &amp; Market Repricing (Nov 14–20, 2026)
+            <h3 class="text-xl font-bold text-ebony font-heading mt-1">
+              Capital Flows Challenge Nvidia's Software Moat Amid Structured GPU Debt (Nov 21–27, 2026)
             </h3>
           </div>
           <div class="flex items-center space-x-2">
-            <button onclick="setChartMode('headline')" id="chartBtnHeadline" class="px-3 py-1.5 rounded text-xs font-semibold bg-teal text-white shadow-sm transition">
-              Headline Capital Deals ($B)
+            <button onclick="setChartMode('venture')" id="chartBtnVenture" class="px-3 py-1.5 rounded text-xs font-semibold bg-charcoal text-white shadow-sm transition">
+              VC, M&amp;A &amp; Strategic Stakes ($M)
             </button>
-            <button onclick="setChartMode('suppliers')" id="chartBtnSuppliers" class="px-3 py-1.5 rounded text-xs font-semibold bg-taupe-50 text-coffee border border-taupe-light hover:bg-taupe-100 transition">
-              Supplier Placement &amp; VC ($M)
+            <button onclick="setChartMode('macro')" id="chartBtnMacro" class="px-3 py-1.5 rounded text-xs font-semibold bg-taupe-50 text-ebony border border-taupe-light hover:bg-taupe-100 transition">
+              GPU Debt &amp; Valuations ($B)
             </button>
           </div>
         </div>
 
-        <p class="text-sm text-coffee leading-relaxed mb-5">
-          Public equity markets absorbed the largest IPO in history alongside an intense rotation away from hardware suppliers toward enterprise beneficiaries. By mid-afternoon November 20, the Nasdaq fell 4.5% (erasing 2026 gains), Micron, CoreWeave, and AMD fell over 10%, and Singapore data-center operator DayOne paused its planned $5B US IPO.
+        <p class="text-sm text-ebony/90 leading-relaxed mb-5">
+          Hyperscalers and venture firms paid steep premiums to erode Nvidia's CUDA-anchored inference dominance—led by Amazon's reported ~$7.5B Decart optimization deal and Marlowe's $277M multi-silicon seed—while enterprise agent vendor Sierra targeted a $30B valuation (75x unaudited ARR) and SpaceX priced ~$44B in off-balance-sheet Rubin GPU debt.
         </p>
 
         <!-- Chart Container -->
@@ -476,69 +478,69 @@
         <!-- Deal Breakdown Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
           
-          <div class="p-4 rounded-lg border-2 border-teal bg-teal-50/30">
+          <div class="p-4 rounded-lg border-2 border-charcoal bg-charcoal-50/30">
             <div class="flex items-center justify-between mb-1">
-              <span class="font-bold text-coffee-900 text-sm">Anthropic IPO (Nasdaq: ANT)</span>
-              <span class="px-2 py-0.5 rounded bg-teal text-white font-mono font-bold">$93.5B + $26.0B</span>
+              <span class="font-bold text-ebony text-sm">Amazon / Decart (DOS)</span>
+              <span class="px-2 py-0.5 rounded bg-charcoal text-white font-mono font-bold">~$7,500M Reported</span>
             </div>
-            <div class="text-teal font-semibold text-[11px] mb-2">Priced $83/sh &bull; $1.11T Basic / $1.5T Diluted</div>
-            <p class="text-coffee leading-relaxed">
-              Upsized from $70–$78 to $83/share (980M shares + 147M greenshoe = $93.5B Class A IPO) plus $26.0B Class N supplier placement ($119.5B combined). Opened Nov 19 at $111.50 (+34.3%), closed at $97.17, and pulled back to $87.20 (+5.1%) on Nov 20 morning against $900B compute commitments.
+            <div class="text-charcoal font-semibold text-[11px] mb-2">IP &amp; Talent Deal (Nov 23) &bull; Undisclosed by Amazon</div>
+            <p class="text-ebony/80 leading-relaxed">
+              Bloomberg reported ~$7.5B (5-year retention installments per Israeli press) for Decart's optimization stack and engineering team to boost AWS Trainium ahead of late-2027 external sales. Excludes Oasis/Lucy world/video models; subject to regulatory clearance.
             </p>
           </div>
 
           <div class="p-4 rounded-lg border border-taupe-light bg-taupe-50/60">
             <div class="flex items-center justify-between mb-1">
-              <span class="font-bold text-coffee-900 text-sm">Class N Supplier Placement</span>
-              <span class="px-2 py-0.5 rounded bg-olive text-coffee-900 font-mono font-bold">$26.0B Total</span>
+              <span class="font-bold text-ebony text-sm">Sierra (Series F)</span>
+              <span class="px-2 py-0.5 rounded bg-carafe text-white font-mono font-bold">$1,750M</span>
             </div>
-            <div class="text-coffee font-medium text-[11px] mb-2">313.25M Non-Voting Shares at $83</div>
-            <p class="text-coffee leading-relaxed">
-              Pre-pricing filings allocated ~$10B each to <strong>Google</strong> and <strong>Nvidia</strong>, $2.5B to <strong>AMD</strong>, $1.0B each to <strong>Broadcom, Micron, and Microsoft</strong>, and $500M to <strong>TSMC</strong>—intensifying analyst scrutiny over circular ecosystem financing.
+            <div class="text-carafe font-semibold text-[11px] mb-2">$30B Valuation (75x Unaudited $400M ARR)</div>
+            <p class="text-ebony/80 leading-relaxed">
+              Led by Greenoaks &amp; Lightspeed (announced Nov 23), nearly doubling its $15.8B valuation 203 days prior. Serves ~half of Fortune 50 firms, though outcome-based pricing across 15+ orchestrated models creates gross margin vulnerability.
             </p>
           </div>
 
           <div class="p-4 rounded-lg border border-taupe-light bg-taupe-50/60">
             <div class="flex items-center justify-between mb-1">
-              <span class="font-bold text-coffee-900 text-sm">Nvidia Q3 FY27 &amp; Buyback</span>
-              <span class="px-2 py-0.5 rounded bg-teal text-white font-mono font-bold">$150B Auth</span>
+              <span class="font-bold text-ebony text-sm">Marlowe (Seed Round)</span>
+              <span class="px-2 py-0.5 rounded bg-charcoal text-white font-mono font-bold">$277M</span>
             </div>
-            <div class="text-coffee font-medium text-[11px] mb-2">$115.84B Rev (+103% YoY) &bull; $43.78B FCF</div>
-            <p class="text-coffee leading-relaxed">
-              Returned $28.1B in Q3 and authorized a $150B repurchase program under interim CEO Colette Kress ($20B debut Vera Rubin shipments). Yet AR climbed to $81.0B, Q4 gross margins narrow to 71%–72%, and shares fell ~12% Nov 20 amid SEC accounting inquiry reports.
+            <div class="text-charcoal font-medium text-[11px] mb-2">$1.15B Reported Val &bull; Accel-Led (Nov 23)</div>
+            <p class="text-ebony/80 leading-relaxed">
+              Six-month-old multi-silicon inference startup building Etched ASIC (Dec 2026) and AMD Helios (Q2 2027) centers claiming 2x–3x efficiency gains—though first site is not live, claims are untested externally, and Etched lacks confirmed volume output.
             </p>
           </div>
 
           <div class="p-4 rounded-lg border border-taupe-light bg-taupe-50/60">
             <div class="flex items-center justify-between mb-1">
-              <span class="font-bold text-coffee-900 text-sm">Payhawk Series C</span>
-              <span class="px-2 py-0.5 rounded bg-olive text-coffee-900 font-mono font-bold">$280M</span>
+              <span class="font-bold text-ebony text-sm">SpaceX GPU Lease Debt</span>
+              <span class="px-2 py-0.5 rounded bg-ebony text-white font-mono font-bold">~$44.0B Debt</span>
             </div>
-            <div class="text-teal font-medium text-[11px] mb-2">Led by Goldman Sachs &bull; $2.0B (£1.5B) Val</div>
-            <p class="text-coffee leading-relaxed">
-              Closed Nov 19 for London-based enterprise finance-agent platform Payhawk, where 77% of enterprise customers actively use AI agents daily—illustrating investor appetite for applied workflow ROI.
+            <div class="text-ebony/75 font-medium text-[11px] mb-2">Apollo Atlas SP (BlackRock, GSAM, KKR)</div>
+            <p class="text-ebony/80 leading-relaxed">
+              Multi-tranche off-balance-sheet GPU lease debt priced Nov 20 to finance ~$47.3B of Nvidia Rubin GPUs for H1 2027 delivery—signaling heavy structured credit reliance behind hyperscale infrastructure buildouts.
             </p>
           </div>
 
           <div class="p-4 rounded-lg border border-taupe-light bg-taupe-50/60">
             <div class="flex items-center justify-between mb-1">
-              <span class="font-bold text-coffee-900 text-sm">DayOne IPO Paused</span>
-              <span class="px-2 py-0.5 rounded bg-coffee text-white font-mono font-bold">Up to $5.0B</span>
+              <span class="font-bold text-ebony text-sm">Anthropic Post-IPO Check</span>
+              <span class="px-2 py-0.5 rounded bg-carafe text-white font-mono font-bold">$87.64 (-9.8%)</span>
             </div>
-            <div class="text-coffee font-medium text-[11px] mb-2">Singapore AI Data-Center Operator</div>
-            <p class="text-coffee leading-relaxed">
-              Paused its planned Q4 US equity offering of up to $5B explicitly citing AI infrastructure valuation volatility and rising 5% 10-year Treasury borrowing costs.
+            <div class="text-carafe font-medium text-[11px] mb-2">Off $97.17 Debut Close &amp; $111.50 Open</div>
+            <p class="text-ebony/80 leading-relaxed">
+              Following its $83 IPO ($1.77T fully diluted at debut close + $26B placement including TSMC's $500M for ~0.03%), ANT slipped to $87.64 on Nov 23 (-21.4% from open, +5.6% vs offer). AI captured 47% (241 of 513) of tracked Nov venture rounds ($49.9B total).
             </p>
           </div>
 
-          <div class="p-4 rounded-lg border border-olive bg-olive-50/40">
+          <div class="p-4 rounded-lg border border-carafe bg-carafe-50/40">
             <div class="flex items-center justify-between mb-1">
-              <span class="font-bold text-coffee-900 text-sm">Macro Capital Conditions</span>
-              <span class="px-2 py-0.5 rounded bg-olive-dark text-white font-mono font-bold">5.0% Yields</span>
+              <span class="font-bold text-ebony text-sm">Decart &amp; TSMC Context</span>
+              <span class="px-2 py-0.5 rounded bg-carafe text-white font-mono font-bold">$300M / $500M</span>
             </div>
-            <div class="text-olive-dark font-bold text-[11px] mb-2">NCCI Economic Snapshot (Nov 2026)</div>
-            <p class="text-coffee leading-relaxed">
-              AI CapEx contributed ~half of US 2026 GDP growth (1.5pp of 3.4%), while 10-year Treasury yields climbed from 4% to 5% and incoming TX/GA governors moved to halt data-center tax incentives.
+            <div class="text-carafe font-bold text-[11px] mb-2">Prior Financing &amp; Foundry Resilience</div>
+            <p class="text-ebony/80 leading-relaxed">
+              Decart separately raised $300M in May 2026 at a ~$4B whole-company valuation (with Nvidia participating). Meanwhile, TSMC confirmed its $500M Anthropic stake and publicly dismissed broader AI market correction fears on Nov 24.
             </p>
           </div>
 
@@ -546,12 +548,12 @@
       </div>
 
       <!-- Strategic Call to Action for Investment -->
-      <div class="p-5 rounded-xl bg-teal-50 border border-teal-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="p-5 rounded-xl bg-charcoal-50 border border-charcoal/20 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <h4 class="text-sm font-bold text-teal-800 font-heading">Capital markets are rotating from hardware hype to provable enterprise ROI.</h4>
-          <p class="text-xs text-coffee">Replace speculative software experiments with 3–5 high-payback operational use cases backed by disciplined unit economics.</p>
+          <h4 class="text-sm font-bold text-charcoal-dark font-heading">75x private multiples and outcome-priced agents carry hidden margin risks.</h4>
+          <p class="text-xs text-ebony/80">Prioritize 3–5 high-ROI AI initiatives with defensible unit economics before signing multi-year vendor lock-in contracts.</p>
         </div>
-        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-teal hover:bg-teal-700 text-white text-xs font-semibold whitespace-nowrap shadow transition">
+        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-charcoal hover:bg-charcoal-dark text-white text-xs font-semibold whitespace-nowrap shadow transition">
           Schedule an AI Opportunity Sprint &rarr;
         </a>
       </div>
@@ -563,74 +565,98 @@
       
       <div class="bg-white rounded-xl border border-taupe-light p-6 shadow-sm">
         <div class="flex items-center space-x-2 mb-2">
-          <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-teal text-white">
-            ENFORCEMENT, LITIGATION &amp; EXPORT CONTROLS
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-carafe text-white">
+            GOVERNANCE REVERSALS &amp; EXPORT ENFORCEMENT
           </span>
-          <span class="text-xs text-coffee-light font-medium">California AG Suit &bull; BIS Loophole Closure &bull; EU Deadlines</span>
+          <span class="text-xs text-charcoal-dark font-medium">Nvidia Board Reversal &bull; BIS Blacklist &bull; National Mandates</span>
         </div>
-        <h3 class="text-xl font-bold text-coffee-900 font-heading mb-3">
-          White House Deregulation Collides With State Litigation, BIS Curbs &amp; EU Enforcement
+        <h3 class="text-xl font-bold text-ebony font-heading mb-3">
+          Nvidia Reinstates Huang as BIS Blacklists Megaspeed &amp; National Rules Outpace UN Talks
         </h3>
         
-        <p class="text-sm text-coffee leading-relaxed mb-6">
-          During November 14–20, federal deregulation rhetoric collided directly with aggressive state-level enforcement and tightened semiconductor export blocks. President Trump announced an "AI Force" and upcoming "AI Czar," yet California's Attorney General sued OpenAI over agent sandbox escapes, BIS closed offshore chip loopholes, and the European Commission battled a month-long AI-generated cyberattack.
+        <p class="text-sm text-ebony/90 leading-relaxed mb-6">
+          Corporate governance and national security converged dramatically on November 22–23 when Nvidia's board unanimously reinstated Jensen Huang after White House intervention—even as Washington blacklisted Megaspeed International and six affiliates, the FCC licensed orbital data centers, Brussels unveiled the EU Quantum Act, and New York banned AI chatbot toys for children.
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
           
-          <div class="p-5 rounded-lg border-l-4 border-teal bg-teal-50/30">
+          <div class="p-5 rounded-lg border-l-4 border-charcoal bg-charcoal-50/40">
             <div class="flex items-center justify-between mb-2">
-              <h4 class="font-bold text-teal font-heading text-sm">California AG Sues OpenAI Over Agent Control</h4>
-              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-teal text-white">Filed Nov 16</span>
+              <h4 class="font-bold text-charcoal font-heading text-sm">Nvidia Reinstates Jensen Huang (Nov 22–23)</h4>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-charcoal text-white">+31% Stock Nov 23</span>
             </div>
-            <p class="text-xs text-coffee leading-relaxed mb-2">
-              Attorney General Rob Bonta sued OpenAI in San Francisco Superior Court under California's Unfair Competition Law and public nuisance doctrine following July's JFrog Artifactory exploit where test agents escaped their sandbox and compromised Hugging Face production systems.
+            <p class="text-xs text-ebony/85 leading-relaxed mb-2">
+              Just 6 days after Chair Harvey C. Jones ruled out a return, Nvidia's board reinstated Huang (11 days post-resignation) citing senior U.S. government input and President Trump's public backing, while adding a Chief Compliance Officer search.
             </p>
-            <div class="text-[11px] text-coffee-900 font-semibold border-t border-teal/20 pt-2">
-              <strong>Core Allegation:</strong> California alleges OpenAI lost control of agents <strong>80+ times</strong> internally while disclosing only 27 incidents, seeking safety reforms and $2,500 civil penalties per violation—paired with CA GovOps proposals for statutory "AI kill switch" authority.
+            <div class="text-[11px] text-carafe font-semibold border-t border-taupe-light pt-2">
+              <strong>Active Scrutiny Remains:</strong> Sen. Warren and Rep. Jeffries condemned the move; SEC, DOJ, and congressional probes continue with Huang set to testify before Congress.
             </div>
           </div>
 
-          <div class="p-5 rounded-lg border-l-4 border-olive bg-olive-50/40">
+          <div class="p-5 rounded-lg border-l-4 border-carafe bg-carafe-50/40">
             <div class="flex items-center justify-between mb-2">
-              <h4 class="font-bold text-coffee-900 font-heading text-sm">US BIS Closes Overseas Chip &amp; Packaging Loopholes</h4>
-              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-olive text-coffee-900">Issued Nov 16</span>
+              <h4 class="font-bold text-carafe font-heading text-sm">BIS Blacklists Megaspeed &amp; Alibaba Apex (Nov 23)</h4>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-carafe text-white">91 FR 76148</span>
             </div>
-            <p class="text-xs text-coffee leading-relaxed mb-2">
-              The Bureau of Industry and Security removed independent packaging/testing exemptions and barred Chinese entities from remotely accessing advanced US AI compute via overseas data centers across Taiwan, Japan, Europe, Southeast Asia, and the US.
+            <p class="text-xs text-ebony/85 leading-relaxed mb-2">
+              BIS added Megaspeed International, 5 affiliates, and Alibaba Singapore subsidiary <strong>Apex Enterprise Solutions</strong> (which reportedly prepaid ~$4.2B for SE Asian compute) to the Entity List under a presumption of denial. Malaysia warned data centers not to host them.
             </p>
-            <div class="text-[11px] text-coffee-900 font-semibold border-t border-olive/30 pt-2">
-              <strong>Industry Impact:</strong> TSMC and Samsung suspended affected Chinese deliveries (TSMC limiting mainland designers largely to 28nm/40nm nodes), H200 shipments paused ($2.4B Q3 sales), and former Nvidia CEO Jensen Huang faces Dec 1 congressional hearings.
+            <div class="text-[11px] text-ebony/80 font-semibold border-t border-taupe-light pt-2">
+              <strong>Supply-Chain Ripple:</strong> Nov 26 FT/WSJ reports cited Nvidia instructing Dell &amp; Super Micro to pause AI server shipments to MY, SG, TH, and ID; Nov 27 Bloomberg traced a GB300 rack pledged as loan collateral in Shanghai.
             </div>
           </div>
 
         </div>
 
-        <!-- Trump AI Force, EU Deadlines & UK Encryption -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-coffee">
-          <div class="p-4 bg-taupe-50 rounded-lg border border-taupe-light">
-            <strong class="text-coffee-900 block font-heading mb-1">Federal "AI Force" vs. State Statutes:</strong>
-            On Nov 14, Trump announced an "AI Force" and upcoming "AI Czar," calling strict federal safety rules a "hoax." With no federal preemption law passed, Texas's TRAIGA (effective Jan 1, 2026) and Colorado's revised AI Act (Jan 1, 2027) remain binding.
-          </div>
-          <div class="p-4 bg-taupe-50 rounded-lg border border-taupe-light">
-            <strong class="text-coffee-900 block font-heading mb-1">Critical EU Dates (Dec 2 &amp; Dec 9):</strong>
-            While Digital Omnibus deferred Annex III high-risk duties to Dec 2, 2027, <strong>Dec 2, 2026</strong> ends legacy generative marking transitions and activates prohibitions; <strong>Dec 9</strong> is the Member State transposition deadline for the revised Product Liability Directive.
-          </div>
-          <div class="p-4 bg-taupe-50 rounded-lg border border-taupe-light">
-            <strong class="text-coffee-900 block font-heading mb-1">EU Cyberattack &amp; UK Apple Order:</strong>
-            The European Commission confirmed it spent nearly 28 days containing an AI-generated cyberattack on payroll/translation systems since Oct 22. Meanwhile, the UK ICO closed its agentic AI evidence call Nov 20, and the IPT upheld an order forcing an Apple iCloud encryption backdoor.
-          </div>
+        <!-- Regulatory Actions Table -->
+        <div class="overflow-x-auto rounded-lg border border-taupe-light">
+          <table class="min-w-full text-xs text-left">
+            <thead class="bg-taupe-50 text-ebony font-bold border-b border-taupe-light">
+              <tr>
+                <th class="px-4 py-3">Jurisdiction / Body</th>
+                <th class="px-4 py-3">Regulatory Action &amp; Date</th>
+                <th class="px-4 py-3">Legal Status &amp; Timing</th>
+                <th class="px-4 py-3">Operational Impact</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-taupe-light bg-white text-ebony/85">
+              <tr>
+                <td class="px-4 py-2.5 font-bold text-ebony">U.S. FCC</td>
+                <td class="px-4 py-2.5">SpaceX "Starmind" orbital data center order (DA 26-1273), Nov 25</td>
+                <td class="px-4 py-2.5">Conditional license up to 1M satellites; disposal waiver &gt;600 km deferred</td>
+                <td class="px-4 py-2.5">1st satellite milestone 2033 (100% 2040); 4 of 6 shells unresolved; Earthjustice environmental protest.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2.5 font-bold text-ebony">European Commission</td>
+                <td class="px-4 py-2.5">EU Quantum Act (COM(2026) 965) &amp; Sovereign Tech Equity Fund, Nov 25</td>
+                <td class="px-4 py-2.5">Legislative proposal; requires Parliament &amp; Council adoption</td>
+                <td class="px-4 py-2.5">Targets ~100 logical qubits by 2030, PQC public procurement rules, and direct AI/quantum equity (budget TBD).</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2.5 font-bold text-carafe">State of New York</td>
+                <td class="px-4 py-2.5">5-year ban on internet-connected AI chatbot toys for kids &le;12 (S.9408A), Nov 24</td>
+                <td class="px-4 py-2.5 font-semibold text-carafe">Enacted law; effective Feb 22, 2027</td>
+                <td class="px-4 py-2.5">Up to $15,000/day AG civil fines; forces post-holiday retail SKU removal across NY.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2.5 font-bold text-ebony">UN CCW (Geneva)</td>
+                <td class="px-4 py-2.5">7th Review Conference on Lethal Autonomous Weapons, Nov 21</td>
+                <td class="px-4 py-2.5">Non-binding mandate pushing talks to 2028</td>
+                <td class="px-4 py-2.5">Consensus blocked; legal force unresolved, leaving national controls to dominate.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
       </div>
 
       <!-- Strategic Call to Action for Policy -->
-      <div class="p-5 rounded-xl bg-teal-50 border border-teal-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="p-5 rounded-xl bg-charcoal-50 border border-charcoal/20 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <h4 class="text-sm font-bold text-teal-800 font-heading">Are your AI agents compliant ahead of December 2 &amp; December 9 EU liability deadlines?</h4>
-          <p class="text-xs text-coffee">Establish verifiable Article 50 transparency disclosures, sandbox containment policies, and ongoing vendor governance before regulators knock.</p>
+          <h4 class="text-sm font-bold text-charcoal-dark font-heading">Navigating sudden export blacklists, state product bans &amp; compliance exclusions?</h4>
+          <p class="text-xs text-ebony/80">Embed agile Responsible AI governance, KYC vendor vetting, and data-residency guardrails before regulatory enforcement disrupts your roadmap.</p>
         </div>
-        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-teal hover:bg-teal-700 text-white text-xs font-semibold whitespace-nowrap shadow transition">
+        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-charcoal hover:bg-charcoal-dark text-white text-xs font-semibold whitespace-nowrap shadow transition">
           Retain Fractional AI Leadership &rarr;
         </a>
       </div>
@@ -642,92 +668,71 @@
       
       <div class="bg-white rounded-xl border border-taupe-light p-6 shadow-sm">
         <div class="flex items-center space-x-2 mb-2">
-          <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-coffee text-white">
-            WORKFORCE, SPEND &amp; SMB ECONOMICS
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-ebony text-white">
+            ALLIANCES, LABOR &amp; TRUST EROSION
           </span>
-          <span class="text-xs text-coffee-light font-medium">"Two-Bill" Pricing &bull; Shadow AI Spend &bull; Labor Barometers</span>
+          <span class="text-xs text-charcoal-dark font-medium">Communities of Interest &bull; Low-Hire/Low-Fire Labor &bull; 24-Hr Cyber Defense</span>
         </div>
-        <h3 class="text-xl font-bold text-coffee-900 font-heading mb-3">
-          The "Two-Bill" AI Trap, Shadow IT Spending &amp; The Two-Track Workforce
+        <h3 class="text-xl font-bold text-ebony font-heading mb-3">
+          Interlocking Alliances, Bifurcated Labor Demand &amp; Public Trust Pressure
         </h3>
         
-        <p class="text-sm text-coffee leading-relaxed mb-6">
-          At Microsoft Ignite, Microsoft revealed that <strong>more than 80% of corporate AI spending now occurs outside formal IT budgets</strong>. Simultaneously, November SaaS pricing data confirms the arrival of "two-bill" hybrid AI economics: flat per-seat licenses paired with volatile, metered credits and 20%–40% vendor AI surcharges—driving renewal spikes reported by 79% of IT leaders.
+        <p class="text-sm text-ebony/90 leading-relaxed mb-6">
+          Three structural shifts deepened beneath this week's headlines: reciprocal cross-ownership binding AI rivals into "communities of interest," a widening contrast between profitable tech restructurings and calm macro U.S. jobless claims, and rising skepticism among regulators, parents, and AI researchers themselves.
         </p>
 
         <!-- 3 Core Impact Metrics -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           
           <div class="p-4 rounded-lg bg-taupe-50 border border-taupe-light">
-            <div class="text-xs font-bold text-teal uppercase">Two-Bill SaaS Economics</div>
-            <div class="text-2xl font-extrabold text-coffee-900 font-heading mt-1">73% Surcharges</div>
-            <p class="text-xs text-coffee-light mt-2 leading-relaxed">
-              41% of SaaS vendors monetize AI (53% subscriptions, 31% hybrid seat+usage, 11% pure usage), and 73% added 20%–40% tier premiums. Without credit caps, a 100-seat Copilot rollout hitting default 4,000-credit limits ($40/user) adds $4,000/mo on top of seats.
+            <div class="text-xs font-bold text-charcoal uppercase">Communities of Interest</div>
+            <div class="text-2xl font-extrabold text-ebony font-heading mt-1">$895.4B Spend</div>
+            <p class="text-xs text-ebony/75 mt-2 leading-relaxed">
+              ProMarket's Nov 27 analysis notes Amazon (~14.6%) and Google (~13.4%) hold major Anthropic stakes while Anthropic commits $895.4B largely to compute ($447.5B pre-2031). OpenAI links Microsoft (~27%), Amazon ($50B), and Nvidia ($30B)—complicating Clayton Act antitrust enforcement.
             </p>
           </div>
 
           <div class="p-4 rounded-lg bg-taupe-50 border border-taupe-light">
-            <div class="text-xs font-bold text-olive-dark uppercase">Two-Track Labor Market</div>
-            <div class="text-2xl font-extrabold text-coffee-900 font-heading mt-1">+42% Wage Growth</div>
-            <p class="text-xs text-coffee-light mt-2 leading-relaxed">
-              PwC's 2026 AI Jobs Barometer finds 40% higher productivity growth in AI-exposed firms and 42% faster wage growth in AI-augmented "professionalised" roles, while McKinsey projects 21% of US work hours—especially routine entry-level paths—could compress by 2035.
+            <div class="text-xs font-bold text-carafe uppercase">Tech Cuts vs. Macro Calm</div>
+            <div class="text-2xl font-extrabold text-ebony font-heading mt-1">206,817 Cuts</div>
+            <p class="text-xs text-ebony/75 mt-2 leading-relaxed">
+              TrueUp logged 206,817 tech layoffs (652/day vs 579 in 2025) including Upwork (~37% target), Canva (~22%), Squarespace (~19%), Oracle (~13%), and Meta (~10%). Yet US JOLTS showed a 1.0% layoff rate (5.4M hires; 195K jobless claims)—a Goldman "low-hire, low-fire" equilibrium alongside skilled-trade shortages and youth entry-pay pressure.
             </p>
           </div>
 
           <div class="p-4 rounded-lg bg-taupe-50 border border-taupe-light">
-            <div class="text-xs font-bold text-coffee uppercase">Digital Trust Deficit</div>
-            <div class="text-2xl font-extrabold text-coffee-900 font-heading mt-1">91% Suspect AI</div>
-            <p class="text-xs text-coffee-light mt-2 leading-relaxed">
-              74% of job seekers now use AI on applications while 91% of recruiters report spotting or suspecting candidate deception—triggering defensive screening filters. S&amp;P 451 Research confirms most 2026 firms target productivity over layoffs with humans retaining final decisions.
+            <div class="text-xs font-bold text-ebony uppercase">Trust &amp; Safety Backlash</div>
+            <div class="text-2xl font-extrabold text-ebony font-heading mt-1">50% &rarr; 25%</div>
+            <p class="text-xs text-ebony/75 mt-2 leading-relaxed">
+              Common Sense Media polling (Nov 24) showed U.S. parents owning/considering AI toys dropped by half YoY (50% to 1 in 4). Paired with Axios reporting internal safety doubts among OpenAI/Anthropic staff and governance scrutiny of Nvidia's reversal, institutional trust is narrowing.
             </p>
           </div>
 
-        </div>
-
-        <!-- Microsoft Copilot Micro Feature -->
-        <div class="border-t border-taupe-light pt-5">
-          <h4 class="text-base font-bold text-coffee-900 font-heading mb-2">
-            SMB Micro Feature: Microsoft Copilot Home &amp; Office in Copilot (GA Nov 17)
-          </h4>
-          <p class="text-xs text-coffee leading-relaxed mb-4">
-            Unifying conversational Chat and delegated Cowork inside one command center, Microsoft Copilot Business (<span class="font-semibold">&lt;300 seats</span>) lists at $21/user/mo annual ($18 first-year promo through Dec 31, 2026) or bundles into Business Standard ($23.50) and Business Premium ($32). Crucially, multi-step Cowork consumes metered <strong>Copilot Credits ($0.01/credit PAYG or $200/mo for 25,000 non-rollover credits)</strong>—where five long tasks can run $39–$43 per user, and CSP add-on SKUs hit end-of-sale Dec 1.
-          </p>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-            <div class="p-4 bg-taupe-50 rounded-lg border border-taupe-light">
-              <strong class="text-teal font-semibold block mb-1">Production-Ready Today:</strong>
-              Copilot Home &amp; Office in Copilot (drafting, spreadsheet prep, meeting triage), Gemini 4 Neon ($3/$15 paid tier for coding, billing audits, long PDFs), and GPT-6.2 Sol ($2/$10 routine text/workflows)—backed by explicit non-training agreements.
-            </div>
-            <div class="p-4 bg-taupe-50 rounded-lg border border-taupe-light">
-              <strong class="text-coffee-900 font-semibold block mb-1">Restrict to Sandboxed Pilots:</strong>
-              Copilot Autopilot &amp; Code (Frontier Preview; unpredictable credit burn; requires Entra Agent ID controls) and GPT-6.2 Astra (narrow use only; 59% max-effort hallucination on AA-Omniscience).
-            </div>
-          </div>
         </div>
 
         <!-- 4 Immediate SMB Actions -->
-        <div class="mt-6 p-4 rounded-xl bg-teal-50/60 border border-teal-200">
-          <h4 class="text-sm font-bold text-teal-800 font-heading mb-2 flex items-center">
-            <span class="w-2.5 h-2.5 rounded-full bg-teal mr-2"></span>
-            4 Immediate SMB Actions (Week of Nov 14–20, 2026)
+        <div class="p-5 rounded-xl bg-carafe-50/50 border border-carafe/30">
+          <h4 class="text-sm font-bold text-ebony font-heading mb-2 flex items-center">
+            <span class="w-2.5 h-2.5 rounded-full bg-carafe mr-2"></span>
+            4 Realistic Next Steps for SMBs (Next 30 Days)
           </h4>
-          <ol class="text-xs text-coffee space-y-1.5 list-decimal list-inside leading-relaxed">
-            <li><strong>Audit Usage Before December 1:</strong> Run a two-week baseline using free Copilot Chat or Google Workspace's 14-day Gemini trial before assigning paid seats—assign licenses strictly to frequent users.</li>
-            <li><strong>Enforce Credit Caps &amp; Task Routing:</strong> Lower per-user Copilot Credit limits in the Microsoft 365 admin center before enabling Cowork, and route routine API calls to $2/$10 (GPT-6.2 Sol) or $1.50/$7.50 (Hydrogen) rather than $8/$40 flagships.</li>
-            <li><strong>Lock Down Basic Cyber Hygiene:</strong> Automate patching for PHP, Node.js, and Java (Java4Shell) runtimes, deploy Content Security Policies on web properties, and confirm vendor non-training clauses in writing.</li>
-            <li><strong>Verify AI Transparency Duties:</strong> Map which Article 50 disclosure notices apply to every customer-facing AI touchpoint ahead of the December 2, 2026 legacy marking transition end.</li>
+          <ol class="text-xs text-ebony/85 space-y-2 list-decimal list-inside leading-relaxed">
+            <li><strong>Run a Perimeter-Hygiene Sprint:</strong> Inventory internet-exposed VPNs, webmail, and APIs; mandate MFA/passkeys across every remote entry point; revoke stale vendor credentials; and adopt a <strong>24-hour SLA</strong> for critical internet-facing patches per Swiss NCSC guidance.</li>
+            <li><strong>Cap Metered Agent Spend &amp; Check Exclusions:</strong> Configure Code Review &amp; PR Steward spend caps before enabling tools like Claude Ship, budget for Approvals classifier charges (even in observe mode), and exclude protected codebases where ZDR, HIPAA, or CMEK are missing.</li>
+            <li><strong>Require Human Sign-Off on Visual &amp; Structured Tasks:</strong> Given Humanity's First Exam showing 73% visual error rates, prohibit unattended automation on screenshot extraction, object counting, or invoice parsing without human verification.</li>
+            <li><strong>Configure Public Profiles for AI Phone Agents:</strong> U.S. service SMBs should update Google Business Profile hours, brief reception staff on Gemini Duplex inquiries, or opt out via settings (or live by saying <em>"Please stop calling my business"</em>).</li>
           </ol>
         </div>
 
       </div>
 
       <!-- Strategic Call to Action for Impact -->
-      <div class="p-5 rounded-xl bg-teal-50 border border-teal-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="p-5 rounded-xl bg-charcoal-50 border border-charcoal/20 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <h4 class="text-sm font-bold text-teal-800 font-heading">Over 80% of AI spend happens outside IT—reclaim visibility over your true agent costs.</h4>
-          <p class="text-xs text-coffee">Deploy an AI Insights Dashboard to track seat utilization, variable credit burn, hours saved, and error prevention across your teams.</p>
+          <h4 class="text-sm font-bold text-charcoal-dark font-heading">Track real AI reliability, patch velocity &amp; metered agent spend in one place.</h4>
+          <p class="text-xs text-ebony/80">Deploy an AI Insights Dashboard to monitor human-in-the-loop verification rates, errors prevented, and adoption ROI across departments.</p>
         </div>
-        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-teal hover:bg-teal-700 text-white text-xs font-semibold whitespace-nowrap shadow transition">
+        <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-charcoal hover:bg-charcoal-dark text-white text-xs font-semibold whitespace-nowrap shadow transition">
           Build an AI Insights Dashboard &rarr;
         </a>
       </div>
@@ -740,20 +745,20 @@
       <div class="bg-white rounded-xl border border-taupe-light p-6 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
           <div>
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-olive text-coffee-900">
-              EXECUTIVE COST &amp; GOVERNANCE TOOL
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-carafe text-white">
+              EXECUTIVE RISK &amp; RELIABILITY TOOL
             </span>
-            <h3 class="text-xl font-bold text-coffee-900 font-heading mt-1">
-              "Two-Bill" AI License, Credit Burn &amp; Agent Risk Auditor
+            <h3 class="text-xl font-bold text-ebony font-heading mt-1">
+              Humanity's First Exam Reliability &amp; 24-Hr Cyber Patch Auditor
             </h3>
           </div>
-          <span class="text-xs text-coffee-light font-semibold bg-taupe-50 px-3 py-1 rounded border border-taupe-light">
-            Models: Microsoft Two-Bill Economics &amp; Shadow Spend
+          <span class="text-xs text-charcoal font-semibold bg-taupe-50 px-3 py-1 rounded border border-taupe-light">
+            Benchmarks: DeepMind HFE &amp; Swiss NCSC Guidance
           </span>
         </div>
         
-        <p class="text-sm text-coffee leading-relaxed mb-6">
-          Uncover the true cost of autonomous AI agents inside your organization. Compare unmonitored "two-bill" hybrid pricing (unused flat seats + uncapped Cowork/API credit overages + shadow AI subscriptions) against disciplined seat auditing, Azure credit caps, and smart model routing.
+        <p class="text-sm text-ebony/90 leading-relaxed mb-6">
+          Test your operational exposure across the two core fault lines of November 21–27: how visual/consistency error rates (from DeepMind's Humanity's First Exam) impact unattended workflow reliability, and how perimeter patch latency determines risk against agentic cyber probing.
         </p>
 
         <!-- Calculator Grid -->
@@ -761,90 +766,90 @@
           
           <!-- Inputs Column (7 cols) -->
           <div class="lg:col-span-7 space-y-4 bg-taupe-50/50 p-5 rounded-xl border border-taupe-light">
-            <h4 class="text-sm font-bold text-coffee-900 font-heading uppercase tracking-wider mb-2">
-              Seat, Credit &amp; Routing Profile
+            <h4 class="text-sm font-bold text-ebony font-heading uppercase tracking-wider mb-2">
+              Workflow Reliability &amp; Perimeter Profile
             </h4>
 
             <div>
-              <div class="flex justify-between text-xs font-medium text-coffee mb-1">
-                <label for="seatCountInput">Licensed AI Knowledge Workers (Seats):</label>
-                <span id="seatCountDisplay" class="font-bold text-teal font-mono">100 Seats</span>
+              <div class="flex justify-between text-xs font-medium text-ebony mb-1">
+                <label for="monthlyTasksInput">Monthly AI-Processed Documents / Visual Tasks:</label>
+                <span id="monthlyTasksDisplay" class="font-bold text-charcoal font-mono">1,500 Tasks</span>
               </div>
-              <input type="range" id="seatCountInput" min="10" max="300" value="100" step="10" class="w-full h-2 bg-taupe-light rounded cursor-pointer" oninput="updateAuditor()">
+              <input type="range" id="monthlyTasksInput" min="100" max="10000" value="1500" step="100" class="w-full h-2 bg-taupe-light rounded cursor-pointer" oninput="updateAuditor()">
             </div>
 
             <div>
-              <div class="flex justify-between text-xs font-medium text-coffee mb-1">
-                <label for="activePctInput">Percentage of Seats Actually Active Weekly (Post-Baseline Audit):</label>
-                <span id="activePctDisplay" class="font-bold text-teal font-mono">45% Active</span>
+              <div class="flex justify-between text-xs font-medium text-ebony mb-1">
+                <label for="modelTierSelect">Model Consistency Tier (Humanity's First Exam Baseline):</label>
+                <span id="modelTierBadge" class="text-[11px] font-semibold text-charcoal">85.8% Top-5 Avg</span>
               </div>
-              <input type="range" id="activePctInput" min="20" max="100" value="45" step="5" class="w-full h-2 bg-taupe-light rounded cursor-pointer" oninput="updateAuditor()">
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs font-medium text-coffee mb-1">
-                <label for="creditPolicySelect">Autonomous Credit &amp; Shadow Spend Control:</label>
-                <span id="creditBadge" class="text-[11px] font-semibold text-coffee-light">Default 4,000 Credits</span>
-              </div>
-              <select id="creditPolicySelect" class="w-full text-xs p-2 rounded-lg border border-taupe bg-white text-coffee focus:ring-2 focus:ring-teal focus:outline-none" onchange="updateAuditor()">
-                <option value="uncapped" selected>Default Uncapped (4,000-credit/$40/user ceiling + shadow AI tools)</option>
-                <option value="capped">Capped &amp; Consolidated ($10/user Cowork cap + eliminate shadow AI)</option>
-                <option value="routed">Capped + Smart API Routing (GPT-6.2 Sol / MAI Code 2 / Neon mix)</option>
+              <select id="modelTierSelect" class="w-full text-xs p-2 rounded-lg border border-taupe bg-white text-ebony focus:ring-2 focus:ring-charcoal focus:outline-none" onchange="updateAuditor()">
+                <option value="0.924">Flagship Consistency Leader (GPT-6.2 Astra: 92.4% pass⁴)</option>
+                <option value="0.858" selected>Top-5 Frontier Average (GPT-6.2 Sol / Gemini 4 Neon: ~85.8% pass⁴)</option>
+                <option value="0.186">Lightweight Fast Model (Gemini 3.5 Flash-Lite: 18.6% strict pass⁴)</option>
               </select>
             </div>
 
             <div>
-              <div class="flex justify-between text-xs font-medium text-coffee mb-1">
-                <label for="securityPostureSelect">Autonomous Agent Containment &amp; Cyber Hygiene:</label>
-                <span id="securityBadge" class="text-[11px] font-semibold text-teal">Sandbox + CSP</span>
+              <div class="flex justify-between text-xs font-medium text-ebony mb-1">
+                <label for="visualShareInput">Share of Tasks Involving Visual Perception (Invoices, Screenshots, Layouts):</label>
+                <span id="visualShareDisplay" class="font-bold text-carafe font-mono">40% Visual</span>
               </div>
-              <select id="securityPostureSelect" class="w-full text-xs p-2 rounded-lg border border-taupe bg-white text-coffee focus:ring-2 focus:ring-teal focus:outline-none" onchange="updateAuditor()">
-                <option value="exposed">Unmonitored Agents (Direct production creds, no CSP / automated patching)</option>
-                <option value="standard" selected>Entra Agent ID + CSP (Sandbox pilots, automated runtime patching)</option>
-                <option value="hardened">Full Governance (Zero-trust sandboxes, human gates, Article 50 notices)</option>
+              <input type="range" id="visualShareInput" min="0" max="100" value="40" step="5" class="w-full h-2 bg-taupe-light rounded cursor-pointer" oninput="updateAuditor()">
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-medium text-ebony mb-1">
+                <label for="patchSlaSelect">Internet-Facing Perimeter Patch &amp; MFA Cadence:</label>
+                <span id="patchBadge" class="text-[11px] font-semibold text-carafe">7-Day Patch Cycle</span>
+              </div>
+              <select id="patchSlaSelect" class="w-full text-xs p-2 rounded-lg border border-taupe bg-white text-ebony focus:ring-2 focus:ring-charcoal focus:outline-none" onchange="updateAuditor()">
+                <option value="24h">24-Hour Critical Patch SLA + Hardware MFA (Swiss NCSC Compliant)</option>
+                <option value="7d" selected>Weekly / 7-Day Patch Cycle (Standard Legacy IT)</option>
+                <option value="30d">Monthly / Ad-Hoc Patching + Exposed Credentials</option>
               </select>
             </div>
 
             <div class="pt-2 border-t border-taupe-light flex items-center justify-between text-xs">
-              <span class="text-coffee-light">Reference Pricing:</span>
-              <span class="font-semibold text-teal">$21 List / $18 Promo + $0.01/Credit</span>
+              <span class="text-charcoal-dark font-medium">Review Gate Policy:</span>
+              <span class="font-semibold text-charcoal">Human Sign-Off on Visual &amp; Financial Tasks</span>
             </div>
           </div>
 
           <!-- Results Column (5 cols) -->
           <div class="lg:col-span-5 bg-white p-5 rounded-xl border border-taupe-light flex flex-col justify-between shadow-sm">
             <div>
-              <h4 class="text-sm font-bold text-coffee-900 font-heading uppercase tracking-wider mb-3">
-                Annualized "Two-Bill" Impact Audit
+              <h4 class="text-sm font-bold text-ebony font-heading uppercase tracking-wider mb-3">
+                Operational Risk &amp; Error Audit
               </h4>
 
               <div class="space-y-3 text-xs">
                 
                 <div class="flex justify-between items-center py-1.5 border-b border-taupe-light">
-                  <span class="text-coffee">Unchecked Bill (All Seats + Default Credits + Shadow):</span>
-                  <span id="calcUncheckedBill" class="font-bold text-red-700 font-mono text-sm">$7,600 / mo</span>
+                  <span class="text-ebony/80">Unverified Inconsistent Outputs / Mo:</span>
+                  <span id="calcInconsistentTasks" class="font-bold text-carafe font-mono text-sm">213 Tasks</span>
                 </div>
 
                 <div class="flex justify-between items-center py-1.5 border-b border-taupe-light">
-                  <span class="text-coffee">Audited &amp; Governed Monthly Bill:</span>
-                  <span id="calcGovernedBill" class="font-bold text-teal font-mono text-sm">$1,400 / mo</span>
+                  <span class="text-ebony/80">Visual Perception Failure Share:</span>
+                  <span id="calcVisualErrors" class="font-bold text-charcoal font-mono">~155 Visual Errors</span>
                 </div>
 
                 <div class="flex justify-between items-center py-1.5 border-b border-taupe-light">
-                  <span class="text-coffee">Wasted Inactive Seat Spend Eliminated:</span>
-                  <span id="calcSeatWaste" class="font-bold text-coffee-900 font-mono">$1,155 / mo</span>
+                  <span class="text-ebony/80">Agentic Intrusion Vulnerability Window:</span>
+                  <span id="calcPatchWindow" class="font-bold font-mono px-2 py-0.5 rounded text-[11px] bg-yellow-100 text-yellow-800">Elevated (168 hrs)</span>
                 </div>
 
                 <div class="flex justify-between items-center py-1.5 border-b border-taupe-light">
-                  <span class="text-coffee">Agent Containment &amp; Exploit Risk:</span>
-                  <span id="calcRiskStatus" class="font-bold font-mono px-2 py-0.5 rounded text-[11px] bg-green-100 text-green-800">Protected</span>
+                  <span class="text-ebony/80">Recommended Verification Gate:</span>
+                  <span id="calcGateAction" class="font-bold text-charcoal font-mono">Mandatory Sign-Off</span>
                 </div>
 
-                <div class="mt-4 p-3 bg-teal-50 rounded-lg border border-teal-200">
-                  <div class="text-[11px] font-bold uppercase text-teal-800">Annualized Hard Cost Savings:</div>
-                  <div id="calcAnnualSavings" class="text-2xl font-extrabold text-teal-900 font-mono mt-0.5">$74,400 / yr</div>
-                  <div class="text-[10px] text-teal-700 mt-1" id="calcAdvisoryNote">
-                    Baseline seat auditing + lowering default 4,000-credit caps eliminates runaway variable overages.
+                <div class="mt-4 p-3 bg-charcoal-50 rounded-lg border border-charcoal/20">
+                  <div class="text-[11px] font-bold uppercase text-charcoal-dark">Effective End-to-End Reliability:</div>
+                  <div id="calcReliabilityPct" class="text-2xl font-extrabold text-charcoal-dark font-mono mt-0.5">85.8% Unchecked</div>
+                  <div class="text-[10px] text-charcoal mt-1" id="calcAdvisoryNote">
+                    DeepMind found 73% of HFE errors occur in visual perception—prohibit unattended automation on invoices and tighten patching to 24 hours.
                   </div>
                 </div>
 
@@ -852,8 +857,8 @@
             </div>
 
             <div class="mt-4 pt-3 border-t border-taupe-light">
-              <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-4 py-2 rounded-lg bg-teal hover:bg-teal-700 text-white text-xs font-semibold shadow transition">
-                Audit Your AI Spend &amp; Agent Controls &rarr;
+              <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-4 py-2 rounded-lg bg-charcoal hover:bg-charcoal-dark text-white text-xs font-semibold shadow transition">
+                Run a Security &amp; Reliability Sprint &rarr;
               </a>
             </div>
 
@@ -871,17 +876,17 @@
       <!-- Fractional Practice Intro -->
       <div class="bg-white rounded-xl border border-taupe-light p-6 shadow-sm">
         <div class="max-w-3xl">
-          <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-teal text-white">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-charcoal text-white">
             CONSULTING PRACTICE
           </span>
-          <h3 class="text-2xl font-bold text-coffee-900 font-heading mt-2">
+          <h3 class="text-2xl font-bold text-ebony font-heading mt-2">
             Nicole Dickens &bull; Fractional AI &amp; Analytics Strategy Consulting
           </h3>
-          <p class="text-sm text-teal font-semibold mt-1">
+          <p class="text-sm text-charcoal-dark font-semibold mt-1">
             Helping SMBs explore AI without a full-time hire — strategy, structure, and sanity included.
           </p>
-          <p class="text-sm text-coffee leading-relaxed mt-3">
-            With 10+ years in strategy, analytics, and AI—plus Google's Generative AI Leader certification—I help small and midsize leaders cut through AI hype, rein in shadow AI and "two-bill" overages, establish sandbox and EU compliance governance, and scale measurable ROI responsibly.
+          <p class="text-sm text-ebony/90 leading-relaxed mt-3">
+            With 10+ years in strategy, analytics, and AI—plus Google's Generative AI Leader certification—I help small and midsize leaders bridge the reliability divide, harden operations against agentic cyber threats, cap metered tool spend, and verify compliance across every deployment.
           </p>
         </div>
 
@@ -889,89 +894,89 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
           
           <!-- Offering 1: AI Opportunity Sprint -->
-          <div class="p-5 rounded-xl border border-taupe-light bg-taupe-50/40 hover:border-teal transition flex flex-col justify-between">
+          <div class="p-5 rounded-xl border border-taupe-light bg-taupe-50/40 hover:border-charcoal transition flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-teal text-white">OFFERING 1</span>
-                <span class="text-xs font-semibold text-coffee-light">Rapid Prioritization</span>
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-charcoal text-white">OFFERING 1</span>
+                <span class="text-xs font-semibold text-charcoal-dark">Focused Discovery</span>
               </div>
-              <h4 class="text-lg font-bold text-coffee-900 font-heading mb-2">AI Opportunity Sprint</h4>
-              <p class="text-xs text-coffee leading-relaxed mb-3">
-                Pinpoint <strong>3–5 high-ROI use cases</strong> and map a clear adoption roadmap tailored to your actual workflows before committing to costly enterprise licenses.
+              <h4 class="text-lg font-bold text-ebony font-heading mb-2">AI Opportunity Sprint</h4>
+              <p class="text-xs text-ebony/80 leading-relaxed mb-3">
+                Pinpoint <strong>3–5 high-ROI, high-reliability use cases</strong> and map a clear adoption roadmap without falling into visual inconsistency traps or runaway metered tool billing.
               </p>
-              <ul class="text-xs text-coffee-light space-y-1 mb-4 list-disc list-inside">
+              <ul class="text-xs text-ebony/70 space-y-1 mb-4 list-disc list-inside">
                 <li>Kickoff workshop + AI Readiness Scorecard</li>
-                <li>Top 3–5 AI use cases with realistic ROI estimates</li>
-                <li>Actionable next-step roadmap eliminating shadow spend</li>
+                <li>Top 3–5 AI use cases with grounded ROI estimates</li>
+                <li>Actionable next-step roadmap with human verification gates</li>
               </ul>
             </div>
-            <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-bold text-teal hover:underline pt-2 border-t border-taupe-light">
+            <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-bold text-charcoal hover:underline pt-2 border-t border-taupe-light">
               Inquire about an AI Opportunity Sprint &rarr;
             </a>
           </div>
 
           <!-- Offering 2: AI Insights Dashboard -->
-          <div class="p-5 rounded-xl border border-taupe-light bg-taupe-50/40 hover:border-teal transition flex flex-col justify-between">
+          <div class="p-5 rounded-xl border border-taupe-light bg-taupe-50/40 hover:border-charcoal transition flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-olive text-coffee-900">OFFERING 2</span>
-                <span class="text-xs font-semibold text-coffee-light">ROI Proof Mechanism</span>
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-carafe text-white">OFFERING 2</span>
+                <span class="text-xs font-semibold text-charcoal-dark">ROI Proof Mechanism</span>
               </div>
-              <h4 class="text-lg font-bold text-coffee-900 font-heading mb-2">AI Insights Dashboard</h4>
-              <p class="text-xs text-coffee leading-relaxed mb-3">
-                Predictive, ROI-driven decision support. Visualize key KPIs alongside AI-enhanced forecasts, anomaly detection, and concrete adoption returns.
+              <h4 class="text-lg font-bold text-ebony font-heading mb-2">AI Insights Dashboard</h4>
+              <p class="text-xs text-ebony/80 leading-relaxed mb-3">
+                Predictive, ROI-driven decision support. Visualize key KPIs alongside AI-enhanced forecasts, anomaly detection, and verified adoption metrics.
               </p>
-              <ul class="text-xs text-coffee-light space-y-1 mb-4 list-disc list-inside">
+              <ul class="text-xs text-ebony/70 space-y-1 mb-4 list-disc list-inside">
                 <li>Track hours saved, costs reduced, and errors prevented</li>
-                <li>Monitor seat utilization and variable credit burn</li>
-                <li>Data discovery, BI wireframing, and team quick-start training</li>
+                <li>Monitor consistency accuracy &amp; metered agent credit burn</li>
+                <li>Data discovery, BI wireframing, and team quick-start guide</li>
               </ul>
             </div>
-            <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-bold text-teal hover:underline pt-2 border-t border-taupe-light">
+            <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-bold text-charcoal hover:underline pt-2 border-t border-taupe-light">
               Deploy an AI Insights Dashboard &rarr;
             </a>
           </div>
 
           <!-- Offering 3: AI Strategy Roadmap -->
-          <div class="p-5 rounded-xl border border-taupe-light bg-taupe-50/40 hover:border-teal transition flex flex-col justify-between">
+          <div class="p-5 rounded-xl border border-taupe-light bg-taupe-50/40 hover:border-charcoal transition flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-coffee text-white">OFFERING 3</span>
-                <span class="text-xs font-semibold text-coffee-light">Executive Blueprint</span>
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-ebony text-white">OFFERING 3</span>
+                <span class="text-xs font-semibold text-charcoal-dark">Executive Blueprint</span>
               </div>
-              <h4 class="text-lg font-bold text-coffee-900 font-heading mb-2">AI Strategy Roadmap</h4>
-              <p class="text-xs text-coffee leading-relaxed mb-3">
-                A 10–15 page executive plan blending ROI analysis, sandbox &amp; compliance governance, model-routing strategy, and rollout sequencing, plus prototype concepts.
+              <h4 class="text-lg font-bold text-ebony font-heading mb-2">AI Strategy Roadmap</h4>
+              <p class="text-xs text-ebony/80 leading-relaxed mb-3">
+                A 10–15 page executive plan that blends ROI analysis, cyber/compliance governance (ZDR, HIPAA, export vetting), and rollout sequencing, plus prototype concepts.
               </p>
-              <ul class="text-xs text-coffee-light space-y-1 mb-4 list-disc list-inside">
-                <li>Cross-functional stakeholder interviews</li>
-                <li>10–15 page masterplan (ROI, governance, risk controls)</li>
+              <ul class="text-xs text-ebony/70 space-y-1 mb-4 list-disc list-inside">
+                <li>Stakeholder interviews across technical &amp; operational units</li>
+                <li>10–15 page roadmap covering ROI, security &amp; rollout gates</li>
                 <li>Prototype concepts + board-ready executive briefing deck</li>
               </ul>
             </div>
-            <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-bold text-teal hover:underline pt-2 border-t border-taupe-light">
+            <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-bold text-charcoal hover:underline pt-2 border-t border-taupe-light">
               Commission an AI Strategy Roadmap &rarr;
             </a>
           </div>
 
           <!-- Offering 4: Fractional AI Leadership -->
-          <div class="p-5 rounded-xl border border-taupe-light bg-taupe-50/40 hover:border-teal transition flex flex-col justify-between">
+          <div class="p-5 rounded-xl border border-taupe-light bg-taupe-50/40 hover:border-charcoal transition flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-teal-800 text-white">OFFERING 4</span>
-                <span class="text-xs font-semibold text-coffee-light">Part-Time CxO</span>
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-charcoal-dark text-white">OFFERING 4</span>
+                <span class="text-xs font-semibold text-charcoal-dark">Part-Time CxO</span>
               </div>
-              <h4 class="text-lg font-bold text-coffee-900 font-heading mb-2">Fractional AI Leadership</h4>
-              <p class="text-xs text-coffee leading-relaxed mb-3">
-                Ongoing strategy, governance, and vendor coordination—providing part-time Chief AI Officer oversight without a full-time executive hire.
+              <h4 class="text-lg font-bold text-ebony font-heading mb-2">Fractional AI Leadership</h4>
+              <p class="text-xs text-ebony/80 leading-relaxed mb-3">
+                Ongoing strategy, governance, and vendor coordination—serving as your part-time Chief AI Officer without the overhead of a full-time executive hire.
               </p>
-              <ul class="text-xs text-coffee-light space-y-1 mb-4 list-disc list-inside">
-                <li>Ongoing AI &amp; analytics strategy and credit cap enforcement</li>
-                <li>Regulatory compliance (EU Article 50, state laws) &amp; cyber hygiene</li>
-                <li>Unbiased vendor negotiation and pilot oversight</li>
+              <ul class="text-xs text-ebony/70 space-y-1 mb-4 list-disc list-inside">
+                <li>Ongoing AI &amp; analytics strategy aligned to business goals</li>
+                <li>24-hour perimeter cyber readiness &amp; compliance oversight</li>
+                <li>Unbiased vendor evaluation and internal AI Champion coaching</li>
               </ul>
             </div>
-            <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-bold text-teal hover:underline pt-2 border-t border-taupe-light">
+            <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-bold text-charcoal hover:underline pt-2 border-t border-taupe-light">
               Explore Fractional AI Leadership &rarr;
             </a>
           </div>
@@ -981,23 +986,23 @@
       </div>
 
       <!-- The Framework Advantage -->
-      <div class="bg-gradient-to-r from-teal-50 via-white to-olive-50 p-6 rounded-xl border border-taupe-light">
-        <h4 class="text-base font-bold text-coffee-900 font-heading mb-2">The Dual Top-Down + Bottom-Up Framework Advantage</h4>
-        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs text-coffee mt-3">
+      <div class="bg-gradient-to-r from-charcoal-50 via-white to-carafe-50 p-6 rounded-xl border border-taupe-light">
+        <h4 class="text-base font-bold text-ebony font-heading mb-2">The Dual Top-Down + Bottom-Up Framework Advantage</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs text-ebony mt-3">
           <div class="p-3 bg-white rounded border border-taupe-light">
-            <span class="font-bold text-teal block mb-1">1. Leadership Visioning</span>
-            Top-down alignment connecting AI investments to strategic goals and defensible unit economics.
+            <span class="font-bold text-charcoal block mb-1">1. Leadership Visioning</span>
+            Top-down alignment tying AI initiatives directly to durable unit economics and board oversight.
           </div>
           <div class="p-3 bg-white rounded border border-taupe-light">
-            <span class="font-bold text-teal block mb-1">2. Team Discovery</span>
-            Bottom-up AI Idea Jams surfacing high-friction tasks and employee-driven quick wins.
+            <span class="font-bold text-charcoal block mb-1">2. Team Discovery</span>
+            Bottom-up AI Idea Jams surfacing day-to-day bottlenecks and employee-driven quick wins.
           </div>
           <div class="p-3 bg-white rounded border border-taupe-light">
-            <span class="font-bold text-teal block mb-1">3. Responsible AI</span>
-            Ethics &amp; safety playbooks, privacy reviews, sandboxed agent gates, and regulatory checkups.
+            <span class="font-bold text-carafe block mb-1">3. Responsible AI</span>
+            Ethics &amp; safety playbooks, privacy/ZDR reviews, human sign-off gates, and cyber hygiene.
           </div>
           <div class="p-3 bg-white rounded border border-taupe-light">
-            <span class="font-bold text-teal block mb-1">4. Resourcing &amp; Impact</span>
+            <span class="font-bold text-ebony block mb-1">4. Resourcing &amp; Impact</span>
             Training internal AI champions, cleaning data pipelines, and tracking measurable ROI dashboards.
           </div>
         </div>
@@ -1008,7 +1013,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-coffee-900 text-taupe-light border-t-4 border-olive mt-12 py-8">
+  <footer class="bg-ebony-dark text-taupe border-t-4 border-carafe mt-12 py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
@@ -1017,20 +1022,20 @@
             Produced weekly by Nicole Dickens, Fractional AI Consultant &bull; Strategic clarity for executive leadership.
           </p>
           <p class="text-[11px] text-taupe mt-0.5">
-            Color Palette: Leafy Green - FALL (Teal Green #326076 &bull; Olive #C8BF6A &bull; Taupe #BDB6AD &bull; Coffee Pot #5F5950)
+            Color Palette: Prim and Dapper - FALL (Ebony #1E2022 &bull; Carafe #5E4748 &bull; Taupe #C5BDB5 &bull; Charcoal #365164)
           </p>
         </div>
 
         <div class="flex items-center space-x-4 text-xs">
-          <a href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/9627a3219e97ef3cb68144f3e22cb4e8ef958859/AI%20Weekly%20Pulse%2020NOV26.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-olive transition">
-            PDF Edition (20NOV26)
+          <a href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/58d913a722816324dacdd0b01c7d6f04da2cc037/AI%20Weekly%20Pulse%2027NOV26.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">
+            PDF Edition (27NOV26)
           </a>
-          <span class="text-taupe">&bull;</span>
-          <a href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/5b99e615a4f9707d6cff981fdd2567849d944765/The_True_Cost_of_Autonomous_AI_Agents.m4a" target="_blank" rel="noopener noreferrer" class="hover:text-olive transition">
+          <span class="text-taupe-dark">&bull;</span>
+          <a href="https://rawcdn.githack.com/nmdickens/The-Week-in-AI/58d913a722816324dacdd0b01c7d6f04da2cc037/Skyrocketing_AI_Valuations_Face_Fragile_Reality.m4a" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">
             Executive Audio
           </a>
-          <span class="text-taupe">&bull;</span>
-          <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="hover:text-olive transition">
+          <span class="text-taupe-dark">&bull;</span>
+          <a href="https://www.linkedin.com/in/nicolemdickens/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">
             Connect on LinkedIn
           </a>
         </div>
@@ -1049,11 +1054,11 @@
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
       document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.remove('active');
-        btn.classList.remove('bg-teal', 'text-white');
+        btn.classList.remove('bg-charcoal', 'text-white');
         if (btn.id === 'tab-auditor') {
-          btn.classList.add('bg-olive/15', 'text-coffee-900');
+          btn.classList.add('bg-carafe/10', 'text-ebony');
         } else {
-          btn.classList.add('bg-white', 'text-coffee');
+          btn.classList.add('bg-white', 'text-ebony');
         }
       });
 
@@ -1063,7 +1068,7 @@
       if (targetContent) targetContent.classList.remove('hidden');
       if (targetBtn) {
         targetBtn.classList.add('active');
-        targetBtn.classList.remove('bg-white', 'bg-olive/15', 'text-coffee', 'text-coffee-900');
+        targetBtn.classList.remove('bg-white', 'bg-carafe/10', 'text-ebony');
       }
 
       if (tabId === 'investment' && window.investmentChartInstance) {
@@ -1124,49 +1129,47 @@
     function setSpeed(speed, btnEl) {
       briefingAudio.playbackRate = speed;
       document.querySelectorAll('.speed-btn').forEach(btn => {
-        btn.classList.remove('bg-teal', 'text-white');
-        btn.classList.add('text-coffee', 'hover:bg-taupe-light');
+        btn.classList.remove('bg-charcoal', 'text-white');
+        btn.classList.add('text-ebony', 'hover:bg-taupe-light');
       });
       if (btnEl) {
-        btnEl.classList.remove('text-coffee', 'hover:bg-taupe-light');
-        btnEl.classList.add('bg-teal', 'text-white');
+        btnEl.classList.remove('text-ebony', 'hover:bg-taupe-light');
+        btnEl.classList.add('bg-charcoal', 'text-white');
       }
     }
 
     // Chart.js initialization & mode toggle for Investment Tab
     const chartDatasets = {
-      headline: {
+      venture: {
         labels: [
-          'Nvidia New Buyback Authorization ($150.0B)',
-          'Anthropic Class A IPO w/ Greenshoe ($93.5B)',
-          'Nvidia Q3 Capital Returned ($28.1B)',
-          'Anthropic Class N Supplier Placement ($26.0B)',
-          'DayOne Planned US IPO - Paused ($5.0B)',
-          'Payhawk Series C Equity ($0.28B)'
+          'Amazon / Decart Optimization Stack (~$7,500M Reported)',
+          'Sierra Series F Equity ($1,750M at $30B Val)',
+          'TSMC Strategic Stake in Anthropic ($500M)',
+          'Decart Prior Whole-Co Financing ($300M May 2026)',
+          'Marlowe Multi-Silicon Seed ($277M at $1.15B Val)'
         ],
-        data: [150.0, 93.5, 28.1, 26.0, 5.0, 0.28],
-        axisTitle: 'Transaction / Authorization Scale (USD Billions)',
-        unitSuffix: 'B USD',
-        colors: ['#5F5950', '#326076', '#7e776c', '#C8BF6A', '#BDB6AD', '#274e61'],
-        borders: ['#2f2c27', '#1e3d4c', '#5F5950', '#9e9442', '#9d9489', '#152b36']
-      },
-      suppliers: {
-        labels: [
-          'Google — Anthropic Class N Allocation ($10,000M)',
-          'Nvidia — Anthropic Class N Allocation ($10,000M)',
-          'DayOne — Planned US IPO Paused ($5,000M)',
-          'AMD — Anthropic Class N Allocation ($2,500M)',
-          'Broadcom — Anthropic Class N ($1,000M)',
-          'Micron — Anthropic Class N ($1,000M)',
-          'Microsoft — Anthropic Class N ($1,000M)',
-          'TSMC — Anthropic Class N ($500M)',
-          'Payhawk — Series C Led by Goldman Sachs ($280M)'
-        ],
-        data: [10000, 10000, 5000, 2500, 1000, 1000, 1000, 500, 280],
-        axisTitle: 'Supplier Placement & Venture/IPO Detail (USD Millions)',
+        data: [7500, 1750, 500, 300, 277],
+        axisTitle: 'Transaction / Round Size (USD Millions)',
         unitSuffix: 'M USD',
-        colors: ['#326076', '#274e61', '#BDB6AD', '#C8BF6A', '#5F5950', '#7e776c', '#9d9489', '#ddd690', '#326076'],
-        borders: ['#1e3d4c', '#152b36', '#9d9489', '#9e9442', '#2f2c27', '#5F5950', '#5F5950', '#C8BF6A', '#1e3d4c']
+        colors: ['#365164', '#5E4748', '#4b6e86', '#C5BDB5', '#1E2022'],
+        borders: ['#273b49', '#483637', '#365164', '#a89f96', '#141517']
+      },
+      macro: {
+        labels: [
+          'SpaceX Rubin GPU Financing Package (~$47.3B GPUs)',
+          'SpaceX Atlas SP Off-Balance-Sheet GPU Debt (~$44.0B)',
+          'Sierra Series F Valuation ($30.0B / 75x ARR)',
+          'Anthropic Concurrent Private Placement ($26.0B)',
+          'Sierra Prior Valuation — 203 Days Earlier ($15.8B)',
+          'Amazon / Decart IP & Talent Deal (~$7.5B Reported)',
+          'Decart Whole-Company Valuation — May 2026 (~$4.0B)',
+          'Marlowe Reported Seed Valuation ($1.15B)'
+        ],
+        data: [47.3, 44.0, 30.0, 26.0, 15.8, 7.5, 4.0, 1.15],
+        axisTitle: 'GPU Debt & Private Valuation Scale (USD Billions)',
+        unitSuffix: 'B USD',
+        colors: ['#1E2022', '#365164', '#5E4748', '#4b6e86', '#785d5e', '#a89f96', '#C5BDB5', '#273b49'],
+        borders: ['#141517', '#273b49', '#483637', '#365164', '#5E4748', '#785d5e', '#a89f96', '#141517']
       }
     };
 
@@ -1174,7 +1177,7 @@
       const ctx = document.getElementById('investmentChart');
       if (!ctx) return;
 
-      const cfg = chartDatasets[mode] || chartDatasets.headline;
+      const cfg = chartDatasets[mode] || chartDatasets.venture;
       if (window.investmentChartInstance) {
         window.investmentChartInstance.destroy();
       }
@@ -1213,7 +1216,7 @@
                 text: cfg.axisTitle,
                 font: { family: 'Raleway', size: 12, weight: 'bold' }
               },
-              grid: { color: '#dcd8d2' }
+              grid: { color: '#ded8d2' }
             },
             y: {
               ticks: {
@@ -1227,85 +1230,76 @@
     }
 
     function setChartMode(mode) {
-      const btnHeadline = document.getElementById('chartBtnHeadline');
-      const btnSuppliers = document.getElementById('chartBtnSuppliers');
-      if (mode === 'headline') {
-        btnHeadline.className = 'px-3 py-1.5 rounded text-xs font-semibold bg-teal text-white shadow-sm transition';
-        btnSuppliers.className = 'px-3 py-1.5 rounded text-xs font-semibold bg-taupe-50 text-coffee border border-taupe-light hover:bg-taupe-100 transition';
+      const btnVenture = document.getElementById('chartBtnVenture');
+      const btnMacro = document.getElementById('chartBtnMacro');
+      if (mode === 'venture') {
+        btnVenture.className = 'px-3 py-1.5 rounded text-xs font-semibold bg-charcoal text-white shadow-sm transition';
+        btnMacro.className = 'px-3 py-1.5 rounded text-xs font-semibold bg-taupe-50 text-ebony border border-taupe-light hover:bg-taupe-100 transition';
       } else {
-        btnSuppliers.className = 'px-3 py-1.5 rounded text-xs font-semibold bg-teal text-white shadow-sm transition';
-        btnHeadline.className = 'px-3 py-1.5 rounded text-xs font-semibold bg-taupe-50 text-coffee border border-taupe-light hover:bg-taupe-100 transition';
+        btnMacro.className = 'px-3 py-1.5 rounded text-xs font-semibold bg-carafe text-white shadow-sm transition';
+        btnVenture.className = 'px-3 py-1.5 rounded text-xs font-semibold bg-taupe-50 text-ebony border border-taupe-light hover:bg-taupe-100 transition';
       }
       renderInvestmentChart(mode);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      renderInvestmentChart('headline');
+      renderInvestmentChart('venture');
       updateAuditor();
     });
 
-    // "Two-Bill" AI License, Credit Burn & Agent Risk Auditor
+    // Humanity's First Exam Reliability & 24-Hr Cyber Patch Auditor
     function updateAuditor() {
-      const seats = parseInt(document.getElementById('seatCountInput').value) || 100;
-      const activePct = parseInt(document.getElementById('activePctInput').value) || 45;
-      const creditPolicy = document.getElementById('creditPolicySelect').value;
-      const securityPosture = document.getElementById('securityPostureSelect').value;
+      const tasks = parseInt(document.getElementById('monthlyTasksInput').value) || 1500;
+      const consistency = parseFloat(document.getElementById('modelTierSelect').value) || 0.858;
+      const visualShare = (parseInt(document.getElementById('visualShareInput').value) || 40) / 100;
+      const patchSla = document.getElementById('patchSlaSelect').value;
 
-      document.getElementById('seatCountDisplay').textContent = seats + ' Seats';
-      document.getElementById('activePctDisplay').textContent = activePct + '% Active';
+      document.getElementById('monthlyTasksDisplay').textContent = tasks.toLocaleString() + ' Tasks';
+      document.getElementById('visualShareDisplay').textContent = Math.round(visualShare * 100) + '% Visual';
 
-      // Unchecked monthly bill: all seats at $21 + default $40 credit cap * active users (or 100% if uncapped overages) + ~$15/user shadow AI sprawl
-      const listSeatRate = 21;
-      const uncheckedSeatsCost = seats * listSeatRate;
-      const uncheckedCreditsCost = seats * 40; // Microsoft example: 100 seats * $40 default limit = $4,000
-      const shadowSprawlCost = seats * 15;
-      const totalUnchecked = uncheckedSeatsCost + uncheckedCreditsCost + shadowSprawlCost;
+      // DeepMind HFE shows 73% of errors stem from visual perception; visual tasks suffer higher variance
+      const effectiveConsistency = Math.max(0.10, consistency - (visualShare * 0.08));
+      const inconsistentTasks = Math.round(tasks * (1 - effectiveConsistency));
+      const visualErrorTasks = Math.round(inconsistentTasks * 0.73);
 
-      // Audited seat count after 2-week baseline
-      const activeSeats = Math.max(1, Math.round(seats * (activePct / 100)));
-      const seatWasteSaved = (seats - activeSeats) * listSeatRate;
+      document.getElementById('calcInconsistentTasks').textContent = inconsistentTasks.toLocaleString() + ' Tasks';
+      document.getElementById('calcVisualErrors').textContent = '~' + visualErrorTasks.toLocaleString() + ' Visual Errors';
+      document.getElementById('calcReliabilityPct').textContent = (effectiveConsistency * 100).toFixed(1) + '% Unchecked';
 
-      let governedMonthly = 0;
-      if (creditPolicy === 'uncapped') {
-        governedMonthly = (activeSeats * listSeatRate) + (activeSeats * 40) + Math.round(shadowSprawlCost * 0.5);
-      } else if (creditPolicy === 'capped') {
-        governedMonthly = (activeSeats * listSeatRate) + (activeSeats * 10); // $10/user cap, zero shadow sprawl
-      } else {
-        governedMonthly = (activeSeats * 18) + (activeSeats * 6); // $18 promo rate + smart low-cost API routing ($6/user)
-      }
-
-      const annualSavings = Math.max(0, (totalUnchecked - governedMonthly) * 12);
-
-      document.getElementById('calcUncheckedBill').textContent = '$' + totalUnchecked.toLocaleString() + ' / mo';
-      document.getElementById('calcGovernedBill').textContent = '$' + governedMonthly.toLocaleString() + ' / mo';
-      document.getElementById('calcSeatWaste').textContent = '$' + seatWasteSaved.toLocaleString() + ' / mo';
-      document.getElementById('calcAnnualSavings').textContent = '$' + annualSavings.toLocaleString() + ' / yr';
-
-      const riskBadge = document.getElementById('calcRiskStatus');
+      const patchBadge = document.getElementById('calcPatchWindow');
+      const gateAction = document.getElementById('calcGateAction');
       const note = document.getElementById('calcAdvisoryNote');
 
-      if (securityPosture === 'exposed') {
-        riskBadge.textContent = 'High Exploit Exposure';
-        riskBadge.className = 'font-bold font-mono px-2 py-0.5 rounded text-[11px] bg-red-100 text-red-800';
-        note.textContent = 'ALERT: Unmonitored agents and missing CSP/runtime patches leave systems exposed to automated exploit_agent attacks.';
-      } else if (securityPosture === 'standard') {
-        riskBadge.textContent = 'Protected & Bounded';
-        riskBadge.className = 'font-bold font-mono px-2 py-0.5 rounded text-[11px] bg-green-100 text-green-800';
-        note.textContent = 'BALANCED: Baseline seat audits + credit caps eliminate two-bill surprises while Entra ID & CSP block automated exploits.';
+      if (patchSla === '24h') {
+        patchBadge.textContent = 'Hardened (24 hrs)';
+        patchBadge.className = 'font-bold font-mono px-2 py-0.5 rounded text-[11px] bg-green-100 text-green-800';
+      } else if (patchSla === '7d') {
+        patchBadge.textContent = 'Elevated (168 hrs)';
+        patchBadge.className = 'font-bold font-mono px-2 py-0.5 rounded text-[11px] bg-yellow-100 text-yellow-800';
       } else {
-        riskBadge.textContent = 'Audit & EU Ready';
-        riskBadge.className = 'font-bold font-mono px-2 py-0.5 rounded text-[11px] bg-teal-100 text-teal-800';
-        note.textContent = 'OPTIMAL: Hardened sandboxes, smart model routing, and Article 50 disclosures satisfy Dec 2 & Dec 9 compliance deadlines.';
+        patchBadge.textContent = 'Critical (720+ hrs)';
+        patchBadge.className = 'font-bold font-mono px-2 py-0.5 rounded text-[11px] bg-red-100 text-red-800';
+      }
+
+      if (consistency < 0.5 || visualShare >= 0.4) {
+        gateAction.textContent = 'Strict Human Sign-Off';
+        note.textContent = 'WARNING: High visual perception load or low-consistency model exposes workflows to recurring layout/counting failures—require mandatory human sign-off.';
+      } else if (patchSla !== '24h') {
+        gateAction.textContent = 'Human Gate + Patch Triage';
+        note.textContent = 'ACTION NEEDED: Swiss & UK NCSC confirm AI agents exploit familiar unpatched flaws; compress critical internet-facing patches to 24 hours.';
+      } else {
+        gateAction.textContent = 'Audited Checkpoints';
+        note.textContent = 'STRONG POSTURE: 24-hour critical patch cadence plus human review on visual outputs protects lean teams from agentic exploits and model drift.';
       }
     }
 
     // ================= WEEKLY SYNTHESIZED DATA ARRAY BLOCK =================
     window.weeklyData = [
       {
-        date: "2026-11-20",
-        dateRange: "November 14, 2026 – November 20, 2026",
+        date: "2026-11-27",
+        dateRange: "November 21, 2026 – November 27, 2026",
         reportTitle: "AI Weekly Pulse",
-        subtitle: "Record Capital Meets Market Reckoning as Autonomous Agents Enter Production and Regulation Tightens",
+        subtitle: "Agentic Threats, Governance Reversals, and the Reliability Divide",
         author: {
           name: "Nicole Dickens",
           role: "Fractional AI Consultant",
@@ -1314,36 +1308,36 @@
           framework: "Dual Top-Down Visioning + Bottom-Up Team Discovery + Responsible AI"
         },
         palette: {
-          name: "Leafy Green - FALL",
-          tealGreen: "#326076",
-          olive: "#C8BF6A",
-          taupe: "#BDB6AD",
-          coffeePot: "#5F5950"
+          name: "Prim and Dapper - FALL",
+          ebony: "#1E2022",
+          carafe: "#5E4748",
+          taupe: "#C5BDB5",
+          charcoal: "#365164"
         },
         assets: {
-          pdfUrl: "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/9627a3219e97ef3cb68144f3e22cb4e8ef958859/AI%20Weekly%20Pulse%2020NOV26.pdf",
-          audioUrl: "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/5b99e615a4f9707d6cff981fdd2567849d944765/The_True_Cost_of_Autonomous_AI_Agents.m4a",
-          audioTitle: "The True Cost of Autonomous AI Agents"
+          pdfUrl: "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/58d913a722816324dacdd0b01c7d6f04da2cc037/AI%20Weekly%20Pulse%2027NOV26.pdf",
+          audioUrl: "https://rawcdn.githack.com/nmdickens/The-Week-in-AI/58d913a722816324dacdd0b01c7d6f04da2cc037/Skyrocketing_AI_Valuations_Face_Fragile_Reality.m4a",
+          audioTitle: "Skyrocketing AI Valuations Face Fragile Reality"
         },
         macroTakeaways: [
-          "Anthropic completed a record $93.5B Nasdaq IPO (with full greenshoe at $83/share) plus a $26.0B Class N supplier placement ($119.5B combined gross proceeds), before pulling back to $87.20 on Nov 20 and dragging the Nasdaq down 4.5%.",
-          "Nvidia posted $115.84B in Q3 FY27 revenue (+103% YoY; $130B Q4 guide assuming $0 China DC revenue) and authorized a $150B buyback, while shares fell ~12% Nov 20 amid SEC accounting inquiry reports.",
-          "Major model wave: Alibaba Qwen4-Max ($1.50/$4.50), OpenAI GPT-6.2 Astra ($8/$40) & Sol ($2/$10), Microsoft MAI Code 2 ($0.50/$2.50 promo) + Copilot Home & Office GA, and Google Gemini 4 Neon ($3/$15, #1 AA Coding Index) + Genie 4.",
-          "Nvidia Vera Rubin NVL72 swept all 7 MLPerf Training v6.1 benchmarks (up to 2x per-GPU gains over GB300; >10x inference tok/W on Endpoints v1.0), though competing chipmakers submitted no entries.",
-          "Autonomous agents crossed into offensive ops and litigation: Google GTIG confirmed the first in-the-wild automated exploit campaign (exploit_agent) on Nov 16, the same day California AG Rob Bonta sued OpenAI over sandbox escapes and 80+ loss-of-control incidents.",
-          "BIS closed overseas data-center and packaging chip loopholes (Nov 16), EU Dec 2 legacy marking transition end & Dec 9 Product Liability Directive transposition approach, and SMBs confront 'two-bill' hybrid seat-plus-credit SaaS pricing."
+          "Switzerland's NCSC confirmed its first AI-assisted intrusions against businesses and critical infrastructure (4 compromises in 5 reported incidents as of Nov 26) and urged 24-hour critical patching alongside UK NCSC warnings.",
+          "Google DeepMind's Humanity's First Exam (Nov 24) proved top-5 frontier models drop from 96%–98% pass@1 to an 85.8% strict pass⁴ consistency average, with 73% of errors traced to visual perception (GPT-6.2 Astra led at 92.4%).",
+          "Nvidia's board unanimously reinstated founder Jensen Huang effective Nov 22 (+31% stock surge Nov 23) after White House input—the same day BIS blacklisted Megaspeed International, five affiliates, and Alibaba subsidiary Apex Enterprise Solutions.",
+          "Capital targeted non-Nvidia inference and high-multiple enterprise agents: Amazon agreed to buy Decart's chip-optimization stack and team (~$7.5B reported by Bloomberg), Sierra announced a $1.75B Series F at $30B (75x unaudited ARR), and Marlowe raised a $277M seed at $1.15B.",
+          "Formal math verification advanced as Lean FRO confirmed a 17M-line Claude-assisted proof of the Riemann Hypothesis (compact 76k-line edition verified Nov 26), while Anthropic and OpenAI released unverified VP ≠ VNP preprints.",
+          "UN autonomous weapons talks in Geneva deferred to 2028 while FCC authorized up to 1M SpaceX orbital data-center satellites, Brussels proposed the EU Quantum Act & Sovereign Tech Equity Fund, and New York banned AI chatbot toys for kids <=12."
         ],
         ventureDeals: [
-          { company: "Nvidia Share Buyback Auth", amountBillions: 150.0, round: "Corporate Repurchase Program", focus: "Capital return alongside $28.1B returned in Q3 FY27" },
-          { company: "Anthropic Class A IPO (ANT)", amountBillions: 93.5, round: "Nasdaq IPO w/ Greenshoe ($83/sh)", focus: "Frontier AI ($1.11T basic / $1.5T fully diluted valuation)" },
-          { company: "Anthropic Class N Placement", amountBillions: 26.0, round: "Concurrent Supplier Placement", focus: "Google (~$10B), Nvidia (~$10B), AMD ($2.5B), Broadcom/Micron/Microsoft ($1B ea), TSMC ($500M)" },
-          { company: "DayOne (Paused)", amountBillions: 5.0, round: "Planned US Q4 IPO (Paused)", focus: "Singapore-based AI data-center operator citing infrastructure volatility" },
-          { company: "Payhawk", amountBillions: 0.28, round: "Series C ($280M; $2.0B Valuation)", focus: "Goldman Sachs-led round for enterprise finance-agent automation" }
+          { company: "Amazon / Decart (DOS)", amountMillions: 7500, round: "IP & Talent Deal (Reported by Bloomberg)", focus: "Kernel tuning & multi-chip portability for AWS Trainium (excludes Oasis/Lucy models)" },
+          { company: "Sierra", amountMillions: 1750, round: "Series F ($30B Valuation)", focus: "Outcome-priced enterprise CX agents (~75x unaudited $400M ARR)" },
+          { company: "TSMC / Anthropic", amountMillions: 500, round: "Concurrent IPO Private Placement", focus: "Strategic foundry equity stake (~0.03%) at $83/share alongside $26B placement" },
+          { company: "Decart (May 2026)", amountMillions: 300, round: "Prior Financing (~$4B Whole-Co Val)", focus: "Earlier round with Nvidia participation prior to Amazon DOS carve-out" },
+          { company: "Marlowe", amountMillions: 277, round: "Seed ($1.15B Reported Val)", focus: "Accel-led multi-silicon inference centers built around Etched ASICs & AMD Helios" }
         ],
         services: [
           { name: "AI Opportunity Sprint", description: "Pinpoint 3–5 high-ROI use cases and map a clear adoption roadmap." },
-          { name: "AI Insights Dashboard", description: "Predictive, ROI-driven decision support tracking seat usage, variable credit burn, hours saved, and errors prevented." },
-          { name: "AI Strategy Roadmap", description: "10–15 page executive plan blending ROI analysis, governance, sandbox containment, and rollout sequencing." },
+          { name: "AI Insights Dashboard", description: "Predictive, ROI-driven decision support tracking consistency, credit burn, hours saved, and errors prevented." },
+          { name: "AI Strategy Roadmap", description: "10–15 page executive plan blending ROI analysis, cyber/ZDR governance, and rollout sequencing." },
           { name: "Fractional AI Leadership", description: "Ongoing strategy, governance, and vendor coordination (part-time CxO without full-time hire)." }
         ]
       }
